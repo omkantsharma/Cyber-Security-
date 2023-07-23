@@ -1,0 +1,30 @@
+ping google.com
+packets: send, received, lost
+show us the time --
+===========================
+ping localhost
+ping 127.0.0.1
+ping 0
+====================
+ping -a server01
+====================
+You can adjust the number of pings by using the -c option,
+followed by the desired number of ping messages. 
+For example, to send five pings, type:
+
+ping -c 5 192.168.2.200
+
+----------------
+A quick name resolution query by using a single ping.
+ping -c 1 server01
+---------------------------
+You can increase the detail level by adding the -v (verbose) 
+option or summarize the results by using the -q (quiet) option.
+[Using the quiet mode with ping.]
+
+ping -v server01
+ping -c 1 -q server01
+----------------------------------
+ping -b -c 3 -i 8.8.8.8     [on window cmd] importent ]]]]
+-------------------------------------------
+https://www.redhat.com/sysadmin/ping-usage-basics
