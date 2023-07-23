@@ -1,0 +1,11 @@
+kali kernal   [defalt sql in kali]
+--------------
+sudo su
+service mysql start
+mysql -u root
+show databases;
+create database om;
+use om;
+create table omkant(name varchar(35),id int (15));
+show tables;
+----------------------
