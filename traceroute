@@ -1,0 +1,57 @@
+traceroute   
+ping each router[hobs] on its way to the destination.
+traceroute - packets: send, received, lost, show time  
+
+[Running traceroute is helpful for figuring out the routing hops data has to go through, as well as response delays as it travels across nodes, which are what send the data toward
+ its destination. Traceroute also enables you to locate points of failure.] 
+----------------------------------------------------------
+traceroute google.com 
+[in Linux]
+tracert google.com    
+[ in window]
+
+It gives us detail about each router IP and time spent to go through
+ to reach the final destination.
+if google is slow, you ping which just gives you the time will take to reach the final destination... ping provides average time but 
+-- can not identify where the problem was 
+but 
+traceroute - it gives you each packet's time, where takes more time to 
+reach/find a time gap in the packet.. which router outside has a 
+problem, we can track that router with its IP.
+-------------------------------------------- 
+if the time like 9ms to 200ms   gap shows there then would/could the 
+distance there of continent level in between the routers.
+------------------------------------------
+if a  star came means does not configure to place a trace to reply
+------------------------------------------
+TTL -  TIME TO LIVE ---- prevent data packets from travelling endlessly 
+around the internet.
+eg..
+C:\Users\omkan>tracert 8.8.8.8
+[window cmd]
+  1     1 ms     1 ms     1 ms  192.168.43.1
+  2     *        *        *     Request timed out.
+  3    46 ms    43 ms    55 ms  56.8.191.65
+  4    65 ms    37 ms    40 ms  172.26.74.229
+here- 
+Tracing route to dns.google [8.8.8.8]
+over a maximum of 4 hops: 
+[ data packet rach in 4 hobs and then drops ]
+
+  1     2 ms     2 ms     1 ms  192.168.43.1
+  2     *        *        *     Request timed out.
+  3    61 ms    46 ms    41 ms  56.8.191.65
+  4    28 ms    39 ms    38 ms  172.26.74.229
+
+Trace complete.
+---------------
+so TTL defines a lime of data packet 
+if the time like 9ms to 200ms   gap shows that there then would/could 
+the distance there of continent level in between the routers. 
+[ if a  star came means does not configure to place a trace to reply]
+
+----------------------------------------
+Note:- Tracing route to dns.google or 8.8.8.8
+ Only/Over a maximum of 30 hops:  
+[if data packet not reach with in 30 hobs then data packet will drop 
+and prevents it from looping.]
