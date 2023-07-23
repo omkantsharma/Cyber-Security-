@@ -1,0 +1,21 @@
+1 
+tcpdump is a CLI utility that allows you to capture 
+and analyze network traffic.
+2 
+used to resolve network and security issues. 
+3.
+tcpdump        - write in Kali kernel...        
+for installation -
+sudo apt-get install tcpdump
+4.
+sudo tcpdump [options] [filter expression]
+5.
+sudo tcpdump -i any
+6. 
+sudo tcpdump -i any -c 5
+7.
+sudo tcpdump -i any -c5 -nn
+8.
+sudo tcpdump -i any -c5 icmp
+------------------------------------
+https://gist.github.com/marcoemorais/a8bf499bd6a8f69960c5
