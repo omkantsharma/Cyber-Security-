@@ -274,8 +274,10 @@ nmap -p 53 --script dns-enum <target>
 nmap <network>/24
 [Scan Network Range:]
 
+
 nmap -F <target>
 [Fast Scan:]
+
 
 Output Results to File:
 [nmap -oN <output_file.txt> <target>]
