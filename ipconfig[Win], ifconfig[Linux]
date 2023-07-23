@@ -1,0 +1,23 @@
+ipconfig [for the win]
+ifconfig [for the Linux]
+1 ip -
+ipv
+ipv6
+2 subnet mask - show network ip and host IP
+[how may connection created by host ips till 255]
+3 default gateway ----- given by iso or public
+---------------------------------------
+ipconfig /all --- provide al detail like mac, dns , ipv4 or v6 ,
+ subnet ....
+--------------------------------------
+ipconfig /flushdns
+Windows IP Configuration Successfully flushed the DNS Resolver Cache.
+ [it is necessary when eg. youtube change ip but in ours, DNS has or saves 
+the previous one, so it will so error..because dns outdated 
+so need update .it also help in security concern. like[[DNS spoofing.
+hacking using malware redirect your cash -- prize website -use this 
+tactic steal sensitive information.... another benefit has unhide 
+your search behaviour- in cia -- make availability breach.. ..]
+--------------------------------------------
+ipconfig /displaydns
+Windows IP Configuration
