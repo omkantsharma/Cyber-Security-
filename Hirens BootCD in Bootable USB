@@ -1,0 +1,76 @@
+Hirens_BootCD
+-----------------------------------------------------------------------------------
+google - Hirens boot cd  
+or 
+https://www.hirensbootcd.org/
+
+click on download 
+https://www.hirensbootcd.org/download/       {reature mention here}
+
+at the end click on 
+the file name - HBCD_PE_X6.iso 
+Download link - 
+https://www.hirensbootcd.org/files/HBCD_PE_x64.iso
+
+-----------------------------------------------------------------------------------
+ Ventoy
+A New Bootable USB Solution
+
+https://www.ventoy.net/en/download.html
+https://github.com/ventoy/PXE/releases
+https://github.com/ventoy/PXE/releases/download/v1.0.17/iventoy-1.0.17-win64-free.zip
+[for window]
+- extract ventoy zip file and open ventoy
+- attach USB and add [Hirens boot] file 
+then
+and save changes 
+restart computer
+and follow the window's BIOS 
+and choose in boot - USB drive as bootable -  
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+To make {Bootable  USB FLASH DRIVE}, we use this software 
+name -Rufus 
+-------------------------------------------------------------------------------------
+https://rufus.ie/en/#google_vignette
+download link - 
+https://github.com/pbatard/rufus/releases/download/v4.1/rufus-4.1.exe
+ ------------------------------------------------------------------------------------
+in tools operation's steps - 
+
+Dive 
+[- select USB] 
+
+Boot selection
+[selct operating system boot file]
+
+Partition scheme 
+[computer folder- right click-manage-Disk Management-
+look left side-right click on disk0 basic [---gb] online,
+after right click - property - reach like- PCI SSD property
+- volume - see partition style  ]
+[ partition style add in partition schima]
+
+Target system 
+[boot]
+
+
+format Option
+[32 or 64 format usb first]
+
+status 
+ready
+
+turn off the system go to BIOS and make boot changes 
+[in the boot - select readable USB drive]
+
+https://www.techtarget.com/whatis/definition/BIOS-basic-input-output-system#:~:text=BIOS%20(basic%20input%2Foutput%20system)%20is%20the%20program%20a,%2C%20keyboard%2C%20mouse%20and%20printer.
+
+and save changes 
+restart computer
+and follow the window's BIOS 
+and choose in boot - USB drive as bootable -  
