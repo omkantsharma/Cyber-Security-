@@ -1,0 +1,116 @@
+================================================================
+================================================================
+Google dorks can reveal sensitive or private information
+about websites and the companies, organizations, and individuals
+that own and operate them. In preparing for an attack, malicious 
+hackers might use Google Dorks to gather data on their targets.
+----------------------------------------------------------------
+Google Hacking/Dorking -
+Google hacking, also named Google dorking,[1][2] is a hacker 
+technique that uses Google Search and other Google applications 
+to find security holes in the configuration and computer code 
+that websites are using.
+
+https://en.wikipedia.org/wiki/Google_hacking
+----------------------------------------------------------------
+order defined by Google - SEO
+search engine optimization (SEO)]
+put in search engine for particular website output 
+-----MOST RECENT or SEARCHABLE  LINK WILL APPEAR---------
+---------------------------------------------------------------
+cybersecurity site:ibm.com   (operator (site: is an
+operator here) -- site: search_words )
+---------------------------------------------------------------
+cybersecurity filetype:pptx (operator(filetype is 
+a operator here) -- filetype:pptx/xml (any file extension)
+---------------------------------------------------------------
+link:
+cache:example.com
+==============================================================
+==============================================================
+Google Dorking -- OPERATORS ARE :- 
+
+inurl
+intitle
+allintitle
+site
+filetype
+intext
+link
+define
+info
+related
+-------------------------------------------------------------
+=============================================================
+=============================================================
+insert these query in google search engine 
+------------------------------------------------------------
+inurl - [search particular string -related url ] 
+inurl: php    [all php result shows with php extenson -url]
+inurl: asp
+inurl: php?id=     [for find vulnerability] 
+inurl:passwords.txt
+-----------------------------------------------------
+allinurl: any domain
+---------------------------
+intitle: facebook [title facebook there in all search output]   
+intitle: yahoo login
+intitle:"index of"
+allintitle: yahoo
+---------------------------
+site: yahoo.com [damain specific -in,org,com]
+------------------------------------------------
+search term filetype: extension
+ethical hacking filetype: pdf [ppt,xml,csv,]
+----------------------------------------
+intext: ethical hacking  [specific text content/matirial]
+------------------------------------------
+link: outlook.com    
+cache:om.com
+------------------------------------------
+define: cyber
+------------------------------------------
+info: twitter     [find old/main website/link]
+-------------------------------------------
+related: cyber security 
+-------------------------------
+indexof: ethical hacking  
+[does a directory indexing of given sources]
+[perticuler file Directory/provide]
+[after click, it will download]
+[file,software,folder]
+
+index: series/trends
+index:/movies/URI
+---------------------------------
+intitle: movies filetype:mp4
+intitle: facebook filetype:pdf
+---------------------------------
+
+=====================================
+=====================================
+==========================
+Links - 
+Google Hacking Database
+https://www.exploit-db.com/google-hacking-database
+https://www.acunetix.com/websitesecurity/google-hacking/ 
+
+--------------------------------------------------------
+-----------------------------------------------------
+httpswww.acunetix.comwebsitesecuritygoogle-hacking
+--------------------------------------------------------
+footprinting [information gathering] through search engines
+as security expert/ethical hacker-----
+hacking first step ----
+- footprinting through search engines
+information about Target,  extracting that particular 
+info [point to point ] through search engines 
+- finding the company's public and restricted websites
+- collect location information
+--------------------------------
+footprinting
+---------------
+encyclopidia
+netcraft - [netcraft site report]
+[netcraft lookup -[enter target site_url]]
+=======================================================
