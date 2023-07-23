@@ -1,0 +1,281 @@
+Basic Linux cmd. 
+
+ip addr              [To check the IP address of the device ]
+ifconfig
+ping 8.8.8.8  [To check to communicate with ip [8.8.8.8 google DNS]
+sudo apt-get update  [To update system]
+sudo apt-get upgrade [upgrades all the packets]
+sudo su              [ENTER IN SUPER USER]
+history              [HISTOR OF CMD]
+clear                [clear kernal]
+cd                   [cd mean change director/reach in dir]
+          
+cd ..                [one step back]
+cd Desktop           [ reach desktop]
+sudo vmhgfs-fuse .host:/share share -o allow_other -o uid=1000
+[share the folder between host win or vm kali ]
+------------ --------------
+mkdir share  [make folder]
+cd share     [enter in folder]
+ls            [list of file/folder]
+
+--------------------------
+tuch file.txt [create file]
+uname         [system name]
+uname -r      [os version]
+uname -a      [all details about system]
+
+-----------------
+touch file.txt [to create file]
+rm file.txt [remove file]
+
+-----------------
+mkdir cyber [make folder/dir]
+rmdir cyber
+---------------------
+man ls [provide manual of any linux cmd]
+---------------------
+mk file.txt            [make file]
+cp file.txt Desktop    [cp mean copy file to desktop]
+------------------------------------------------------
+======================================================
+importent -         
+------------------------------------------------------
+ls -l file.txt         [provide authontication rule]
+
+like
+-rw-r--r-- 1 kali kali 0 Jul 18 01:08 file.txt
+
+chmod 777 file.txt [use to change permissions]
+[meaning of 777]
+
+[ admin rwx 4+2+1=7 ]
+[ group rw  4+2  =6 ]
+[ public r  =4]
+
+[ 1 means excute]
+[ 2 means write ]
+[ 4 means read  ]
+
+----------------------------------------
+
+cat file.txt       [used to see the text/word]
+
+cat > file.txt     [ write/add text/word in the file]
+hi, all this is cyber security class. if any doubt free to ask. thanks
+
+[To save and quit the cat command, press CTRL + D . You will now return
+to your shell prompt.]
+----------------------------------------
+
+cal  [see calendar]
+whoami [in root or user]
+
+pwd   [ present working dir  {home/kali}]
+
+vi editar
+vi file.txt
+cat file.txt
+
+==========================================
+open matesploit -------
+
+https://www.geeksforgeeks.org/linux-metasploit-command/
+==============================================================
+==============================================================
+==============================================================
+==============================================================
+==============================================================
+ping 192.168.44.128   [check connectivity with ip/domain name]
+nmap 192.168.44.129
+-------------------------------------------------------------
+host
+open/close ports
+operating system information
+service running on the network
+running processes on a network
+identify vulnerabilities
+-------------------------------------------------------------
+https://www.interviewbit.com/blog/nmap-commands/
+https://www.varonis.com/blog/nmap-commands
+-------------------------------------------------------------
+=============================================================
+=============================================================
+=============================================================
+Basic Nmap commands
+-------------------------------------------------------------
+nmap -sn 192.168.44.128     [vm metasploit ip ]
+[use for ping scan performance/host is up, it means machine is on]
+
+nmap -sn 8.8.8.8  [google dns server ip]
+[-sn    send a syn packet to detect
+ system is on/off]
+
+nmap -sn 192.168.44.130  [vm window machine ip ]
+┌──(kali㉿kali)-[~]
+└─$ nmap -sn 192.168.44.130
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-07-18 03:31 EDT
+Note: The host seems down. If it is really up, but blocking our ping probes,
+ try -Pn
+Nmap done: 1 IP address (0 hosts up) scanned in 3.00 seconds
+
+[using invasion technique to bypass 
+firewall/antivirus etc ]
+[arp address resolution protocol 
+[48 bit] - scan,  ]
+--------------------------------------
+arp -e  [provide arp table]
+
+──(kali㉿kali)-[~]
+└─$ arp -e        
+Address                  HWtype  HWaddress           Flags Mask            Iface
+192.168.44.2             ether   00:50:56:fa:5e:d0   C                     eth0
+192.168.44.130           ether   00:0c:29:68:18:4b   C                     eth0
+192.168.44.254           ether   00:50:56:f7:75:f9   C                     eth0
+
+[if arp table is not there then, he 
+do not know which ip belong to which
+mac addr]  so we take this senarios 
+advantage and raise arp request through
+nmap,so we will do arp requst 
+broadcast to targaet ip, target identity its is 
+ip then in rply send mac addr, in this 
+method be can know target
+ machine on/off
+   ]
+ping is block syn packet block or not
+ throgh firwall....,
+
+-----------------------------------
+                                                              
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -sn 192.168.44.130 -PR              
+[sudo] password for kali: 
+[sudo] password for kali: 
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-07-18 03:56 EDT
+Nmap scan report for 192.168.44.130
+Host is up (0.00035s latency).
+MAC Address: 00:0C:29:68:18:4B (VMware)
+Nmap done: 1 IP address (1 host up) scanned in 0.22 seconds
+
+[-PR   use arp]
+-------------------------------------
+hobs - host of the points
+[path router]
+=======================================
+┌──(kali㉿kali)-[~]
+└─$ nmap -sn traceroute facebook.com  
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-07-18 04:02 EDT
+Failed to resolve "traceroute".
+Nmap scan report for facebook.com (157.240.198.35)
+Host is up (0.012s latency).
+Other addresses for facebook.com (not scanned): 2a03:2880:f144:82:face:b00c:0:25de
+rDNS record for 157.240.198.35: edge-star-mini-shv-01-del1.facebook.com
+Nmap done: 1 IP address (1 host up) scanned in 15.07 seconds
+--------------------------------
+if i wants to change dns server ...
+by defalt we useing 8.8.8.8 dns 's 
+getway server 
+but we want change dns server
+
+--------------------------
+-n [can cut name resolution part]
+-Pn [we so not want to use ping 
+     means do not want to send icmp
+packet use]
+[so -Pn block ping scan ] 
+
+ping send icmp packets 
+[ICMP (Internet Control Message Prot
+ocol) is an error-reporting 
+protocol that network devices 
+such as routers use to generate
+ error messages to the source IP
+ address when network problems 
+prevent delivery of IP packets.]
+
+============================================
+============================================
+┌──(kali㉿kali)-[~]
+└─$ nmap -n facebook.com -Pn          
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-07-18 04:12 EDT
+Nmap scan report for facebook.com (157.240.198.35)
+Host is up (0.014s latency).
+Other addresses for facebook.com (not scanned): 2a03:2880:f144:82:face:b00c:0:25de
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+
+Nmap done: 1 IP address (1 host up) scanned in 4.92 seconds
+==================================
+==================================
+==================================
+==================================
+----------------------------------
+port scan -ports state are
+---------------------------------
+---------------------------------
+open -  indicate port sevice and
+listening  
+ 
+close - indicate probes [signal] send 
+but no service running on port
+
+filter - indicte- no sign probe are 
+received / state could not establish/
+[probe are dropped some kind of 
+filtering]
+
+unfilterinng - mean - probes were 
+received but state could not be 
+establish [recived but not identify 
+that post is on/off]
+
+open/filtered- port is open but 
+filtered [anvirus/firewall blocking]
+
+close/filtered [filtter or could be 
+close - on/off not defined]
+==================================
+==================================
+nmap -sT facebook.com -Pn     
+[-sT - TCP scan, -Pn without ping]
+[ press shift to check recent 
+scanning status in percentage ]  
+nmap -sT facebook.com 
+nmap -sU facebook.com -Pn
+[-sU - UDP scan, -Pn without ping]    
+nmap -sU facebook.com 
+=================================
+=================================
+=================================
+
+nmap <target ip> 
+[• Basic Scan: Perform a basic TCP port
+scan on a target:]
+
+nmap -p <port1,port2,port3> <target ip>
+[• Scan Specific Ports: Specify specific
+ports to scan on a target:]
+
+nmap -p- <target ip>
+[Scan All Ports:]
+
+nmap -O <target ip>
+[OS detection]
+
+nmap -A <target>
+[Aggressive Scan:]
+
+nmap -p 53 --script dns-enum <target>
+[DNS Enumeration]
+
+nmap <network>/24
+[Scan Network Range:]
+
+nmap -F <target>
+[Fast Scan:]
+
+Output Results to File:
+[nmap -oN <output_file.txt> <target>]
