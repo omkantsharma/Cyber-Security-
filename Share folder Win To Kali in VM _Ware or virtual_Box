@@ -1,0 +1,54 @@
+1
+in the window create a share-named folder on the Desktop 
+for sharing it with Virtual Machines
+2
+go vm ware - select kali - setting - option on top - 
+Share folder - browse share folder - next - tick enable the share 
+finish - 
+3
+then in Kali - 
+
+┌──(kali㉿kali)-[~]
+└─$cd /Desktop
+
+┌──(kali㉿kali)-[~/Desktop]
+└─$mkdir share
+
+┌──(kali㉿kali)-[~/Desktop]
+└─$ vmware-hgfsclient
+
+                   
+┌──(kali㉿kali)-[~/Desktop]
+└─$ sudo vmhgfs-fuse .host:/share share -o allow_other
+ -o uid=1000 
+
+──(kali㉿kali)-[~/Desktop]
+└─$ ls
+share
+                                                                             
+┌──(kali㉿kali)-[~/Desktop]
+└─$ cd share  
+                                                                             
+┌──(kali㉿kali)-[~/Desktop/share]
+└─$ ls
+'share folder win To kali in vmware steps.txt'
+                                                                             
+┌──(kali㉿kali)-[~/Desktop/share]
+└─$ 
+
+Note:- [share named folder in win [host os] and
+ share named folder in Linux [kali-virtual os/envirnment]
+VM Ware ]
+===============================================
+===============================================
+
+and in VirtualBox cmd in kernel
+┌──(kali㉿kali)-[~/Desktop]
+└─$ mkdir share
+                                                                             
+┌──(kali㉿kali)-[~/Desktop]
+└─$ sudo mount -t vboxsf kali share
+
+Note:- [Kali named folder in win [host os] and
+ share named folder in Linux [kali-virtual os/envirnment]
+Virtual Box ]
