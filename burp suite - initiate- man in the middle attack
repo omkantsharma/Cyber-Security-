@@ -1,0 +1,72 @@
+open kali kernel
+write 
+burpsuite
+-----------
+next...
+start burp
+-----------
+go to proxy
+tern on intercept
+----------------
+open firefox
+google - foxyproxy
+and click on 
+[FoxyProxy Standard – Get this Extension for Firefox (en-US)]
+add to firefox - [FoxyProxy Standard by Eric H. Jung]
+it will add on the top of right side 
+click on - it-- option- add - 
+title or description - as you want [om]
+proxy ip address and dns name - [127.0.0.1] [localhost ip]
+Port - 8080
+save
+[localhost configration done]
+close all extara tab
+-------------------------------------
+open vulnerable website named - 
+http://testphp.vulnweb.com/
+click on signup 
+-----------------------
+now check ---
+intercept should on in burpsuite 
+and check in 
+forxyproxy localhost proxy should be on/enable 
+[select title or description for tourn it on/enable]
+----------------------
+so random credential in acuart sign up page like -
+username - admin
+password - 12345
+press -  login
+----------------------------------------
+so now all details got extract through burpsuit on intercpt
+----------------------------------------
+details look like - 
+-------------------------------------------------
+POST /userinfo.php HTTP/1.1
+Host: testphp.vulnweb.com
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 22
+Origin: http://testphp.vulnweb.com
+Connection: close
+Referer: http://testphp.vulnweb.com/login.php
+Upgrade-Insecure-Requests: 1
+
+uname=admin&pass=12345 [credential got extracted]
+---------------------------------------------------
+so turn of the proxy 
+---------------------------------------------------
+in this way you can breach confidentiality and integrityof the data
+----------------------------------------------------
+
+articals to read- 
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+https://www.kaggle.com/datasets/wjburns/common-password-list-rockyoutxt
+https://www.geeksforgeeks.org/difference-between-http-get-and-post-methods/
+https://www.techtarget.com/whatis/definition/HTTP-Hypertext-Transfer-Protocol
+https://www.freecodecamp.org/news/http-request-methods-explained/
+----------------
+https://www.researchgate.net/figure/Man-In-The-Middle-attack-using-Burp-Suite-and-mitmproxy_fig3_317580056
+https://securityonline.info/ssl-mitm-using-burp-suite-proxiescredential-harvesting-via-mitm-burp-suite/
