@@ -1,0 +1,121 @@
+Hashing and Encryption
+===========================
+===========================
+===========================
+Hashing 
+-----------------------------------
+online website for Hashing ---
+
+md5hashgenerator.com
+
+======================
+list of prechecked passwords
+http://project-rainbowcrack.com/table.htm
+[salt, HMAC rainbow] Tables
+======================
+https://docs.rapid7.com/metasploit/verifying-downloads-with-sha-1-hashes/
+======================
+Hashing is always unique
+------------------------
+you hash the file 
+-------------------------
+send encrypted file with his hashing
+-------------------------
+Note:- 
+If in between file got changed [integrity breached]
+the hash value will not match 
+vice versa
+-------------------------
+====================================
+====================================
+encryption 
+====================================
+------------------------------------
+symmetric and asymmetric encryption
+------------------------------------
+Symmetric has only one key to encrypt or  decrypt 
+to same file
+------------------------------------
+asymmetric has two keys 
+1. public key - only to encrypt data,
+it could be distributed publicly to
+get confidential data...
+
+
+2. private key - encrypt and decrypt both 
+but always remain confidential 
+[keep secretly]
+------------------------------------
+and to decrypt received data that is encrypted by other 
+with that public key  
+------------------------------------
+------------------------------------
+
+=========================================================
+=========================================================
+=========================================================
+Online plate form/website for encryptions ------
+
+Just search out in Google search engine- 
+Private key generator online
+==========================================
+website link-     
+https://www.devglan.com/online-tools/rsa-encryption-decryption
+---------------------------------------------------------------
+RSA Encryption and Decryption Online
+-----------------------------------------------
+step -  1 
+Select RSA Key Size 
+[select bit according to your msg length ]
+----------------------------------------------
+Generate RSA key Pair ________________________
+it will generate public and private key at same time 
+copy that pairs differently and save 
+-----------------------------------------------
+
+Public Key-    [you can share this with everyone ]
+
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCwd94HN2xiBXCvYBXA3HwzuNyIZG0pIeMAOPJBdtJJXjWYZ40kghpVpuSlRTlyMAdN3HYgw8sEdnLVDca1nPj7XuZcXalKh1svPKPtW7OOaJF9soCfKR6Mui5oOKyQRzdjRaG/m9iN5qofb2eC3BG1Ihmi+EEyasRkb6IMOGOriwIDAQAB
+
+---------------------------------------------------------------
+Private Key-   [keep it your self confidential]
+
+MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBALB33gc3bGIFcK9gFcDcfDO43IhkbSkh4wA48kF20kleNZhnjSSCGlWm5KVFOXIwB03cdiDDywR2ctUNxrWc+Pte5lxdqUqHWy88o+1bs45okX2ygJ8pHoy6Lmg4rJBHN2NFob+b2I3mqh9vZ4LcEbUiGaL4QTJqxGRvogw4Y6uLAgMBAAECgYBz828KItquVZDDS0k/3iAmBBOz8vjfDAsR/FkBtsdZufNRXskY8fvHx8944NFsPC6wdGmSAdSF7CZr449rieb2fGoWNajwtong6AccKqihdwA6uIM6nBQN7Usww/8RZx+khxtR05K3hp0O4x8aJVxBmWixmuPtgTHofqFg2cDEcQJBAOMH1d0DYgTkAfNbey3XVAswXXLlwNqt/QHOBefdyBI9MhukDqYOPhFFdmkUKA21o0NLnqagELVJiUohjk1fCwcCQQDG/F177tCB1PSPd/TluEvSPAgGQrXilUPqHe5xMlbWFA30KqcubiKk8Ewj6Fazi7HcpqTDQ2nltWQ7qlLJcYZdAkAW7QGhsefCCqxPwNstg+MOxjGJmr3g11UHS6C5C2JaxSc8N1LrXeDSqasNbWWmDMOR1h8NQHivdd+RRtYx5fkdAkADOj6t7u603GZnGVQAkd+w9kZPC6/1j+Q9HOUsMtvTtxmO105E44ZuVHN3taIKYX6uDInpnONP1YRdr2KOX+gFAkEA1wQPDxx8B7kHvaM0IRgopl/Lu+k6hedDxZLc1wI3MgewrEfw6CFF0zRyQb1t0XZ5+pJXRSpKlH7wQPme7/Zc7g==
+
+----------------------------------------------------------------
+In below 
+---------------------------------------
+[ RSA Encryption and Decryption Online ] 
+
+RSA Encryption
+Enter Plain Text to Encrypt
+[Write down your message --]
+-----------------------------------------
+Enter Public/Private key
+
+[                         ]
+-----------------------------------------
+Select Cipher Type
+press Encrypt 
+[ here you will get encrypted msg ]
+==========================================
+for now Decryption
+RSA Decryption
+Enter Encrypted Text[msg here] to Decrypt (Base64)
+[                                      ]
+------------------------------------------
+Enter Private key
+[                                      ]
+==========================================
+Decrypted out
+[ you will get text msg now in written language ]
+==========================================
+
+----------------------------------------------------------------
+-----------------------------------------------------------------
+https://cryptotools.net/rsagen
+
+https://travistidwell.com/jsencrypt/demo/
+
+hash value--
+8e9b8ae4fb801b9f9fce9304b75f8f89dd1539e8
