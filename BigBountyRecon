@@ -1,0 +1,64 @@
+BigBountyRecon
+-------------------------------------------------------
+http://bit.ly/3E2jxcY
+https://github.com/Viralmaniar/BigBountyRecon
+-------------------------------------------------------
+=======================================================
+=======================================================
+=======================================================
+──(kali㉿kali)-[~]
+└─$  sudo su
+[sudo] password for kali: 
+┌──(root㉿kali)-[/home/kali]
+└─# cd               
+-------------------------------------------------------
+┌──(root㉿kali)-[~]       [Parallel tool]
+└─#  wget http://ftpmirror.gnu.org/parallel/par...
+    bzip2 -dc parallel-20150322.tar.bz2 | tar xvf -
+    cd parallel-20150322
+    ./configure --prefix=$HOME && make && make install
+-------------------------------------------------------
+Second Method - 
+-------------------------------------------------------
+ wget http://git.savannah.gnu.org/cgit/para
+ chmod 755 parallel
+ cp parallel sem
+ mv parallel sem dir-in-your-$PATH/bin/
+-----------------------------------------------------
+
+1
+cmd- on kali 
+nslookup chan.org 
+[get server ip of this domain]
+-------------------------------
+2
+dig google.com
+-------------------------------
+3 
+[with the help of parallel can run multiple cmd of any
+tool ]
+
+parallel -h 
+parallel nslookup ::: google.com gnu.org vulnweb.com
+-------------------------------
+if you have a file -
+
+parallel -a /root/Desktop/file.txt "nslookup {}"
+
+[parallel    path and in text file has ips "tool {}" ]
+-----------------------------------
+if we want to save input/output --- for that cmd is ..
+
+parallel -a /root/Desktop/file.txt "nslookup {}" | tee 
+-a /root/Desktop/nslookup.txt
+
+--------------------------------------
+run nmap  -- in parallel
+
+parallel -a /root/Desktop/target_list.txt "nmap -p80 {}"
+
+[careful - it will consume more cpu  ]
+--------------------------------------
+
+
+
