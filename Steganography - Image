@@ -1,0 +1,15 @@
+Steganography 
+============================
+go to the image folder
+choose image 
+right click in the folder
+open terminal - 
+syntax -
+-----------------------------------------------------------------------------
+echo " in between the cotes write down the message " >> image_name.extension 
+ [remove all special characters like ~!@#$%^&*_+=]       [o.jpg/png etc]                                            []
+press enter
+open  the image in Notepad 
+at the end _you can see your 
+message 
+-----------------------------------------------------
