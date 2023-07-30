@@ -1,0 +1,86 @@
+
+1. Project Report – [word file or pdf and approx. -20 pages]
+2. Project - Presentation - [ppt or pdf and date - 2 Aug 2023] 
+[Project last submission date - 2 Aug 2023]
+---------------------------------------------------------------
+Some Project Topics are- 
+------------------------------------------------------
+Choose topic - Reconnaissance - passive recon and active recon
+Foot printing 
+Tools - Nmap, wire shark - protocols, services, ports, source ip 
+and destination ip etc... 
+--------------------------------------------------------
+attack on Metasploite - vulnerable Machine through nmap
+--------------------------------------------------------
+Installation of Operating system on Virtual Environment
+Tools- virtual Box, VM ware [create virtual environment platform/software]
+Operating systems - window, kali Linux, tails, Metasploite [vulnerable Machine]
+------------------------------------------------------
+Deep/Dark website 
+Tool - tor browser [in Tails OS]
+------------------------------------------------------
+Linux cmd...
+Tool - Kali terminal
+--------------------------------------------------------
+Google Hacking/ Dorking 
+----------------------------------------------------------
+Stenography - hidden in image / encryptions and decryption
+Through online websites
+----------------------------------------------------------
+
+------------------------------------------------------
+sql injection - explain
+Tool - sqlmap
+------------------------------------------------------
+Networks - topologies, media, ip, mac, devices.
+Tools- ping, traceroute, tcp dump, arp, ipconfig/ifconfig
+---------------------------------------------------------
+Denial of service attack -
+Tool- slowloris 
+---------------------------------------------------------
+Man in the middle attack - 
+Tool - burp suite
+--------------------------------------------------------
+Database create - 
+Tool- sql
+--------------------------------------------------------
+Proxy chain - [Dynamic, public, random]
+--------------------------------------------------------
+
+------------------------------------------------------
+Note :- cmd execution and output 's capture screenshots 
+and explain executions [what, why, how, which]
+===============================================================
+===============================================================
+
+--------------Project Report Writing Format--------------------
+===============================================================
+1. Front Page
+
+Project title
+
+Institute Name
+
+Faculty
+
+Address
+===============================================================
+2. 
+2.1 certificate
+2.2 Acknowledgment 
+-------------------------------
+2.3 INDEX   [TABLE]
+===============================================================
+3. Introduction- [Project Topic's Description, explanation] [approx -2 pages]
+
+==================================================================
+4. Tools - [Description, explanation of tools [approx -1 pages]]
+==================================================================
+5. Executions - 
+Cmd/tools execution and output -attach captured screenshots 
+and explain executions in brief [what, why, how, which].
+=================================================================
+6. Result / conclusion 
+=================================================================
+7. References 
+=================================================================
