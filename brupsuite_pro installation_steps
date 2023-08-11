@@ -1,0 +1,133 @@
+https://github.com/SNGWN/Burp-Suite
+
+GitHub---
+
+code 
+HTTPS
+copy
+https://github.com/SNGWN/Burp-Suite.git
+git clone https://github.com/SNGWN/Burp-Suite.git
+------------
+┌──(kali㉿kali)-[~]
+└─$ ls 
+Burp-Suite  Documents  Music     Public     Videos
+Desktop     Downloads  Pictures  Templates
+------------------
+cd Burp-Suite
+----
+──(kali㉿kali)-[~/Burp-Suite]
+└─$ ls
+Kali_Linux_Setup.sh  loader.jar     Readme.md
+keygen.jar           Old-Readme.md  Windows_setup.ps1
+------------------
+┌──(kali㉿kali)-[~/Burp-Suite]
+└─$ ./Kali_Linux_Setup.sh 
+${YELLOW}
+ .d8888b.           
+d88P  Y88b          
+Y88b.               
+ "Y888b.           
+      "888         
+Y88b  d88P            
+ "Y8888P"  ...................        
+
+Execute Command as Root User
+[use script behalf of the user]
+----------------------------
+──(kali㉿kali)-[~/Burp-Suite]
+└─$ sudo ./Kali_Linux_Setup.sh  
+[sudo] password for kali: 
+${YELLOW}
+
+${YELLOW}
+ .d8888b.           
+d88P  Y88b          
+Y88b.               
+ "Y888b.           
+      "888         
+Y88b  d88P            
+ "Y8888P"  ..
+
+Downloading Burp Suite Professional v2022.8.
+2 ....
+Burp_Suite_Pro.jar  100%[================>] 
+549.57M  15.4MB/s    in 42s     
+Starting Keygenerator
+/home/kali/Burp-Suite/home/kali/Burp-Suite
+Executing Burp Suite Professional with Key
+loader
+./Kali_Linux_Setup.sh: line 38: n: command
+ not found
+t 1. Please download latest Burp Suite 
+Professional Jar file from :-:
+./Kali_Linux_Setup.sh: line 39: n: 
+command not found
+t https://portswigger.net/burp/releases
+/startdownload?product=pro&version=&type=Jar
+./Kali_Linux_Setup.sh: line 40: n: 
+command not found
+./Kali_Linux_Setup.sh: line 40: n: 
+command not found
+t 2. Replace the existing Burp-Suite
+-Pro.jar file with downloaded jar file.
+ t Keep previous file name
+------------------------------------------
+[all done-insert cresdetials]
+============================================
+============================================
+-------------------------------------------
+its all done if bychange not done 
+- if manually then we can 
+follow blow step-
+---------------------
+but now not required
+-------------------------------------------
+https://github.com/SNGWN/Burp-Suite.git
+open it
+view 
+-----
+then open new tab
+search on google - brup-suite profession
+[https://portswigger.net/burp/pro]
+-Download
+[https://portswigger.net/burp/releases/
+professional
+-community-2023-7-2?requestededition=
+professional&requestedplatform=]
+-------------------------------
+Professional / Community 2023.7.2
+----
+win-[64-bit] change jar there
+----------------------
+===========================================
+-------------------------------------------
+===========================================
+next step is insert credetials -
+task bar will appear ---
+burp suite pro special leader and siddharth 
+sangwan
+---------
+in licensed text: - change name siddharth to om
+-------------------
+notification will appear like - 
+-JRE version not fully tested- JUST OK-
+------------------------
+with in 10 - 20 sec 
+open burpsuite - Licence agrement will appear
+- I Accept
+- enter licence key [notice..]
+-go to loader/keygen [copy the]- license[key]
+-paste in [enter licence key [notice..]]
+-next
+- click in - [manual activation]
+- there copy [copy request] 
+- in loader/keygen- paste[activation request]
+- response will appear there 
+- copy [activation response]
+- paste that in manual activation -
+[paste response] box
+- next
+- Finish .....
+------
+and now use -  burpsuite profession 
+- 
