@@ -1,0 +1,97 @@
+Cross-site Scripting [XSS]
+
+Cross-site scripting is a type of computer security 
+vulnerability typically found in web applications.
+-------------------------------------------------------
+----------------------------------------------------------
+===========================================================
+ XSS enables attackers to 
+inject client-side scripts into web pages viewed by other 
+users.
+
+types of XSS:
+
+- Reflected XSS
+- Stored XSS
+- Dom Based XSS
+--------------------------------------------------------
+online lab plateform called - 
+https://portswigger.net/
+create account
+academy
+all labs
+scroll down 
+cross site scripting
+----------------------------------------------
+lab - 1
+[reflected cross-site scripting - vulnerability-
+search functionality- alert function]
+appear - BLOG 
+------------
+Write a script in a Search Box. like -
+<script>alert()</script> [payload]
+----------------- 
+popup will show
+------------------------------
+[<script>at beginning]
+[here alert() is a functon and use
+to show popup in website
+and pop means execution successful]
+[<script>at end]
+------------------------------
+Script tag used for injecting the javascript in
+HTML page
+------------------------------
+==================================================
+Lab - 2
+
+
+
+
+-------------------------------------------------------
+==================================================
+==================================================
+first google - AltroMutual
+    
+[vulnerable/testing banking website] 
+http://testfire.net/
+----------------------------
+in this website, in search bar find out input 
+that should be reflected in output 
+like - 
+search - hlo
+output came -
+no result were found for the query:
+hlo
+-----------------------------------------------
+so in this scenario we will inject the script
+
+<script>alert("hello")</script>
+
+[if ou it this in chrom then script will block]
+so we can try to do it in internet explorer/any other
+------------------------------------------------------
+in feedback - insert random data in
+-------------------------------------
+Your Name:           <script>alert("Om Kant")</script>	
+Your Email Address:  om@gmail.com	
+Subject: 	     ethical
+Question/Comment:    reflect
+------------------------------------------------------
+then - pop up will appear -
+
+testfire.net
+Om Kant
+
+-----------------------------------------------------
+after pop-up 
+website output- 
+
+Thank You
+
+Thank you for your comments, . They will be reviewed 
+by our Customer  Service staff and given the full 
+attention that they deserve. Our reply will be sent
+to your email: om@gmail.com
+
+----------------------------------------------------
