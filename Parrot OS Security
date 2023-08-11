@@ -1,0 +1,110 @@
+https://www.parrotsec.org/download/
+
+- parrot introduction
+
+- GUI
+- terminal [cmd]
+- dir/file - files, files system hierarchy 
+file - cut copy paste
+- deep vulnerability, network scanning, website vulnerabilities
+- user - manage user on gui level/user gui management, 
+the user creates, deletes, password apply, etc
+- Network - network management/configuration
+- System services/management
+- Application installation office packages 
+- P OS - Downgrade and upgrade/update/repository fix
+- bin/txt editor - use for script writing
+- ssh remort access
+- FTP server design
+- webserver design/ called Apache server-  management 
+- Python tool
+-repository problem management/fix
+-Vulnerability assessment tools and applications
+Nmap and Metasploit integrate/execute, in-build tools - 600+ tools
+- privilege accessclate
+- provide single-user or multiple-user access 
+- 
+------------------------------------------------------
+search over the google - parrot security download website link -
+https://www.parrotsec.org/
+https://www.parrotsec.org/download/
+--------------------------------------------------------
+hackthe box
+-zone where pentesting lab performance
+-tagret live machines
+--------------------------------------------------------
+-  click on Download Parrot OS 5.3
+security edition - penteration testing and red team operations
+home edition - daily use, privacy and software development
+hack the box - 
+cloud edition - embedded devices, cloud envirnments, virtual machines
+Architect - Parrot OS with nothing pre-indtalled. install any software 
+DE with this edition
+Raspberry PI - compatibility with other Iot devices will be added in the 
+future
+----------------------------------------------------------
+chose securiy edition- download - iso[imd64]
+download vmare - 
+https://customerconnect.vmware.com/en/downloads/details?downloadGroup=WKST-PLAYER-1702&productId=1377&rPId=104734
+- install setup of vmWare - desktop- click vm ware icon - pen- 
+ - click on _create a new Virtual Machine - select _installer disc image file
+{iso} - browse  parrote iso file -
+- next - in gest operating system - Linux 
+- version - Debian 11.x 64 bit -Next 
+- in verrtual machine name - Parrot - 
+- browse [Provide installation or boot location]
+-next - maximum disk size - 40 gb 
+- select - store virtual disk as a single file - next
+- customize hardware ...
+- processor - 2 
+- memory -  8 gb
+- new cd/dvd [ide] - add browse - close
+- select parote from list - play virtual machine
+- yes/no- select _try / install - enter - wait it will install soon ...
+-------------------------------------------
+if you want  to change configration during running parrot 
+- go to player - manage - virtual machine's setting 
+------------------------------------------------------
+- operating system's desktop will appear within 5 minutes
+- on the parrot desktop - there is a file or icon nameed 
+- install parrot - duble click on it - wait 
+- select language - time zone - keybord us english - 
+- two otion will appear then - Erase disk or manual partitioning 
+- select _erase disk [here swap will appear means - vitual ram]
+- no swap and next - name - password - conferm password - next
+- now show system configration - click on - install 
+- notification come like alocated hard disk drive will got erase 
+- just press- install now - and wailt - All Done - restart
+- wait - it will appear after some time [booting going on or loading]
+- run - switch use - defaut - password - desktop will appear 
+
+- -----------------------------------------------------------------------
+terminal - $ dolor sign denote here - we are working in local user login 
+/locally - here we can not perform some task there - need root or admin 
+- previlage - 
+
+- enter in root - shortcut cmd is- 
+----------------------------------
+sudo -i   
+or 
+sudo su            
+----------------------------------
+- now on terminal - # login  - here install software or manage 
+
+- if you want logout from root - syntex is exit 
+----------------------------------
+su user/om
+exit
+----------------------------------
+logout
+----------------------------------
+for large size of syntex in terminal - use -
+----------------------------------
+ctrl and shift and + togather 
+----------------------------------
+for small size of syntex in terminal - use -
+----------------------------------
+ctrl and shift and + togather 
+-----------------------------------
+ls 
+ls -l
