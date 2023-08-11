@@ -1,11 +1,47 @@
-kali kernal   [defalt sql in kali]
---------------
+
+---------------------------------------- 
+kali kernal   
 sudo su
-service mysql start
+service mysql start   [defalt sql in kali]
+service mysql status
 mysql -u root
 show databases;
+create database om;
+drop database om;
 create database om;
 use om;
 create table omkant(name varchar(35),id int (15));
 show tables;
-----------------------
+\q
+--------------
+mysql -u root
+---------------------
+create database omk;
+--------------------------
+MariaDB [(none)]> use omk;
+----------------------------------
+MariaDB [omk]> create table o (id int, name varchar(20));
+Query OK, 0 rows affected (0.009 sec)
+----------------------------------
+MariaDB [omk]> show tables;
++---------------+
+| Tables_in_omk |
++---------------+
+| o             |
+| omk           |
+2 rows in set (0.001 sec)
+-----------------------------------
+MariaDB [omk]> insert into o (id,name) values (1,"om kant");
+Query OK, 1 row affected (0.005 sec)
+-----------------------------------------
+MariaDB [omk]> select * from o;
++------+---------+
+| id   | name    |
++------+---------+
+|    1 | om kant |
++------+---------+
+1 row in set (0.003 sec)
+-----------------------------------------------------------
+MariaDB [omk]> \q
+Bye
+       
