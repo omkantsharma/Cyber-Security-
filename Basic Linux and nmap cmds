@@ -1,8 +1,45 @@
 Basic Linux cmd. 
+File system
+[here slash / mean root directory/folder]
+[like bin directory store all program file like ls - what function 
+will run and how will run - these files are written ]
+------------------------------------------------------
+write a cmd in terminal 
+ls -l /               [file system]
+------------------------------------------------------
+/bin    - Basic programs or commands [ls, cd, mv ...]
+essential user commands here. 
+boot  - file of or for boot loader [in parrot]
+/sbin    - System Program [fdisk, sysctl, mkfs
+            [display system binary information]
+dev   - device information [parrot]
+/etc  - host file - here can make changes in host/network files/configuration
+        [same in window, linux - kali, ubuntu, parrot]
+        [ Apache server/webserver  - local host ]
+media
+mnt   - mount - cd/dvd/ shows attachment with system
+        [resource mount with linux machine -it will display here ] 
+opt   - [addon packages information] 
+
+lib      - shared libraries structure/information
+/temp    - Temporary files
+/usr/bin - installed Applications [apt, nmap...
+/usr/share - Application support and data files
+/home    - Personal Directories of User's [/home]
+[hme directories has user functions]
+/root  -  Home directory of super user [admin]
+          [here we can access admin data/previllage] 
+srv    - data for service from system
+usr    - utility application programes
+var     - ftp server / create local repository
+          [host file configration]
+          [create/manage default repository]
+---------------------------------------------
 
 ip addr              [To check the IP address of the device ]
 ifconfig
 ping 8.8.8.8  [To check to communicate with ip [8.8.8.8 google DNS]
+arp -e   [in linux]   arp -a [in win]
 sudo apt-get update  [To update system]
 sudo apt-get upgrade [upgrades all the packets]
 sudo su              [ENTER IN SUPER USER]
@@ -12,73 +49,132 @@ cd                   [cd mean change director/reach in dir]
           
 cd ..                [one step back]
 cd Desktop           [ reach desktop]
-sudo vmhgfs-fuse .host:/share share -o allow_other -o uid=1000
+----------------------------------------------
 [share the folder between host win or vm kali ]
+virtual Machine settings-options-share folder-always enabled- 
+add {folder path} - ok - play virtual machine - open terminal 
+[write below cmds]
+cd Desktop
+mk share
+sudo vmhgfs-fuse .host:/share share -o allow_other -o uid=1000
 ------------ --------------
 mkdir share  [make folder]
 cd share     [enter in folder]
 ls            [list of file/folder]
-
+pwd   [ present working dir  {home/kali}]
 --------------------------
-tuch file.txt [create file]
 uname         [system name]
 uname -r      [os version]
 uname -a      [all details about system]
+ls /home/     [ display - all users name ]
+id user       [id om - shows - uid , gid, groups ]
+              [uid-user id , gid- group id, groups - group no.]
+id root       [ uid -o, gid -0, group -  ] 
+              [ root is administrative account ]
+sudo su  or sudo -i   [login in root user with 
+                       basic user password- enter ]
+exit or su user  or su om     [ exit and enter in local user ]
+
+whoami        [ shows user name]
+
+passwd user   [ passwd om - for password change]
+passwd root   [ same for root] 
+              [ insert - current - new - retype new ] 
+
+sudo su 
+su useradd  omk  [create new user - omk ]
+passwd omk       [provide password]
+
+ls /home/        [ for user details]
+
+su omk 
+ls /omk          [no privilege]
+id omk  
+sudo su or sudo -i         
+userdel omk
+
+
+
 
 -----------------
-touch file.txt [to create file]
-rm file.txt [remove file]
 
------------------
 mkdir cyber [make folder/dir]
 rmdir cyber
+mkdir {1..10}         [1 to 10 folder will create]
+rmdir {1..10}         [1 to 10 folder will remove]
+mkdir {a..z}         [a to z folder will create]
+rmdir {a..z}         [a to z folder will remove]
+
+rmdir *              [in present dir - all dir will remove]
+
 ---------------------
 man ls [provide manual of any linux cmd]
+help    [show basic cmd and there use]
+
 ---------------------
-mk file.txt            [make file]
-cp file.txt Desktop    [cp mean copy file to desktop]
-------------------------------------------------------
-======================================================
-importent -         
-------------------------------------------------------
-ls -l file.txt         [provide authontication rule]
-
-like
--rw-r--r-- 1 kali kali 0 Jul 18 01:08 file.txt
-
-chmod 777 file.txt [use to change permissions]
-[meaning of 777]
-
-[ admin rwx 4+2+1=7 ]
-[ group rw  4+2  =6 ]
-[ public r  =4]
-
-[ 1 means excute]
-[ 2 means write ]
-[ 4 means read  ]
-
-----------------------------------------
-
+touch file.txt [to create file]
 cat file.txt       [used to see the text/word]
 
 cat > file.txt     [ write/add text/word in the file]
 hi, all this is cyber security class. if any doubt free to ask. thanks
 
-[To save and quit the cat command, press CTRL + D . You will now return
+[To save and quit the cat command - press CTRL + D or ctrl+z
+You will now return
 to your shell prompt.]
+
+rm file.txt [remove file]
+----------------------------------------
+cp file.txt Desktop    [cp means copy file to desktop]
+mv file.txt Desktop    [mv means move file to desktop]
+------------------------------------------------------
+nano  - linux file editor
+pluma - file editor software
+======================================================
+important -         
+------------------------------------------------------
+ls -l file.txt         [provide authentication rule]
+
+like
+-rw-r--r-- 1 kali kali 0 Jul 18 01:08 file.txt
+
+[d if dir is there, -rw-r--r-- permission/privileges,
+ 1 is id, kali is user, kali - group
+0 is size,Jul 18 01:08  date and time, file.txt is file/dir name]   
+
+chmod 777 file.txt [use to change mode/permissions]
+[meaning of 777]
+or 
+chod 755 file/dir  [default mode]
+
+[ admin/user    rwx  4+2+1 =7 ]
+[ group          rw  4+2   =6 ]
+[ public/other    r  4     =4]
+
+[x and 1 means execute ]
+[w and 2 means write  ]
+[r and 4 means read   ]
+execute - performing an action on them, like deleting, moving,
+ or editing
+
+Each permission (rwx) can be controlled at three levels: 
+u - admin/user = yourself 
+g - group = can be people in the same project
+o - public/other = everyone on the system.
 ----------------------------------------
 
-cal  [see calendar]
+----------------------------------------
 whoami [in root or user]
 
 pwd   [ present working dir  {home/kali}]
 
-vi editar
+cal  [see calendar]
+----------------------------------------
+vi editor
 vi file.txt
 cat file.txt
 
 ==========================================
-open matesploit -------
+open Metasploit -------
 
 https://www.geeksforgeeks.org/linux-metasploit-command/
 ==============================================================
@@ -104,7 +200,7 @@ https://www.varonis.com/blog/nmap-commands
 =============================================================
 Basic Nmap commands
 -------------------------------------------------------------
-nmap -sn 192.168.44.128     [vm metasploit ip ]
+nmap -sn 192.168.44.128     [vm Metasploit ip ]
 [use for ping scan performance/host is up, it means machine is on]
 
 nmap -sn 8.8.8.8  [google dns server ip]
@@ -135,16 +231,16 @@ Address                  HWtype  HWaddress           Flags Mask            Iface
 
 [if arp table is not there then, he 
 do not know which ip belong to which
-mac addr]  so we take this senarios 
+mac addr ]  so we take this scenarios 
 advantage and raise arp request through
-nmap,so we will do arp requst 
-broadcast to targaet ip, target identity its is 
-ip then in rply send mac addr, in this 
+nmap, so we will do arp request 
+broadcast to target ip, target identity its is 
+ip then in reply send mac addr, in this 
 method be can know target
  machine on/off
    ]
 ping is block syn packet block or not
- throgh firwall....,
+ through firewall.,
 
 -----------------------------------
                                                               
@@ -174,8 +270,8 @@ rDNS record for 157.240.198.35: edge-star-mini-shv-01-del1.facebook.com
 Nmap done: 1 IP address (1 host up) scanned in 15.07 seconds
 --------------------------------
 if i wants to change dns server ...
-by defalt we useing 8.8.8.8 dns 's 
-getway server 
+by default we using 8.8.8.8 dns 's 
+gateway server 
 but we want change dns server
 
 --------------------------
