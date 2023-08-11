@@ -1,0 +1,178 @@
+-------------------------------------------------------
+A Cross-site request forgery loophole is when a malicious 
+the site can cause a visitor's browser to make a request
+to your server that causes a change on the server. The 
+the server thinks that because the request comes with the 
+user's cookies, the user wanted to submit that form.
+--- www.geekyshows.com
+Depending on which forms[in cookies] on your site are vulnerable, 
+an attacker might be able to do the following to your 
+victims.
+- log the victim out of your site
+- change the vitim's site preference on your site.
+- post a comment on your site using the victim's login
+- tansfer funds to another user's account
+
+attaks can also be based on the victim's ip address rather 
+than cookies:
+- post an anonymous comment that is shown as comminng from 
+the victim's ip address.
+- modify setting on a device such as a wireless router or 
+cable modem.
+- modify an internet wiki page.
+- perform a distributed password-guessing attack without an
+botnet.
+
+all these senarios can happen if web page form is week
+--------------------------------------------------------
+cross site request forgery
+-CSRF is ignored due to lack of understanding
+- attackers target only senstive transactions
+- scanners not helpful
+- Burp CSRF PoC 
+---------------------------------------------------------
+---------------------------------------------------------
+Practical -
+open metasploit and put credential
+username- user
+password-user
+or 
+username-msfadmin
+password-msfadmin
+
+----------------------
+open kali-----
+put credential 
+username-kali
+password-kali
+
+----------------------
+ping metasploit ip in kali browser 
+not there then 
+ip addr
+if metasploit and kali subneting is not same then
+reinstall kali an subnetting / last octal of ip should
+same.
+if subnetting same then
+and kali ping the metasploit ip-
+--------------------------------------------
+open browser in kali insert matesploit ip there---
+like in url-192.168.44.129
+--------------------------------------------
+there metasploite option will appear
+- Twiki
+- phpmyadmin
+- multillodae
+- DVWA
+- webdav
+--------------------------
+open multillodae 
+[Choose options]
+owasp top 10
+cross site request forgery
+add to your blog
+[this is vulnerable]
+type message - 
+hi this my first msg
+[save blog entry]
+see output in view blogs-
+--------------------------
+now perform csrf attack-
+
+--------------------------
+first configure foxyproxy on browser
+addon extention in firefox
+------------------------------------
+open burpsuite 
+agree-next-nnext
+--------------------
+go to proxy - turn on intercpt
+intercept is off - do on
+-------------------------------
+then write in - add blog
+testing csrf poc 
+save 
+--------------------
+burpsuit will capture that
+
+notice - csrf.token=, is empty there 
+easily bypass and generate token
+[only through profesional edition]
+right click- engagment tool- generate csrf poc
+-------
+----
+just see there 
+from action - ip
+method - post  
+sourece and target some valu/ output there
+[all parameter has submit - hidden 
+but first- input csrf taken values are empty/
+SecurityIsDisabled - 
+[csrf] token value - are empty/SecurityIsDisabled
+[ of the victem/ of the user]
+------------------------
+second - input entry - blog entery -
+msg inself-[testing csrf poc  ]
+ in value - msg inself [which is url coded]
+[if you click in them - it will provide you little bit 
+explaination]
+--------------------------------------------
+---------------------------------------------
+----------------------------------------------
+now in sec input entry - we will change that in -
+successfull csrf poc
+---------------------------------------------
+----------------------------------------------
+----------------------------------------------
+now click on -
+test in browser - [notice bar appear] - copy [that]
+- close -  [do]turn off- intercpt []off] and foxyproxy off
+-------------------------------------------
+go back to blog []
+----------------------------------
+----------------------------------
+reload that blog page - confermation msg will appear-
+resend [that]
+[bog view same as before ]
+------------------------------------------------
+------------------------------------------------
+------------------------------------------------
+so now burpsuite copied link - paste that in another
+ open tab -
+- submit request
+[ open given link html page]
+-----------------
+------------------
+-----------------
+Now the - view blogs will change in --
+successfull csrf poc
+------------------------
+[conclusion is - if send to someone , that click on it
+submit botten / or without submit butten / user soes 
+notice anything, he/she post the masseges behalf of the 
+itself.  ]
+------------------------
+------------------------
+
+
+
+
+
+
+-----------------------------
+-----------------------------
+open kali
+open Firefox 
+testfire.net
+login with username - jsmith
+password - demo1234
+user account access
+transfer fund
+selecting ac
+amount transfer: 200
+transfer money
+
+----------------------------
+create page - 
+open kernal
+mousepad info.html
