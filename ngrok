@@ -42,12 +42,10 @@ ngrok http 8080
 ------------------------
 torn off wifi and use 
 just try with mobile data  
-============================================
-METHOD - 2 
-============================================
-https://www.youtube.com/watch?v=LEIPxwyNRBY
  -------------------------------------
-
+========================================
+========================================
+========================================
  ngrok.com
 copy ngrok links -
 open terminal paste there  
@@ -73,6 +71,14 @@ ngrok config add-authtoken 2U8fYhIt2mNorbzVf7pvSxEnexn_4Vgsk8Yrmmo7BnHovVKXR
 copy and paste that on terminal
 
 ---------------------------------
+---------------------------------
+
+after sign up 
+connect to account -
+ngrok config add-authtoken 2U8fYhIt2mNorbzVf7pvSxEnexn_4Vgsk8Yrmmo7BnHovVKXR
+copy and paste that on terminal
+
+---------------------------------
 ngrok tcp 447      
 [now running process - resolving tunnel ]  
 it will connect soon 
@@ -80,12 +86,36 @@ press - ctrl+c for exit
 ---------------------------
 restart -ngrok
 ngrok http 8080 
-[it will take time to conecting ]
+[it will take time to connecting ]
 then it will link
 ngrok http 8080
 ------------------------
 torn off wifi and use 
 just try with mobile data  
 ==========================
+---------------------------------
+ngrok http 3000
 
-
+output-
+🤯 Try the ngrok Kubernetes Ingress Controller: https://ngrok.com/s/k8s-ingress                                                        
+                                                                                                                                       
+Session Status                online                                                                                                   
+Account                       svvvprojectjun23@gmail.com (Plan: Free)                                                                  
+Update                        update available (version 3.3.4, Ctrl-U to update)                                                       
+Version                       3.3.3                                                                                                    
+Region                        India (in)                                                                                               
+Latency                       104ms                                                                                                    
+Web Interface                 http://127.0.0.1:4040                                                                                    
+Forwarding                    https://518b-112-196-100-75.ngrok-free.app -> http://localhost:3000                                      
+                                                                                                                                       
+Connections                   ttl     opn     rt1     rt5     p50     p90                                                              
+                              0       0       0.00    0.00    0.00    0.00
+---------------
+copy forwarding link -
+https://518b-112-196-100-75.ngrok-free.app
+---------------------
+open browser in private tab and paste there - 
+------------------
+code . 
+                                                            
+                                                                                                  
