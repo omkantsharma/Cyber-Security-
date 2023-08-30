@@ -1,0 +1,36 @@
+nmap DoS attack
+Denial of service attack - DOS  attack sends the packet to the system 
+Beyond its limit...
+
+ Attacker system -- target/victim system 
+-----
+Terminal - 
+netdiscover
+---------
+Open Metasploit as the target machine
+and write cmd - 
+top 
+---------
+kali - terminal 
+[tool - hping3 - use for flooding [generate multiple
+ requests send syn packets] on the system got slow or crashed]
+===========================================================
+===========================================================
+cmd-
+hping3 -S 192.168.239.129 -a 192.168.239.131 --flood -p 22
+===========================================================
+===========================================================
+tool   -syn target/victim -attacker --method -port no. 
+----------
+Metasploit kernel 
+top  
+Observe service flood through top cmd
+-----------------
+for increasing power of attack open multiple kernel and 
+Execute same cmd...
+
+
+
+
+
+
