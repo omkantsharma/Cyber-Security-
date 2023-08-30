@@ -1,0 +1,91 @@
+https://github.com/inconshreveable/ngrok
+
+METHOD - 1 
+===========================================
+https://www.youtube.com/watch?v=RqBmf_M5toI
+ngrok - 
+-------------
+apt update
+or 
+apt-get update
+apt upgrade
+pkg install wget
+------------------------
+go to browser
+search - temp mail
+https://temp-mail.org/en/
+copy temp email address
+ngrok - sign up
+insert temp email addr
+download ngrok
+long press - copy link address
+wget paste link  - .tgz extention file
+ls
+tar xvzf -file name  [for extraction]
+ls    
+---------------
+revisit website
+copy authentication token
+./ paste and then enter
+[your authentication token now will generated ]    
+-----------------------------------------------
+ngrok tcp 447      
+[now running process - resolving tunnel ]  
+it will connect soon 
+press - ctrl+c for exit
+---------------------------
+restart -ngrok
+ngrok http 8080 
+[it will take time to connecting ]
+then it will link
+ngrok http 8080
+------------------------
+torn off wifi and use 
+just try with mobile data  
+============================================
+METHOD - 2 
+============================================
+https://www.youtube.com/watch?v=LEIPxwyNRBY
+ -------------------------------------
+
+ ngrok.com
+copy ngrok links -
+open terminal paste there  
+
+
+https://ngrok.com/download
+
+curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list && sudo apt update && sudo apt install ngrok
+or
+snap install ngrok
+---------------------------------------------------------------------
+signup ngrok with gmail and ou will receive authentication code mine-
+YYGECPMJOBHAOCX3LHL5YVBEPTYP4PVZ
+[The information supplied for MFA verification was invalid.]
+AU4WZ2GV7TITMMVBCGA3T2DPVBSC2FIE
+---------------------------------
+next- skip - next
+---------------------------------
+
+after sign up 
+connect to account -
+ngrok config add-authtoken 2U8fYhIt2mNorbzVf7pvSxEnexn_4Vgsk8Yrmmo7BnHovVKXR
+copy and paste that on terminal
+
+---------------------------------
+ngrok tcp 447      
+[now running process - resolving tunnel ]  
+it will connect soon 
+press - ctrl+c for exit
+---------------------------
+restart -ngrok
+ngrok http 8080 
+[it will take time to conecting ]
+then it will link
+ngrok http 8080
+------------------------
+torn off wifi and use 
+just try with mobile data  
+==========================
+
+
