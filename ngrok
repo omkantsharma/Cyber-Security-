@@ -118,5 +118,22 @@ https://518b-112-196-100-75.ngrok-free.app
 open browser in private tab and paste there - 
 ------------------
 code . 
-                                                            
+
+========================================
+for next time you want to use ngrok 
+just first login ngrok and...
+Connect your account
+Running command will add your authtoken to the default ngrok.yml 
+configuration file. This will grant you access to more features 
+and longer session times. Running tunnels will be listed on the 
+endpoints page of the dashboard.
+run cmd in terminal like... - 
+---------------------------------
+ngrok config add-authtoken 2UglzlIXdJo7AMBX8PwRHvl25XQ_6izsNaeiU299quMosDydp
+
+ngrok http 8080
+---------------------------------
+
+
+
                                                                                                   
