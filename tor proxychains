@@ -1,39 +1,29 @@
+Tor Proxy Chain
 kali kernal ----------
 sudo apt update
 sudo apt install tor
 sudo apt install tor proxychains
 sudo nano /etc/proxychains.conf
 ===================================================================
+In computer networking, a proxy server is a server application that acts as an intermediary between a client requesting a 
+resource and the server providing that resource.
 -------------------------------------------------------------------
-In computer Networking, a proxy server is a server application 
-that acts as an intermediary between a client requesting a resource
-and the server providing that resource.
-
--------------------------------------------------------------------
-Every time request something on the internet with real ip, your 
-request go through to the proxy server so the proxy server will 
-provide you the resource made a request through the proxy server IP,
-so ip addr not be left there means you are anonymous.   
+Every time request something on the internet with real ip, your request go through to the proxy server so the proxy 
+server will provide you the resource made a request through the proxy server IP, so ip addr not be left there means you are anonymous.   
 ---------
-here we can change the Network setting as per our requirements 
-three types of proxy chain
-random or dynamic or strict [chains]
-1 Strick chain_________________
-all proxies of the list will be used. And they will be chained in an
-ordered way. But if there any dead proxy in your list
-,then your connection is gone
+here we can change the Network setting as per our requirements three types of proxy chain random or dynamic or strict [chains]
+1 Strict chain_________________
+all proxies of the list will be used. And they will be chained in an ordered way. But if there any dead proxy in your list, 
+then your connection is gone
 2 Dynamic Chain________________
-Almost similar to the strict chain, but if there is any dead proxy in
-your list, it will be skipped to the next proxy........
-3. Ransom Cjain_______________     
-A random proxy will be used from your proxy list. 
-each connection made through proxy chains will be done via a random 
-combo of proxies
+Almost similar to the strict chain, but if there is any dead proxy in your list, it will be skipped to the next proxy........
+3. Ransom Chain_______________     
+A random proxy will be used from your proxy list. Each connection made through proxy chains will be done via a random combo 
+of proxies. 
 -----------------------------------------
-default use strick proxy 
-but if you want to change then remove hash form the proxy type.
+Default use strict proxy but if you want to change then remove hash form the proxy type.
 ----------------------------
-I prefer Dynamic so remove hash from dynamic and add hash on strick proxy
+I prefer Dynamic so remove hash from dynamic and add hash on strict proxy
 ======================================================================
 at the end 
 [search  free proxy ip on browser ]
