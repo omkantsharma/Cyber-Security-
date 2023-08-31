@@ -34,7 +34,7 @@ ngrok tcp 447
 it will connect soon 
 press - ctrl+c for exit
 ---------------------------
-restart -ngrok
+[restart -ngrok]
 ngrok http 8080 
 [it will take time to connecting ]
 then it will link
@@ -85,7 +85,7 @@ ngrok tcp 447
 it will connect soon 
 press - ctrl+c for exit
 ---------------------------
-restart -ngrok
+[restart -ngrok]
 ngrok http 8080 
 [it will take time to connecting ]
 then it will link
