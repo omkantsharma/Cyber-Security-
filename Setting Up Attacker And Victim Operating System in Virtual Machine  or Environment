@@ -1,5 +1,4 @@
-Setting Up Attacker And Victim Operating System in Virtual Machine  /Environment 
-
+Setting Up Attacker And Victim Operating System in Virtual Machine  or Environment 
 Virtual Machines/Environment -  
 
 1 . VMware - https://www.vmware.com/in.html 
@@ -9,8 +8,7 @@ Manage apps in a local virtualization sandbox
 Fusion for Mac
 Workstation Player
 Workstation Pro
-
-2. Download Virtual Box - https://www.virtualbox.org/wiki/Downloads
+2. Download Virtual Box - https://www.virtualbox.org/wiki/Downloads 
 Here you will find links to Virtual Box binaries and its source code.
 Virtual Box binaries
 By downloading, you agree to the terms and conditions of the respective license.
@@ -24,17 +22,12 @@ VirtualBox 7.0.10 platform packages
 
 
 https://blog.openthreatresearch.com/setting_up_attacker_victim_machines
-
 Attacker Machines/operating System- 
-
 1.	Kali 
 https://www.kali.org/get-kali/#kali-platforms 
 2.	Parrot
 https://www.parrotsec.org/download/ 
-
-
 Victim Machines/operating System –        imp. https://www.vulnhub.com/ 
-
 1.	Metasploit 
 https://www.metasploit.com/download 
 https://docs.metasploit.com/docs/development/maintainers/downloads-by-version.html
