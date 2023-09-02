@@ -1,24 +1,51 @@
-Setting Up Attacker And Victim Machines
+Setting Up Attacker And Victim Operating System in Virtual Machine  /Environment 
+
+Virtual Machines/Environment -  
+
+1 . VMware - https://www.vmware.com/in.html 
+Products are - 
+Desktop Hypervisor
+Manage apps in a local virtualization sandbox
+Fusion for Mac
+Workstation Player
+Workstation Pro
+
+2. Download Virtual Box - https://www.virtualbox.org/wiki/Downloads
+Here you will find links to Virtual Box binaries and its source code.
+Virtual Box binaries
+By downloading, you agree to the terms and conditions of the respective license.
+If you're looking for the latest Virtual Box 6.1 packages, see VirtualBox 6.1 builds. Version 6.1 will remain supported until December 2023.
+VirtualBox 7.0.10 platform packages
+•	Windows hosts
+•	macOS / Intel hosts
+•	Linux distributions
+•	Solaris hosts
+•	Solaris 11 IPS hosts
+
+
 https://blog.openthreatresearch.com/setting_up_attacker_victim_machines
 
-Attacker Machines- 
-Kali 
+Attacker Machines/operating System- 
+
+1.	Kali 
 https://www.kali.org/get-kali/#kali-platforms 
-Parrat
+2.	Parrot
 https://www.parrotsec.org/download/ 
 
-Victim Machines –        imp. https://www.vulnhub.com/ 
-Metasploit 
+
+Victim Machines/operating System –        imp. https://www.vulnhub.com/ 
+
+1.	Metasploit 
 https://www.metasploit.com/download 
 https://docs.metasploit.com/docs/development/maintainers/downloads-by-version.html
-VULNERABLE PENTESTING LAB ENVIRONMENT: 1
+2.	VULNERABLE PENTESTING LAB ENVIRONMENT: 1
 https://www.vulnhub.com/entry/vulnerable-pentesting-lab-environment-1,737/
-Tomcat
+3.	Tomcat
 https://tomcat.apache.org/download-90.cgi 
 https://www.linkedin.com/pulse/vulnerable-lab-lists-pentesting-mehedi-hasan-babu 
-
 Blogs links - 
-ttps://tails.net/doc/anonymous_internet/Tor_Browser/index.en.html 
+
+https://tails.net/doc/anonymous_internet/Tor_Browser/index.en.html 
 https://www.getastra.com/blog/security-audit/best-penetration-testing-tools/ 
 https://sourceforge.net/directory/windows/?q=vulnerable+machine
 
