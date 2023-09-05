@@ -18,11 +18,17 @@ copy temp email address
 ngrok - sign up
 insert temp email addr
 download ngrok
+---------------------------
+1.
 long press - copy link address
 wget paste link  - .tgz extention file
 ls
 tar xvzf -file name  [for extraction]
 ls    
+---------------
+2.
+install by apt
+
 ---------------
 revisit website
 copy authentication token
