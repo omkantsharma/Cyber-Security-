@@ -48,11 +48,11 @@ just try with mobile data
 Method - 2 
 ========================================
  ngrok.com
-copy ngrok links -
+copy ngrok links - https://ngrok.com/download
+
 open terminal paste there  
 
-
-https://ngrok.com/download
+sudo su
 
 curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list && sudo apt update && sudo apt install ngrok
 or
@@ -132,6 +132,10 @@ run cmd in terminal like... -
 ngrok config add-authtoken 2UglzlIXdJo7AMBX8PwRHvl25XQ_6izsNaeiU299quMosDydp
 
 ngrok http 8080
+
+Reference -
+https://gist.github.com/SalahHamza/799cac56b8c2cd20e6bfeb8886f18455
+
 ---------------------------------
 
 
