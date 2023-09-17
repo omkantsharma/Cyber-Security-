@@ -1,0 +1,27 @@
+In Kali – just open terminal and type wireshark
+In window download the wireshark 
+https://www.wireshark.org/download.html
+Download setup and install
+open wireshark 
+Go to wireshark and  select wifi 
+ 
+
+ 
+search website – http://testphp.vulnweb.com/
+log in with user – test and password - test
+ 
+
+
+Go menu bar – capture – stop 
+  
+Search http at search bar 
+ 
+  
+Post user info. Safe -- Right click – follow – http stream --- 
+ 
+
+
+
+Scroll Down – there you can see user input
+ 
+User name and password --- test 
