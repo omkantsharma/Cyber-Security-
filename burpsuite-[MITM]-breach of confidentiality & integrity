@@ -1,3 +1,124 @@
+https://portswigger.net/burp/documentation/desktop/testing-workflow/authentication-mechanisms/brute-forcing-logins
+
+
+
+open kali kernel
+write 
+burpsuite
+-----------
+next...
+start burp
+-----------
+go to proxy
+tern on intercept
+----------------
+open Firefox
+google - foxyproxy
+and click on 
+[FoxyProxy Standard – Get this Extension for Firefox (en-US)]
+add to Firefox - [FoxyProxy Standard by Eric H. Jung]
+it will add on the top of right side 
+click on - it-- option- add - 
+title or description - as you want [om]
+proxy ip address and dns name - [127.0.0.1] [localhost ip]
+Port - 8080
+save
+[localhost configuration done]
+close all extras tab
+-------------------------------------
+open vulnerable website named - 
+http://testphp.vulnweb.com/
+click on signup 
+-----------------------
+http://testfire.net/index.jsp [try on it ]
+https://support.hcltechsw.com/csm?id=kb_article&sysparm_article=KB0010981 [credentials]
+-----------------------
+now check ---
+intercept should on in burpsuite 
+and check in 
+forxyproxy localhost proxy should be on/enable 
+[select title or description for tourn it on/enable]
+----------------------
+so random credential in acuart sign up page like -
+username - admin
+password - 12345
+press -  login
+----------------------------------------
+so now all details got extract through burpsuit on intercept
+----------------------------------------
+details look like - 
+-------------------------------------------------
+POST /userinfo.php HTTP/1.1
+Host: testphp.vulnweb.com
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 22
+Origin: http://testphp.vulnweb.com
+Connection: close
+Referer: http://testphp.vulnweb.com/login.php
+Upgrade-Insecure-Requests: 1
+
+uname=admin&pass=12345 [credential got extracted]
+--------------------------------------------------
+WE Done Man in Meddle attack
+in this way you can breach confidentiality.
+---------------------------------------------------
+Now we will breach - integrity of the data
+===================================================
+proxy - intercept- row - right click - choose option 
+no. 1 - send to Intruder
+no. 2 - send to Repeater
+-------------------------------------
+Go to intruder-Positions-add and clear[manipulate credential]
+here credential text selected and highlight and marked with $
+[uname=§admin§&pass=§45123§]
+you can change here - username and password
+[like username - test, pass - 1256]
+----------------------------------
+[username should be correct here]
+[then password can find with blow process]
+-------------------------------------
+-------------------------------------
+then Intruder - Payloads - payload option {simple list}
+[if you want then you can load Dictionary file for dictionary attack]
+[here we add manually 5 word as small dictionary attack ]
+-------------------------------------
+add -  assumed password key like - rtyn,test,test,12345,efvd
+right side of the top - click on -  start attack
+Will appear - intruder attack on testphp.vulnweb.com / target web
+in the list focus on status - 200 [http - response successful]
+[use keyword as password who received status 200]
+------------------------------------------
+read articles- 
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+https://www.tutorialspoint.com/http/http_status_codes.htm
+-------------------------------------------
+now go to - repeater- request - Raw
+[change password-use that key - {got status 200}]
+[uname=test&pass=test]
+left on the top click on -  Send 
+Blow in - Response - pretty - Raw - Hex - Render
+[click on render - Response web page ]
+===================================================
+
+---------------------------------------------------
+in this way you can breach confidentiality and integrity of the data
+=====================================================================
+=====================================================================
+
+articles to read- 
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+https://www.kaggle.com/datasets/wjburns/common-password-list-rockyoutxt
+https://www.geeksforgeeks.org/difference-between-http-get-and-post-methods/
+https://www.techtarget.com/whatis/definition/HTTP-Hypertext-Transfer-Protocol
+https://www.freecodecamp.org/news/http-request-methods-explained/
+----------------
+https://www.researchgate.net/figure/Man-In-The-Middle-attack-using-Burp-Suite-and-mitmproxy_fig3_317580056
+https://securityonline.info/ssl-mitm-using-burp-suite-proxiescredential-harvesting-via-mitm-burp-suite/
+
 open kali kernel
 write 
 burpsuite
