@@ -1,0 +1,11 @@
+Setup Quad9 with Windows
+
+control Panel -> Network and Internet 
+-> Internet and sharing center 
+-> Change adapter setting 
+-> Ethernet
+-> right click and Ethernet property 
+-> Internet control version - 4 (TCP\IP v4) properties
+-> Use the following DNS server addresses: 
+-> prefer DNS server: 9.9.9.9
+-> ok
