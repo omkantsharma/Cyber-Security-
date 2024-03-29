@@ -308,3 +308,92 @@ code .
 Reference -
 https://gist.github.com/SalahHamza/799cac56b8c2cd20e6bfeb8886f18455
 
+----------------------------------------------------
+┌──(kali㉿kali)-[~]
+└─$ ssh-keygen
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/kali/.ssh/id_ed25519): 
+/home/kali/.ssh/id_ed25519 already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/kali/.ssh/id_ed25519
+Your public key has been saved in /home/kali/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:s+scYsS7eolgo3b/y1dOAYo9KK+IYLjne+1XCyoAAdk kali@kali
+The key's randomart image is:
++--[ED25519 256]--+
+|oo               |
+|o E      .       |
+| .    + . .      |
+|.  . + +   .     |
+|..  o o S   .    |
+|o.=  o ..o.o     |
+|++.+.o+ooo+.     |
+|+o.o+.*+.+..     |
+|.o+oo*+**        |
++----[SHA256]-----+
+
+
+                                                                                                                    
+┌──(kali㉿kali)-[~]
+└─$ ssh -R 80:localhost:8080 localhost.run
+
+===============================================================================
+Welcome to localhost.run!
+
+Follow your favourite reverse tunnel at [https://twitter.com/localhost_run].
+
+To set up and manage custom domains go to https://admin.localhost.run/
+
+More details on custom domains (and how to enable subdomains of your custom
+domain) at https://localhost.run/docs/custom-domains
+
+If you get a permission denied error check the faq for how to connect with a key or
+create a free tunnel without a key at [http://localhost:3000/docs/faq#generating-an-ssh-key].
+
+To explore using localhost.run visit the documentation site:
+https://localhost.run/docs/
+
+===============================================================================
+
+** your connection id is c193d729-883f-4692-82dc-021ab88dcedb, please mention it if you send me a message about an issue. **
+
+authenticated as anonymous user
+beacf039164fba.lhr.life tunneled with tls termination, https://beacf039164fba.lhr.life
+create an account and add your key for a longer lasting domain name. see https://localhost.run/docs/forever-free/ for more information.
+Open your tunnel address on your mobile with this QR:                    
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+
+
+
+
+
+┌──(kali㉿kali)-[~]
+└─$ ssh -R 80:localhost:8080 localhost.run
+
