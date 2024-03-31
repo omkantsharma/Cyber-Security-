@@ -1,0 +1,71 @@
+The Secure Shell (SSH) protocol is a method for securely sending commands to a computer over an unsecured network.
+SSH uses cryptography to authenticate and encrypt connections between devices.
+
+=================================================
+┌──(kali㉿kali)-[~]
+└─$ ssh-keygen                            
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/kali/.ssh/id_ed25519): 
+/home/kali/.ssh/id_ed25519 already exists.
+Overwrite (y/n)? n
+                                                                                                                                                            
+┌──(kali㉿kali)-[~]
+└─$ ls -a         
+.             .bashrc.original          .dmrc           .face.icon     .mozilla     .pagekite.rc  .sudo_as_admin_successful  .xsession-errors
+..            boringproxy-linux-x86_64  Documents       .gnupg         Music        Pictures      telebit                    .xsession-errors.old
+Applications  .cache                    Downloads       .ICEauthority  .node-gyp    .profile      Templates                  zphisher
+.bash_logout  .config                   .face           .java          .npm         Public        Videos                     .zsh_history
+.bashrc       Desktop                   .face.dpkg-new  .local         pagekite.py  .ssh          .Xauthority                .zshrc
+                                                                                                                                                            
+┌──(kali㉿kali)-[~]
+└─$ cd .ssh    
+                                                                                                                                                            
+┌──(kali㉿kali)-[~/.ssh]
+└─$ ls -lrt
+total 12
+-rw-r--r-- 1 kali kali 442 Mar 28 23:05 known_hosts
+-rw-r--r-- 1 kali kali  91 Mar 29 05:02 id_ed25519.pub
+-rw------- 1 kali kali 399 Mar 29 05:02 id_ed25519
+                                                                                                                                                            
+┌──(kali㉿kali)-[~/.ssh]
+└─$ cat id_ed25519.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK29tY3PxfYKnVNR36VHkE99Z1bU5pWKg1U7xm8vyB/f kali@kali
+                                                                                                                                                            
+┌──(kali㉿kali)-[~/.ssh]
+└─$ cat id_ed25519    
+
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+QyNTUxOQAAACCtvbWNz8X2Cp1TUd+lR5BPfWdW1OaVioNVO8ZvL8gf3wAAAJA9JnavPSZ2
+rwAAAAtzc2gtZWQyNTUxOQAAACCtvbWNz8X2Cp1TUd+lR5BPfWdW1OaVioNVO8ZvL8gf3w
+AAAEAIGIRSJg1TdDvuCRGXqwUT41GBUtOWM4KpNAxFH4uoxK29tY3PxfYKnVNR36VHkE99
+Z1bU5pWKg1U7xm8vyB/fAAAACWthbGlAa2FsaQECAwQ=
+-----END OPENSSH PRIVATE KEY-----
+                                                                                                                                                            
+┌──(kali㉿kali)-[~/.ssh]
+└─$ ssh-keygen        
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/kali/.ssh/id_ed25519): 
+/home/kali/.ssh/id_ed25519 already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/kali/.ssh/id_ed25519
+Your public key has been saved in /home/kali/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:cuP8wtDKU+z755x+VCpK+T2zWRBoUhO3nPs8k/CQpW0 kali@kali
+The key's randomart image is:
++--[ED25519 256]--+
+|            +..  |
+|           . = o |
+|          . o =. |
+|           o  =o.|
+|      .oS  . =oE |
+|      .=+.o . B+.|
+|     . *o. o + =+|
+|      + +...o.=oo|
+|       ..+o+=.o+ |
++----[SHA256]-----+
+                                                                                                                                                            
+┌──(kali㉿kali)-[~/.ssh]
+└─$ 
