@@ -1,10 +1,10 @@
-Email Header and Suspecious Link (Malware) Analysis.
+Email Header and Suspicious Link (Malware) Analysis.
 
 - open inbox then suspicious emails
-- right click on three dots and click on show original
+- right click on three dots and click on Show original
 
 ----------------------------------------------------------------
-Out put - 
+Output - 
 ======================================
 ----------------------------------------------------------------
 ======================================
@@ -204,8 +204,8 @@ X-Attachment-Id: ii_lsirza5k1
 
 
 ===================================================================
-if there is link in email - then copy that link and paste that in 
-1. Virius Total 
+if there is a link in the email - then copy that link and paste that in 
+1. Virus Total 
 https://www.virustotal.com/gui/home/upload
 
 2. urlscan.io
@@ -218,7 +218,7 @@ https://www.hybrid-analysis.com/
 https://checkphish.bolster.ai/
 
 ------------------------------------------------------------------------------------------------------------
-pentration testing, phishing analysis, 
-malware - hash - check on - tools like send box, virus total , cloud strike- edr (event detection responce) solusion
+penetration testing, phishing analysis, 
+malware - hash - check on - tools like send box, virus total , cloud strike- edr (event detection response) solution
 
 -----------------------------------------------------------------------------------------------------------
