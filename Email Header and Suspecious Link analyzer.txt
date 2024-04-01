@@ -1,0 +1,224 @@
+Email Header and Suspecious Link (Malware) Analysis.
+
+- open inbox then suspicious emails
+- right click on three dots and click on show original
+
+----------------------------------------------------------------
+Out put - 
+======================================
+----------------------------------------------------------------
+======================================
+----------------------------------------------------------------
+Original Message
+Message ID	<65fcdccf.050a0220.233f5.443d.GMR@mx.google.com>
+Created at:	Fri, Mar 22, 2024 at 6:50 AM (Delivered after 0 seconds)
+From:	Mail Delivery Subsystem <mailer-daemon@googlemail.com>
+To:	omkantibmce@gmail.com
+Subject:	Delivery Status Notification (Failure)
+SPF:	NONE with IP 209.85.220.69 Learn more
+DKIM:	'PASS' with domain googlemail.com Learn more
+DMARC:	'PASS' Learn more
+
+
+Download Original	Copy to clipboard	
+------------------------------------------------------------------------
+Header started 
+-------------------------------------------
+Delivered-To: omkantabcde@gmail.com
+Received: by 2002:a05:6200:511d:b0:538:1c48:8bc5 with SMTP id q29csp280409qnu;
+        Mon, 12 Feb 2024 02:24:01 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCUyoBox6kuCjGBloZZdNkc4FkbWYGh7tF+LYbcjtpBpLqrs3tkQaBdZmZnOklKaxhacSFDRcbgj9a8tENSfYsDBFuj2HeQ=
+X-Received: by 2002:a81:5211:0:b0:604:44f2:6959 with SMTP id g17-20020a815211000000b0060444f26959mr5847036ywb.37.1707733441538;
+        Mon, 12 Feb 2024 02:24:01 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1707733441; cv=none;
+        d=google.com; s=arc-20160816;
+        b=jCZd7NF6p8Lt5lY1+bTugJJJWJP7wp6ktNayVa/INAp8wFYfefIYJRxewbejRIv89q
+         JJJcUQIX4afDFKSTsdQazc9Vw6aTmaf0QFgG8GdtVjxGsWOnKUDKdjXcXkv+M0zWhJIh
+         WGNxqjNexvRWlH69Fou+eZlC4a3Tc9nEzUwFv7bHJa+OFBFDMBTcxQXzWuCyVqJ4kMUJ
+         z+pc+7MbV5v33fnNnPoX8/dcgORgoiqZg4/VPE2582/CE7YPZ3R4pJLvdNGlNbPc6m1Z
+         DEamtckfaByA10iUzSyJOiRf68fgCC0hFionxc9NkmcPY+cHAxSkLOU+tVCUcbRj1hP5
+         cLFA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=cc:to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=WcN9l10jR9szbCe4idh/Vdqa2UfEeT3plO4ULWALYTg=;
+        fh=6f4RETw0Wlw+wdPUqQeG2o+dW0Xtw3i1nDryQ8BiEiU=;
+        b=hLeXsQsULD5Kht6YrkL0pC1ENm9syqYP7tNppCbIkyc2I/NHdS8VMtMw0jncWpS6vm
+         ZNI64BfKdxyw6x8ASCjjAUSCu2b9uAwE9FuW5wXp6g/mmX7VrYpofZlMvk4FFq/o569d
+         K8zmt3Lmb6nM3W7ySxXhDDKiZxsxdd70vqm06pwVFX80qX1hmchUw/BxOf2KmfwukEi/
+         tOA87QDpr8WB9qnX3tt3dLo2bxSIKdxNr/IYDWhjpndCT00tUCPu9IBpHEUWCI9B5OTl
+         i/2LkbOkR5wW4O6qZHao5LTQ6FCDsJXsFVh2MsDKMhGcQtvy6BFLWm1M+SZWg+jbNTdr
+         UMpw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=hXPO7FwC;
+       spf=pass (google.com: domain of rashi.ibmce@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=rashi.ibmce@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+X-Forwarded-Encrypted: i=1; AJvYcCVyJ9jYngHQW9+dl3xJZYFNFoIQpwsBxFQY89EsJJ6ghmGbMmlFpp0tN4ebh4KS81V7xhS8PeTdix8unjQbqxnj9D0L5ACzXb3lhRyPV5yyPZo2YL//+hmgqswSDRER+eBRQm8RmIFk/+s3yFC0HY011ERXgYdKBFP0/dDepK0=
+Return-Path: <rashi.ibmce@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id o132-20020a0dcc8a000000b0060498ad628asor2472054ywd.10.2024.02.12.02.24.01
+        (Google Transport Security);
+        Mon, 12 Feb 2024 02:24:01 -0800 (PST)
+Received-SPF: pass (google.com: domain of rashi.ibmce@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=hXPO7FwC;
+       spf=pass (google.com: domain of rashi.ibmce@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=rashi.ibmce@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1707733441; x=1708338241; dara=google.com;
+        h=cc:to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=WcN9l10jR9szbCe4idh/Vdqa2UfEeT3plO4ULWALYTg=;
+        b=hXPO7FwClSYu1jROMVIO7/5fQD9m7bKyI9MWgoJcv2DEQJPi2HH2Lzq2Lpg4jmgy3/
+         uIiReyfFICf03XSHVw4rb9K5ZB/z2SWaTPEz+eUEDrAkqzKwICPjFYPM2+Z6aKHnZhkI
+         kc7gLia0r/WFI2wfsTkWkiDdTwahyQxU1dcr6CjHh7FQviVlPS9O47gcesOad3O1TJ3q
+         jtfLuFnf9XojHaDvXspIpvmgLAmP0a+TUgzz/reCeoviYTV46G1nQJnxtmqC9k8oPzXG
+         UJ9VnmCJJXD7rMG9foVOyiZ0zCkHcse2BLTvvXO0tQ18xe8EUyaGvDa87qzioGRgUzs9
+         eaZA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1707733441; x=1708338241;
+        h=cc:to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=WcN9l10jR9szbCe4idh/Vdqa2UfEeT3plO4ULWALYTg=;
+        b=vbEZ86X1vFC2M3LCdyGvYl0qDBUUqEfqjZfrEszgGJZVHgl2UB0xwafMlXCddk1Gp1
+         eK0oXxorOz1w9DAjszXvZqtSJUOyQCKRj92978UCs6lDU17fbsG1Q2Slfbz+0ORbiI44
+         z7Q1SYUza9BUAx78bZuR7hooSrgj9GjIdGMS3bPlJ2we6g/UMx6th+KKtdJhS5fzc2b3
+         DO9rWnJDvY2VOnok/cFD0l4/rogIqDzITQKNAzr9yzv2PUGceJGkgqqy/0B/819L5UKo
+         eeDFbCVEe5gCv2l/z2cFObpzFLemFU//umvOOaQ7MiND/33eR7AUqFzy1W7u39lLFNPi
+         E0Nw==
+X-Forwarded-Encrypted: i=1; AJvYcCW9+v06PxptVjKP1jqJU7HVK1ehDcY2HqkG99pBKtAcL/OXfnSdim5r73N8N8on0qMDmuHkrycsoGJVXALPUm/D+YrZss+g8QsflK4HorrJFfNd8PSj7/awVALQkyZXxujMuF1BudCIZ7ePuCbTABTvBZ2eut3Za2lM2m6nrPY=
+X-Gm-Message-State: AOJu0YzpgWNupkOmhZQA9fEKDk3mNhOo1z5K/KwjLydtZWwVnuD+9uXV ETsEB3UX49nbFY+73P/VHidU2T84eHyYNRmiw9GRfUCHrBec061tKxM8Pnq3Dae56ZMKQbuMgKG w4UCLb1/v+lftz3dkM0ctz2lo6sdUeaVDuwk=
+X-Google-Smtp-Source: AGHT+IEnLoxbzovU7kUuxxm5yA9GXOv9GvFmtdLCJLkFbHOvUGl8KAU69qEM8RhDU3UkyTvSarVoLFyFZts39eB6U8Y=
+X-Received: by 2002:a81:6fd7:0:b0:5ff:4a64:a8ec with SMTP id k206-20020a816fd7000000b005ff4a64a8ecmr6065781ywc.38.1707733440840; Mon, 12 Feb 2024 02:24:00 -0800 (PST)
+MIME-Version: 1.0
+From: Rashi Sharma <rashi.ibmce@gmail.com>
+Date: Mon, 12 Feb 2024 15:53:46 +0530
+Message-ID: <CACf+dmgCm=Ke+t1w7zEaaKmoTjsTvVY8PyE1hKh0dVKaFPnrNg@mail.gmail.com>
+Subject: Due to important work: Request to give Leave for 1 day
+To: Rohit Nanda <rohit@allsoftsolutions.in>
+Cc: "nidhi.ibmce@gmail.com" <nidhi.ibmce@gmail.com>, "shivamrathour.ibmce@gmail.com" <shivamrathour.ibmce@gmail.com>, "mahendra.ibmce@gmail.com" <mahendra.ibmce@gmail.com>, omkantibmce@gmail.com
+Content-Type: multipart/related; boundary="0000000000001d0ff406112cad3d"
+
+--0000000000001d0ff406112cad3d
+Content-Type: multipart/alternative; boundary="0000000000001d0ff306112cad3c"
+
+--0000000000001d0ff306112cad3c
+Content-Type: text/plain; charset="UTF-8"
+--------------------------------------------------------------------------------------------------
+===========================================================
+Header ended till here _   copy it and _ free online email header analyzer tools _ MX ToolBox
+--------------------------------------------------------------------------------------------------
+1. mx toolbox
+ https://mxtoolbox.com/EmailHeaders.aspx
+
+2. (what is my ip) email-header-analyzer  
+https://www.whatismyip.com/email-header-analyzer/
+
+3. google admin toolbox
+https://toolbox.googleapps.com/apps/main/ 
+--------------------------------------------------------------------------------------------------
+===========================================================
+
+Dear Sir,
+
+I have important work, so I need 1 day leave on 19 Feb, as I have to go out
+of station for family work. Kindly grant me leave for one day
+Below attached is my schedule for this day and adjustments are also
+allocated.
+
+
+[image: image.png]
+
+
+Thanks and Regards
+Rashi
+IBM Subject Matter Expert - Artificial Intelligence
+M: 94188848360
+
+--0000000000001d0ff306112cad3c
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div di=
+r=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr">Dear Sir,<div =
+dir=3D"auto"><br></div><div dir=3D"auto">I have important work, so I need 1=
+ day leave on=C2=A019 Feb, as I have to go out of=C2=A0station for family w=
+ork. Kindly grant me leave for one day<br></div><div style=3D"padding:20px =
+0px 0px"><table cellpadding=3D"0" style=3D"font-family:&quot;Google Sans&qu=
+ot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-size:0.875rem;border=
+-collapse:collapse;margin-top:0px;width:auto;display:block"></table></div><=
+div style=3D"font-family:&quot;Google Sans&quot;,Roboto,RobotoDraft,Helveti=
+ca,Arial,sans-serif;font-size:medium"><div id=3D"m_-8639157371173183305m_61=
+12091061247749622m_-4968166838547958744gmail-:v1" style=3D"direction:ltr;ma=
+rgin:8px 0px 0px;padding:0px;font-size:0.875rem"><div id=3D"m_-863915737117=
+3183305m_6112091061247749622m_-4968166838547958744gmail-:v0" style=3D"font-=
+variant-numeric:normal;font-variant-east-asian:normal;font-variant-alternat=
+es:normal;font-kerning:auto;font-feature-settings:normal;font-stretch:norma=
+l;font-size:small;line-height:1.5;font-family:Arial,Helvetica,sans-serif;ov=
+erflow:hidden"><div dir=3D"ltr"><div dir=3D"auto"><div>Below attached is my=
+ schedule=C2=A0for this day and adjustments are also allocated.</div><div><=
+br></div><div><br></div><div><img src=3D"cid:ii_lsirza5k1" alt=3D"image.png=
+" width=3D"512" height=3D"123"><br></div><div><div style=3D"padding-top:0px=
+;padding-right:0px;padding-left:0px;display:flex;font-family:&quot;Google S=
+ans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-size:medium"><=
+div style=3D"margin:0px;min-width:0px;padding:0px 0px 20px;width:initial"><=
+div><div id=3D"m_-8639157371173183305gmail-:mo" style=3D"margin:8px 0px 0px=
+;padding:0px;overflow-x:hidden"><div id=3D"m_-8639157371173183305gmail-:mn"=
+><div dir=3D"ltr"><table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" w=
+idth=3D"862" style=3D"width:431pt;border-collapse:collapse"><tbody></tbody>=
+</table><div><div dir=3D"ltr" class=3D"gmail_signature"><div dir=3D"ltr"><b=
+r></div><div dir=3D"ltr"><br></div><div dir=3D"ltr"><div><span style=3D"col=
+or:rgb(136,136,136)">Thanks and Regards</span></div><div id=3D"m_-351028988=
+7604631296m_3337400730256415136m_-2948473340143750274gmail-:oh" style=3D"di=
+rection:ltr;margin:8px 0px 0px;padding:0px;font-size:0.875rem"><div id=3D"m=
+_-3510289887604631296m_3337400730256415136m_-2948473340143750274gmail-:og" =
+style=3D"font-variant-numeric:normal;font-variant-east-asian:normal;font-st=
+retch:normal;font-size:small;line-height:1.5;font-family:Arial,Helvetica,sa=
+ns-serif;overflow:hidden"><div dir=3D"ltr"><font color=3D"#888888"><div dir=
+=3D"ltr"><div dir=3D"ltr"><div>Rashi</div><div>IBM Subject Matter Expert - =
+Artificial Intelligence</div><div>M: 94188848360</div><div><br></div><div><=
+img src=3D"https://images.credly.com/size/220x220/images/64feda72-d2eb-4345=
+-8abd-589f2fa7ae53/Getting_Started_with_Enterprise-grade_AI.png" width=3D"9=
+6" height=3D"96" class=3D"gmail-CToWUd"></div></div></div></font></div></di=
+v></div><div class=3D"gmail-yj6qo"></div><div class=3D"gmail-adL"><br style=
+=3D"font-family:Arial,Helvetica,sans-serif;font-size:small"></div></div></d=
+iv></div></div><div></div></div></div><div></div><div></div></div></div><di=
+v></div></div><div style=3D"border-bottom-left-radius:0px;border-bottom-rig=
+ht-radius:0px;border-top:none;background-image:initial;background-position:=
+initial;background-size:initial;background-repeat:initial;background-origin=
+:initial;background-clip:initial;font-family:&quot;Google Sans&quot;,Roboto=
+,RobotoDraft,Helvetica,Arial,sans-serif"><div><div style=3D"padding:16px 0p=
+x;border-top:none"></div></div></div></div></div></div></div></div></div></=
+div></div></div></div></div></div></div></div>
+
+--0000000000001d0ff306112cad3c--
+--0000000000001d0ff406112cad3d
+Content-Type: image/png; name="image.png"
+Content-Disposition: inline; filename="image.png"
+Content-Transfer-Encoding: base64
+Content-ID: <ii_lsirza5k1>
+X-Attachment-Id: ii_lsirza5k1
+
+
+--0000000000001d0ff406112cad3d--
+
+
+===================================================================
+if there is link in email - then copy that link and paste that in 
+1. Virius Total 
+https://www.virustotal.com/gui/home/upload
+
+2. urlscan.io
+https://urlscan.io/
+
+3. hybrid analysis
+https://www.hybrid-analysis.com/
+
+4. Check Phish
+https://checkphish.bolster.ai/
+
+------------------------------------------------------------------------------------------------------------
+pentration testing, phishing analysis, 
+malware - hash - check on - tools like send box, virus total , cloud strike- edr (event detection responce) solusion
+
+-----------------------------------------------------------------------------------------------------------
