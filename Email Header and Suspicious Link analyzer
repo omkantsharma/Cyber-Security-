@@ -105,6 +105,16 @@ Content-Type: multipart/alternative; boundary="0000000000001d0ff306112cad3c"
 --0000000000001d0ff306112cad3c
 Content-Type: text/plain; charset="UTF-8"
 --------------------------------------------------------------------------------------------------
+key words- 
+
+DKIM - DomainKeys Identified Mail
+https://dmarcian.com/what-is-dkim/
+
+SPF - Sender Policy Framework (SPF) 
+https://dmarcian.com/what-is-spf/
+
+ DMARC - Domain-based Message Authentication, Reporting & Conformance
+https://dmarc.org/
 ===========================================================
 Header ended till here _   copy it and _ free online email header analyzer tools _ MX ToolBox
 --------------------------------------------------------------------------------------------------
