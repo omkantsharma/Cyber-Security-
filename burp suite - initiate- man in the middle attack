@@ -21,16 +21,16 @@ title or description - as you want [om]
 proxy ip address and dns name - [127.0.0.1] [localhost ip]
 Port - 8080
 save
-[localhost configration done]
-close all extara tab
+[localhost configuration done]
+close all extra tab
 -------------------------------------
-open vulnerable website named - 
+the open vulnerable website named - 
 http://testphp.vulnweb.com/
 click on signup 
 -----------------------
 now check ---
 intercept should on in burpsuite 
-and check in 
+and check-in 
 forxyproxy localhost proxy should be on/enable 
 [select title or description for tourn it on/enable]
 ----------------------
@@ -49,7 +49,7 @@ User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
 Accept-Language: en-US,en;q=0.5
 Accept-Encoding: gzip, deflate
-Content-Type: application/x-www-form-urlencoded
+Content-Type: application/x-www-form-URL-encoded
 Content-Length: 22
 Origin: http://testphp.vulnweb.com
 Connection: close
@@ -60,10 +60,59 @@ uname=admin&pass=12345 [credential got extracted]
 ---------------------------------------------------
 so turn of the proxy 
 ---------------------------------------------------
-in this way you can breach confidentiality and integrityof the data
+in this way, you can breach the confidentiality and integrity of the data
 ----------------------------------------------------
+============================================================================
+============================================================================
+establish proxy through browser 
+open firefox in kali
+firefox setting
+find in setting search box- search proxy 
+network setting 
+select option - manual proxy configuration
+HTTP Proxy - 127.0.01               Port 8080
+ok
+-----------------------
+open burp suite
+Menu bar - proxy 
+proxy setting
+(running - check box already selected there 
+and in the interface - 127.0.0.1:8080 will be there )
+but the internet will not in working form for that 
 
-articals to read- 
+------------------------
+next step download the certificate 
+In Firefox enter as URL - HTTP://brupsuite  and access it
+then CA certificate download
+firefox setting
+find in setting search box- search certificate
+click on View certificate 
+Certificate Manager - Import -select port swigger CA
+import certificate 
+notification will appear 
+Do you ask 'PostSwigger CA' FOR THE FOLLOWING PURPOSES
+SELECT - trust this CA identity website
+select - trust this CA IDENTITY EMAIL user
+OK
+-----------------------
+THEN YOU CAN ACCESS EVERYTHING OVER burp suite target BROWSER on chromium
+----------------------------
+(IF YOU unselect in 
+proxy setting )
+(stop running - check box unselected there 
+and in the interface - 127.0.0.1:8080 -  )
+
+
+
+
+
+
+
+
+
+============================================================================
+============================================================================
+articles to read- 
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 https://www.kaggle.com/datasets/wjburns/common-password-list-rockyoutxt
 https://www.geeksforgeeks.org/difference-between-http-get-and-post-methods/
