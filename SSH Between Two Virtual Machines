@@ -1,0 +1,21 @@
+Using SSH Between Two Virtual Machines
+
+Machine 1 
+open terminal 
+sudo apt update
+sudo apt upgrade
+ip --brief addr show
+-------------------------
+-------------------------
+same as with
+Machine 2 
+open terminal 
+sudo apt update
+sudo apt upgrade
+ip --brief addr show
+
+--------------------------
+--------------------------
+
+in machine 1
+ssh machine2user@IP
