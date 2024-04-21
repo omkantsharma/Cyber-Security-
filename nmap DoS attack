@@ -1,5 +1,5 @@
 nmap DoS attack
-Denial of service attack - DOS  attack sends the packet to the system 
+Denial of service attack - A DOS  attack sends the packet to the system 
 Beyond its limit...
 
  Attacker system -- target/victim system 
@@ -26,8 +26,14 @@ Metasploit kernel
 top  
 Observe service flood through top cmd
 -----------------
-for increasing power of attack open multiple kernel and 
+To increase the power of attack open multiple kernels and 
 Execute same cmd...
+
+=========================================================
+=========================================================
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -p- -Pn -O -sV -A -sS hackerone.com 
+
 
 
 
