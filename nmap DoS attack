@@ -34,6 +34,12 @@ Execute same cmd...
 ┌──(kali㉿kali)-[~]
 └─$ sudo nmap -p- -Pn -O -sV -A -sS hackerone.com 
 
+=========================================================
+=========================================================
+
+https://systemweakness.com/hacking-for-beginners-exploiting-open-ports-92534bfd4c17
+
+
 
 
 
