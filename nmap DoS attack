@@ -39,6 +39,81 @@ Execute same cmd...
 
 https://systemweakness.com/hacking-for-beginners-exploiting-open-ports-92534bfd4c17
 
+=========================================================
+=========================================================
+Bypass Firewall 
+
+[ nmap -sn matasploit IP 192.168.44.142 ]
+┌──(kali㉿kali)-[~]
+└─$ nmap -sn 192.168.44.142 
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-04-29 06:28 EDT
+Nmap scan report for 192.168.44.142
+Host is up (0.00095s latency).
+Nmap done: 1 IP address (1 host up) scanned in 0.09 seconds
+--------------------------------------------------------------------
+[ nmap -sn win xp 192.168.44.144 ]
+┌──(kali㉿kali)-[~]
+└─$ nmap -sn 192.168.44.144
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-04-29 06:28 EDT
+Note: Host seems down. If it is really up, but blocking our ping probes, try -Pn
+Nmap done: 1 IP address (0 hosts up) scanned in 3.01 seconds
+--------------------------------------------------------------------
+bypass XP firewall 
+[ sudo nmap -sn WIN XP IP 192.168.44.144 -PR ] 
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -sn 192.168.44.144 -PR
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-04-29 06:29 EDT
+Nmap scan report for 192.168.44.144
+Host is up (0.00038s latency).
+MAC Address: 00:0C:29:AD:2C:67 (VMware)
+Nmap done: 1 IP address (1 host up) scanned in 0.22 seconds
+                                
+=======================================================================
+=======================================================================
+=======================================================================
+HOPS - HOST OF THE POINTS
+Through traceroute, you can trace the path of my packet to
+reach the Facebook server through various routers. You can
+check that with this command - 
+<TOOL>nmap <PING CHECKING>-sn <CMD >--traceroute <WEBSITE>facebook.com
+
+
+┌──(kali㉿kali)-[~]
+└─$ nmap -sn traceroute facebook.com
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-04-29 06:42 EDT
+Failed to resolve "traceroute".
+Nmap scan report for facebook.com (157.240.15.35)
+Host is up (0.094s latency).
+Other addresses for facebook.com (not scanned): 2a03:2880:f10c:181:face:b00c:0:25de
+rDNS record for 157.240.15.35: edge-star-mini-shv-03-sin6.facebook.com
+Nmap done: 1 IP address (1 host up) scanned in 15.55 seconds
+------------------------------------------------------------
+┌──(kali㉿kali)-[~]
+└─$ nmap -sn --traceroute facebook.com      
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-04-29 06:53 EDT
+Traceroute has to be run as root
+QUITTING!
+-------------------------------------------------------------------
+                                
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -sn --traceroute facebook.com 
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-04-29 06:52 EDT
+Nmap scan report for facebook.com (157.240.15.35)
+Host is up (0.00027s latency).
+Other addresses for facebook.com (not scanned): 2a03:2880:f10c:181:face:b00c:0:25de
+rDNS record for 157.240.15.35: edge-star-mini-shv-03-sin6.facebook.com
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT     ADDRESS
+1   0.44 ms 192.168.44.2
+2   0.13 ms edge-star-mini-shv-03-sin6.facebook.com (157.240.15.35)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.42 seconds
+
+
+
+
+
 
 
 
