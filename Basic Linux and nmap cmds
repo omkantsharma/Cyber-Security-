@@ -101,6 +101,41 @@ zsh: sure you want to delete the only file in /root [yn]? y
 ┌──(root㉿kali)-[~]
 └─# ls              
                 
+------------------------------------------------------
+                                                                                  
+┌──(root㉿kali)-[/var/log]
+└─# ls     
+alternatives.log  macchanger.log        vmware-network.4.log
+apache2           macchanger.log.1.gz   vmware-network.5.log
+apt               macchanger.log.2.gz   vmware-network.6.log
+boot.log          mosquitto             vmware-network.7.log
+boot.log.1        nginx                 vmware-network.8.log
+boot.log.2        notus-scanner         vmware-network.9.log
+boot.log.3        openvpn               vmware-network.log
+boot.log.4        postgresql            vmware-vmsvc-root.1.log
+boot.log.5        private               vmware-vmsvc-root.2.log
+boot.log.6        README                vmware-vmsvc-root.3.log
+btmp              redis                 vmware-vmsvc-root.log
+dpkg.log          runit                 vmware-vmtoolsd-kali.log
+faillog           samba                 vmware-vmtoolsd-root.log
+fontconfig.log    speech-dispatcher     vmware-vmusr-kali.log
+gvm               stunnel4              wtmp
+inetsim           sysstat               Xorg.0.log
+journal           vmware-network.1.log  Xorg.0.log.old
+lastlog           vmware-network.2.log  Xorg.1.log
+lightdm           vmware-network.3.log  Xorg.1.log.old
+                                                                                   
+┌──(root㉿kali)-[/var/log]
+└─# cp -r /var/log/private /var/log/apache2 /root/demo                   
+                                                                                   
+┌──(root㉿kali)-[/var/log]
+└─# ls -l /root/demo
+total 8
+drwxr-x--- 2 root root 4096 Apr 30 00:56 apache2
+drwx------ 2 root root 4096 Apr 30 00:56 private
+                                                                                   
+┌──(root㉿kali)-[/var/log]
+└─# 
 
 ------------------------------------------------------
 /bin    - Basic programs or commands [ls, cd, mv ...]
