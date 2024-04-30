@@ -37,6 +37,25 @@ rmdir: failed to remove 'o': Directory not empty
 ┌──(kali㉿kali)-[~]
 └─$ rm -r o  
 ------------------------------------------------------
+┌──(kali㉿kali)-[~]
+└─$ mkdir -p o/o1/o2/o3
+                                                               
+┌──(kali㉿kali)-[~]
+└─$ cd o
+                                                               
+┌──(kali㉿kali)-[~/o]
+└─$ cd o1
+                                                               
+┌──(kali㉿kali)-[~/o/o1]
+└─$ cd o2
+                                                               
+┌──(kali㉿kali)-[~/o/o1/o2]
+└─$ cd o3 
+                                                               
+┌──(kali㉿kali)-[~/o/o1/o2/o3]
+└─$ 
+
+------------------------------------------------------
 /bin    - Basic programs or commands [ls, cd, mv ...]
 essential user commands here. 
 boot  - file of or for boot loader [in parrot]
