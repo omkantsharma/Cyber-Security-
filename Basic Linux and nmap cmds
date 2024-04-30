@@ -93,7 +93,14 @@ journal  lightdm  log  nginx
                                                        
 ┌──(root㉿kali)-[~]
 └─# 
-
+------------------------------------------------------
+┌──(root㉿kali)-[~]
+└─# rm -rf *
+zsh: sure you want to delete the only file in /root [yn]? y
+                                                       
+┌──(root㉿kali)-[~]
+└─# ls              
+                
 
 ------------------------------------------------------
 /bin    - Basic programs or commands [ls, cd, mv ...]
