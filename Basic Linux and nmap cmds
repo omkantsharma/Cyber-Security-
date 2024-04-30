@@ -54,6 +54,37 @@ rmdir: failed to remove 'o': Directory not empty
                                                                
 ┌──(kali㉿kali)-[~/o/o1/o2/o3]
 └─$ 
+-----------------------------------------------------
+┌──(root㉿kali)-[~]
+└─# mkdir demolog
+                                                               
+┌──(root㉿kali)-[~]
+└─# ls
+demolog
+                                                               
+┌──(root㉿kali)-[~]
+└─# cp /var/log /demolog
+cp: -r not specified; omitting directory '/var/log'
+                                                               
+┌──(root㉿kali)-[~]
+└─# cp /var/log /root/demolog
+cp: -r not specified; omitting directory '/var/log'
+                                                               
+┌──(root㉿kali)-[~]
+└─# cp -r /var/log /root/demolog
+                                                               
+┌──(root㉿kali)-[~]
+└─# ls
+demolog
+                                                               
+┌──(root㉿kali)-[~]
+└─# cd demolog                  
+                                                               
+┌──(root㉿kali)-[~/demolog]
+└─# ls
+log
+                                                               
+
 
 ------------------------------------------------------
 /bin    - Basic programs or commands [ls, cd, mv ...]
