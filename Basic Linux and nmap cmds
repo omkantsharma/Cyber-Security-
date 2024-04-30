@@ -128,22 +128,68 @@ zsh: sure you want to delete the only file in /root [yn]? y
 alternatives.log  macchanger.log        vmware-network.4.log
 apache2           macchanger.log.1.gz   vmware-network.5.log
 apt               macchanger.log.2.gz   vmware-network.6.log
-boot.log          mosquitto             vmware-network.7.log
-boot.log.1        nginx                 vmware-network.8.log
-boot.log.2        notus-scanner         vmware-network.9.log
-boot.log.3        openvpn               vmware-network.log
-boot.log.4        postgresql            vmware-vmsvc-root.1.log
-boot.log.5        private               vmware-vmsvc-root.2.log
-boot.log.6        README                vmware-vmsvc-root.3.log
-btmp              redis                 vmware-vmsvc-root.log
-dpkg.log          runit                 vmware-vmtoolsd-kali.log
-faillog           samba                 vmware-vmtoolsd-root.log
-fontconfig.log    speech-dispatcher     vmware-vmusr-kali.log
-gvm               stunnel4              wtmp
-inetsim           sysstat               Xorg.0.log
-journal           vmware-network.1.log  Xorg.0.log.old
-lastlog           vmware-network.2.log  Xorg.1.log
-lightdm           vmware-network.3.log  Xorg.1.log.old
+...............
+-----------------------------------------------
+──(kali㉿kali)-[~]
+└─$ ls -lh && date && time && cal
+total 32K
+drwxr-xr-x 2 kali kali 4.0K Apr 30 02:24 Desktop
+drwxr-xr-x 2 kali kali 4.0K Apr 30 02:24 Documents
+drwxr-xr-x 2 kali kali 4.0K Apr 30 02:24 Downloads
+drwxr-xr-x 2 kali kali 4.0K Apr 30 02:24 Music
+drwxr-xr-x 2 kali kali 4.0K Apr 30 02:24 Pictures
+drwxr-xr-x 2 kali kali 4.0K Apr 30 02:24 Public
+drwxr-xr-x 2 kali kali 4.0K Apr 30 02:24 Templates
+drwxr-xr-x 2 kali kali 4.0K Apr 30 02:24 Videos
+Tue Apr 30 07:40:12 PM EDT 2024
+
+real    46569.60s
+user    1.01s
+sys     1.09s
+cpu     0%
+
+real    46569.60s
+user    0.34s
+sys     0.28s
+cpu     0%
+     April 2024       
+Su Mo Tu We Th Fr Sa  
+    1  2  3  4  5  6  
+ 7  8  9 10 11 12 13  
+14 15 16 17 18 19 20  
+21 22 23 24 25 26 27  
+28 29 30   
+-------------------------------------------------
+┌──(kali㉿kali)-[~]
+└─$ ls -lh; time; date; cal
+total 32K
+drwxr-xr-x 2 kali kali 4.0K Apr 30 02:24 Desktop
+drwxr-xr-x 2 kali kali 4.0K Apr 30 02:24 Documents
+drwxr-xr-x 2 kali kali 4.0K Apr 30 02:24 Downloads
+drwxr-xr-x 2 kali kali 4.0K Apr 30 02:24 Music
+drwxr-xr-x 2 kali kali 4.0K Apr 30 02:24 Pictures
+drwxr-xr-x 2 kali kali 4.0K Apr 30 02:24 Public
+drwxr-xr-x 2 kali kali 4.0K Apr 30 02:24 Templates
+drwxr-xr-x 2 kali kali 4.0K Apr 30 02:24 Videos
+
+real    46809.43s
+user    2.07s
+sys     2.07s
+cpu     0%
+
+real    46809.43s
+user    0.46s
+sys     0.36s
+cpu     0%
+Tue Apr 30 07:44:12 PM EDT 2024
+     April 2024       
+Su Mo Tu We Th Fr Sa  
+    1  2  3  4  5  6  
+ 7  8  9 10 11 12 13  
+14 15 16 17 18 19 20  
+21 22 23 24 25 26 27  
+28 29 30                            
+-----------------------------------------------
                                                                                    
 ┌──(root㉿kali)-[/var/log]
 └─# cp -r /var/log/private /var/log/apache2 /root/demo                   
