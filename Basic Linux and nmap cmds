@@ -4,7 +4,7 @@ File system
 [like bin directory store all program file like ls - what function 
 will run and how will run - these files are written ]
 ------------------------------------------------------
-write a cmd in terminal 
+write a cmd in the terminal 
 ls -l /               [file system]
 
   info
@@ -19,6 +19,8 @@ ls -l /               [file system]
   ls -R
   ls -r
   ls
+/ 
+/var/log
 ------------------------------------------------------
 /bin    - Basic programs or commands [ls, cd, mv ...]
 essential user commands here. 
