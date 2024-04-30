@@ -23,6 +23,16 @@ ls -l /               [file system]
 /var/log
 ls -tha /var/log
 rm *.txt
+------------------------------------------------
+┌──(kali㉿kali)-[~]
+└─$ rmdir o 
+rmdir: failed to remove 'o': Directory not empty
+                                                               
+┌──(kali㉿kali)-[~]
+└─$ rm -rf o
+                                                               
+┌──(kali㉿kali)-[~]
+└─$ 
 
 ------------------------------------------------------
 /bin    - Basic programs or commands [ls, cd, mv ...]
