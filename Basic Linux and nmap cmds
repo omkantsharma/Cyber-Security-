@@ -34,6 +34,8 @@ rmdir: failed to remove 'o': Directory not empty
 ┌──(kali㉿kali)-[~]
 └─$ 
 
+┌──(kali㉿kali)-[~]
+└─$ rm -r o  
 ------------------------------------------------------
 /bin    - Basic programs or commands [ls, cd, mv ...]
 essential user commands here. 
