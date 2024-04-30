@@ -3,6 +3,15 @@ File system
 [here slash / mean root directory/folder]
 [like bin directory store all program file like ls - what function 
 will run and how will run - these files are written ]
+
+-------------------------------------------------------
+┌──(kali㉿kali)-[~]
+└─$ mkdir a,aa,aaa,aaaa -v
+mkdir: created directory 'a,aa,aaa,aaaa'
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ rm -rv a,aa,aaa,aaaa
+removed directory 'a,aa,aaa,aaaa'                                                                  
 -------------------------------------------------------
 ┌──(kali㉿kali)-[/var/log/apt]
 └─$ nano history.log
