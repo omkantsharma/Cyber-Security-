@@ -21,6 +21,8 @@ ls -l /               [file system]
   ls
 / 
 /var/log
+ls -tha /var/log
+
 ------------------------------------------------------
 /bin    - Basic programs or commands [ls, cd, mv ...]
 essential user commands here. 
