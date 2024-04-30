@@ -303,7 +303,21 @@ u - admin/user = yourself
 g - group = can be people in the same project
 o - public/other = everyone on the system.
 ----------------------------------------
-
+┌──(kali㉿kali)-[~]
+└─$ id          
+uid=1000(kali) gid=1000(kali) groups=1000(kali),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),100(users),106(netdev),111(bluetooth),114(scanner),137(wireshark),140(kaboxer)                                                                    
+┌──(kali㉿kali)-[~]
+└─$ whoami
+kali                                                                        
+┌──(kali㉿kali)-[~]
+└─$ who   
+kali     tty7         2024-04-30 02:24 (:0)                                                                      
+┌──(kali㉿kali)-[~]
+└─$ w  
+ 05:13:47 up  2:11,  1 user,  load average: 0.03, 0.04, 0.00
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+kali     tty7     :0               02:24    2:52m  2:05   0.53s xfce4-sessio
+                                                                             
 ----------------------------------------
 whoami [in root or user]
 
