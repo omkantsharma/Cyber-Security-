@@ -22,6 +22,7 @@ ls -l /               [file system]
 / 
 /var/log
 ls -tha /var/log
+rm *.txt
 
 ------------------------------------------------------
 /bin    - Basic programs or commands [ls, cd, mv ...]
