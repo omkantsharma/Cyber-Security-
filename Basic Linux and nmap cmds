@@ -83,7 +83,16 @@ demolog
 ┌──(root㉿kali)-[~/demolog]
 └─# ls
 log
-                                                               
+------------------------------------------------------                                                               
+┌──(root㉿kali)-[~]
+└─# cp -r /var/log/journal /var/log/lightdm /var/log/nginx /root/demolog
+                                                       
+┌──(root㉿kali)-[~]
+└─# ls /root/demolog
+journal  lightdm  log  nginx
+                                                       
+┌──(root㉿kali)-[~]
+└─# 
 
 
 ------------------------------------------------------
