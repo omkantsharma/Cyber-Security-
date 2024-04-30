@@ -6,6 +6,19 @@ will run and how will run - these files are written ]
 ------------------------------------------------------
 write a cmd in terminal 
 ls -l /               [file system]
+
+  info
+  ls info
+  info ls
+  man ls
+  man pwd
+  pws -p
+  pws -l
+  ls -l
+  ls -l -a -h
+  ls -R
+  ls -r
+  ls
 ------------------------------------------------------
 /bin    - Basic programs or commands [ls, cd, mv ...]
 essential user commands here. 
@@ -29,9 +42,9 @@ lib      - shared libraries structure/information
 [hme directories has user functions]
 /root  -  Home directory of super user [admin]
           [here we can access admin data/previllage] 
-srv    - data for service from system
-usr    - utility application programes
-var     - ftp server / create local repository
+srv    - data for service from the system
+usr    - utility application programs
+var     - FTP server / create local repository
           [host file configration]
           [create/manage default repository]
 ---------------------------------------------
