@@ -3,6 +3,17 @@ File system
 [here slash / mean root directory/folder]
 [like bin directory store all program file like ls - what function 
 will run and how will run - these files are written ]
+-------------------------------------------------------
+┌──(kali㉿kali)-[/var/log/apt]
+└─$ nano history.log
+                                                                  
+┌──(kali㉿kali)-[/var/log/apt]
+└─$ less history.log
+
+zsh: suspended  less history.log
+                                                                             
+┌──(kali㉿kali)-[/var/log/apt]
+└─$ more history.log
 ------------------------------------------------------
 write a cmd in the terminal 
 ls -l /               [file system]
