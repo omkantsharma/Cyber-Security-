@@ -200,8 +200,32 @@ total 8
 drwxr-x--- 2 root root 4096 Apr 30 00:56 apache2
 drwx------ 2 root root 4096 Apr 30 00:56 private
                                                                                    
-┌──(root㉿kali)-[/var/log]
-└─# 
+-----------------------------------------------------
+print 
+┌──(kali㉿kali)-[~]
+└─$ ls              
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ ls >ls.txt 
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ ls        
+Desktop    Downloads  Music     Public     Videos
+Documents  ls.txt     Pictures  Templates
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ echo om kant
+om kant
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ echo om kant >o.txt
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ ls
+Desktop    Downloads  Music  Pictures  Templates
+Documents  ls.txt     o.txt  Public    Videos
+                                                       
 
 ------------------------------------------------------
 /bin    - Basic programs or commands [ls, cd, mv ...]
