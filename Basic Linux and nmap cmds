@@ -225,6 +225,31 @@ om kant
 └─$ ls
 Desktop    Downloads  Music  Pictures  Templates
 Documents  ls.txt     o.txt  Public    Videos
+--------------------
+┌──(kali㉿kali)-[~]
+└─$ cat o.txt
+om kant
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ ls       
+Desktop    Downloads  Music   o.txt     Public     Videos
+Documents  ls.txt     o.text  Pictures  Templates
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ echo sharma >o.txt 
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ cat o.txt
+sharma
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ echo omkant >>o.txt
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ cat o.txt
+sharma
+omkant
+              
                                                        
 
 ------------------------------------------------------
