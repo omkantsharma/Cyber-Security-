@@ -1,0 +1,25 @@
+Share folder details on win 
+
+C:\Users\omkan>net view
+Server Name            Remark
+
+-------------------------------------------------------------------------------
+\\OM
+The command completed successfully.
+===============================================
+C:\Windows\System32>net view OM
+Shared resources at OM
+Share name    Type  Used as  Comment
+-------------------------------------------------------------------------------
+share folder  Disk
+Users         Disk
+The command completed successfully.
+============================================
+C:\Users\omkan>tracert OM
+Tracing route to Om [fe80::d008:8906:4257:7234%14]
+over a maximum of 30 hops:
+  1    <1 ms    <1 ms    <1 ms  Om [fe80::d008:8906:4257:7234]
+Trace complete.
+C:\Users\omkan>
+open desktop remote control 
+- insert there Ip - fe80::d008:8906:4257:7234
