@@ -607,3 +607,53 @@ Matching Modules
 
 
 Interact with a module by name or index. For example info 441, use 441 or use exploit/multi/http/pgadmin_session_deserialization
+
+===========================================================================================================================
+===========================================================================================================================
+  223  auxiliary/scanner/smb/smb_ms17_010                                              .                normal     No     MS17-010 SMB RCE Detection
+(it will tell us our machine is vulnerable or not)
+===========================================================================================================================
+===========================================================================================================================
+msf6 > use auxiliary/scanner/smb/smb_ms17_010 
+msf6 auxiliary(scanner/smb/smb_ms17_010) > show options
+
+Module options (auxiliary/scanner/smb/smb_ms17_010):
+
+   Name         Current Setting          Required  Description
+   ----         ---------------          --------  -----------
+   CHECK_ARCH   true                     no        Check for architecture on vulnerable ho
+                                                   sts
+   CHECK_DOPU   true                     no        Check for DOUBLEPULSAR on vulnerable ho
+                                                   sts
+   CHECK_PIPE   false                    no        Check for named pipe on vulnerable host
+                                                   s
+   NAMED_PIPES  /opt/metasploit-framewo  yes       List of named pipes to check
+                rk/embedded/framework/d
+                ata/wordlists/named_pip
+                es.txt
+   RHOSTS                                yes       The target host(s), see https://docs.me
+                                                   tasploit.com/docs/using-metasploit/basi
+                                                   cs/using-metasploit.html
+   RPORT        445                      yes       The SMB service port (TCP)
+   SMBDomain    .                        no        The Windows domain to use for authentic
+                                                   ation
+   SMBPass                               no        The password for the specified username
+   SMBUser                               no        The username to authenticate as
+   THREADS      1                        yes       The number of concurrent threads (max o
+                                                   ne per host)
+
+
+View the full module info with the info, or info -d command.
+
+msf6 auxiliary(scanner/smb/smb_ms17_010) > set RHOSTS 192.168.44.160
+RHOSTS => 192.168.44.160
+msf6 auxiliary(scanner/smb/smb_ms17_010) > exploit
+
+[+] 192.168.44.160:445    - Host is likely VULNERABLE to MS17-010! - Windows XP 3790 Service Pack 1 x86 (32-bit)
+[*] 192.168.44.160:445    - Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+msf6 auxiliary(scanner/smb/smb_ms17_010) > 
+
+===========================================================================================================================
+===========================================================================================================================
+
