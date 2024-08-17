@@ -1,0 +1,1610 @@
+Nmap - Attacker - Kali and Target - Metasploitable 2
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+Mapping & Port Scanning 
+==============================================================================================
+----------------------------------------------------------------------------------------------
+┌──(kali㉿kali)-[~]
+└─$ nmap 192.168.176.128/24                                 
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-16 23:12 EDT
+Nmap scan report for 192.168.176.2
+Host is up (0.00079s latency).
+Not shown: 999 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+53/tcp open  domain
+
+Nmap scan report for 192.168.176.128
+Host is up (0.00091s latency).
+Not shown: 977 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+23/tcp   open  telnet
+25/tcp   open  smtp
+53/tcp   open  domain
+80/tcp   open  http
+111/tcp  open  rpcbind
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+512/tcp  open  exec
+513/tcp  open  login
+514/tcp  open  shell
+1099/tcp open  rmiregistry
+1524/tcp open  ingreslock
+2049/tcp open  nfs
+2121/tcp open  ccproxy-ftp
+3306/tcp open  mysql
+5432/tcp open  postgresql
+5900/tcp open  vnc
+6000/tcp open  X11
+6667/tcp open  irc
+8009/tcp open  ajp13
+8180/tcp open  unknown
+
+Nmap scan report for 192.168.176.132
+Host is up (0.00049s latency).
+All 1000 scanned ports on 192.168.176.132 are in ignored states.
+Not shown: 1000 closed tcp ports (conn-refused)
+
+Nmap done: 256 IP addresses (3 hosts up) scanned in 3.50 seconds
+===============================================================================================
+===============================================================================================
+===============================================================================================
+===============================================================================================
+===============================================================================================
+===============================================================================================
+┌──(kali㉿kali)-[~]
+└─$ nmap -vv 192.168.176.128/24
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-16 23:14 EDT
+Initiating Ping Scan at 23:14
+Scanning 256 hosts [2 ports/host]
+Completed Ping Scan at 23:14, 2.41s elapsed (256 total hosts)
+Initiating Parallel DNS resolution of 3 hosts. at 23:14
+Completed Parallel DNS resolution of 3 hosts. at 23:14, 0.32s elapsed
+Nmap scan report for 192.168.176.0 [host down, received no-response]
+Nmap scan report for 192.168.176.1 [host down, received no-response]
+Nmap scan report for 192.168.176.3 [host down, received no-response]
+Nmap scan report for 192.168.176.4 [host down, received no-response]
+Nmap scan report for 192.168.176.5 [host down, received no-response]
+Nmap scan report for 192.168.176.6 [host down, received no-response]
+Nmap scan report for 192.168.176.7 [host down, received no-response]
+Nmap scan report for 192.168.176.8 [host down, received no-response]
+Nmap scan report for 192.168.176.9 [host down, received no-response]
+Nmap scan report for 192.168.176.10 [host down, received no-response]
+Nmap scan report for 192.168.176.11 [host down, received no-response]
+Nmap scan report for 192.168.176.12 [host down, received no-response]
+Nmap scan report for 192.168.176.13 [host down, received no-response]
+Nmap scan report for 192.168.176.14 [host down, received no-response]
+Nmap scan report for 192.168.176.15 [host down, received no-response]
+Nmap scan report for 192.168.176.16 [host down, received no-response]
+Nmap scan report for 192.168.176.17 [host down, received no-response]
+Nmap scan report for 192.168.176.18 [host down, received no-response]
+Nmap scan report for 192.168.176.19 [host down, received no-response]
+Nmap scan report for 192.168.176.20 [host down, received no-response]
+Nmap scan report for 192.168.176.21 [host down, received no-response]
+Nmap scan report for 192.168.176.22 [host down, received no-response]
+Nmap scan report for 192.168.176.23 [host down, received no-response]
+Nmap scan report for 192.168.176.24 [host down, received no-response]
+Nmap scan report for 192.168.176.25 [host down, received no-response]
+Nmap scan report for 192.168.176.26 [host down, received no-response]
+Nmap scan report for 192.168.176.27 [host down, received no-response]
+Nmap scan report for 192.168.176.28 [host down, received no-response]
+Nmap scan report for 192.168.176.29 [host down, received no-response]
+Nmap scan report for 192.168.176.30 [host down, received no-response]
+Nmap scan report for 192.168.176.31 [host down, received no-response]
+Nmap scan report for 192.168.176.32 [host down, received no-response]
+Nmap scan report for 192.168.176.33 [host down, received no-response]
+Nmap scan report for 192.168.176.34 [host down, received no-response]
+Nmap scan report for 192.168.176.35 [host down, received no-response]
+Nmap scan report for 192.168.176.36 [host down, received no-response]
+Nmap scan report for 192.168.176.37 [host down, received no-response]
+Nmap scan report for 192.168.176.38 [host down, received no-response]
+Nmap scan report for 192.168.176.39 [host down, received no-response]
+Nmap scan report for 192.168.176.40 [host down, received no-response]
+Nmap scan report for 192.168.176.41 [host down, received no-response]
+Nmap scan report for 192.168.176.42 [host down, received no-response]
+Nmap scan report for 192.168.176.43 [host down, received no-response]
+Nmap scan report for 192.168.176.44 [host down, received no-response]
+Nmap scan report for 192.168.176.45 [host down, received no-response]
+Nmap scan report for 192.168.176.46 [host down, received no-response]
+Nmap scan report for 192.168.176.47 [host down, received no-response]
+Nmap scan report for 192.168.176.48 [host down, received no-response]
+Nmap scan report for 192.168.176.49 [host down, received no-response]
+Nmap scan report for 192.168.176.50 [host down, received no-response]
+Nmap scan report for 192.168.176.51 [host down, received no-response]
+Nmap scan report for 192.168.176.52 [host down, received no-response]
+Nmap scan report for 192.168.176.53 [host down, received no-response]
+Nmap scan report for 192.168.176.54 [host down, received no-response]
+Nmap scan report for 192.168.176.55 [host down, received no-response]
+Nmap scan report for 192.168.176.56 [host down, received no-response]
+Nmap scan report for 192.168.176.57 [host down, received no-response]
+Nmap scan report for 192.168.176.58 [host down, received no-response]
+Nmap scan report for 192.168.176.59 [host down, received no-response]
+Nmap scan report for 192.168.176.60 [host down, received no-response]
+Nmap scan report for 192.168.176.61 [host down, received no-response]
+Nmap scan report for 192.168.176.62 [host down, received no-response]
+Nmap scan report for 192.168.176.63 [host down, received no-response]
+Nmap scan report for 192.168.176.64 [host down, received no-response]
+Nmap scan report for 192.168.176.65 [host down, received no-response]
+Nmap scan report for 192.168.176.66 [host down, received no-response]
+Nmap scan report for 192.168.176.67 [host down, received no-response]
+Nmap scan report for 192.168.176.68 [host down, received no-response]
+Nmap scan report for 192.168.176.69 [host down, received no-response]
+Nmap scan report for 192.168.176.70 [host down, received no-response]
+Nmap scan report for 192.168.176.71 [host down, received no-response]
+Nmap scan report for 192.168.176.72 [host down, received no-response]
+Nmap scan report for 192.168.176.73 [host down, received no-response]
+Nmap scan report for 192.168.176.74 [host down, received no-response]
+Nmap scan report for 192.168.176.75 [host down, received no-response]
+Nmap scan report for 192.168.176.76 [host down, received no-response]
+Nmap scan report for 192.168.176.77 [host down, received no-response]
+Nmap scan report for 192.168.176.78 [host down, received no-response]
+Nmap scan report for 192.168.176.79 [host down, received no-response]
+Nmap scan report for 192.168.176.80 [host down, received no-response]
+Nmap scan report for 192.168.176.81 [host down, received no-response]
+Nmap scan report for 192.168.176.82 [host down, received no-response]
+Nmap scan report for 192.168.176.83 [host down, received no-response]
+Nmap scan report for 192.168.176.84 [host down, received no-response]
+Nmap scan report for 192.168.176.85 [host down, received no-response]
+Nmap scan report for 192.168.176.86 [host down, received no-response]
+Nmap scan report for 192.168.176.87 [host down, received no-response]
+Nmap scan report for 192.168.176.88 [host down, received no-response]
+Nmap scan report for 192.168.176.89 [host down, received no-response]
+Nmap scan report for 192.168.176.90 [host down, received no-response]
+Nmap scan report for 192.168.176.91 [host down, received no-response]
+Nmap scan report for 192.168.176.92 [host down, received no-response]
+Nmap scan report for 192.168.176.93 [host down, received no-response]
+Nmap scan report for 192.168.176.94 [host down, received no-response]
+Nmap scan report for 192.168.176.95 [host down, received no-response]
+Nmap scan report for 192.168.176.96 [host down, received no-response]
+Nmap scan report for 192.168.176.97 [host down, received no-response]
+Nmap scan report for 192.168.176.98 [host down, received no-response]
+Nmap scan report for 192.168.176.99 [host down, received no-response]
+Nmap scan report for 192.168.176.100 [host down, received no-response]
+Nmap scan report for 192.168.176.101 [host down, received no-response]
+Nmap scan report for 192.168.176.102 [host down, received no-response]
+Nmap scan report for 192.168.176.103 [host down, received no-response]
+Nmap scan report for 192.168.176.104 [host down, received no-response]
+Nmap scan report for 192.168.176.105 [host down, received no-response]
+Nmap scan report for 192.168.176.106 [host down, received no-response]
+Nmap scan report for 192.168.176.107 [host down, received no-response]
+Nmap scan report for 192.168.176.108 [host down, received no-response]
+Nmap scan report for 192.168.176.109 [host down, received no-response]
+Nmap scan report for 192.168.176.110 [host down, received no-response]
+Nmap scan report for 192.168.176.111 [host down, received no-response]
+Nmap scan report for 192.168.176.112 [host down, received no-response]
+Nmap scan report for 192.168.176.113 [host down, received no-response]
+Nmap scan report for 192.168.176.114 [host down, received no-response]
+Nmap scan report for 192.168.176.115 [host down, received no-response]
+Nmap scan report for 192.168.176.116 [host down, received no-response]
+Nmap scan report for 192.168.176.117 [host down, received no-response]
+Nmap scan report for 192.168.176.118 [host down, received no-response]
+Nmap scan report for 192.168.176.119 [host down, received no-response]
+Nmap scan report for 192.168.176.120 [host down, received no-response]
+Nmap scan report for 192.168.176.121 [host down, received no-response]
+Nmap scan report for 192.168.176.122 [host down, received no-response]
+Nmap scan report for 192.168.176.123 [host down, received no-response]
+Nmap scan report for 192.168.176.124 [host down, received no-response]
+Nmap scan report for 192.168.176.125 [host down, received no-response]
+Nmap scan report for 192.168.176.126 [host down, received no-response]
+Nmap scan report for 192.168.176.127 [host down, received no-response]
+Nmap scan report for 192.168.176.129 [host down, received no-response]
+Nmap scan report for 192.168.176.130 [host down, received no-response]
+Nmap scan report for 192.168.176.131 [host down, received no-response]
+Nmap scan report for 192.168.176.133 [host down, received no-response]
+Nmap scan report for 192.168.176.134 [host down, received no-response]
+Nmap scan report for 192.168.176.135 [host down, received no-response]
+Nmap scan report for 192.168.176.136 [host down, received no-response]
+Nmap scan report for 192.168.176.137 [host down, received no-response]
+Nmap scan report for 192.168.176.138 [host down, received no-response]
+Nmap scan report for 192.168.176.139 [host down, received no-response]
+Nmap scan report for 192.168.176.140 [host down, received no-response]
+Nmap scan report for 192.168.176.141 [host down, received no-response]
+Nmap scan report for 192.168.176.142 [host down, received no-response]
+Nmap scan report for 192.168.176.143 [host down, received no-response]
+Nmap scan report for 192.168.176.144 [host down, received no-response]
+Nmap scan report for 192.168.176.145 [host down, received no-response]
+Nmap scan report for 192.168.176.146 [host down, received no-response]
+Nmap scan report for 192.168.176.147 [host down, received no-response]
+Nmap scan report for 192.168.176.148 [host down, received no-response]
+Nmap scan report for 192.168.176.149 [host down, received no-response]
+Nmap scan report for 192.168.176.150 [host down, received no-response]
+Nmap scan report for 192.168.176.151 [host down, received no-response]
+Nmap scan report for 192.168.176.152 [host down, received no-response]
+Nmap scan report for 192.168.176.153 [host down, received no-response]
+Nmap scan report for 192.168.176.154 [host down, received no-response]
+Nmap scan report for 192.168.176.155 [host down, received no-response]
+Nmap scan report for 192.168.176.156 [host down, received no-response]
+Nmap scan report for 192.168.176.157 [host down, received no-response]
+Nmap scan report for 192.168.176.158 [host down, received no-response]
+Nmap scan report for 192.168.176.159 [host down, received no-response]
+Nmap scan report for 192.168.176.160 [host down, received no-response]
+Nmap scan report for 192.168.176.161 [host down, received no-response]
+Nmap scan report for 192.168.176.162 [host down, received no-response]
+Nmap scan report for 192.168.176.163 [host down, received no-response]
+Nmap scan report for 192.168.176.164 [host down, received no-response]
+Nmap scan report for 192.168.176.165 [host down, received no-response]
+Nmap scan report for 192.168.176.166 [host down, received no-response]
+Nmap scan report for 192.168.176.167 [host down, received no-response]
+Nmap scan report for 192.168.176.168 [host down, received no-response]
+Nmap scan report for 192.168.176.169 [host down, received no-response]
+Nmap scan report for 192.168.176.170 [host down, received no-response]
+Nmap scan report for 192.168.176.171 [host down, received no-response]
+Nmap scan report for 192.168.176.172 [host down, received no-response]
+Nmap scan report for 192.168.176.173 [host down, received no-response]
+Nmap scan report for 192.168.176.174 [host down, received no-response]
+Nmap scan report for 192.168.176.175 [host down, received no-response]
+Nmap scan report for 192.168.176.176 [host down, received no-response]
+Nmap scan report for 192.168.176.177 [host down, received no-response]
+Nmap scan report for 192.168.176.178 [host down, received no-response]
+Nmap scan report for 192.168.176.179 [host down, received no-response]
+Nmap scan report for 192.168.176.180 [host down, received no-response]
+Nmap scan report for 192.168.176.181 [host down, received no-response]
+Nmap scan report for 192.168.176.182 [host down, received no-response]
+Nmap scan report for 192.168.176.183 [host down, received no-response]
+Nmap scan report for 192.168.176.184 [host down, received no-response]
+Nmap scan report for 192.168.176.185 [host down, received no-response]
+Nmap scan report for 192.168.176.186 [host down, received no-response]
+Nmap scan report for 192.168.176.187 [host down, received no-response]
+Nmap scan report for 192.168.176.188 [host down, received no-response]
+Nmap scan report for 192.168.176.189 [host down, received no-response]
+Nmap scan report for 192.168.176.190 [host down, received no-response]
+Nmap scan report for 192.168.176.191 [host down, received no-response]
+Nmap scan report for 192.168.176.192 [host down, received no-response]
+Nmap scan report for 192.168.176.193 [host down, received no-response]
+Nmap scan report for 192.168.176.194 [host down, received no-response]
+Nmap scan report for 192.168.176.195 [host down, received no-response]
+Nmap scan report for 192.168.176.196 [host down, received no-response]
+Nmap scan report for 192.168.176.197 [host down, received no-response]
+Nmap scan report for 192.168.176.198 [host down, received no-response]
+Nmap scan report for 192.168.176.199 [host down, received no-response]
+Nmap scan report for 192.168.176.200 [host down, received no-response]
+Nmap scan report for 192.168.176.201 [host down, received no-response]
+Nmap scan report for 192.168.176.202 [host down, received no-response]
+Nmap scan report for 192.168.176.203 [host down, received no-response]
+Nmap scan report for 192.168.176.204 [host down, received no-response]
+Nmap scan report for 192.168.176.205 [host down, received no-response]
+Nmap scan report for 192.168.176.206 [host down, received no-response]
+Nmap scan report for 192.168.176.207 [host down, received no-response]
+Nmap scan report for 192.168.176.208 [host down, received no-response]
+Nmap scan report for 192.168.176.209 [host down, received no-response]
+Nmap scan report for 192.168.176.210 [host down, received no-response]
+Nmap scan report for 192.168.176.211 [host down, received no-response]
+Nmap scan report for 192.168.176.212 [host down, received no-response]
+Nmap scan report for 192.168.176.213 [host down, received no-response]
+Nmap scan report for 192.168.176.214 [host down, received no-response]
+Nmap scan report for 192.168.176.215 [host down, received no-response]
+Nmap scan report for 192.168.176.216 [host down, received no-response]
+Nmap scan report for 192.168.176.217 [host down, received no-response]
+Nmap scan report for 192.168.176.218 [host down, received no-response]
+Nmap scan report for 192.168.176.219 [host down, received no-response]
+Nmap scan report for 192.168.176.220 [host down, received no-response]
+Nmap scan report for 192.168.176.221 [host down, received no-response]
+Nmap scan report for 192.168.176.222 [host down, received no-response]
+Nmap scan report for 192.168.176.223 [host down, received no-response]
+Nmap scan report for 192.168.176.224 [host down, received no-response]
+Nmap scan report for 192.168.176.225 [host down, received no-response]
+Nmap scan report for 192.168.176.226 [host down, received no-response]
+Nmap scan report for 192.168.176.227 [host down, received no-response]
+Nmap scan report for 192.168.176.228 [host down, received no-response]
+Nmap scan report for 192.168.176.229 [host down, received no-response]
+Nmap scan report for 192.168.176.230 [host down, received no-response]
+Nmap scan report for 192.168.176.231 [host down, received no-response]
+Nmap scan report for 192.168.176.232 [host down, received no-response]
+Nmap scan report for 192.168.176.233 [host down, received no-response]
+Nmap scan report for 192.168.176.234 [host down, received no-response]
+Nmap scan report for 192.168.176.235 [host down, received no-response]
+Nmap scan report for 192.168.176.236 [host down, received no-response]
+Nmap scan report for 192.168.176.237 [host down, received no-response]
+Nmap scan report for 192.168.176.238 [host down, received no-response]
+Nmap scan report for 192.168.176.239 [host down, received no-response]
+Nmap scan report for 192.168.176.240 [host down, received no-response]
+Nmap scan report for 192.168.176.241 [host down, received no-response]
+Nmap scan report for 192.168.176.242 [host down, received no-response]
+Nmap scan report for 192.168.176.243 [host down, received no-response]
+Nmap scan report for 192.168.176.244 [host down, received no-response]
+Nmap scan report for 192.168.176.245 [host down, received no-response]
+Nmap scan report for 192.168.176.246 [host down, received no-response]
+Nmap scan report for 192.168.176.247 [host down, received no-response]
+Nmap scan report for 192.168.176.248 [host down, received no-response]
+Nmap scan report for 192.168.176.249 [host down, received no-response]
+Nmap scan report for 192.168.176.250 [host down, received no-response]
+Nmap scan report for 192.168.176.251 [host down, received no-response]
+Nmap scan report for 192.168.176.252 [host down, received no-response]
+Nmap scan report for 192.168.176.253 [host down, received no-response]
+Nmap scan report for 192.168.176.254 [host down, received no-response]
+Nmap scan report for 192.168.176.255 [host down, received net-unreach]
+Initiating Connect Scan at 23:14
+Scanning 3 hosts [1000 ports/host]
+Discovered open port 3306/tcp on 192.168.176.128
+Discovered open port 80/tcp on 192.168.176.128
+Discovered open port 111/tcp on 192.168.176.128
+Discovered open port 5900/tcp on 192.168.176.128
+Discovered open port 53/tcp on 192.168.176.2
+Discovered open port 53/tcp on 192.168.176.128
+Discovered open port 22/tcp on 192.168.176.128
+Discovered open port 21/tcp on 192.168.176.128
+Discovered open port 25/tcp on 192.168.176.128
+Discovered open port 23/tcp on 192.168.176.128
+Discovered open port 445/tcp on 192.168.176.128
+Discovered open port 139/tcp on 192.168.176.128
+Discovered open port 512/tcp on 192.168.176.128
+Discovered open port 513/tcp on 192.168.176.128
+Discovered open port 5432/tcp on 192.168.176.128
+Discovered open port 8180/tcp on 192.168.176.128
+Discovered open port 6667/tcp on 192.168.176.128
+Discovered open port 2049/tcp on 192.168.176.128
+Discovered open port 1524/tcp on 192.168.176.128
+Discovered open port 6000/tcp on 192.168.176.128
+Discovered open port 8009/tcp on 192.168.176.128
+Discovered open port 2121/tcp on 192.168.176.128
+Discovered open port 1099/tcp on 192.168.176.128
+Discovered open port 514/tcp on 192.168.176.128
+Completed Connect Scan against 192.168.176.2 in 0.12s (2 hosts left)
+Completed Connect Scan against 192.168.176.132 in 0.12s (1 host left)
+Completed Connect Scan at 23:14, 0.12s elapsed (3000 total ports)
+Nmap scan report for 192.168.176.2
+Host is up, received conn-refused (0.00036s latency).
+Scanned at 2024-08-16 23:14:09 EDT for 0s
+Not shown: 999 closed tcp ports (conn-refused)
+PORT   STATE SERVICE REASON
+53/tcp open  domain  syn-ack
+
+Nmap scan report for 192.168.176.128
+Host is up, received syn-ack (0.0023s latency).
+Scanned at 2024-08-16 23:14:09 EDT for 0s
+Not shown: 977 closed tcp ports (conn-refused)
+PORT     STATE SERVICE      REASON
+21/tcp   open  ftp          syn-ack
+22/tcp   open  ssh          syn-ack
+23/tcp   open  telnet       syn-ack
+25/tcp   open  smtp         syn-ack
+53/tcp   open  domain       syn-ack
+80/tcp   open  http         syn-ack
+111/tcp  open  rpcbind      syn-ack
+139/tcp  open  netbios-ssn  syn-ack
+445/tcp  open  microsoft-ds syn-ack
+512/tcp  open  exec         syn-ack
+513/tcp  open  login        syn-ack
+514/tcp  open  shell        syn-ack
+1099/tcp open  rmiregistry  syn-ack
+1524/tcp open  ingreslock   syn-ack
+2049/tcp open  nfs          syn-ack
+2121/tcp open  ccproxy-ftp  syn-ack
+3306/tcp open  mysql        syn-ack
+5432/tcp open  postgresql   syn-ack
+5900/tcp open  vnc          syn-ack
+6000/tcp open  X11          syn-ack
+6667/tcp open  irc          syn-ack
+8009/tcp open  ajp13        syn-ack
+8180/tcp open  unknown      syn-ack
+
+Nmap scan report for 192.168.176.132
+Host is up, received conn-refused (0.00034s latency).
+Scanned at 2024-08-16 23:14:09 EDT for 0s
+All 1000 scanned ports on 192.168.176.132 are in ignored states.
+Not shown: 1000 closed tcp ports (conn-refused)
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 256 IP addresses (3 hosts up) scanned in 2.92 seconds
+==============================================================================================
+==============================================================================================
+==============================================================================================
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+==============================================================================================
+==============================================================================================
+The scanner can try determine versions of the application listening behind a port. This is 
+called service scanning and can be enabled with the -sV flag.
+----------------------------------------------------------------------------------------------
+┌──(kali㉿kali)-[~]
+└─$ nmap -vv 192.168.176.128   
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-16 23:28 EDT
+Initiating Ping Scan at 23:28
+Scanning 192.168.176.128 [2 ports]
+Completed Ping Scan at 23:28, 0.00s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 23:28
+Completed Parallel DNS resolution of 1 host. at 23:28, 0.32s elapsed
+Initiating Connect Scan at 23:28
+Scanning 192.168.176.128 [1000 ports]
+Discovered open port 25/tcp on 192.168.176.128
+Discovered open port 5900/tcp on 192.168.176.128
+Discovered open port 139/tcp on 192.168.176.128
+Discovered open port 21/tcp on 192.168.176.128
+Discovered open port 23/tcp on 192.168.176.128
+Discovered open port 111/tcp on 192.168.176.128
+Discovered open port 445/tcp on 192.168.176.128
+Discovered open port 22/tcp on 192.168.176.128
+Discovered open port 80/tcp on 192.168.176.128
+Discovered open port 53/tcp on 192.168.176.128
+Discovered open port 3306/tcp on 192.168.176.128
+Discovered open port 2049/tcp on 192.168.176.128
+Discovered open port 6000/tcp on 192.168.176.128
+Discovered open port 5432/tcp on 192.168.176.128
+Discovered open port 8009/tcp on 192.168.176.128
+Discovered open port 513/tcp on 192.168.176.128
+Discovered open port 6667/tcp on 192.168.176.128
+Discovered open port 512/tcp on 192.168.176.128
+Discovered open port 1099/tcp on 192.168.176.128
+Discovered open port 1524/tcp on 192.168.176.128
+Discovered open port 514/tcp on 192.168.176.128
+Discovered open port 8180/tcp on 192.168.176.128
+Discovered open port 2121/tcp on 192.168.176.128
+Completed Connect Scan at 23:28, 0.09s elapsed (1000 total ports)
+Nmap scan report for 192.168.176.128
+Host is up, received syn-ack (0.0016s latency).
+Scanned at 2024-08-16 23:28:52 EDT for 0s
+Not shown: 977 closed tcp ports (conn-refused)
+PORT     STATE SERVICE      REASON
+21/tcp   open  ftp          syn-ack
+22/tcp   open  ssh          syn-ack
+23/tcp   open  telnet       syn-ack
+25/tcp   open  smtp         syn-ack
+53/tcp   open  domain       syn-ack
+80/tcp   open  http         syn-ack
+111/tcp  open  rpcbind      syn-ack
+139/tcp  open  netbios-ssn  syn-ack
+445/tcp  open  microsoft-ds syn-ack
+512/tcp  open  exec         syn-ack
+513/tcp  open  login        syn-ack
+514/tcp  open  shell        syn-ack
+1099/tcp open  rmiregistry  syn-ack
+1524/tcp open  ingreslock   syn-ack
+2049/tcp open  nfs          syn-ack
+2121/tcp open  ccproxy-ftp  syn-ack
+3306/tcp open  mysql        syn-ack
+5432/tcp open  postgresql   syn-ack
+5900/tcp open  vnc          syn-ack
+6000/tcp open  X11          syn-ack
+6667/tcp open  irc          syn-ack
+8009/tcp open  ajp13        syn-ack
+8180/tcp open  unknown      syn-ack
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 0.47 seconds
+=============================================================================================
+=============================================================================================
+=============================================================================================
+=============================================================================================
+=============================================================================================
+=============================================================================================
+=============================================================================================
+=============================================================================================
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+┌──(kali㉿kali)-[~]
+└─$ nmap -sV 192.168.176.128
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-17 09:09 EDT
+Nmap scan report for 192.168.176.128
+Host is up (0.0019s latency).
+Not shown: 977 closed tcp ports (conn-refused)
+PORT     STATE SERVICE     VERSION
+21/tcp   open  ftp         vsftpd 2.3.4
+22/tcp   open  ssh         OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+23/tcp   open  telnet      Linux telnetd
+25/tcp   open  smtp        Postfix smtpd
+53/tcp   open  domain      ISC BIND 9.4.2
+80/tcp   open  http        Apache httpd 2.2.8 ((Ubuntu) DAV/2)
+111/tcp  open  rpcbind     2 (RPC #100000)
+139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+512/tcp  open  exec        netkit-rsh rexecd
+513/tcp  open  login       OpenBSD or Solaris rlogind
+514/tcp  open  tcpwrapped
+1099/tcp open  java-rmi    GNU Classpath grmiregistry
+1524/tcp open  bindshell   Metasploitable root shell
+2049/tcp open  nfs         2-4 (RPC #100003)
+2121/tcp open  ftp         ProFTPD 1.3.1
+3306/tcp open  mysql       MySQL 5.0.51a-3ubuntu5
+5432/tcp open  postgresql  PostgreSQL DB 8.3.0 - 8.3.7
+5900/tcp open  vnc         VNC (protocol 3.3)
+6000/tcp open  X11         (access denied)
+6667/tcp open  irc         UnrealIRCd
+8009/tcp open  ajp13       Apache Jserv (Protocol v1.3)
+8180/tcp open  http        Apache Tomcat/Coyote JSP engine 1.1
+Service Info: Hosts:  metasploitable.localdomain, irc.Metasploitable.LAN; OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 12.54 seconds
+
+
+
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+Nmap can be told to scan the most common ports with the argument --top-ports.
+┌──(kali㉿kali)-[~]
+└─$ nmap --top-ports 100 192.168.176.128/24 
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-17 09:16 EDT
+Nmap scan report for 192.168.176.2
+Host is up (0.00044s latency).
+Not shown: 99 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+53/tcp open  domain
+
+Nmap scan report for 192.168.176.128
+Host is up (0.00059s latency).
+Not shown: 82 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+23/tcp   open  telnet
+25/tcp   open  smtp
+53/tcp   open  domain
+80/tcp   open  http
+111/tcp  open  rpcbind
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+513/tcp  open  login
+514/tcp  open  shell
+2049/tcp open  nfs
+2121/tcp open  ccproxy-ftp
+3306/tcp open  mysql
+5432/tcp open  postgresql
+5900/tcp open  vnc
+6000/tcp open  X11
+8009/tcp open  ajp13
+
+Nmap scan report for 192.168.176.132
+Host is up (0.00041s latency).
+All 100 scanned ports on 192.168.176.132 are in ignored states.
+Not shown: 100 closed tcp ports (conn-refused)
+
+Nmap done: 256 IP addresses (3 hosts up) scanned in 6.98 seconds
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+Nmap has many built-in scripts designed to target a specific service and interact with it. 
+Scripts can do all sorts of things like pull out information from the service or try to 
+exploit it. We can enable the script scanner with the -sC flag. This enables only safe 
+checks, as such no denial of service or exploitation attempts.
+----------------------------------------------------------------------------------------------
+┌──(kali㉿kali)-[~]
+└─$ nmap -sC 192.168.176.128
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-17 09:24 EDT
+Nmap scan report for 192.168.176.128
+Host is up (0.0011s latency).
+Not shown: 977 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+|_ftp-anon: Anonymous FTP login allowed (FTP code 230)
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to 192.168.176.132
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      vsFTPd 2.3.4 - secure, fast, stable
+|_End of status
+22/tcp   open  ssh
+| ssh-hostkey: 
+|   1024 600fcfe1c05f6a74d69024fac4d56ccd (DSA)
+|_  2048 5656240f211ddea72bae61b1243de8f3 (RSA)
+23/tcp   open  telnet
+25/tcp   open  smtp
+| sslv2: 
+|   SSLv2 supported
+|   ciphers: 
+|     SSL2_RC4_128_EXPORT40_WITH_MD5
+|     SSL2_DES_64_CBC_WITH_MD5
+|     SSL2_RC4_128_WITH_MD5
+|     SSL2_DES_192_EDE3_CBC_WITH_MD5
+|     SSL2_RC2_128_CBC_EXPORT40_WITH_MD5
+|_    SSL2_RC2_128_CBC_WITH_MD5
+|_smtp-commands: metasploitable.localdomain, PIPELINING, SIZE 10240000, VRFY, ETRN, STARTTLS, ENHANCEDSTATUSCODES, 8BITMIME, DSN
+|_ssl-date: 2024-08-17T06:04:13+00:00; -7h20m41s from scanner time.
+| ssl-cert: Subject: commonName=ubuntu804-base.localdomain/organizationName=OCOSA/stateOrProvinceName=There is no such thing outside US/countryName=XX
+| Not valid before: 2010-03-17T14:07:45
+|_Not valid after:  2010-04-16T14:07:45
+53/tcp   open  domain
+| dns-nsid: 
+|_  bind.version: 9.4.2
+80/tcp   open  http
+|_http-title: Metasploitable2 - Linux
+111/tcp  open  rpcbind
+| rpcinfo: 
+|   program version    port/proto  service
+|   100000  2            111/tcp   rpcbind
+|   100000  2            111/udp   rpcbind
+|   100003  2,3,4       2049/tcp   nfs
+|   100003  2,3,4       2049/udp   nfs
+|   100005  1,2,3      34033/udp   mountd
+|   100005  1,2,3      40712/tcp   mountd
+|   100021  1,3,4      37638/udp   nlockmgr
+|   100021  1,3,4      58759/tcp   nlockmgr
+|   100024  1          38500/udp   status
+|_  100024  1          46230/tcp   status
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+512/tcp  open  exec
+513/tcp  open  login
+514/tcp  open  shell
+1099/tcp open  rmiregistry
+1524/tcp open  ingreslock
+2049/tcp open  nfs
+2121/tcp open  ccproxy-ftp
+3306/tcp open  mysql
+| mysql-info: 
+|   Protocol: 10
+|   Version: 5.0.51a-3ubuntu5
+|   Thread ID: 15
+|   Capabilities flags: 43564
+|   Some Capabilities: LongColumnFlag, Support41Auth, SwitchToSSLAfterHandshake, ConnectWithDatabase, Speaks41ProtocolNew, SupportsTransactions, SupportsCompression
+|   Status: Autocommit
+|_  Salt: V&Xh&!n.6dvF:0}I2^cX
+5432/tcp open  postgresql
+|_ssl-date: 2024-08-17T06:05:10+00:00; -7h20m41s from scanner time.
+| ssl-cert: Subject: commonName=ubuntu804-base.localdomain/organizationName=OCOSA/stateOrProvinceName=There is no such thing outside US/countryName=XX
+| Not valid before: 2010-03-17T14:07:45
+|_Not valid after:  2010-04-16T14:07:45
+5900/tcp open  vnc
+| vnc-info: 
+|   Protocol version: 3.3
+|   Security types: 
+|_    VNC Authentication (2)
+6000/tcp open  X11
+6667/tcp open  irc
+| irc-info: 
+|   users: 1
+|   servers: 1
+|   lusers: 1
+|   lservers: 0
+|   server: irc.Metasploitable.LAN
+|   version: Unreal3.2.8.1. irc.Metasploitable.LAN 
+|   uptime: 0 days, 3:16:24
+|   source ident: nmap
+|   source host: D5B6DDA7.EEA681EA.FFFA6D49.IP
+|_  error: Closing Link: iueitftoy[192.168.176.132] (Quit: iueitftoy)
+8009/tcp open  ajp13
+|_ajp-methods: Failed to get a valid response for the OPTION request
+8180/tcp open  unknown
+|_http-title: Apache Tomcat/5.5
+|_http-favicon: Apache Tomcat
+
+Host script results:
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+|_clock-skew: mean: -6h20m41s, deviation: 2h00m00s, median: -7h20m41s
+|_nbstat: NetBIOS name: METASPLOITABLE, NetBIOS user: <unknown>, NetBIOS MAC: 000000000000 (Xerox)
+| smb-os-discovery: 
+|   OS: Unix (Samba 3.0.20-Debian)
+|   Computer name: metasploitable
+|   NetBIOS computer name: 
+|   Domain name: localdomain
+|   FQDN: metasploitable.localdomain
+|_  System time: 2024-08-17T02:03:57-04:00
+|_smb2-time: Protocol negotiation failed (SMB2)
+
+Nmap done: 1 IP address (1 host up) scanned in 73.73 seconds
+                                                                
+
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+Operating System detection can be done with the scanner, allowing it to try determine which 
+operating system is running. It uses many different parameters to try measure and estimate
+ the likelihood of what operating system it is. This can be enabled with the -O argument.
+----------------------------------------------------------------------------------------------
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -O 192.168.176.128   
+[sudo] password for kali: 
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-17 09:34 EDT
+Nmap scan report for 192.168.176.128
+Host is up (0.0011s latency).
+Not shown: 977 closed tcp ports (reset)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+23/tcp   open  telnet
+25/tcp   open  smtp
+53/tcp   open  domain
+80/tcp   open  http
+111/tcp  open  rpcbind
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+512/tcp  open  exec
+513/tcp  open  login
+514/tcp  open  shell
+1099/tcp open  rmiregistry
+1524/tcp open  ingreslock
+2049/tcp open  nfs
+2121/tcp open  ccproxy-ftp
+3306/tcp open  mysql
+5432/tcp open  postgresql
+5900/tcp open  vnc
+6000/tcp open  X11
+6667/tcp open  irc
+8009/tcp open  ajp13
+8180/tcp open  unknown
+MAC Address: 00:0C:29:FA:DD:2A (VMware)
+Device type: general purpose
+Running: Linux 2.6.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6
+OS details: Linux 2.6.9 - 2.6.33
+Network Distance: 1 hop
+
+OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 2.43 seconds
+===========================================================================================
+===========================================================================================
+===========================================================================================                                                                                                                                                                               
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -O 192.168.176.128/24
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-17 09:34 EDT
+Nmap scan report for 192.168.176.1
+Host is up (0.00021s latency).
+All 1000 scanned ports on 192.168.176.1 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+MAC Address: 00:50:56:C0:00:08 (VMware)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+Nmap scan report for 192.168.176.2
+Host is up (0.0026s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE SERVICE
+53/tcp open  domain
+MAC Address: 00:50:56:F7:AE:18 (VMware)
+Aggressive OS guesses: VMware Player virtual NAT device (98%), Microsoft Windows XP SP3 or Windows 7 or Windows Server 2012 (93%), Microsoft Windows XP SP3 (93%), DD-WRT v24-sp2 (Linux 2.4.37) (91%), Linux 3.2 (91%), DVTel DVT-9540DW network camera (91%), Actiontec MI424WR-GEN3I WAP (90%), BlueArc Titan 2100 NAS device (89%), Linux 4.4 (89%), Brother HL-5170DN printer (88%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 1 hop
+
+Nmap scan report for 192.168.176.128
+Host is up (0.00089s latency).
+Not shown: 977 closed tcp ports (reset)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+23/tcp   open  telnet
+25/tcp   open  smtp
+53/tcp   open  domain
+80/tcp   open  http
+111/tcp  open  rpcbind
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+512/tcp  open  exec
+513/tcp  open  login
+514/tcp  open  shell
+1099/tcp open  rmiregistry
+1524/tcp open  ingreslock
+2049/tcp open  nfs
+2121/tcp open  ccproxy-ftp
+3306/tcp open  mysql
+5432/tcp open  postgresql
+5900/tcp open  vnc
+6000/tcp open  X11
+6667/tcp open  irc
+8009/tcp open  ajp13
+8180/tcp open  unknown
+MAC Address: 00:0C:29:FA:DD:2A (VMware)
+Device type: general purpose
+Running: Linux 2.6.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6
+OS details: Linux 2.6.9 - 2.6.33
+Network Distance: 1 hop
+
+Nmap scan report for 192.168.176.254
+Host is up (0.00043s latency).
+All 1000 scanned ports on 192.168.176.254 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+MAC Address: 00:50:56:FF:04:A4 (VMware)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+Nmap scan report for 192.168.176.132
+Host is up (0.000077s latency).
+All 1000 scanned ports on 192.168.176.132 are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 0 hops
+
+OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 256 IP addresses (5 hosts up) scanned in 14.71 seconds
+
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -A 192.168.176.128/24
+[sudo] password for kali: 
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-17 13:00 EDT
+Stats: 0:00:04 elapsed; 251 hosts completed (4 up), 4 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 52.97% done; ETC: 13:01 (0:00:02 remaining)
+Stats: 0:00:08 elapsed; 251 hosts completed (4 up), 4 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 91.14% done; ETC: 13:01 (0:00:00 remaining)
+Stats: 0:00:15 elapsed; 251 hosts completed (4 up), 4 undergoing Service Scan
+Service scan Timing: About 45.83% done; ETC: 13:01 (0:00:07 remaining)
+Nmap scan report for 192.168.176.1
+Host is up (0.010s latency).
+All 1000 scanned ports on 192.168.176.1 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+MAC Address: 00:50:56:C0:00:08 (VMware)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   10.02 ms 192.168.176.1
+
+Nmap scan report for 192.168.176.2
+Host is up (0.0021s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+53/tcp open  domain  dnsmasq 2.51
+| dns-nsid: 
+|_  bind.version: dnsmasq-2.51
+MAC Address: 00:50:56:F7:AE:18 (VMware)
+Aggressive OS guesses: VMware Player virtual NAT device (98%), Microsoft Windows XP SP3 or Windows 7 or Windows Server 2012 (93%), Microsoft Windows XP SP3 (93%), DD-WRT v24-sp2 (Linux 2.4.37) (91%), Linux 3.2 (91%), DVTel DVT-9540DW network camera (91%), Actiontec MI424WR-GEN3I WAP (90%), Linux 4.4 (90%), BlueArc Titan 2100 NAS device (89%), Brother HL-5170DN printer (88%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   2.15 ms 192.168.176.2
+
+Nmap scan report for 192.168.176.128
+Host is up (0.00074s latency).
+Not shown: 977 closed tcp ports (reset)
+PORT     STATE SERVICE     VERSION
+21/tcp   open  ftp         vsftpd 2.3.4
+|_ftp-anon: Anonymous FTP login allowed (FTP code 230)
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to 192.168.176.132
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      vsFTPd 2.3.4 - secure, fast, stable
+|_End of status
+22/tcp   open  ssh         OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+| ssh-hostkey: 
+|   1024 600fcfe1c05f6a74d69024fac4d56ccd (DSA)
+|_  2048 5656240f211ddea72bae61b1243de8f3 (RSA)
+23/tcp   open  telnet      Linux telnetd
+25/tcp   open  smtp        Postfix smtpd
+| ssl-cert: Subject: commonName=ubuntu804-base.localdomain/organizationName=OCOSA/stateOrProvinceName=There is no such thing outside US/countryName=XX
+| Not valid before: 2010-03-17T14:07:45
+|_Not valid after:  2010-04-16T14:07:45
+|_ssl-date: 2024-08-17T09:35:07+00:00; -7h26m22s from scanner time.
+| sslv2: 
+|   SSLv2 supported
+|   ciphers: 
+|     SSL2_RC4_128_WITH_MD5
+|     SSL2_DES_64_CBC_WITH_MD5
+|     SSL2_RC2_128_CBC_EXPORT40_WITH_MD5
+|     SSL2_RC2_128_CBC_WITH_MD5
+|     SSL2_DES_192_EDE3_CBC_WITH_MD5
+|_    SSL2_RC4_128_EXPORT40_WITH_MD5
+|_smtp-commands: metasploitable.localdomain, PIPELINING, SIZE 10240000, VRFY, ETRN, STARTTLS, ENHANCEDSTATUSCODES, 8BITMIME, DSN
+53/tcp   open  domain      ISC BIND 9.4.2
+| dns-nsid: 
+|_  bind.version: 9.4.2
+80/tcp   open  http        Apache httpd 2.2.8 ((Ubuntu) DAV/2)
+|_http-server-header: Apache/2.2.8 (Ubuntu) DAV/2
+|_http-title: Metasploitable2 - Linux
+111/tcp  open  rpcbind     2 (RPC #100000)
+| rpcinfo: 
+|   program version    port/proto  service
+|   100000  2            111/tcp   rpcbind
+|   100000  2            111/udp   rpcbind
+|   100003  2,3,4       2049/tcp   nfs
+|   100003  2,3,4       2049/udp   nfs
+|   100005  1,2,3      34033/udp   mountd
+|   100005  1,2,3      40712/tcp   mountd
+|   100021  1,3,4      37638/udp   nlockmgr
+|   100021  1,3,4      58759/tcp   nlockmgr
+|   100024  1          38500/udp   status
+|_  100024  1          46230/tcp   status
+139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp  open  netbios-ssn Samba smbd 3.0.20-Debian (workgroup: WORKGROUP)
+512/tcp  open  exec        netkit-rsh rexecd
+513/tcp  open  login?
+514/tcp  open  tcpwrapped
+1099/tcp open  java-rmi    GNU Classpath grmiregistry
+1524/tcp open  bindshell   Metasploitable root shell
+2049/tcp open  nfs         2-4 (RPC #100003)
+2121/tcp open  ftp         ProFTPD 1.3.1
+3306/tcp open  mysql       MySQL 5.0.51a-3ubuntu5
+| mysql-info: 
+|   Protocol: 10
+|   Version: 5.0.51a-3ubuntu5
+|   Thread ID: 26
+|   Capabilities flags: 43564
+|   Some Capabilities: SupportsCompression, ConnectWithDatabase, LongColumnFlag, SupportsTransactions, Support41Auth, SwitchToSSLAfterHandshake, Speaks41ProtocolNew
+|   Status: Autocommit
+|_  Salt: U9^MFWacO@2z1%`:?m'w
+5432/tcp open  postgresql  PostgreSQL DB 8.3.0 - 8.3.7
+|_ssl-date: 2024-08-17T09:35:07+00:00; -7h26m22s from scanner time.
+| ssl-cert: Subject: commonName=ubuntu804-base.localdomain/organizationName=OCOSA/stateOrProvinceName=There is no such thing outside US/countryName=XX
+| Not valid before: 2010-03-17T14:07:45
+|_Not valid after:  2010-04-16T14:07:45
+5900/tcp open  vnc         VNC (protocol 3.3)
+| vnc-info: 
+|   Protocol version: 3.3
+|   Security types: 
+|_    VNC Authentication (2)
+6000/tcp open  X11         (access denied)
+6667/tcp open  irc         UnrealIRCd
+8009/tcp open  ajp13       Apache Jserv (Protocol v1.3)
+|_ajp-methods: Failed to get a valid response for the OPTION request
+8180/tcp open  http        Apache Tomcat/Coyote JSP engine 1.1
+|_http-server-header: Apache-Coyote/1.1
+|_http-title: Apache Tomcat/5.5
+|_http-favicon: Apache Tomcat
+MAC Address: 00:0C:29:FA:DD:2A (VMware)
+Device type: general purpose
+Running: Linux 2.6.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6
+OS details: Linux 2.6.9 - 2.6.33
+Network Distance: 1 hop
+Service Info: Hosts:  metasploitable.localdomain, irc.Metasploitable.LAN; OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Host script results:
+| smb-os-discovery: 
+|   OS: Unix (Samba 3.0.20-Debian)
+|   Computer name: metasploitable
+|   NetBIOS computer name: 
+|   Domain name: localdomain
+|   FQDN: metasploitable.localdomain
+|_  System time: 2024-08-17T05:34:57-04:00
+|_clock-skew: mean: -6h26m22s, deviation: 2h00m00s, median: -7h26m22s
+| smb-security-mode: 
+|   account_used: <blank>
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+|_smb2-time: Protocol negotiation failed (SMB2)
+|_nbstat: NetBIOS name: METASPLOITABLE, NetBIOS user: <unknown>, NetBIOS MAC: 000000000000 (Xerox)
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   0.74 ms 192.168.176.128
+
+Nmap scan report for 192.168.176.254
+Host is up (0.00032s latency).
+All 1000 scanned ports on 192.168.176.254 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+MAC Address: 00:50:56:FF:04:A4 (VMware)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   0.32 ms 192.168.176.254
+
+Nmap scan report for 192.168.176.132
+Host is up (0.000087s latency).
+All 1000 scanned ports on 192.168.176.132 are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 0 hops
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 256 IP addresses (5 hosts up) scanned in 37.30 seconds
+
+
+
+==============================================================================================
+==============================================================================================
+==============================================================================================
+s
+                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -A 192.168.176.128   
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-17 13:05 EDT
+Stats: 0:00:17 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.39% done; ETC: 13:06 (0:00:00 remaining)
+Stats: 0:00:18 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.73% done; ETC: 13:06 (0:00:00 remaining)
+Stats: 0:00:18 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 99.02% done; ETC: 13:06 (0:00:00 remaining)
+Stats: 0:00:21 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 99.97% done; ETC: 13:06 (0:00:00 remaining)
+Nmap scan report for 192.168.176.128
+Host is up (0.00094s latency).
+Not shown: 977 closed tcp ports (reset)
+PORT     STATE SERVICE     VERSION
+21/tcp   open  ftp         vsftpd 2.3.4
+|_ftp-anon: Anonymous FTP login allowed (FTP code 230)
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to 192.168.176.132
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      vsFTPd 2.3.4 - secure, fast, stable
+|_End of status
+22/tcp   open  ssh         OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+| ssh-hostkey: 
+|   1024 600fcfe1c05f6a74d69024fac4d56ccd (DSA)
+|_  2048 5656240f211ddea72bae61b1243de8f3 (RSA)
+23/tcp   open  telnet      Linux telnetd
+25/tcp   open  smtp        Postfix smtpd
+|_ssl-date: 2024-08-17T09:39:44+00:00; -7h26m22s from scanner time.
+| ssl-cert: Subject: commonName=ubuntu804-base.localdomain/organizationName=OCOSA/stateOrProvinceName=There is no such thing outside US/countryName=XX
+| Not valid before: 2010-03-17T14:07:45
+|_Not valid after:  2010-04-16T14:07:45
+| sslv2: 
+|   SSLv2 supported
+|   ciphers: 
+|     SSL2_RC4_128_EXPORT40_WITH_MD5
+|     SSL2_RC4_128_WITH_MD5
+|     SSL2_RC2_128_CBC_WITH_MD5
+|     SSL2_RC2_128_CBC_EXPORT40_WITH_MD5
+|     SSL2_DES_64_CBC_WITH_MD5
+|_    SSL2_DES_192_EDE3_CBC_WITH_MD5
+|_smtp-commands: metasploitable.localdomain, PIPELINING, SIZE 10240000, VRFY, ETRN, STARTTLS, ENHANCEDSTATUSCODES, 8BITMIME, DSN
+53/tcp   open  domain      ISC BIND 9.4.2
+| dns-nsid: 
+|_  bind.version: 9.4.2
+80/tcp   open  http        Apache httpd 2.2.8 ((Ubuntu) DAV/2)
+|_http-title: Metasploitable2 - Linux
+|_http-server-header: Apache/2.2.8 (Ubuntu) DAV/2
+111/tcp  open  rpcbind     2 (RPC #100000)
+| rpcinfo: 
+|   program version    port/proto  service
+|   100000  2            111/tcp   rpcbind
+|   100000  2            111/udp   rpcbind
+|   100003  2,3,4       2049/tcp   nfs
+|   100003  2,3,4       2049/udp   nfs
+|   100005  1,2,3      34033/udp   mountd
+|   100005  1,2,3      40712/tcp   mountd
+|   100021  1,3,4      37638/udp   nlockmgr
+|   100021  1,3,4      58759/tcp   nlockmgr
+|   100024  1          38500/udp   status
+|_  100024  1          46230/tcp   status
+139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp  open  netbios-ssn Samba smbd 3.0.20-Debian (workgroup: WORKGROUP)
+512/tcp  open  exec        netkit-rsh rexecd
+513/tcp  open  login       OpenBSD or Solaris rlogind
+514/tcp  open  tcpwrapped
+1099/tcp open  java-rmi    GNU Classpath grmiregistry
+1524/tcp open  bindshell   Metasploitable root shell
+2049/tcp open  nfs         2-4 (RPC #100003)
+2121/tcp open  ftp         ProFTPD 1.3.1
+3306/tcp open  mysql       MySQL 5.0.51a-3ubuntu5
+| mysql-info: 
+|   Protocol: 10
+|   Version: 5.0.51a-3ubuntu5
+|   Thread ID: 35
+|   Capabilities flags: 43564
+|   Some Capabilities: ConnectWithDatabase, SupportsTransactions, Support41Auth, LongColumnFlag, SwitchToSSLAfterHandshake, Speaks41ProtocolNew, SupportsCompression
+|   Status: Autocommit
+|_  Salt: |=X#AaDn}MFXg~bPKhHm
+5432/tcp open  postgresql  PostgreSQL DB 8.3.0 - 8.3.7
+| ssl-cert: Subject: commonName=ubuntu804-base.localdomain/organizationName=OCOSA/stateOrProvinceName=There is no such thing outside US/countryName=XX
+| Not valid before: 2010-03-17T14:07:45
+|_Not valid after:  2010-04-16T14:07:45
+|_ssl-date: 2024-08-17T09:39:44+00:00; -7h26m22s from scanner time.
+5900/tcp open  vnc         VNC (protocol 3.3)
+| vnc-info: 
+|   Protocol version: 3.3
+|   Security types: 
+|_    VNC Authentication (2)
+6000/tcp open  X11         (access denied)
+6667/tcp open  irc         UnrealIRCd
+| irc-info: 
+|   users: 1
+|   servers: 1
+|   lusers: 1
+|   lservers: 0
+|   server: irc.Metasploitable.LAN
+|   version: Unreal3.2.8.1. irc.Metasploitable.LAN 
+|   uptime: 0 days, 6:52:01
+|   source ident: nmap
+|   source host: D5B6DDA7.EEA681EA.FFFA6D49.IP
+|_  error: Closing Link: sxkzbzsti[192.168.176.132] (Quit: sxkzbzsti)
+8009/tcp open  ajp13       Apache Jserv (Protocol v1.3)
+|_ajp-methods: Failed to get a valid response for the OPTION request
+8180/tcp open  http        Apache Tomcat/Coyote JSP engine 1.1
+|_http-title: Apache Tomcat/5.5
+|_http-favicon: Apache Tomcat
+|_http-server-header: Apache-Coyote/1.1
+MAC Address: 00:0C:29:FA:DD:2A (VMware)
+Device type: general purpose
+Running: Linux 2.6.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6
+OS details: Linux 2.6.9 - 2.6.33
+Network Distance: 1 hop
+Service Info: Hosts:  metasploitable.localdomain, irc.Metasploitable.LAN; OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Host script results:
+| smb-os-discovery: 
+|   OS: Unix (Samba 3.0.20-Debian)
+|   Computer name: metasploitable
+|   NetBIOS computer name: 
+|   Domain name: localdomain
+|   FQDN: metasploitable.localdomain
+|_  System time: 2024-08-17T05:39:35-04:00
+|_clock-skew: mean: -6h26m21s, deviation: 2h00m00s, median: -7h26m22s
+| smb-security-mode: 
+|   account_used: <blank>
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+|_nbstat: NetBIOS name: METASPLOITABLE, NetBIOS user: <unknown>, NetBIOS MAC: 000000000000 (Xerox)
+|_smb2-time: Protocol negotiation failed (SMB2)
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   0.94 ms 192.168.176.128
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 23.64 seconds
+
+-----------------------------------------------------------------------------------------------------
+
+
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -sL 192.168.176.128
+[sudo] password for kali: 
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-17 13:51 EDT
+Nmap scan report for 192.168.176.128
+Nmap done: 1 IP address (0 hosts up) scanned in 0.32 seconds
+                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ nmap --top-ports 100 192.168.176.128
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-17 13:52 EDT
+Nmap scan report for 192.168.176.128
+Host is up (0.00032s latency).
+Not shown: 82 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+23/tcp   open  telnet
+25/tcp   open  smtp
+53/tcp   open  domain
+80/tcp   open  http
+111/tcp  open  rpcbind
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+513/tcp  open  login
+514/tcp  open  shell
+2049/tcp open  nfs
+2121/tcp open  ccproxy-ftp
+3306/tcp open  mysql
+5432/tcp open  postgresql
+5900/tcp open  vnc
+6000/tcp open  X11
+8009/tcp open  ajp13
+
+Nmap done: 1 IP address (1 host up) scanned in 0.08 seconds
+                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -sn 192.168.176.128      
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-17 13:52 EDT
+Nmap scan report for 192.168.176.128
+Host is up (0.00032s latency).
+MAC Address: 00:0C:29:FA:DD:2A (VMware)
+Nmap done: 1 IP address (1 host up) scanned in 0.48 seconds
+                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -sP 192.168.176.128
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-17 13:52 EDT
+Nmap scan report for 192.168.176.128
+Host is up (0.00040s latency).
+MAC Address: 00:0C:29:FA:DD:2A (VMware)
+Nmap done: 1 IP address (1 host up) scanned in 0.52 seconds
+                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -Pn 192.168.176.128
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-17 13:53 EDT
+Nmap scan report for 192.168.176.128
+Host is up (0.0080s latency).
+Not shown: 977 closed tcp ports (reset)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+23/tcp   open  telnet
+25/tcp   open  smtp
+53/tcp   open  domain
+80/tcp   open  http
+111/tcp  open  rpcbind
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+512/tcp  open  exec
+513/tcp  open  login
+514/tcp  open  shell
+1099/tcp open  rmiregistry
+1524/tcp open  ingreslock
+2049/tcp open  nfs
+2121/tcp open  ccproxy-ftp
+3306/tcp open  mysql
+5432/tcp open  postgresql
+5900/tcp open  vnc
+6000/tcp open  X11
+6667/tcp open  irc
+8009/tcp open  ajp13
+8180/tcp open  unknown
+MAC Address: 00:0C:29:FA:DD:2A (VMware)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.95 seconds
+                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -PS 192.168.176.128
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-17 13:55 EDT
+Nmap scan report for 192.168.176.128
+Host is up (0.0011s latency).
+Not shown: 977 closed tcp ports (reset)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+23/tcp   open  telnet
+25/tcp   open  smtp
+53/tcp   open  domain
+80/tcp   open  http
+111/tcp  open  rpcbind
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+512/tcp  open  exec
+513/tcp  open  login
+514/tcp  open  shell
+1099/tcp open  rmiregistry
+1524/tcp open  ingreslock
+2049/tcp open  nfs
+2121/tcp open  ccproxy-ftp
+3306/tcp open  mysql
+5432/tcp open  postgresql
+5900/tcp open  vnc
+6000/tcp open  X11
+6667/tcp open  irc
+8009/tcp open  ajp13
+8180/tcp open  unknown
+MAC Address: 00:0C:29:FA:DD:2A (VMware)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.98 seconds
+                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -PS 22, 25, 443 192.168.176.128
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-17 13:56 EDT
+Failed to resolve "22,".
+Failed to resolve "25,".
+Nmap scan report for 192.168.176.128
+Host is up (0.0064s latency).
+Not shown: 977 closed tcp ports (reset)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+23/tcp   open  telnet
+25/tcp   open  smtp
+53/tcp   open  domain
+80/tcp   open  http
+111/tcp  open  rpcbind
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+512/tcp  open  exec
+513/tcp  open  login
+514/tcp  open  shell
+1099/tcp open  rmiregistry
+1524/tcp open  ingreslock
+2049/tcp open  nfs
+2121/tcp open  ccproxy-ftp
+3306/tcp open  mysql
+5432/tcp open  postgresql
+5900/tcp open  vnc
+6000/tcp open  X11
+6667/tcp open  irc
+8009/tcp open  ajp13
+8180/tcp open  unknown
+MAC Address: 00:0C:29:FA:DD:2A (VMware)
+
+Nmap done: 2 IP addresses (1 host up) scanned in 3.27 seconds
+                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -PA 192.168.176.128 
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-17 13:57 EDT
+Nmap scan report for 192.168.176.128
+Host is up (0.0089s latency).
+Not shown: 977 closed tcp ports (reset)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+23/tcp   open  telnet
+25/tcp   open  smtp
+53/tcp   open  domain
+80/tcp   open  http
+111/tcp  open  rpcbind
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+512/tcp  open  exec
+513/tcp  open  login
+514/tcp  open  shell
+1099/tcp open  rmiregistry
+1524/tcp open  ingreslock
+2049/tcp open  nfs
+2121/tcp open  ccproxy-ftp
+3306/tcp open  mysql
+5432/tcp open  postgresql
+5900/tcp open  vnc
+6000/tcp open  X11
+6667/tcp open  irc
+8009/tcp open  ajp13
+8180/tcp open  unknown
+MAC Address: 00:0C:29:FA:DD:2A (VMware)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.97 seconds
+                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -PA 22, 25, 443 192.168.176.128
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-17 13:58 EDT
+Failed to resolve "22,".
+Failed to resolve "25,".
+Nmap scan report for 192.168.176.128
+Host is up (0.0037s latency).
+Not shown: 977 closed tcp ports (reset)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+23/tcp   open  telnet
+25/tcp   open  smtp
+53/tcp   open  domain
+80/tcp   open  http
+111/tcp  open  rpcbind
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+512/tcp  open  exec
+513/tcp  open  login
+514/tcp  open  shell
+1099/tcp open  rmiregistry
+1524/tcp open  ingreslock
+2049/tcp open  nfs
+2121/tcp open  ccproxy-ftp
+3306/tcp open  mysql
+5432/tcp open  postgresql
+5900/tcp open  vnc
+6000/tcp open  X11
+6667/tcp open  irc
+8009/tcp open  ajp13
+8180/tcp open  unknown
+MAC Address: 00:0C:29:FA:DD:2A (VMware)
+
+Nmap done: 2 IP addresses (1 host up) scanned in 3.11 seconds
+                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -PY 192.168.176.128
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-17 13:58 EDT
+Nmap scan report for 192.168.176.128
+Host is up (0.0053s latency).
+Not shown: 977 closed tcp ports (reset)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+23/tcp   open  telnet
+25/tcp   open  smtp
+53/tcp   open  domain
+80/tcp   open  http
+111/tcp  open  rpcbind
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+512/tcp  open  exec
+513/tcp  open  login
+514/tcp  open  shell
+1099/tcp open  rmiregistry
+1524/tcp open  ingreslock
+2049/tcp open  nfs
+2121/tcp open  ccproxy-ftp
+3306/tcp open  mysql
+5432/tcp open  postgresql
+5900/tcp open  vnc
+6000/tcp open  X11
+6667/tcp open  irc
+8009/tcp open  ajp13
+8180/tcp open  unknown
+MAC Address: 00:0C:29:FA:DD:2A (VMware)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.75 seconds
+                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -PE; -PP; -PM  192.168.176.128
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-17 13:59 EDT
+WARNING: No targets were specified, so 0 hosts scanned.
+Nmap done: 0 IP addresses (0 hosts up) scanned in 0.05 seconds
+-PP: command not found
+-PM: command not found
+                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -PE  192.168.176.128     
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-17 14:01 EDT
+Nmap scan report for 192.168.176.128
+Host is up (0.0044s latency).
+Not shown: 977 closed tcp ports (reset)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+23/tcp   open  telnet
+25/tcp   open  smtp
+53/tcp   open  domain
+80/tcp   open  http
+111/tcp  open  rpcbind
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+512/tcp  open  exec
+513/tcp  open  login
+514/tcp  open  shell
+1099/tcp open  rmiregistry
+1524/tcp open  ingreslock
+2049/tcp open  nfs
+2121/tcp open  ccproxy-ftp
+3306/tcp open  mysql
+5432/tcp open  postgresql
+5900/tcp open  vnc
+6000/tcp open  X11
+6667/tcp open  irc
+8009/tcp open  ajp13
+8180/tcp open  unknown
+MAC Address: 00:0C:29:FA:DD:2A (VMware)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.84 seconds
+                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -sT  192.168.176.128
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-17 14:01 EDT
+Nmap scan report for 192.168.176.128
+Host is up (0.0077s latency).
+Not shown: 977 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+23/tcp   open  telnet
+25/tcp   open  smtp
+53/tcp   open  domain
+80/tcp   open  http
+111/tcp  open  rpcbind
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+512/tcp  open  exec
+513/tcp  open  login
+514/tcp  open  shell
+1099/tcp open  rmiregistry
+1524/tcp open  ingreslock
+2049/tcp open  nfs
+2121/tcp open  ccproxy-ftp
+3306/tcp open  mysql
+5432/tcp open  postgresql
+5900/tcp open  vnc
+6000/tcp open  X11
+6667/tcp open  irc
+8009/tcp open  ajp13
+8180/tcp open  unknown
+MAC Address: 00:0C:29:FA:DD:2A (VMware)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.68 seconds
+                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -sT  8.8.8.8        
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-17 14:02 EDT
+Stats: 0:01:00 elapsed; 0 hosts completed (1 up), 1 undergoing Connect Scan
+Connect Scan Timing: About 89.90% done; ETC: 14:03 (0:00:07 remaining)
+Stats: 0:01:00 elapsed; 0 hosts completed (1 up), 1 undergoing Connect Scan
+Connect Scan Timing: About 89.95% done; ETC: 14:03 (0:00:07 remaining)
+Stats: 0:01:02 elapsed; 0 hosts completed (1 up), 1 undergoing Connect Scan
+Connect Scan Timing: About 90.20% done; ETC: 14:03 (0:00:07 remaining)
+Stats: 0:01:03 elapsed; 0 hosts completed (1 up), 1 undergoing Connect Scan
+Connect Scan Timing: About 90.35% done; ETC: 14:03 (0:00:07 remaining)
+Nmap scan report for dns.google (8.8.8.8)
+Host is up (0.088s latency).
+Not shown: 999 filtered tcp ports (no-response)
+PORT   STATE SERVICE
+53/tcp open  domain
+
+Nmap done: 1 IP address (1 host up) scanned in 91.54 seconds
+                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -sI  8.8.8.8
+WARNING: Many people use -Pn w/Idlescan to prevent pings from their true IP.  On the other hand, timing info Nmap gains from pings can allow for faster, more reliable scans.
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-17 14:03 EDT
+WARNING: No targets were specified, so 0 hosts scanned.
+Nmap done: 0 IP addresses (0 hosts up) scanned in 2.06 seconds
+
+==============================================================================================
+==============================================================================================
+
+
+
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+
+
+
+
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+
+
+
+
+
+
+
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+
+
+
+
+
+
+
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+==============================================================================================
+
+
+
+Reference - https://www.w3schools.com/cybersecurity/cybersecurity_mapping_port_scanning.php
+https://nmap.org/book/man-target-specification.html
