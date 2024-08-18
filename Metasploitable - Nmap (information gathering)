@@ -45,6 +45,7 @@ Metasploit Documentation: https://docs.metasploit.com/
 msf6 > 
 =======================================================
 (  -sV [service version]  [target machine ip] )
+msf6 > nmap -Pn 192.168.44.142         (use it)
 msf6 > nmap -sV 192.168.44.142
 [*] exec: nmap -sV 192.168.44.142
 
