@@ -39,6 +39,9 @@ escalating privileges, or extracting passwords.
 ======================================================================
 ======================================================================
 ┌──(kali㉿kali)-[~]
+└─$ service postgresql start
+
+┌──(kali㉿kali)-[~]
 └─$ 
 service postgresql status
 
