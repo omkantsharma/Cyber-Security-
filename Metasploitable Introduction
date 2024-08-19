@@ -38,6 +38,13 @@ escalating privileges, or extracting passwords.
 ======================================================================
 ======================================================================
 ======================================================================
+ Introduction, Benefits, Use Cases & More
+It can handle advanced data types, complex queries, foreign keys, 
+triggers, and views, as well as procedural languages for stored 
+procedures. PostgreSQL is highly expandable, allowing users to 
+add new functions, data types, and other features.
+https://www.percona.com/blog/what-is-postgresql-used-for/#:~:text=It%20can%20handle%20advanced%20data,data%20types%2C%20and%20other%20features.
+-----------------------------------------------------------------------
 ┌──(kali㉿kali)-[~]
 └─$ service postgresql start
 
