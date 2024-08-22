@@ -352,12 +352,10 @@ Snort has several options to get more help:
 
 --help* and --list* options preempt other processing so should be last on the
 command line since any following options are ignored.  To ensure options like
---markup and --plugin-path take effect, place them ahead of the help or list
-options.
+--markup and --plugin-path take effect, place them ahead of the help or list options.
 
 Options that filter output based on a matching prefix, such as --help-config
-won't output anything if there is no match.  If no prefix is given, everything
-matches.
+won't output anything if there is no match.  If no prefix is given, everything matches.
 
 Report bugs to bugs@snort.org.
 
@@ -380,8 +378,17 @@ zsh: suspended  sudo vim /root/.vimrc
 
 -==========================================================================
 ===========================================================================
+Intrusion Detection With Snort
+----------------------------------------------------
+┌──(kali㉿kali)-[~]
+└─$ sudo vim /etc/snort/rules/local.rules
+[sudo] password for kali: 
+
+zsh: suspended  sudo vim /etc/snort/rules/local.rules
+
 ===========================================================================
 -==========================================================================
+
 ===========================================================================
 ===========================================================================
 -==========================================================================
