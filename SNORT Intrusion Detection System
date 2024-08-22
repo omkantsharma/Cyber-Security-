@@ -1,0 +1,396 @@
+SNORT Intrusion Detection System
+
+
+https://www.fortinet.com/resources/cyberglossary/snort#:~:text=Open%20Source,monitor%20and%20protect%20their%20network.
+----------------------------------
+===========================================================================
+===========================================================================
+-==========================================================================
+Snort - is an open source, highly configurable and portable host based / Network based IDS. 
+- IT can perform real time packet capture, content searching and protocol analysis. 
+- created in 1998 by Martin Roesch founder of source file.
+- Now snot developed by Cisco which purchased Source file in 2013
+Characteristics of snort-
+- easily deployed on most nodes (host, Server, router) of a network. 
+- efficient operation that uses small amount of memory and processor time.
+- easily configured by system administrations who need to implement a specific security solution in a snort amount of time.
+
+  
+
+===========================================================================
+===========================================================================
+-==========================================================================
+Snort Architecture - 
+
+                                            Logs
+
+                                             /
+                                            /
+                                           /
+                                          /
+Packet ---------Decoder -------- Detection
+                                   engine 
+                                           \
+                                            \       
+                                             \
+                                              \
+                                              Alert 
+Packet decoder - Processes each captured packet to identity and isolate protocol header.
+
+Detection Engine - Analyzes each packet based on set of rules defined by security admin.
+
+Logger - each packet that matches rule store in human readable format.
+
+Alert - for each detected packet, an alert can be sent. 
+
+===========================================================================
+===========================================================================
+-==========================================================================
+Snort Configuration Modes - 
+3 nodes ------
+Sniffer -: The program will read network packets and display them on the console.  
+Packet Logger-: The program will log packets to the disk. 
+NIDS - the program will monitor network traffic and analyze it against a rule set defined by the user. 
+
+===========================================================================
+===========================================================================
+==========================================================================
+Installation and Configuration - 
+installation steps on windows ------
+- open official website - www.snort.org
+- download setup from link below- 
+https://www.snort.org/downloads
+- Snort_2_9_20_Installer.x64.exe
+- install snort 
+- create account on snort.org 
+- click on rules and downloads snortrules-snapshot-29160.tar.gz
+===========================================================================
+===========================================================================
+-==========================================================================
+===========================================================================
+===========================================================================
+-==========================================================================
+===========================================================================
+===========================================================================
+-==========================================================================
+┌──(kali㉿kali)-[~]
+└─$ sudo apt-get update
+
+===========================================================================
+===========================================================================
+┌──(kali㉿kali)-[~]
+└─$ sudo apt-get upgrade
+(enter y)
+-==========================================================================
+===========================================================================
+┌──(kali㉿kali)-[~]
+└─$ sudo apt-get install snort -y
+(configure snot - ok and yes)
+===========================================================================
+-==========================================================================
+┌──(kali㉿kali)-[~]
+└─$ ip a s
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 00:0c:29:bf:5f:48 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.176.132/24 brd 192.168.176.255 scope global dynamic noprefixroute eth0
+       valid_lft 1580sec preferred_lft 1580sec
+    inet6 fe80::79dc:9caa:9a7b:1846/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+
+===========================================================================
+===========================================================================
+┌──(kali㉿kali)-[~]
+└─$  snort --version
+
+   ,,_     -*> Snort++ <*-
+  o"  )~   Version 3.1.82.0
+   ''''    By Martin Roesch & The Snort Team
+           http://snort.org/contact#team
+           Copyright (C) 2014-2024 Cisco and/or its affiliates. All rights reserved.
+           Copyright (C) 1998-2013 Sourcefire, Inc., et al.
+           Using DAQ version 3.0.12
+           Using LuaJIT version 2.1.1700206165
+           Using OpenSSL 3.2.2 4 Jun 2024
+           Using libpcap version 1.10.4 (with TPACKET_V3)
+           Using PCRE version 8.39 2016-06-14
+           Using ZLIB version 1.2.11
+           Using LZMA version 5.2.7
+
+-==========================================================================
+===========================================================================
+                                                 
+┌──(kali㉿kali)-[~]
+└─$ sudo ip link set eth0 promisc on
+                                                 
+┌──(kali㉿kali)-[~]
+└─$ 
+
+===========================================================================
+-==========================================================================
+┌──(kali㉿kali)-[~]
+└─$ snort
+usage:
+    snort -?: list options
+    snort -V: output version
+    snort --help: help summary
+    snort [-options] -c conf [-T]: validate conf
+    snort [-options] -c conf -i iface: process live
+    snort [-options] -c conf -r pcap: process readback
+                                            
+===========================================================================
+===========================================================================
+┌──(kali㉿kali)-[~]
+└─$ ls -al /etc/snort
+total 252
+drwxr-xr-x   3 root root  4096 Aug 22 12:22 .
+drwxr-xr-x 178 root root 12288 Aug 22 12:22 ..
+-rw-r--r--   1 root root   590 Mar 13 10:17 balanced.lua
+-rw-r--r--   1 root root 82469 Mar 18 10:16 community-sid-msg.map
+-rw-r--r--   1 root root   616 Mar 13 10:17 connectivity.lua
+-rw-r--r--   1 root root 43355 Mar 13 10:17 file_magic.rules
+-rw-r--r--   1 root root   410 Mar 13 10:17 inline.lua
+-rw-r--r--   1 root root  1123 Mar 13 10:17 max_detect.lua
+drwxr-xr-x   2 root root  4096 Aug 22 12:22 rules
+-rw-r--r--   1 root root   814 Mar 13 10:17 security.lua
+-rw-r--r--   1 root root  5426 Mar 13 10:17 sensitive_data.rules
+-rw-r--r--   1 root root   400 Mar 18 10:16 snort.debian.lua
+-rw-r--r--   1 root root 55670 Mar 13 10:17 snort_defaults.lua
+-rw-r--r--   1 root root  8916 Mar 13 10:17 snort.lua
+-rw-r--r--   1 root root   791 Mar 13 10:17 talos.lua
+
+-==========================================================================
+===========================================================================
+┌──(kali㉿kali)-[~]
+└─$ sudo vim /etc/snort/snort.lua
+---------------
+
+E325: ATTENTION
+Found a swap file by the name "/etc/snort/.snort.lua.swp"
+          owned by: root   dated: Thu Aug 22 12:49:13 2024
+         file name: /etc/snort/snort.lua
+          modified: YES
+         user name: root   host name: kali
+        process ID: 13000
+While opening file "/etc/snort/snort.lua"
+             dated: Wed Mar 13 10:17:33 2024
+
+(1) Another program may be editing the same file.  If this is the case,
+    be careful not to end up with two different instances of the same
+    file when making changes.  Quit, or continue with caution.
+(2) An edit session for this file crashed.
+    If this is the case, use ":recover" or "vim -r /etc/snort/snort.lua"
+    to recover the changes (see ":help recovery").
+    If you did this already, delete the swap file "/etc/snort/.snort.lua.swp"
+    to avoid this message.
+
+Swap file "/etc/snort/.snort.lua.swp" already exists!
+[O]pen Read-Only, (E)dit anyway, (R)ecover, (D)elete it, (Q)uit, (A)bort: 
+
+========================================================================
+
+--------------
+(snort configuration file will open and in between )
+--1. configure defaults 
+HOME_NET = 'any'  
+------------------             
+snort os ip is 192.168.176.132/24
+i set ip such as - HOME_NET = '192.168.176.0/24'
+------------------
+-set up the external network addresses
+- (leave as 'any' in most situations)
+EXTERNAL_NET = 'any'
+
+include 'snort_defaults.lua'
+===========================================================================
+┌──(kali㉿kali)-[~]
+└─$ sudo vim /etc/snort/snort.lua 
+[sudo] password for kali: 
+
+zsh: suspended  sudo vim /etc/snort/snort.lua
+                                                                                                                    
+┌──(kali㉿kali)-[~]
+└─$ 
+
+-==========================================================================
+===========================================================================
+┌──(kali㉿kali)-[~]
+└─$ sudo snort -T -i eth0 -c /etc/snort/snort.lua
+--------------------------------------------------
+o")~   Snort++ 3.1.82.0
+--------------------------------------------------
+Loading /etc/snort/snort.lua:
+Loading snort_defaults.lua:
+Finished snort_defaults.lua:
+        ips
+        file_id
+        stream_user
+        stream_file
+        binder
+        wizard
+        appid
+        js_norm
+        file_policy
+        http2_inspect
+        http_inspect
+        ftp_data
+        ssh
+        dce_http_proxy
+        active
+        trace
+        s7commplus
+        modbus
+        dce_smb
+        dce_tcp
+        dce_udp
+        dce_http_server
+        gtp_inspect
+        port_scan
+        smtp
+        ftp_server
+        ftp_client
+        normalizer
+        netflow
+        imap
+        dns
+        back_orifice
+        arp_spoof
+        references
+        classifications
+        stream_udp
+        stream_tcp
+        stream_icmp
+        stream
+        alerts
+        daq
+        decode
+        host_cache
+        host_tracker
+        hosts
+        network
+        packets
+        process
+        search_engine
+        so_proxy
+        output
+        stream_ip
+        pop
+        rpc_decode
+        sip
+        ssl
+        telnet
+        cip
+        dnp3
+        iec104
+        mms
+Finished /etc/snort/snort.lua:
+Loading file_id.rules_file:
+Loading file_magic.rules:
+Finished file_magic.rules:
+Finished file_id.rules_file:
+--------------------------------------------------
+ips policies rule stats
+              id  loaded  shared enabled    file
+               0     208       0     208    /etc/snort/snort.lua
+--------------------------------------------------
+rule counts
+       total rules loaded: 208
+               text rules: 208
+            option chains: 208
+            chain headers: 1
+--------------------------------------------------
+service rule counts          to-srv  to-cli
+                  file_id:      208     208
+                    total:      208     208
+--------------------------------------------------
+fast pattern groups
+                to_server: 1
+                to_client: 1
+--------------------------------------------------
+search engine (ac_bnfa)
+appid: MaxRss diff: 2496
+appid: patterns loaded: 300
+--------------------------------------------------
+pcap DAQ configured to passive.
+
+Snort successfully validated the configuration (with 0 warnings).
+o")~   Snort exiting
+                                                                                                                    
+┌──(kali㉿kali)-[~]
+└─$ 
+
+===========================================================================
+-==========================================================================
+┌──(kali㉿kali)-[~]
+└─$ snort -h                                     
+
+Snort has several options to get more help:
+
+-? list command line options (same as --help)
+--help this overview of help
+--help-commands [<module prefix>] output matching commands
+--help-config [<module prefix>] output matching config options
+--help-counts [<module prefix>] output matching peg counts
+--help-limits print the int upper bounds denoted by max*
+--help-module <module> output description of given module
+--help-modules list all available modules with brief help
+--help-modules-json dump description of all available modules in JSON format
+--help-plugins list all available plugins with brief help
+--help-options [<option prefix>] output matching command line options
+--help-signals dump available control signals
+--list-buffers output available inspection buffers
+--list-builtin [<module prefix>] output matching builtin rules
+--list-gids [<module prefix>] output matching generators
+--list-modules [<module type>] list all known modules
+--list-plugins list all known modules
+--show-plugins list module and plugin versions
+
+--help* and --list* options preempt other processing so should be last on the
+command line since any following options are ignored.  To ensure options like
+--markup and --plugin-path take effect, place them ahead of the help or list
+options.
+
+Options that filter output based on a matching prefix, such as --help-config
+won't output anything if there is no match.  If no prefix is given, everything
+matches.
+
+Report bugs to bugs@snort.org.
+
+                                                                                                                    
+┌──(kali㉿kali)-[~]
+└─$ 
+
+===========================================================================
+===========================================================================
+┌──(kali㉿kali)-[~]
+└─$ 
+                                                                                                                    
+┌──(kali㉿kali)-[~]
+└─$ sudo vim /root/.vimrc                        
+
+zsh: suspended  sudo vim /root/.vimrc
+                                                                                                                    
+┌──(kali㉿kali)-[~]
+└─$ 
+
+-==========================================================================
+===========================================================================
+===========================================================================
+-==========================================================================
+===========================================================================
+===========================================================================
+-==========================================================================
+===========================================================================
+===========================================================================
+-==========================================================================
+===========================================================================
+===========================================================================
+-==========================================================================
+===========================================================================
+===========================================================================
+-==========================================================================
