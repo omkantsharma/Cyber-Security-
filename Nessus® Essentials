@@ -1,0 +1,168 @@
+Tenable Nessus® Essentials -----
+------------
+Nessus is a platform developed by Tenable that scans for security vulnerabilities in devices, applications, operating systems, cloud services and other network resources. Originally launched as an open source tool in 1998, its enterprise edition became a commercial product in 2005.
+--------------------------
+https://www.techtarget.com/searchnetworking/definition/Nessus#:~:text=Nessus%20is%20a%20platform%20developed,a%20commercial%20product%20in%202005.
+-----------------------------------------------------------------------------
+Downloads Links -  
+https://www.tenable.com/products/nessus/nessus-essentials.
+Register for Nessus Essential 
+Install Nessus in Host window
+
+-----------------------------------------------------------------------------
+
+Add win 10 as victim machine in VMWare or Virtual Box 
+-----------------------------------------------------------------------------
+===========================================================================
+===========================================================================
+===========================================================================
+After installation of Nessus and window 10 ----
+- search nessus and open nessus on localhost over the any browser.
+https://localhost:8834/#/scans/folders/my-scans
+===========================================================================
+===========================================================================
+===========================================================================
+
+- open win 10 in VMWare / virtual box
+and in host machine 
+- in win run command ipconfig in cmd. 
+ipconfig
+
+-----------------------
+vitual machine -ip 
+Microsoft Windows [Version 10.0.10240]
+(c) 2015 Microsoft Corporation. All rights reserved.
+
+C:\Users\ok>ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet0:
+
+   Connection-specific DNS Suffix  . : localdomain
+   Link-local IPv6 Address . . . . . : fe80::ec4b:5794:229f:dd1c%5
+   IPv4 Address. . . . . . . . . . . : 192.168.176.138
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.176.2
+
+Tunnel adapter isatap.localdomain:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : localdomain
+
+Tunnel adapter Local Area Connection* 3:
+
+   Connection-specific DNS Suffix  . :
+   IPv6 Address. . . . . . . . . . . : 2001:0:348b:fb58:6b:1533:8f3b:9bb4
+   Link-local IPv6 Address . . . . . : fe80::6b:1533:8f3b:9bb4%2
+   Default Gateway . . . . . . . . . : ::
+===========================================================================
+===========================================================================
+==========================================================================
+---------------------------------------------------------
+Host machine --
+Microsoft Windows 
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\omkan>ipconfig
+
+Windows IP Configuration
+
+
+Wireless LAN adapter Local Area Connection* 1:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Local Area Connection* 2:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Ethernet adapter VMware Network Adapter VMnet1:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::e187:a78a:5fa1:4b00%17
+   IPv4 Address. . . . . . . . . . . : 192.168.61.1
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . :
+
+Ethernet adapter VMware Network Adapter VMnet8:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::9aa2:197b:a5a0:3820%19
+   IPv4 Address. . . . . . . . . . . : 192.168.176.1
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . :
+
+Wireless LAN adapter Wi-Fi:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::6e94:6877:311e:a616%5
+   IPv4 Address. . . . . . . . . . . : 192.168.114.26
+   Subnet Mask . . . . . . . . . . . : 255.255.252.0
+   Default Gateway . . . . . . . . . : 192.168.112.1
+==================================================================
+==================================================================
+==================================================================
+
+==================================================================
+==================================================================
+use ping cmd. in host os to VM os
+
+C:\Users\omkan>
+
+C:\Users\omkan>ping 192.168.176.138
+
+Pinging 192.168.176.138 with 32 bytes of data:
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+
+Ping statistics for 192.168.176.138:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+
+C:\Users\omkan>
+=================================================================
+=================================================================
+=================================================================
+Turn off win firwall of VMWare os -
+Control Panel\System and Security\Windows Firewall\Customize Settings
+Turn off win firwall
+================================================================
+=================================================================
+=================================================================
+=================================================================
+Then ping again - 
+C:\Users\omkan>ping 192.168.176.138
+
+Pinging 192.168.176.138 with 32 bytes of data:
+Reply from 192.168.176.138: bytes=32 time<1ms TTL=128
+Reply from 192.168.176.138: bytes=32 time<1ms TTL=128
+Reply from 192.168.176.138: bytes=32 time=1ms TTL=128
+Reply from 192.168.176.138: bytes=32 time<1ms TTL=128
+
+Ping statistics for 192.168.176.138:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+
+C:\Users\omkan>
+================================================================
+=================================================================
+=================================================================
+=================================================================
+================================================================
+=================================================================
+=================================================================
+=================================================================
+open web console of Nessus on localhost
+https://localhost:8834/#/scans/folders/my-scans
+====================================================
+in new scan not working then
+https://community.tenable.com/s/question/0D53a00009Gf95JCAR/new-scan-button-not-working?language=en_US
+===================================================
+https://github.com/rapid7/metasploit-framework/issues/11117
+=============================================================
