@@ -247,4 +247,7 @@ curl: (52) Empty reply from server
 ┌──(kali㉿kali)-[~]
 └─$ curl http://whatismyip.akamai.com
 112.196.100.75                                                                  
+-----------------------------------------------------
+Reference - 
+https://www.linuxtrainingacademy.com/determine-public-ip-address-command-line-curl/#:~:text=You%20can%20determine%20the%20IP,122.236.
 
