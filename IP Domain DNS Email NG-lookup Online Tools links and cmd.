@@ -1,0 +1,250 @@
+https://www.quora.com/What-does-a-24-mean-in-an-IP-address#:~:text=In%20IP%20addressing%2C%20a%20%2F24,bits%20representing%20the%20host%20portion.
+.......................................................----
+footprinting [information gathering] through search engines
+as security expert/ethical hacker--------------------------
+
+hacking the first step ----
+footprinting through search engines information about Target,
+extracting that particular info [point to point ] through 
+search engines 
+- finding the company's public and restricted websites
+- collect location information
+-----------------------------------------------------------
+footprinting
+-----------------------------------------------------------
+encyclopidia
+netcraft - [netcraft site report]
+[netcraft lookup -[enter target site_url]]
+
+============================================================
+============================================================
+
+LOCATION MAP
+https://iplookup.flagfox.net/
+
+------------------------------------------------
+=================================================
+-------------------------------------------------
+
+optical fiber cables net in the world -
+https://www.submarinecablemap.com/
+
+=================================================
+=================================================
+ 
+IP ADDRESS LOCATION DETECTION SITE/ip check-
+-------------------------------------------------
+https://www.ipaddress.com/
+https://www.whatismyip.com/ip-address-lookup/
+https://nordvpn.com/ip-lookup/
+https://www.whatismyip.com/
+https://whatismyipaddress.com/
+
+-------------------------------------------------
+LOCATION MAP
+https://iplookup.flagfox.net/
+https://www.iplocation.net/ip-lookup
+-------------------------------------------------
+https://www.opentracker.net/feature/ip-tracker?ip=
+-------------------------------------------------
+=================================================
+=================================================
+Emails - password breach Detector web.
+https://haveibeenpwned.com/
+--------------------------------------------------
+EMAIL's IP     [Detect Email destination]
+
+-first open email
+-right click on three dots ... on left side 
+-then click on [Original Message] 
+- get IP form SPF and use ip lookup
+-------------------------------------email header analyzer
+https://mxtoolbox.com/dnslookup.aspx?utm_term=dns%20monitoring&utm_campaign=Products+-+Monitoring&utm_source=adwords&utm_medium=ppc&hsa_acc=2278553980&hsa_cam=16090940&hsa_grp=17817154100&hsa_ad=342954461966&hsa_src=g&hsa_tgt=kwd-18001271&hsa_kw=dns%20monitoring&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=CjwKCAjw5qC2BhB8EiwAvqa41h5njvk0MBiFJebJPYVgKZWh_9E2tihRF0MbIXuLb1OIvqGSJSz70xoCWdIQAvD_BwE
+
+---------------------------------------------
+---------------------------------------------
+https://www.expressvpn.com/blog/find-ip-address
+-from-email/
+https://www.makeuseof.com/tag/how-to-trace-your
+-emails-back-to-the-source/
+https://whatismyipaddress.com/trace-email
+
+Data breach (check Gmail data breach)
+
+https://haveibeenpwned.com/
+
+
+====================================================
+====================================================
+DOMAIN DETECTION/domain check-----------------------
+----------
+https://whois.domaintools.com/
+https://who.is/
+====================================================
+find dns record...........
+
+https://www.nslookup.io/
+https://www.nslookup.io/ns-lookup/
+------------------
+url / damain 
+
+https://www.nslookup.io/ns-lookup/
+-----------------------------------
+=========================================
+
+ns lookup linux cmd........
+
+https://phoenixnap.com/kb/nslookup-command
+
+https://phoenixnap.com/kb/nslookup-command
+
+artical
+https://www.geeksforgeeks.org/nslookup-command-in-linux-with-examples/
+---------------------------------------------------------------------
+----------------------------------------------------------------------
+======================================================================
+======================================================================
+ip commands in Linux for Public and private 
+──(kali㉿kali)-[~]
+└─$ nmap -e eth0 -S 12.15.162.115 192.168.176.128
+
+WARNING: If -S is being used to fake your source address, you may also have to use -e <interface> and -Pn .  If you are using it to specify your real source address, you can ignore this warning.
+WARNING: -S will only affect the source address used in a connect() scan if you specify one of your own addresses.  Use -sS or another raw scan if you want to completely spoof your source address, but then you need to know what you're doing to obtain meaningful results.
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-23 08:34 EDT
+You have specified some options that require raw socket access.
+These options will not be honored without the necessary privileges.
+init_socket: Problem binding source address (12.15.162.115), errno: 99
+bind: Cannot assign requested address
+NSOCK ERROR [0.0540s] mksock_bind_addr(): Bind to 12.15.162.115:0 failed (IOD #1): Cannot assign requested address (99)
+Nmap scan report for 192.168.176.128
+Host is up (0.00080s latency).
+Not shown: 977 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+23/tcp   open  telnet
+25/tcp   open  smtp
+53/tcp   open  domain
+80/tcp   open  http
+111/tcp  open  rpcbind
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+512/tcp  open  exec
+513/tcp  open  login
+514/tcp  open  shell
+1099/tcp open  rmiregistry
+1524/tcp open  ingreslock
+2049/tcp open  nfs
+2121/tcp open  ccproxy-ftp
+3306/tcp open  mysql
+5432/tcp open  postgresql
+5900/tcp open  vnc
+6000/tcp open  X11
+6667/tcp open  irc
+8009/tcp open  ajp13
+8180/tcp open  unknown
+
+Nmap done: 1 IP address (1 host up) scanned in 0.14 seconds
+-------------------------------------------------------------------
+===================================================================
+Private ip                                                                   
+┌──(kali㉿kali)-[~]
+└─$ ip a s  
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 00:0c:29:bf:5f:48 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.176.132/24 brd 192.168.176.255 scope global dynamic noprefixroute eth0
+       valid_lft 1517sec preferred_lft 1517sec
+    inet6 fe80::79dc:9caa:9a7b:1846/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+                                                                  
+┌──(kali㉿kali)-[~]
+└─$ ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.176.132  netmask 255.255.255.0  broadcast 192.168.176.255
+        inet6 fe80::79dc:9caa:9a7b:1846  prefixlen 64  scopeid 0x20<link>
+        ether 00:0c:29:bf:5f:48  txqueuelen 1000  (Ethernet)
+        RX packets 1868  bytes 159542 (155.8 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1083  bytes 81370 (79.4 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 24  bytes 1240 (1.2 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 24  bytes 1240 (1.2 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+                                                                  
+┌──(kali㉿kali)-[~]
+└─$ /sbin/ifconfig eth0 | grep -i mask
+        inet 192.168.176.132  netmask 255.255.255.0  broadcast 192.168.176.255
+
+┌──(kali㉿kali)-[~]
+└─$ ip addr show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 00:0c:29:bf:5f:48 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.176.132/24 brd 192.168.176.255 scope global dynamic noprefixroute eth0
+       valid_lft 1080sec preferred_lft 1080sec
+    inet6 fe80::79dc:9caa:9a7b:1846/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+                                                                  
+┌──(kali㉿kali)-[~]
+└─$ 
+   ===============================================================================
+Public ip ------------------------
+----------------------
+┌──(kali㉿kali)-[~]
+└─$ curl ifconfig.me
+112.196.100.75                                                                  
+┌──(kali㉿kali)-[~]
+└─$ curl icanhazip.com        
+curl: (52) Empty reply from server
+                                                                  
+┌──(kali㉿kali)-[~]
+└─$ curl ifconfig.me  
+curl: (56) Recv failure: Connection reset by peer
+                                                                  
+┌──(kali㉿kali)-[~]
+└─$ curl ifconfig.me
+curl: (56) Recv failure: Connection reset by peer
+                                                                  
+┌──(kali㉿kali)-[~]
+└─$ curl ipecho.net/plain
+curl: (56) Recv failure: Connection reset by peer
+                                                                  
+┌──(kali㉿kali)-[~]
+└─$  curl ident.me
+curl: (52) Empty reply from server
+                                                                  
+┌──(kali㉿kali)-[~]
+└─$ curl https://myip.dnsomatic.com
+117.250.28.101                                                                  
+┌──(kali㉿kali)-[~]
+└─$ curl https://checkip.amazonaws.com
+117.250.28.101
+                                                                  
+┌──(kali㉿kali)-[~]
+└─$ curl http://whatismyip.akamai.com
+117.250.28.101                                                                  
+┌──(kali㉿kali)-[~]
+└─$ wget -qO- ifconfig.me
+112.196.100.75                                                                  
+┌──(kali㉿kali)-[~]
+└─$ curl http://whatismyip.akamai.com
+112.196.100.75                                                                  
+
