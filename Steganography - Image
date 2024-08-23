@@ -13,3 +13,12 @@ open  the image in Notepad
 at the end _you can see your 
 message 
 -----------------------------------------------------
+-----------------------------------------------------=
+=======================================================
+=======================================================
+copy /b OriginalImage.jpg+SecretMsg.txt Imgwtext.jpg
+copy /b imagefilename.extenson+textfilewithmsg.txt imgwtext.jpg 
+
+Reference - 
+https://medium.com/@abhijitkamble47/hiding-text-file-inside-an-image-file-using-windows-command-prompt-8b428a449808
+
