@@ -401,3 +401,180 @@ zsh: suspended  sudo vim /etc/snort/rules/local.rules
 ===========================================================================
 ===========================================================================
 -==========================================================================
+===========================================================================
+-==========================================================================
+
+===========================================================================
+===========================================================================
+-==========================================================================
+===========================================================================
+===========================================================================
+-==========================================================================
+===========================================================================
+===========================================================================
+-==========================================================================
+===========================================================================
+===========================================================================
+-==========================================================================
+===========================================================================
+-==========================================================================
+
+===========================================================================
+===========================================================================
+-==========================================================================
+===========================================================================
+===========================================================================
+-==========================================================================
+===========================================================================
+===========================================================================
+-==========================================================================
+===========================================================================
+===========================================================================
+-==========================================================================
+Method - 2 
+---------------
+┌──(kali㉿kali)-[/etc/snort]
+└─$ sudo snort -A console -c /etc/snort/snort.lua
+--------------------------------------------------
+o")~   Snort++ 3.1.82.0
+--------------------------------------------------
+Loading /etc/snort/snort.lua:
+Loading snort_defaults.lua:
+Finished snort_defaults.lua:
+        wizard
+        binder
+        trace
+        file_id
+        alerts
+        host_cache
+        host_tracker
+        hosts
+        network
+        process
+        search_engine
+        so_proxy
+        stream
+        stream_ip
+        stream_icmp
+        stream_tcp
+        stream_udp
+        stream_user
+        stream_file
+        arp_spoof
+        back_orifice
+        dns
+        imap
+        netflow
+        normalizer
+        pop
+        rpc_decode
+        sip
+        ssl
+        telnet
+        cip
+        dnp3
+        iec104
+        modbus
+        s7commplus
+        dce_smb
+        dce_tcp
+        dce_udp
+        dce_http_proxy
+        dce_http_server
+        gtp_inspect
+        port_scan
+        smtp
+        ftp_server
+        ftp_data
+        http_inspect
+        http2_inspect
+        ips
+        classifications
+        references
+        appid
+        ftp_client
+        mms
+        ssh
+        output
+        packets
+        decode
+        daq
+        active
+        file_policy
+        js_norm
+Finished /etc/snort/snort.lua:
+ERROR: unknown logger console
+Loading file_id.rules_file:
+Loading file_magic.rules:
+Finished file_magic.rules:
+Finished file_id.rules_file:
+--------------------------------------------------
+ips policies rule stats
+              id  loaded  shared enabled    file
+               0     208       0     208    /etc/snort/snort.lua
+--------------------------------------------------
+rule counts
+       total rules loaded: 208
+               text rules: 208
+            option chains: 208
+            chain headers: 1
+--------------------------------------------------
+service rule counts          to-srv  to-cli
+                  file_id:      208     208
+                    total:      208     208
+--------------------------------------------------
+fast pattern groups
+                to_server: 1
+                to_client: 1
+--------------------------------------------------
+search engine (ac_bnfa)
+                instances: 2
+                 patterns: 416
+            pattern chars: 2508
+               num states: 1778
+         num match states: 370
+             memory scale: KB
+             total memory: 68.5879
+           pattern memory: 18.6973
+        match list memory: 27.3281
+        transition memory: 22.3125
+appid: MaxRss diff: 3084
+appid: patterns loaded: 300
+--------------------------------------------------
+pcap DAQ configured to passive.
+FATAL: see prior 1 errors (0 warnings)
+Fatal Error, Quitting..
+                                                                                                       
+┌──(kali㉿kali)-[/etc/snort]
+└─$ sudo apt install hping3 -y                   
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libnsl-dev libtirpc-dev
+Use 'sudo apt autoremove' to remove them.
+The following packages will be upgraded:
+  hping3
+1 upgraded, 0 newly installed, 0 to remove and 2004 not upgraded.
+Need to get 0 B/104 kB of archives.
+After this operation, 1,024 B of additional disk space will be used.
+(Reading database ... 396127 files and directories currently installed.)
+Preparing to unpack .../hping3_3.a2.ds2-11~kali1_amd64.deb ...
+Unpacking hping3 (3.a2.ds2-11~kali1) over (3.a2.ds2-10) ...
+Setting up hping3 (3.a2.ds2-11~kali1) ...
+Processing triggers for man-db (2.11.0-1+b1) ...
+Processing triggers for kali-menu (2022.4.1) ...
+                                                                                                       
+┌──(kali㉿kali)-[/etc/snort]
+└─$ 
+====================================================================
+-===================================================================
+====================================================================
+====================================================================
+====================================================================
+====================================================================
+kali
+
+
+
+
