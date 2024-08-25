@@ -1,0 +1,239 @@
+NMAP - IP SPOOFING
+------------------------------------------------
+IP spoofing is the creation of Internet Protocol (IP) packets which 
+have a modified source address in order to either hide the identity 
+of the sender, to impersonate another computer system, or both.
+------------------------------------------------
+KALI attacker ip - ip a s
+--------------------------------------
+Metasploitable os target ip - ip a s
+--------------------------------------
+ping kali os to metasploitable os 
+ping ip of target 
+===========================================
+open Wireshark in kali ----
+
+===========================================
+In attacker OS open NMAP --
+use cmd. --
+nmap <target OS ip>
+============================================================
+┌──(kali㉿kali)-[~]
+└─$ ping 192.168.176.128
+PING 192.168.176.128 (192.168.176.128) 56(84) bytes of data.
+64 bytes from 192.168.176.128: icmp_seq=1 ttl=64 time=0.453 ms
+64 bytes from 192.168.176.128: icmp_seq=2 ttl=64 time=0.882 ms
+64 bytes from 192.168.176.128: icmp_seq=3 ttl=64 time=0.822 ms
+64 bytes from 192.168.176.128: icmp_seq=4 ttl=64 time=1.06 ms
+64 bytes from 192.168.176.128: icmp_seq=5 ttl=64 time=0.772 ms
+64 bytes from 192.168.176.128: icmp_seq=6 ttl=64 time=0.821 ms
+64 bytes from 192.168.176.128: icmp_seq=7 ttl=64 time=0.704 ms
+64 bytes from 192.168.176.128: icmp_seq=8 ttl=64 time=0.524 ms
+64 bytes from 192.168.176.128: icmp_seq=9 ttl=64 time=0.378 ms
+64 bytes from 192.168.176.128: icmp_seq=10 ttl=64 time=0.731 ms
+64 bytes from 192.168.176.128: icmp_seq=11 ttl=64 time=0.792 ms
+64 bytes from 192.168.176.128: icmp_seq=12 ttl=64 time=0.835 ms
+^Z
+zsh: suspended  ping 192.168.176.128
+=================================================================                                                                                    
+┌──(kali㉿kali)-[~]
+└─$ nmap 192.168.176.128
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-22 21:22 EDT
+Nmap scan report for 192.168.176.128
+Host is up (0.0014s latency).
+Not shown: 977 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+23/tcp   open  telnet
+25/tcp   open  smtp
+53/tcp   open  domain
+80/tcp   open  http
+111/tcp  open  rpcbind
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+512/tcp  open  exec
+513/tcp  open  login
+514/tcp  open  shell
+1099/tcp open  rmiregistry
+1524/tcp open  ingreslock
+2049/tcp open  nfs
+2121/tcp open  ccproxy-ftp
+3306/tcp open  mysql
+5432/tcp open  postgresql
+5900/tcp open  vnc
+6000/tcp open  X11
+6667/tcp open  irc
+8009/tcp open  ajp13
+8180/tcp open  unknown
+
+Nmap done: 1 IP address (1 host up) scanned in 0.14 seconds
+                                                               
+===============================================================
+then check all communication in Wireshark about
+ attacker OS IP { will change sometime in --source or destination IP}
+ and target OS IP { will also change sometime in --source or destination IP}.
+==============================================================================
+==============================================================================
+==============================================================================
+==============================================================================
+==============================================================================
+NOW USE NAMP COMMANDS FOR IP SPOOFING (with single ip change) - 
+------------------------------------------------
+nmap -e eth0 -S 13.15.162.115 192.168.176.128
+------------------------------------------------
+nmap  => tool
+ -e   => plugin
+eth0  => attacker ethernet name
+-S    => plugin  
+
+123.456.789.159 => set any assumed IP of attacker OS
+
+192.168.176.128 => Target OS IP.
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+method -1                                         (not working sometime)
+┌──(kali㉿kali)-[~]                              
+└─$ nmap -e eth0 -S 13.15.162.115 192.168.176.128
+---------------------------------------------------
+(nmap -e ethernet name -s assumed ip target ip )
+                         spoof ip
+----------------------------------------------------
+WARNING: If -S is being used to fake your source address, you may also have 
+to use -e <interface> and -Pn .  If you are using it to specify your real 
+source address, you can ignore this warning.
+WARNING: -S will only affect the source address used in a connect() scan 
+if you specify one of your own addresses.  Use -sS or another raw scan if 
+you want to completely spoof your source address, but then you need to 
+know what you're doing to obtain meaningful results.
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-22 22:24 EDT
+You have specified some options that require raw socket access.
+These options will not be honored without the necessary privileges.
+init_socket: Problem binding source address (13.15.162.115), errno: 99
+bind: Cannot assign requested address
+NSOCK ERROR [0.0680s] mksock_bind_addr(): Bind to 13.15.162.115:0 
+failed (IOD #1): Cannot assign requested address (99)
+Nmap scan report for 192.168.176.128
+Host is up (0.0014s latency).
+Not shown: 977 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+23/tcp   open  telnet
+25/tcp   open  smtp
+53/tcp   open  domain
+80/tcp   open  http
+111/tcp  open  rpcbind
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+512/tcp  open  exec
+513/tcp  open  login
+514/tcp  open  shell
+1099/tcp open  rmiregistry
+1524/tcp open  ingreslock
+2049/tcp open  nfs
+2121/tcp open  ccproxy-ftp
+3306/tcp open  mysql
+5432/tcp open  postgresql
+5900/tcp open  vnc
+6000/tcp open  X11
+6667/tcp open  irc
+8009/tcp open  ajp13
+8180/tcp open  unknown
+
+Nmap done: 1 IP address (1 host up) scanned in 0.18 seconds
+                                                                                                        
+┌──(kali㉿kali)-[~]
+└─$ 
+================================================================
+================================================================
+================================================================
+================================================================
+================================================================
+================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+Method - 2                                          (working)
+┌──(kali㉿kali)-[~]                                    
+└─$ nmap -D RND:10 192.168.176.128          
+----------------------------------------------------------------
+nmap -D (Decoying IP address) RND:10 (RENDOM: count of 10 IP) TARGET IP
+                                       { count use as you want,10,20,100 }
+-----------------------
+nmap -D RND:100 192.168.176.128          
+---------------------
+https://github.com/Samsar4/Ethical-Hacking-Labs/blob/master/2-Scanning-Networks/5-NmapDecoyIP.md
+---------------------
+https://www.techtarget.com/searchsecurity/definition/IP-spoofing#:~:text=Internet%20Protocol%20(IP)%20spoofing%20is,the%20sender's%20identity%20or%20both.
+----------------------------------------------------------------     
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-08-24 21:21 EDT
+You have specified some options that require raw socket access.
+These options will not be honored without the necessary privileges.
+Nmap scan report for 192.168.176.128
+Host is up (0.00085s latency).
+Not shown: 977 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+23/tcp   open  telnet
+25/tcp   open  smtp
+53/tcp   open  domain
+80/tcp   open  http
+111/tcp  open  rpcbind
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+512/tcp  open  exec
+513/tcp  open  login
+514/tcp  open  shell
+1099/tcp open  rmiregistry
+1524/tcp open  ingreslock
+2049/tcp open  nfs
+2121/tcp open  ccproxy-ftp
+3306/tcp open  mysql
+5432/tcp open  postgresql
+5900/tcp open  vnc
+6000/tcp open  X11
+6667/tcp open  irc
+8009/tcp open  ajp13
+8180/tcp open  unknown
+
+Nmap done: 1 IP address (1 host up) scanned in 0.16 seconds
+
+
+
+                                                                                                        
+┌──(kali㉿kali)-[~]
+└─$ 
+================================================================
+================================================================
+================================================================
+
+
+
+
