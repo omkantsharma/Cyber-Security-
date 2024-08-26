@@ -1,0 +1,482 @@
+ARP Poisoning or Spoofing
+---------------
+
+Target OS -Win
+
+Attacker Os Kali
+=========================================================================
+-------------------------------------------------------------------------
+=========================================================================
+Target OS -Win---> open cmd.
+ipconfig/all
+-----------------------------------------------------------
+Microsoft Windows [Version 10.0.10240]
+(c) 2015 Microsoft Corporation. All rights reserved.
+
+C:\Users\ok>ipconfig/all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : DESKTOP-HKDU4P3
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : localdomain
+
+Ethernet adapter Ethernet0:
+
+   Connection-specific DNS Suffix  . : localdomain
+   Description . . . . . . . . . . . : Intel(R) 82574L Gigabit Network Connection
+   Physical Address. . . . . . . . . : 00-0C-29-93-B6-05
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::ec4b:5794:229f:dd1c%5(Preferred)
+   IPv4 Address. . . . . . . . . . . : 192.168.176.138(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Monday, August 26, 2024 11:10:00 AM
+   Lease Expires . . . . . . . . . . : Monday, August 26, 2024 11:40:00 AM
+   Default Gateway . . . . . . . . . : 192.168.176.2
+   DHCP Server . . . . . . . . . . . : 192.168.176.254
+   DHCPv6 IAID . . . . . . . . . . . : 50334761
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2E-58-F5-2F-00-0C-29-93-B6-05
+   DNS Servers . . . . . . . . . . . : 192.168.176.2
+   Primary WINS Server . . . . . . . : 192.168.176.2
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Tunnel adapter isatap.localdomain:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : localdomain
+   Description . . . . . . . . . . . : Microsoft ISATAP Adapter
+   Physical Address. . . . . . . . . : 00-00-00-00-00-00-00-E0
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+
+Tunnel adapter Local Area Connection* 3:
+
+   Connection-specific DNS Suffix  . :
+   Description . . . . . . . . . . . : Microsoft Teredo Tunneling Adapter
+   Physical Address. . . . . . . . . : 00-00-00-00-00-00-00-E0
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   IPv6 Address. . . . . . . . . . . : 2001:0:348b:fb58:242d:1f05:566a:1ce8(Preferred)
+   Link-local IPv6 Address . . . . . : fe80::242d:1f05:566a:1ce8%2(Preferred)
+   Default Gateway . . . . . . . . . : ::
+   DHCPv6 IAID . . . . . . . . . . . : 134217728
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2E-58-F5-2F-00-0C-29-93-B6-05
+   NetBIOS over Tcpip. . . . . . . . : Disabled
+
+C:\Users\ok>
+---------------------------------------------------------------------------------
+C:\Users\ok>arp -a
+
+Interface: 192.168.176.138 --- 0x5
+  Internet Address      Physical Address      Type
+  192.168.176.2         00-50-56-f7-ae-18     dynamic
+  192.168.176.132       00-0c-29-bf-5f-48     dynamic
+  192.168.176.255       ff-ff-ff-ff-ff-ff     static
+  224.0.0.22            01-00-5e-00-00-16     static
+  224.0.0.252           01-00-5e-00-00-fc     static
+  224.0.0.253           01-00-5e-00-00-fd     static
+  239.255.255.250       01-00-5e-7f-ff-fa     static
+  255.255.255.255       ff-ff-ff-ff-ff-ff     static
+
+C:\Users\ok>
+-----------------------------------------------------------------------------------
+===================================================================================
+-----------------------------------------------------------------------------------
+attacker os kali
+--------------------------------
+┌──(kali㉿kali)-[~]
+└─$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 00:0c:29:bf:5f:48 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.176.132/24 brd 192.168.176.255 scope global dynamic noprefixroute eth0
+       valid_lft 1453sec preferred_lft 1453sec
+    inet6 fe80::b9fb:290a:b1bf:17fa/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+                                                                             
+===================================================================================                                                                             ┌──(kali㉿kali)-[~]
+└─$ ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.176.132  netmask 255.255.255.0  broadcast 192.168.176.255
+        inet6 fe80::b9fb:290a:b1bf:17fa  prefixlen 64  scopeid 0x20<link>
+        ether 00:0c:29:bf:5f:48  txqueuelen 1000  (Ethernet)
+        RX packets 74  bytes 9682 (9.4 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 32  bytes 7210 (7.0 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 4  bytes 240 (240.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 4  bytes 240 (240.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+=============================================================================
+=============================================================================
+=============================================================================
+
+
+──(kali㉿kali)-[~]
+└─$ nmcli -p device show
+
+===============================================================================
+                             Device details (eth0)
+===============================================================================
+GENERAL.DEVICE:                         eth0
+-------------------------------------------------------------------------------
+GENERAL.TYPE:                           ethernet
+-------------------------------------------------------------------------------
+GENERAL.HWADDR:                         00:0C:29:BF:5F:48
+-------------------------------------------------------------------------------
+GENERAL.MTU:                            1500
+-------------------------------------------------------------------------------
+GENERAL.STATE:                          100 (connected)
+-------------------------------------------------------------------------------
+GENERAL.CONNECTION:                     Wired connection 1
+-------------------------------------------------------------------------------
+GENERAL.CON-PATH:                       /org/freedesktop/NetworkManager/ActiveConnection/1
+-------------------------------------------------------------------------------
+WIRED-PROPERTIES.CARRIER:               on
+-------------------------------------------------------------------------------
+IP4.ADDRESS[1]:                         192.168.176.132/24
+IP4.GATEWAY:                            192.168.176.2
+IP4.ROUTE[1]:                           dst = 192.168.176.0/24, nh = 0.0.0.0, mt = 100
+IP4.ROUTE[2]:                           dst = 0.0.0.0/0, nh = 192.168.176.2, mt = 100
+IP4.DNS[1]:                             192.168.176.2
+IP4.DOMAIN[1]:                          localdomain
+-------------------------------------------------------------------------------
+IP6.ADDRESS[1]:                         fe80::b9fb:290a:b1bf:17fa/64
+IP6.GATEWAY:                            --
+IP6.ROUTE[1]:                           dst = fe80::/64, nh = ::, mt = 1024
+-------------------------------------------------------------------------------
+
+===============================================================================
+                              Device details (lo)
+===============================================================================
+GENERAL.DEVICE:                         lo
+-------------------------------------------------------------------------------
+GENERAL.TYPE:                           loopback
+-------------------------------------------------------------------------------
+GENERAL.HWADDR:                         00:00:00:00:00:00
+-------------------------------------------------------------------------------
+GENERAL.MTU:                            65536
+-------------------------------------------------------------------------------
+GENERAL.STATE:                          10 (unmanaged)
+-------------------------------------------------------------------------------
+GENERAL.CONNECTION:                     --
+-------------------------------------------------------------------------------
+GENERAL.CON-PATH:                       --
+-------------------------------------------------------------------------------
+IP4.ADDRESS[1]:                         127.0.0.1/8
+IP4.GATEWAY:                            --
+-------------------------------------------------------------------------------
+IP6.ADDRESS[1]:                         ::1/128
+IP6.GATEWAY:                            --
+IP6.ROUTE[1]:                           dst = ::1/128, nh = ::, mt = 256
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+IP4.ADDRESS[1]:                         192.168.176.132/24
+IP4.GATEWAY:                            192.168.176.2
+IP4.ROUTE[1]:                           dst = 192.168.176.0/24, nh = 0.0.0.0, mt = 100
+IP4.ROUTE[2]:                           dst = 0.0.0.0/0, nh = 192.168.176.2, mt = 100
+IP4.DNS[1]:                             192.168.176.2
+IP4.DOMAIN[1]:                          localdomain
+-------------------------------------------------------------------------------
+IP6.ADDRESS[1]:                         fe80::b9fb:290a:b1bf:17fa/64
+IP6.GATEWAY:                            --
+IP6.ROUTE[1]:                           dst = fe80::/64, nh = ::, mt = 1024
+-------------------------------------------------------------------------------
+
+===============================================================================
+                              Device details (lo)
+===============================================================================
+GENERAL.DEVICE:                         lo
+-------------------------------------------------------------------------------
+lines 19-36/55 67%
+                                                                                                                               
+                                                                                                                               
+                                                                                                                               
+                                                                                                                               
+                                                                                                                               
+                                                                                                                               
+                                                                                                                               
+                                                                                                                               
+                                                                                                                               
+                                                                                                                               
+                                                                                                                               
+                                                                                                                               
+                                                                                                                               
+                                                                                                                               
+                                                                                                                               
+                                                                                                                               
+                                                                                                                               
+                                                                                                                               
+-------------------------------------------------------------------------------
+IP4.ADDRESS[1]:                         192.168.176.132/24
+IP4.GATEWAY:                            192.168.176.2
+IP4.ROUTE[1]:                           dst = 192.168.176.0/24, nh = 0.0.0.0, mt = 100
+IP4.ROUTE[2]:                           dst = 0.0.0.0/0, nh = 192.168.176.2, mt = 100
+IP4.DNS[1]:                             192.168.176.2
+IP4.DOMAIN[1]:                          localdomain
+-------------------------------------------------------------------------------
+IP6.ADDRESS[1]:                         fe80::b9fb:290a:b1bf:17fa/64
+IP6.GATEWAY:                            --
+IP6.ROUTE[1]:                           dst = fe80::/64, nh = ::, mt = 1024
+-------------------------------------------------------------------------------
+
+===============================================================================
+                              Device details (lo)
+===============================================================================
+GENERAL.DEVICE:                         lo
+-------------------------------------------------------------------------------
+GENERAL.TYPE:                           loopback
+-------------------------------------------------------------------------------
+GENERAL.HWADDR:                         00:00:00:00:00:00
+-------------------------------------------------------------------------------
+GENERAL.MTU:                            65536
+-------------------------------------------------------------------------------
+GENERAL.STATE:                          10 (unmanaged)
+-------------------------------------------------------------------------------
+GENERAL.CONNECTION:                     --
+-------------------------------------------------------------------------------
+GENERAL.CON-PATH:                       --
+-------------------------------------------------------------------------------
+IP4.ADDRESS[1]:                         127.0.0.1/8
+IP4.GATEWAY:                            --
+-------------------------------------------------------------------------------
+IP6.ADDRESS[1]:                         ::1/128
+IP6.GATEWAY:                            --
+IP6.ROUTE[1]:                           dst = ::1/128, nh = ::, mt = 256
+-------------------------------------------------------------------------------
+lines 19-55/55 (END)
+
+================================================================================
+
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+cmd. 
+nmcli -p device show
+https://www.ionos.com/digitalguide/hosting/technical-matters/get-linux-ip-address/#:~:text=You'll%20find%20all%20information,find%20this%20under%20%E2%80%9Cwlo1%E2%80%9D.
+----------------------------------------------------------------------------------
+==================================================================================
+----------------------------------------------------------------------------------
+
+==================================================================================
+==================================================================================
+
+
+search & Open Ettercap in kali os
+setup --> Primary interface -- ech0. if require then other.. 
+------------------------
+right on the top  click on --> Tik mark  ---> 3 dots
+- Hosts ---> scan for Hosts ----------> wait for 1 mint. .....
+--------------------------------------------------------------------------
+output----
+Listening on:
+  eth0 -> 00:0C:29:BF:5F:48
+	  192.168.176.132/255.255.255.0
+	  fe80::b9fb:290a:b1bf:17fa/64
+
+SSL dissection needs a valid 'redir_command_on' script in the etter.conf file
+Privileges dropped to EUID 65534 EGID 65534...
+
+  34 plugins
+  42 protocol dissectors
+  57 ports monitored
+28230 mac vendor fingerprint
+1766 tcp OS fingerprint
+2182 known services
+Lua: no scripts were specified, not starting up!
+Starting Unified sniffing...
+
+Randomizing 255 hosts for scanning...
+Scanning the whole netmask for 255 hosts...
+6 hosts added to the hosts list...
+DHCP: [00:0C:29:93:B6:05] REQUEST 192.168.176.138
+DHCP: [192.168.176.254] ACK : 192.168.176.138 255.255.255.0 GW 192.168.176.2 DNS 192.168.176.2 "localdomain"
+DHCP: [00:0C:29:BF:5F:48] REQUEST 192.168.176.132
+DHCP: [192.168.176.254] ACK : 192.168.176.132 255.255.255.0 GW 192.168.176.2 DNS 192.168.176.2 "localdomain"
+DHCP: [00:50:56:C0:00:08] REQUEST 192.168.176.1
+DHCP: [192.168.176.254] ACK : 192.168.176.1 255.255.255.0 GW invalid 
+DHCP: [00:0C:29:93:B6:05] REQUEST 192.168.176.138
+DHCP: [192.168.176.254] ACK : 192.168.176.138 255.255.255.0 GW 192.168.176.2 DNS 192.168.176.2 "localdomain"
+DHCP: [00:0C:29:BF:5F:48] REQUEST 192.168.176.132
+DHCP: [192.168.176.254] ACK : 192.168.176.132 255.255.255.0 GW 192.168.176.2 DNS 192.168.176.2 "localdomain"
+DHCP: [00:50:56:C0:00:08] REQUEST 192.168.176.1
+DHCP: [192.168.176.254] ACK : 192.168.176.1 255.255.255.0 GW invalid 
+DHCP: [00:0C:29:93:B6:05] REQUEST 192.168.176.138
+DHCP: [192.168.176.254] ACK : 192.168.176.138 255.255.255.0 GW 192.168.176.2 DNS 192.168.176.2 "localdomain"
+DHCP: [00:0C:29:BF:5F:48] REQUEST 192.168.176.132
+DHCP: [192.168.176.254] ACK : 192.168.176.132 255.255.255.0 GW 192.168.176.2 DNS 192.168.176.2 "localdomain"
+---------------------------------------------------------------------------------
+Configure Cisco router as DHCP server
+Dynamic Host Configuration Protocol (DHCP) is an application layer protocol used to distribute various network configuration parameters to devices on a TCP/IP network. – IP addresses, subnet masks, default gateways, DNS servers, etc.
+
+----------------------------------------------------------------------------------
+==============================================================================================
+----------------------------------------------------------------------------------
+==================================================================================
+----------------------------------------------------------------------------------
+
+==================================================================================
+==================================================================================
+Ettercap 
+- Hosts ---> Hosts list ----------> wait for 1 mint. .....
+output-- Hosts list tab, (ctrl+shift+c) - connections 
+--192.168.176.2  --- default getaway ---  which is our victim/target Os -- 
+
+--192.168.176.254 ---- DHCP server --- which is our router of win target 
+==========================================================================
+---> select victim ip and add to target 1 -------
+==========================================================================
+---------------------------------------------------------------------------------
+(need to attack to work also need trick router, send to traffic back to us-- 
+i am/we are not the real sender )
+---------------------------------------------------------------------------------
+==========================================================================
+---> select router ip and add to target 2 -------
+==========================================================================
+then ---> MIMA menu ----- ARP Poising 
+---------------------------------------------------------------------------------
+A router is a computer and networking device that forwards data packets between computer networks, including internetworks such as the global Internet.
+-----------------------------------------------------------------------
+https://en.wikipedia.org/wiki/Router_(computing)#:~:text=A%20router%20is%20a%20computer,such%20as%20the%20global%20Internet.
+--------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+==================================================================================
+----------------------------------------------------------------------------------
+
+==================================================================================
+==================================================================================
+
+
+
+
+
+
+--------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+==================================================================================
+----------------------------------------------------------------------------------
+
+==================================================================================
+==================================================================================
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+==========================================================================
+reference -
+-------------
+https://study-ccna.com/configure-cisco-router-as-dhcp-server/
+==============================================================
+Configure Cisco router as DHCP server
+Dynamic Host Configuration Protocol (DHCP) is an application layer protocol used to distribute various network configuration parameters to devices on a TCP/IP network. – IP addresses, subnet masks, default gateways, DNS servers, etc. DHCP employs a client-server architecture; a DHCP client is configured to request network parameters from a DHCP server on the network. A DHCP server is configured with a pool of available IP addresses and assigns one of them to the DHCP client.
+
+A Cisco router can be configured as a DHCP server. Here are the steps:
+
+Exclude IP addresses from being assigned by DHCP by using the ip dhcp excluded-address FIRST_IP LAST_IP
+Create a new DHCP pool with the ip dhcp pool NAME command.
+Define a subnet that will be used to assign IP addresses to hosts with the network SUBNET SUBNET_MASK command.
+Define the default gateway with the default-router IP command.
+Define the DNS server with the dns-server IP address command.
+(Optional) Define the DNS domain name by using the ip domain-name NAME command.
+(Optional) Define the lease duration by using the lease DAYS HOURS MINUTES command. If you don’t specify this argument, the default lease time of 24 hours will be used.
+ 
+
+Here is an example configuration:
+
+Floor1(config)#ip dhcp excluded-address 192.168.0.1 192.168.0.50
+Floor1(config)#ip dhcp pool Floor1DHCP
+Floor1(dhcp-config)#network 192.168.0.0 255.255.255.0
+Floor1(dhcp-config)#default-router 192.168.0.1
+Floor1(dhcp-config)#dns-server 192.168.0.1
+In the example above you can see that I’ve configured the DHCP server with the following parameters:
+
+the IP addresses from the 192.168.0.1 – 192.168.0.50 range will not be assigned to hosts
+the DHCP pool was created and named Floor1DHCP
+the IP addresses assigned to the hosts will be from the 192.168.0.0/24 range
+the default gateway’s IP address is 192.168.0.1
+the DNS server’s IP address is 192.168.0.1
+ 
+
+To view information about the currently leased addresses, you can use the show ip dhcp binding command:
+
+Floor1#show ip dhcp binding
+IP address Client-ID/ Lease expiration Type
+Hardware address
+192.168.0.51 0060.5C2B.3DCC -- Automatic
+In the output above you can see that there is a single DHCP client that was assigned the IP address of 192.168.0.51. Since we’ve excluded the IP addresses from the 192.168.0.1 – 192.168.0.50 range, the device got the first address available – 192.168.0.51.
+
+To display information about the configured DHCP pools, you can use the show ip dhcp pool command:
+
+Floor1#show ip dhcp pool
+Pool Floor1DHCP :
+Utilization mark (high/low) : 100 / 0
+Subnet size (first/next) : 0 / 0
+Total addresses : 254
+Leased addresses : 1
+Excluded addresses : 1
+Pending event : none
+
+1 subnet is currently in the pool
+Current index IP address range Leased/Excluded/Total
+192.168.0.1 192.168.0.1 - 192.168.0.254 1 / 1 / 254
+This command displays some important information about the DHCP pool(s) configured on the device – the pool name, total number of IP addresses, the number of leased and excluded addresses, subnet’s IP range, etc.
+==============================================================
+------------------------------------------------------------------------------------
+https://www.fortinet.com/resources/cyberglossary/dynamic-host-configuration-protocol-dhcp#:~:text=Dynamic%20Host%20Configuration%20Protocol%20(DHCP)%20is%20a%20networking%20protocol%20for,subnet%20masks%2C%20and%20default%20gateways.
+----------------------------------------------------------------------------
+https://learn.microsoft.com/en-us/windows-server/networking/technologies/dhcp/dhcp-top
+----------------------------------------------------
+https://www.quora.com/How-do-I-assign-IP-addresses-to-any-electronic-device
+-----------------------------------------------------------------------------
+https://www.geeksforgeeks.org/how-to-configure-a-router-to-use-dhcp/
+----------------------------------------------------------------------------------
+==================================================================================
+----------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+to be count...............
