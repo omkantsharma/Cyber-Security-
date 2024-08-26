@@ -237,6 +237,85 @@ Nmap done: 1 IP address (1 host up) scanned in 0.16 seconds
 ================================================================
 ================================================================
 
+================================================================
+================================================================
+================================================================
+===============================================================
+================================================================
+================================================================
+================================================================
+================================================================
+================================================================
+================================================================
+================================================================
+================================================================
+================================================================
+================================================================
+================================================================
+================================================================
+================================================================
+================================================================
+================================================================
+================================================================
+================================================================
 
+reference -
+-------------
+https://study-ccna.com/configure-cisco-router-as-dhcp-server/
+==============================================================
+Configure Cisco router as DHCP server
+Dynamic Host Configuration Protocol (DHCP) is an application layer protocol used to distribute various network configuration parameters to devices on a TCP/IP network. – IP addresses, subnet masks, default gateways, DNS servers, etc. DHCP employs a client-server architecture; a DHCP client is configured to request network parameters from a DHCP server on the network. A DHCP server is configured with a pool of available IP addresses and assigns one of them to the DHCP client.
+
+A Cisco router can be configured as a DHCP server. Here are the steps:
+
+Exclude IP addresses from being assigned by DHCP by using the ip dhcp excluded-address FIRST_IP LAST_IP
+Create a new DHCP pool with the ip dhcp pool NAME command.
+Define a subnet that will be used to assign IP addresses to hosts with the network SUBNET SUBNET_MASK command.
+Define the default gateway with the default-router IP command.
+Define the DNS server with the dns-server IP address command.
+(Optional) Define the DNS domain name by using the ip domain-name NAME command.
+(Optional) Define the lease duration by using the lease DAYS HOURS MINUTES command. If you don’t specify this argument, the default lease time of 24 hours will be used.
+ 
+
+Here is an example configuration:
+
+Floor1(config)#ip dhcp excluded-address 192.168.0.1 192.168.0.50
+Floor1(config)#ip dhcp pool Floor1DHCP
+Floor1(dhcp-config)#network 192.168.0.0 255.255.255.0
+Floor1(dhcp-config)#default-router 192.168.0.1
+Floor1(dhcp-config)#dns-server 192.168.0.1
+In the example above you can see that I’ve configured the DHCP server with the following parameters:
+
+the IP addresses from the 192.168.0.1 – 192.168.0.50 range will not be assigned to hosts
+the DHCP pool was created and named Floor1DHCP
+the IP addresses assigned to the hosts will be from the 192.168.0.0/24 range
+the default gateway’s IP address is 192.168.0.1
+the DNS server’s IP address is 192.168.0.1
+ 
+
+To view information about the currently leased addresses, you can use the show ip dhcp binding command:
+
+Floor1#show ip dhcp binding
+IP address Client-ID/ Lease expiration Type
+Hardware address
+192.168.0.51 0060.5C2B.3DCC -- Automatic
+In the output above you can see that there is a single DHCP client that was assigned the IP address of 192.168.0.51. Since we’ve excluded the IP addresses from the 192.168.0.1 – 192.168.0.50 range, the device got the first address available – 192.168.0.51.
+
+To display information about the configured DHCP pools, you can use the show ip dhcp pool command:
+
+Floor1#show ip dhcp pool
+Pool Floor1DHCP :
+Utilization mark (high/low) : 100 / 0
+Subnet size (first/next) : 0 / 0
+Total addresses : 254
+Leased addresses : 1
+Excluded addresses : 1
+Pending event : none
+
+1 subnet is currently in the pool
+Current index IP address range Leased/Excluded/Total
+192.168.0.1 192.168.0.1 - 192.168.0.254 1 / 1 / 254
+This command displays some important information about the DHCP pool(s) configured on the device – the pool name, total number of IP addresses, the number of leased and excluded addresses, subnet’s IP range, etc.
+============================================================================================================================
 
 
