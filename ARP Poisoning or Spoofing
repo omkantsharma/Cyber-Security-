@@ -338,14 +338,14 @@ output-- Hosts list tab, (ctrl+shift+c) - connections
 
 --192.168.176.254 ---- DHCP server --- which is our router of win target 
 ==========================================================================
----> select victim ip and add to target 1 -------
+---> select victim ip  --> click on -->  add to target 1 -------
 ==========================================================================
 ---------------------------------------------------------------------------------
 (need to attack to work also need trick router, send to traffic back to us-- 
 i am/we are not the real sender )
 ---------------------------------------------------------------------------------
 ==========================================================================
----> select router ip and add to target 2 -------
+---> select router ip --> click on --> add to target 2 -------
 ==========================================================================
 then ---> MIMA menu ----- ARP Poising 
 ---------------------------------------------------------------------------------
@@ -478,5 +478,4 @@ https://www.geeksforgeeks.org/how-to-configure-a-router-to-use-dhcp/
 
 
 
-
-to be count...............
+to be count.........
