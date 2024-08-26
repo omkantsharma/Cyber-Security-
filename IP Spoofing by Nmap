@@ -188,6 +188,9 @@ nmap -D (Decoying IP address) RND:10 (RENDOM: count of 10 IP) TARGET IP
 -----------------------
 nmap -D RND:100 192.168.176.128          
 ---------------------
+open wireshark , see changes there...
+---------------------
+---------------------
 https://github.com/Samsar4/Ethical-Hacking-Labs/blob/master/2-Scanning-Networks/5-NmapDecoyIP.md
 ---------------------
 https://www.techtarget.com/searchsecurity/definition/IP-spoofing#:~:text=Internet%20Protocol%20(IP)%20spoofing%20is,the%20sender's%20identity%20or%20both.
