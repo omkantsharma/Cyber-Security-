@@ -338,20 +338,38 @@ output-- Hosts list tab, (ctrl+shift+c) - connections
 
 --192.168.176.254 ---- DHCP server --- which is our router of win target 
 ==========================================================================
+==========================================================================
 ---> select victim ip  --> click on -->  add to target 1 -------
 ==========================================================================
 ---------------------------------------------------------------------------------
 (need to attack to work also need trick router, send to traffic back to us-- 
 i am/we are not the real sender )
+---------------------------------
+A router is a computer and networking device that forwards data packets between computer networks, including internetworks such as the global Internet.
+-----------------------------------------------------------------------
+https://en.wikipedia.org/wiki/Router_(computing)#:~:text=A%20router%20is%20a%20computer,such%20as%20the%20global%20Internet.
 ---------------------------------------------------------------------------------
+==========================================================================
 ==========================================================================
 ---> select router ip --> click on --> add to target 2 -------
 ==========================================================================
 then ---> MIMA menu ----- ARP Poising 
+==========================================================================
+output ----->
+DHCP: [00:0C:29:93:B6:05] REQUEST 192.168.176.138
+DHCP: [192.168.176.254] ACK : 192.168.176.138 255.255.255.0 GW 192.168.176.2 DNS 192.168.176.2 "localdomain"
+Host 192.168.176.138 added to TARGET1
+Host 192.168.176.254 added to TARGET2
+
+ARP poisoning victims:
+
+ GROUP 1 : 192.168.176.138 00:0C:29:93:B6:05
+
+ GROUP 2 : 192.168.176.254 00:50:56:F5:AF:33
+===========================================================================
+-----> open Wireshark --- >  in ech0   --> 
 ---------------------------------------------------------------------------------
-A router is a computer and networking device that forwards data packets between computer networks, including internetworks such as the global Internet.
------------------------------------------------------------------------
-https://en.wikipedia.org/wiki/Router_(computing)#:~:text=A%20router%20is%20a%20computer,such%20as%20the%20global%20Internet.
+
 --------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------
 ==================================================================================
