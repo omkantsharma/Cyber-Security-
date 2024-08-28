@@ -1,0 +1,34 @@
+A. Cyber Lab establishment
+------------------------------------------------------- 
+vmplayer -- Virtual Environment in host Operating system for Lab.
+vmkali -- compressed preinstalled kali zip file for vmplayer 
+kaliiso -- kali is attacker machine or Linux based operating system 
+Metasploitable2 - for practice you can use it as victim or target machine or OS. 
+Tails OS - use to become anonymous or can run Dark web 
+-------------------------------------------------------------------
+===================================================================
+vmplayer vmkali kaliiso Metasploitable2  download links-
+
+vmplayer - https://www.techspot.com/downloads/1969-vmware-player.html
+for win-
+https://www.techspot.com/downloads/downloadnowfile/1969/?evp=372ff28550b00664c9fe3cb3847a7a23&file=2171
+vmkali - compressed preinstalled file for vmplayer-  https://www.kali.org/get-kali/#kali-virtual-machines
+or 
+https://cdimage.kali.org/kali-2024.2/kali-linux-2024.2-vmware-amd64.7z
+
+kaliiso - https://www.kali.org/get-kali/#kali-installer-images
+https://cdimage.kali.org/kali-2024.2/kali-linux-2024.2-installer-amd64.iso
+
+
+Metasploitable2 - target/victim machine os download links
+https://sourceforge.net/projects/metasploitable/files/Metasploitable2/
+https://sourceforge.net/projects/metasploitable/files/Metasploitable2/metasploitable-linux-2.0.0.zip/download
+
+
+privacy os tails-https://tails.net/
+
+https://tails.net/install/index.en.html
+download page link below --
+https://tails.net/install/download-iso/index.en.html
+https://download.tails.net/tails/stable/tails-amd64-6.6/tails-amd64-6.6.iso
+
