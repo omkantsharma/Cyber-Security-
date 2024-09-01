@@ -1,4 +1,5 @@
 Steganography 
+LSB - least significant bit
 ============================
 go to the image folder
 choose image 
@@ -21,4 +22,6 @@ copy /b imagefilename.extenson+textfilewithmsg.txt imgwtext.jpg
 
 Reference - 
 https://medium.com/@abhijitkamble47/hiding-text-file-inside-an-image-file-using-windows-command-prompt-8b428a449808
+https://www.youtube.com/watch?v=yNo58UiIMKU
+
 
