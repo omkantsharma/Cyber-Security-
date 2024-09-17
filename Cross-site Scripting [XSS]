@@ -11,9 +11,18 @@ users.
 
 types of XSS:
 
-- Reflected XSS
+- Reflected XSS 
 - Stored XSS
 - Dom Based XSS
+-----------------
+Reflected XSS involves injecting HTML/JavaScript code into 
+a website's search bar so that it is not treated as a search 
+parameter but as part of the website, and responds accordingly.
+---
+eg. Write a script in a Search Box. like -
+<script>alert()</script> [payload]
+----------------
+
 --------------------------------------------------------
 online lab plateform called - 
 https://portswigger.net/
