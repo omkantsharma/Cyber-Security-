@@ -15,13 +15,10 @@ victims.
 
 attaks can also be based on the victim's ip address rather 
 than cookies:
-- post an anonymous comment that is shown as comminng from 
-the victim's ip address.
-- modify setting on a device such as a wireless router or 
-cable modem.
+- post an anonymous comment that is shown as comminng from the victim's ip address.
+- modify setting on a device such as a wireless router or cable modem.
 - modify an internet wiki page.
-- perform a distributed password-guessing attack without an
-botnet.
+- perform a distributed password-guessing attack without an botnet.
 
 all these senarios can happen if web page form is week
 --------------------------------------------------------
@@ -33,7 +30,7 @@ cross site request forgery
 ---------------------------------------------------------
 ---------------------------------------------------------
 Practical -
-open metasploit and put credential
+open metasploitable2 (practice as target OS) and put credential
 username- user
 password-user
 or 
@@ -47,23 +44,23 @@ username-kali
 password-kali
 
 ----------------------
-ping metasploit ip in kali browser 
+ping metasploitable ip in kali browser 
 not there then 
 ip addr
-if metasploit and kali subneting is not same then
+if metasploitable and kali subneting is not same then
 reinstall kali an subnetting / last octal of ip should
 same.
 if subnetting same then
 and kali ping the metasploit ip-
 --------------------------------------------
-open browser in kali insert matesploit ip there---
+open browser in kali insert metasploitable ip there---
 like in url-192.168.44.129
 --------------------------------------------
 there metasploite option will appear
 - Twiki
 - phpmyadmin
 - multillodae
-- DVWA
+- DVWA [default credentials- admin & password ]
 - webdav
 --------------------------
 open multillodae 
@@ -79,7 +76,8 @@ see output in view blogs-
 --------------------------
 now perform csrf attack-
 --------------------------
-1. payload -
+1. payload - write below script in notepad with html extension --{like - csrf.html}
+--------------------------------------------------------------------------------------
 <html>
 	<body>
 	<script>
@@ -87,7 +85,14 @@ now perform csrf attack-
 	</script>
 	</body>
 </html>
---------------------------
+--------------------------------------------------------------------------------------------------------
+above add ip of target server in - document.location="http://192.168.176.128/dvwa... etc..
+--------------------------------------------------------------------------------------------------------
+========================================================================================================
+========================================================================================================
+========================================================================================================
+========================================================================================================
+-----------------------------------------------
 first configure foxyproxy on browser
 addon extention in firefox
 ------------------------------------
@@ -190,7 +195,7 @@ mousepad info.html
 ===========================================================================================================================================
 ===========================================================================================================================================
 ===========================================================================================================================================
-Practical - 2 CSRF
+
 ===================
 https://www.cyberpunk.rs/dvwa-damn-vulnerable-web-application#:~:text=To%20login%20use%20the%20default,Default%20password%20%3D%20password
 -------------------------------------------------------------------------------------------------------------------------------------------
