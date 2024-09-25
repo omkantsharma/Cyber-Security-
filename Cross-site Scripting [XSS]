@@ -31,8 +31,13 @@ academy
 all labs
 scroll down 
 cross site scripting
-----------------------------------------------
+-----------------------------------------------------------------------------------------
+=========================================================================================
+=========================================================================================
 lab - 1
+-------
+https://portswigger.net/
+-------------------------
 [reflected cross-site scripting - vulnerability-
 search functionality- alert function]
 appear - BLOG 
@@ -50,9 +55,38 @@ and pop means execution successful]
 ------------------------------
 Script tag used for injecting the javascript in
 HTML page
-------------------------------
-==================================================
-Lab - 2
+----------------------------------------------------------------------------------------------
+==============================================================================================
+==============================================================================================
+lab - 2
+-------
+https://portswigger.net/
+-------------------------
+stored cross site scripting
+- open post
+- comment there with below script
+<script>alert("hello")</script>
+- If you reload the page, you will see an alert.
+Open inspect; the script becomes an executable part of the site but not as a comment.
+----------------------------------------------------------------------------------------------
+==============================================================================================
+==============================================================================================
+Lab - 3
+
+https://portswigger.net/
+-------
+ Document Object Model (DOM) - 
+
+https://0a9200a2034ea6c0809d6c42009c0068.web-security-academy.net/?search=hello
+- search hello 
+- right click and open inspect 
+- search there 'hello// and found then click  (page differently behave then it would be vulnerable )
+1 
+'hello//
+2
+">hello
+3
+"><script>alert(om)</script>
 
 
 
@@ -87,7 +121,7 @@ Your Email Address:  om@gmail.com
 Subject: 	     ethical
 Question/Comment:    reflect
 ------------------------------------------------------
-then - pop up will appear -
+then - pop up will appear - 
 
 testfire.net
 Om Kant
@@ -104,16 +138,27 @@ attention that they deserve. Our reply will be sent
 to your email: om@gmail.com
 
 ----------------------------------------------------
-DOM 
+----------------------------------------------------
+====================================================
+====================================================
+====================================================
+portswigger
+ Document Object Model (DOM) - 
 
 https://0a9200a2034ea6c0809d6c42009c0068.web-security-academy.net/?search=hello
 - search hello 
 - right click and open inspect 
-- search there hello and found then click
-- 
-------------------------------------------------------------------------------------
+- search there 'hello// and found then click  (page differently behave then it would be vulnerable )
+1 
+'hello//
+2
+">hello
+3
+"><script>alert(om)</script>
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
 webpage text -
-------
+--------------
 <html>
     <head>
         <link href=/resources/labheader/css/academyLabHeader.css rel=stylesheet>
@@ -170,11 +215,11 @@ webpage text -
                         </form>
                     </section>
                     <script>
-=====================================================================================================
+======================================================================================================================================
                         function trackSearch(query) {
                             document.write('<img src="/resources/images/tracker.gif?searchTerms='+query+'">');            
                         }
-----------------------
+---------------------------------------------------------------------------------------------------------------------------------------
  '+query+'">'  need to crack it
 so we use in web search box 
 https://0a9200a2034ea6c0809d6c42009c0068.web-security-academy.net/?search=hello
