@@ -18,50 +18,53 @@ May add
 use_localtime=YES
 -------
 ==============================================
-
-kali 1 - client server
+os1- kali 1 - client server
 -------------------------------------------
+os2- kali 2 - remote sever FTP setup
+------------------------------------------
+initiate below steps in both os
 ===========================================
-kali 2 - remote sever FTP setup
 
-steo -1 install and confiqure
-
-
+step -1 install and confiqure
+--
 rpm -qa | vsftpd -v
 su -
 yum install vsftpd -y
----
-KALI2
+sudo apt install vsftpd
+---=================================
+[ KALI2 ]
+====================================
 cd/etc/vsftpd
 (remain inside in vsftpd dir)
 ls
 cp vsftpd.conf vsftpd.conf.org
 ls -ltr
 vi vsftpd.conf 
------   
-(enter)
+-----  ---------------------------
+[(enter)
 anonymous_enable-NO
 Uncomment 
 ascii_upload_enable=YES
 ascil_sownload_enable-YES
 May add
-use_localtime=YES
----
---insert--
-wq (save)
+use_localtime=YES]
+----------------------------------
+[--insert--
+wq (save)]
 ----------
+===============================================
 
-
-set -2 
-start and enable vsftpd service
+step -2 
+[start and enable vsftpd service--]
 
 systemctl start vsftpd
 systemctl status vsftpd
-
+--
 systemctl enable vsftpd
+--
+[stop firewall or all allow FTP to firewall --
+we will temporarily stop firewall --]
 
-stop firewall or all allow FTP to firewall 
-we will temporarily stop firewall 
 systemctl stop firewalld.service
 systemctl status firewalld.service
 exit
@@ -69,36 +72,35 @@ exit
 ----------------------
 ===============================================================
 ===============================================================
-kali 1 - client server side
-(ftp already configured in kali)
-----------------
-
-===================================================
-How to transfer file
-ftp 192.168.0.0 (ip of remote server)
-enter username / password
+[kali 1 - client server side
+(ftp already configured in kali)]
+----------------------------------
+(How to transfer file
+ftp ip of remote server --)
+ftp 192.168.0.0 
+(enter username / password --)
 put -file_name
----------cmd......
+---------......
 ftp 192.168.0.0
 ftp>bye/exit            (exit)
 ---------------
-create file 
---
+(create file ---)
+
 touch ftp_testfile.txt
 ls -ltr
 --
-write something in txt
-----
+(write something in txt ---)
+
 echo "this is test file form kali 1 to 
 kali2" > ftp_testfile.txt
 ----
-to see content 
-----
+to see content ---
+
 cat ftp_testftp.txt
 ---
 ==============================
-we ready to transfer file to client to server
----
+(we ready to transfer file to client to server --)
+------------------
 kali1 
 ftp 192.168.0.0
 (note- ftp kali2 ip (server side ip ))
