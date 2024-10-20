@@ -6,8 +6,9 @@ remote server FTP setup
 need root access
 install vsftpd service (if not there)
 yum install vsftpd
-
-config 
+or ---
+sudo apt install vsftpd
+config ----
 /etc/vsftpd/vsftpd.conf
 -------
 anonymous_enable-NO
@@ -18,6 +19,15 @@ May add
 use_localtime=YES
 -------
 ==============================================
+==============================================
+==============================================
+==============================================
+==============================================
+==============================================
+==============================================
+==============================================
+==============================================
+==============================================
 os1- kali 1 - client server
 -------------------------------------------
 os2- kali 2 - remote sever FTP setup
@@ -25,11 +35,12 @@ os2- kali 2 - remote sever FTP setup
 initiate below steps in both os
 ===========================================
 
-step -1 install and confiqure
---
+step -1 install and confiqure----------------
+-------------------------
 rpm -qa | vsftpd -v
-su -
+su 
 yum install vsftpd -y
+or--------------------
 sudo apt install vsftpd
 ---=================================
 [ KALI2 ]
