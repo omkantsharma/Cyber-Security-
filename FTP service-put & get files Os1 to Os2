@@ -160,4 +160,60 @@ ftp>bye
 check in kali1 
 ls 
 =====================================================
+=====================================================
+=====================================================
+=====================================================
+=====================================================
+=====================================================
+┌──(kali㉿kali)-[~]
+└─$ ftp 192.168.176.128 
+Connected to 192.168.176.128.
+220 (vsFTPd 2.3.4)
+Name (192.168.176.128:kali): msfadmin
+331 Please specify the password.
+Password: 
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> ls
+229 Entering Extended Passive Mode (|||38670|).
+150 Here comes the directory listing.
+-rw-r--r--    1 1000     1000           31 Oct 21 08:07 Y
+-rw-r--r--    1 1000     1000           19 Oct 21 08:14 om
+drwxrwxrwx    2 1000     1000         4096 Oct 21 08:06 om.txt
+-rw-r--r--    1 1000     1000           27 Oct 21 08:05 omk.txt
+drwxr-xr-x    6 1000     1000         4096 Apr 28  2010 vulnerable
+226 Directory send OK.
+ftp> 
+----------------------------------------------------
+tp> pwd
+Remote directory: /home/msfadmin
+ftp> get om
+local: om remote: om
+229 Entering Extended Passive Mode (|||38126|).
+150 Opening BINARY mode data connection for om (19 bytes).
+100% |****************************************|    19      111.77 KiB/s    00:00 ETA
+226 Transfer complete.
+19 bytes received in 00:00 (15.79 KiB/s)
+----------------------------------------------------
+ftp> put omks.txt
+local: omks.txt remote: omks.txt
+229 Entering Extended Passive Mode (|||64968|).
+150 Ok to send data.
+100% |****************************************|    27      142.52 KiB/s    00:00 ETA
+226 Transfer complete.
+27 bytes sent in 00:00 (18.23 KiB/s)
+ftp> ls
+229 Entering Extended Passive Mode (|||10018|).
+150 Here comes the directory listing.
+-rw-r--r--    1 1000     1000           31 Oct 21 08:07 Y
+-rw-r--r--    1 1000     1000           19 Oct 21 08:14 om
+drwxrwxrwx    2 1000     1000         4096 Oct 21 08:06 om.txt
+-rw-r--r--    1 1000     1000           27 Oct 21 08:05 omk.txt
+-rw-r--r--    1 1000     1000           27 Oct 21 08:22 omks.txt
+drwxr-xr-x    6 1000     1000         4096 Apr 28  2010 vulnerable
+226 Directory send OK.
+ftp> 
+====================================================
+====================================================
 
