@@ -14,7 +14,23 @@ types of XSS:
 - Reflected XSS 
 - Stored XSS
 - Dom Based XSS
------------------
+===============================================================
+1. Reflected XSS: Malicious script is immediately reflected
+off a web server and executed in a victim's browser through a 
+vulnerable URL or form input.
+-----------------------------
+2. Stored XSS: Malicious script is permanently stored on the 
+server (e.g., in a database) and executed when a user 
+accesses the affected content.
+------------------------------
+3. DOM-Based XSS: Malicious script is executed by modifying 
+the Document Object Model (DOM) of a web page on the 
+client side, without involving the server.
+===============================================================
+
+
+
+------------------------------------------------------------------------------------
 Reflected XSS involves injecting HTML/JavaScript code into 
 a website's search bar so that it is not treated as a search 
 parameter but as part of the website, and responds accordingly.
