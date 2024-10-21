@@ -26,6 +26,9 @@ pythons slowloris.py -s 500 -p 80 ip
 attack is working ]
 ===================================
 or 
+use metasploitable os
+===================================
+or
 sudo apt install slowloris
 -----------------------------------
 slowloris -s 500 -p 80 ip 
