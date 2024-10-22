@@ -315,7 +315,14 @@ Pending event : none
 1 subnet is currently in the pool
 Current index IP address range Leased/Excluded/Total
 192.168.0.1 192.168.0.1 - 192.168.0.254 1 / 1 / 254
-This command displays some important information about the DHCP pool(s) configured on the device – the pool name, total number of IP addresses, the number of leased and excluded addresses, subnet’s IP range, etc.
-============================================================================================================================
-
+This command displays some important information about 
+the DHCP pool(s) configured on the device – the pool 
+name, total number of IP addresses, the number of leased 
+and excluded addresses, subnet’s IP range, etc.
+===================================================================
+===================================================================
+===================================================================
+reference-
+https://www.youtube.com/watch?v=QK4nPt3G3qc
+https://www.youtube.com/watch?v=6XJ0ZwSUB6g
 
