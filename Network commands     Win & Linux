@@ -409,9 +409,10 @@ Open Command Prompt as Administrator:
 Press Win + X and select Command Prompt (Admin) or Windows Terminal (Admin).
 Run the following command:
 
-bash
+
 Copy code
 netsh wlan show drivers
+netsh wlan show all
 Look for the line that says "Radio types supported":
 
 If it lists something like "802.11ac", "802.11n", or "802.11g", 
