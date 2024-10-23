@@ -75,7 +75,10 @@ hi this my first msg
 see output in view blogs-
 --------------------------
 now perform csrf attack-
---------------------------
+------------------------------------------------------------------
+--then save text file inside wirte wblow payload with html extention on desktop...  ----
+-- open it in browser -- then pasSWORD of DAVA will change
+-------------------------------------
 1. payload - write below script in notepad with html extension --{like - csrf.html}
 --------------------------------------------------------------------------------------
 <html>
