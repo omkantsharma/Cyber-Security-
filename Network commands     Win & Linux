@@ -1,0 +1,589 @@
+Network commands     Win & Linux- 
+
+=============================================================================
+in win---------------------------
+
+
+Here's a comprehensive list of network-related commands available in Windows, 
+organized by their functionality. These commands are useful for network 
+troubleshooting, configuration, and monitoring:
+-------------------------------------------------------------------------------------------------------------------------------------
+1. Basic Network Information and IP Configuration Commands:
+ipconfig
+Displays IP configuration for network adapters.
+
+Example: ipconfig /all (Shows detailed network info including MAC address, IP, DNS, DHCP details).
+getmac
+Displays the MAC address of the network adapters.
+
+Example: getmac /v /fo list (Verbose output in list format).
+hostname
+Displays the local computer’s name.
+
+Example: hostname
+nbtstat
+Displays NetBIOS over TCP/IP statistics, including the local NetBIOS name table.
+
+Example: nbtstat -n (Shows the NetBIOS name table of the local computer).
+---------------------------------------------------------------------------------------------------------------------
+2. Network Connectivity Testing and Troubleshooting Commands:
+ping
+Sends ICMP Echo Requests to test network connectivity.
+
+Example: ping google.com (Tests connectivity to Google).
+tracert
+Traces the route that packets take to reach a destination.
+
+Example: tracert google.com
+pathping
+Combines the functionality of ping and tracert to identify 
+packet loss and latency over each hop.
+
+Example: pathping google.com
+netstat
+Displays active connections and listening ports.
+
+Example: netstat -an (Shows all active connections and listening ports).
+nslookup
+Queries DNS to resolve domain names to IP addresses.
+
+Example: nslookup google.com
+telnet
+Used to establish a connection with a remote server or device over specific ports.
+
+Example: telnet example.com 80
+arp
+Displays and modifies the ARP (Address Resolution Protocol) cache.
+
+Example: arp -a (Shows the current ARP cache).
+
+---------------------------------------------------------------------------------------------------------
+3. Network Configuration Commands:
+netsh
+A powerful tool for managing network configuration. It can 
+configure network interfaces, firewall settings, and more.
+
+Example: netsh interface ip show config (Shows IP configuration for interfaces).
+Example: netsh wlan show profiles (Shows saved Wi-Fi profiles).
+route
+Displays and modifies the IP routing table.
+
+Example: route print (Displays the current routing table).
+Example: route add 192.168.1.0 mask 255.255.255.0 192.168.0.1 (Adds a static route).
+net
+General network commands for managing shared resources, users, and services.
+
+Example: net use (Maps a network drive).
+Example: net view (Shows shared resources on the network).
+----------------------------------------------------------------------------------------------------------------
+4. Wireless and Network Adapters Commands:
+netsh wlan
+Specific to Wi-Fi commands, useful for managing wireless networks.
+
+Example: netsh wlan show interfaces (Displays wireless interface details).
+Example: netsh wlan show networks (Lists available wireless networks).
+Example: netsh wlan start hostednetwork (Starts a Wi-Fi hotspot on the machine).
+netsh interface
+Manages network interfaces.
+
+Example: netsh interface set interface name="Ethernet" admin=disabled (Disables the Ethernet adapter).
+------------------------------------------------------------------------------------------------------------------------------------------------------
+5. File and Printer Sharing Commands:
+net share
+Shares folders or printers on the network.
+Example: net share MyFolder=C:\Users\Public (Shares a folder on the network).
+net use
+Maps a network drive to a shared resource.
+Example: net use Z: \\ComputerName\SharedFolder (Maps a network drive to the specified shared folder).
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+6. Active Directory and Domain Network Commands:
+netdom
+Used for managing domain relationships, such as joining a domain or resetting domain trusts.
+
+Example: netdom join ComputerName /domain:DomainName /userD:User /passwordD:* (Joins a computer to a domain).
+dsquery
+Queries Active Directory for information.
+
+Example: dsquery computer -name ComputerName (Searches for a computer in Active Directory).
+------------------------------------------------------------------------------------------------------------------------------------------------
+7. Network Diagnostics Commands:
+netsh diag
+A legacy diagnostic tool that provides basic network troubleshooting information.
+Example: netsh diag gui (Opens a graphical interface for network diagnostics).
+diagnostics
+A Windows GUI tool for troubleshooting network problems (accessible via the Control Panel or command line).
+Example: msdt.exe /id NetworkDiagnosticsNetworkAdapter (Launches the Windows Network Diagnostics tool).
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+8. Advanced Networking and Security Commands:
+netsh advfirewall
+Configures and manages the Windows Firewall.
+
+Example: netsh advfirewall firewall add rule name="Allow Ping" protocol=ICMPv4:8,any dir=in action=allow (Allows incoming ping requests).
+netstat -e
+Displays Ethernet statistics such as bytes sent/received and error counts.
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+9. VPN and Remote Access Commands:
+rasdial
+Used to automate VPN connections.
+Example: rasdial "MyVPN" username password (Initiates a VPN connection using the specified credentials).
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+10. Other Useful Network Commands:
+tasklist /svc
+Shows running services with their process IDs, which is useful for tracking services related to network ports.
+
+Example: tasklist /svc (Lists running tasks and associated services).
+sc query
+Queries the status of services, including network-related services.
+
+Example: sc query (Lists the services running on the system).
+net session
+Lists the sessions connected to the machine.
+
+Example: net session (Shows a list of active sessions).
+This comprehensive list covers essential network-related commands in Windows, useful for a 
+variety of tasks like network configuration, diagnostics, and management. Depending on your 
+use case, some commands may require elevated permissions (run as Administrator).
+========================================================================================
+========================================================================================
+========================================================================================
+========================================================================================
+========================================================================================
+========================================================================================
+========================================================================================
+========================================================================================
+
+in Linux ---------------------------
+
+Here's a comprehensive list of essential network-related commands in Linux, 
+organized by their functionality. These commands are useful for 
+network configuration, troubleshooting, and monitoring:
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+1. Basic Network Information and IP Configuration Commands:
+ifconfig
+Displays or configures network interface parameters.
+
+Example: ifconfig (Shows network interface details).
+Note: In modern distributions, ifconfig is deprecated and replaced by ip.
+ip
+A versatile command for network configuration, replacing ifconfig.
+
+Example: ip addr (Displays IP addresses).
+Example: ip link (Displays information about network interfaces).
+Example: ip route (Shows routing table).
+hostname
+Displays or sets the system's hostname.
+
+Example: hostname (Shows the system's hostname).
+Example: hostnamectl set-hostname newhostname (Sets a new hostname).
+nmcli
+A command-line tool for managing network connections via NetworkManager.
+
+Example: nmcli device status (Shows network device status).
+Example: nmcli connection show (Lists all configured network connections).
+ethtool
+Displays or changes Ethernet device settings.
+
+Example: ethtool eth0 (Shows detailed Ethernet device info).
+iwconfig
+Configures wireless network interfaces.
+
+Example: iwconfig wlan0 (Displays wireless network settings for wlan0).
+iwlist
+Used to scan for wireless networks.
+
+Example: iwlist wlan0 scan (Scans for available wireless networks).
+macchanger
+Changes the MAC address of a network interface.
+
+Example: macchanger -r eth0 (Randomly changes the MAC address of eth0).
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+2. Network Connectivity Testing and Troubleshooting Commands:
+ping
+Sends ICMP Echo Requests to test network connectivity.
+
+Example: ping google.com
+traceroute
+Traces the route that packets take to reach a network host.
+
+Example: traceroute google.com
+tracepath
+Similar to traceroute, but doesn't require root privileges.
+
+Example: tracepath google.com
+mtr
+A network diagnostic tool combining ping and traceroute.
+
+Example: mtr google.com
+netstat
+Displays network statistics and information about active connections and listening ports.
+
+Example: netstat -tuln (Shows listening ports).
+ss
+A modern replacement for netstat, it shows more detailed socket statistics.
+
+Example: ss -tuln (Shows active listening sockets).
+dig
+Queries DNS servers for domain name resolution.
+
+Example: dig google.com
+nslookup
+Queries DNS servers for resolving domain names to IP addresses (older tool).
+
+Example: nslookup google.com
+whois
+Retrieves WHOIS information about a domain name.
+
+Example: whois google.com
+curl
+Transfers data from or to a server using various protocols (HTTP, FTP, etc.).
+
+Example: curl http://example.com (Fetches a web page).
+wget
+Downloads files from the web via HTTP, HTTPS, and FTP.
+
+Example: wget http://example.com/file.tar.gz
+telnet
+Connects to remote systems via a command-line interface, useful for testing remote ports.
+
+Example: telnet example.com 80
+nc (Netcat)
+A versatile network utility used for creating TCP/UDP connections, scanning ports, and transferring files.
+
+Example: nc -zv example.com 80 (Checks if port 80 is open on example.com).
+arp
+Displays or manipulates the ARP (Address Resolution Protocol) cache.
+
+Example: arp -a (Shows ARP cache).
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+3. Network Configuration Commands:
+ifup / ifdown
+Brings a network interface up or down.
+
+Example: ifup eth0 (Enables the eth0 interface).
+Example: ifdown eth0 (Disables the eth0 interface).
+ip route
+Manages and displays the IP routing table.
+
+Example: ip route add 192.168.1.0/24 via 192.168.0.1 (Adds a route).
+route
+A legacy tool for manipulating the routing table (use ip route instead).
+
+Example: route -n (Shows the kernel routing table).
+brctl
+Manages Ethernet bridges.
+
+Example: brctl show (Lists all configured Ethernet bridges).
+nmtui
+A text-based user interface for NetworkManager.
+
+Example: nmtui (Launches a simple network management interface).
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+4. Wireless Network Commands:
+nmcli dev wifi
+Lists available Wi-Fi networks.
+
+Example: nmcli dev wifi list
+wpa_supplicant
+Controls wireless network connections with WPA/WPA2 encryption.
+
+Example: wpa_supplicant -i wlan0 -c /etc/wpa_supplicant.conf -B (Starts WPA connection on wlan0).
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+5. File and Printer Sharing Commands:
+nfsstat
+Shows NFS (Network File System) statistics.
+
+Example: nfsstat
+smbclient
+A command-line SMB (Server Message Block) client for accessing Windows shared resources.
+
+Example: smbclient //server/share
+mount
+Mounts network shares (e.g., NFS or CIFS).
+
+Example: mount -t cifs //server/share /mnt (Mounts a CIFS/SMB network share).
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+6. VPN and Remote Access Commands:
+openvpn
+A tool to connect to OpenVPN servers.
+
+Example: openvpn --config client.ovpn
+ssh
+Secure Shell, used to connect to remote servers securely.
+
+Example: ssh user@remote-server
+scp
+Securely copies files between systems.
+
+Example: scp file.txt user@remote-server:/path/
+rsync
+Efficiently synchronizes files between systems.
+
+Example: rsync -avz file.txt user@remote-server:/path/
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+7. Network Diagnostics Commands:
+tcpdump
+Captures and analyzes network packets.
+
+Example: tcpdump -i eth0 (Captures packets on the eth0 interface).
+wireshark
+A graphical network protocol analyzer.
+
+Example: wireshark (Launches the Wireshark GUI).
+iftop
+Displays bandwidth usage on a network interface in real-time.
+
+Example: iftop -i eth0
+nmap
+A network scanning tool for discovering hosts and services on a network.
+
+Example: nmap -sP 192.168.1.0/24 (Scans for active hosts in the local network).
+vnstat
+A network traffic monitor for logging network usage.
+
+Example: vnstat -l (Shows live traffic statistics).
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+8. Firewall and Security Commands:
+iptables
+Configures the IPv4 packet filtering and NAT.
+
+Example: iptables -L (Lists the current firewall rules).
+firewalld
+A dynamically managed firewall with support for zones.
+
+Example: firewall-cmd --list-all (Shows the current firewall configuration).
+ufw
+A simplified command-line interface for managing the firewall.
+
+Example: ufw enable (Enables the firewall).
+-------------------------------------------------------------------------------------------------------------------------------
+
+9. Other Network Utility Commands:
+bmon
+A bandwidth monitoring and debugging tool.
+
+Example: bmon -p eth0 (Monitors bandwidth usage on eth0).
+netcat (nc)
+A versatile tool for reading from and writing to network connections using TCP or UDP.
+
+Example: nc -l 1234 (Listens on port 1234).
+-------------------------------------------------------------------------------------------------------------------------------
+This comprehensive list covers key network commands in Linux,
+ useful for networking tasks such as configuration, monitoring, and diagnostics. 
+Many of these commands require root privileges (sudo) to execute effectively.
+
+
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+
+
+To check if your wireless network adapter supports monitor mode in Windows, you can use the following methods:
+-------------------------------------------------------------------------------------------------------------------------------
+
+1. Using netsh wlan Command:
+Open Command Prompt as Administrator:
+
+Press Win + X and select Command Prompt (Admin) or Windows Terminal (Admin).
+Run the following command:
+
+bash
+Copy code
+netsh wlan show drivers
+Look for the line that says "Radio types supported":
+
+If it lists something like "802.11ac", "802.11n", or "802.11g", 
+it means your adapter supports packet capturing, but not necessarily monitor mode.
+Check for "Monitor mode supported". If it says "Yes", 
+your adapter supports monitor mode.
+Example:
+yaml
+Copy code
+Radio types supported : 802.11b 802.11a 802.11g
+Monitor mode supported: Yes
+If "Monitor mode supported" says No, your adapter doesn't support this mode.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+2. Using Wireshark and Npcap:
+Download Wireshark (a network protocol analyzer):
+
+Go to Wireshark's official website and install it.
+Install Npcap (a packet capturing driver):
+
+During the Wireshark installation, you'll be prompted 
+to install Npcap. Make sure to check the option to 
+install it in "WinPcap API-compatible mode".
+Check for Monitor Mode:
+
+Open Wireshark, click on the "Capture" menu, then "Options".
+Select your wireless adapter and check if you can switch 
+to monitor mode from the dropdown or checkboxes.
+If available, it will allow capturing raw 802.11 frames in monitor mode.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+3. Using Third-Party Tools:
+Some wireless adapters may support monitor mode using 
+third-party drivers or tools like Acrylic Wi-Fi or CommView 
+for Wi-Fi. These tools allow you to put your adapter into 
+monitor mode if it supports the feature.
+-------------------------------------------------------------------------------------------------------------------------------
+
+Important Notes:
+Most built-in wireless adapters in laptops do not support 
+monitor mode in Windows, even though they might on Linux.
+You may need a USB wireless adapter specifically designed 
+for packet capturing (like Alfa adapters) for monitor mode 
+to work properly in Windows.
+
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+
+To check if your wireless network adapter supports monitor mode in Linux,
+ you can use a few commands and tools. Here’s how you can do it:
+-------------------------------------------------------------------------------------------------------------------------------
+
+1. Using iwconfig Command:
+Open a terminal window.
+
+Run the following command to list all wireless interfaces:
+
+
+Copy code
+iwconfig
+If your wireless adapter supports monitor mode, it will 
+appear in the list with an interface name like wlan0, wlp2s0, or similar.
+
+Check if your network interface supports monitor mode
+ by putting the interface into monitor mode:
+
+
+
+Copy code
+sudo ifconfig wlan0 down
+sudo iwconfig wlan0 mode monitor
+sudo ifconfig wlan0 up
+Run iwconfig again to verify that the mode has changed to monitor:
+
+
+Copy code
+iwconfig
+You should see the following output indicating the adapter is 
+in monitor mode:
+mathematica
+Copy code
+Mode:Monitor
+If the interface changes to monitor mode successfully, your 
+wireless adapter supports monitor mode.
+-------------------------------------------------------------------------------------------------------------------------------
+
+2. Using airmon-ng (part of the Aircrack-ng suite):
+If you have Aircrack-ng installed, you can use the airmon-ng 
+tool to check whether your wireless adapter supports monitor mode.
+
+Install Aircrack-ng if it's not already installed:
+
+
+Copy code
+sudo apt update
+sudo apt install aircrack-ng
+Run the following command to list the wireless interfaces:
+
+
+Copy code
+sudo airmon-ng
+The output will show whether the adapter can be placed into 
+monitor mode. If monitor mode is supported, you’ll see the 
+adapter listed with its interface name (e.g., wlan0).
+
+To enable monitor mode on your adapter, run:
+
+
+Copy code
+sudo airmon-ng start wlan0
+After enabling monitor mode, you can verify it by running iwconfig:
+
+
+Copy code
+iwconfig
+It should show the interface in monitor mode.
+-------------------------------------------------------------------------------------------------------------------------------
+
+3. Using nmcli Command (NetworkManager):
+You can use nmcli to check if your wireless interface supports 
+monitor mode as well.
+
+List all interfaces:
+
+
+Copy code
+nmcli dev status
+If your wireless adapter is listed, use the following command to 
+check its capabilities:
+
+
+Copy code
+nmcli device show wlan0
+Look for details related to 802.11 capabilities. Monitor mode may 
+not be explicitly listed here, but this method can give insight into 
+the adapter's capabilities.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+4. Check the Driver and Chipset:
+Sometimes, the ability to use monitor mode depends on the 
+driver or chipset of the wireless adapter. You can use the lspci 
+or lsusb commands to identify the chipset and then check 
+online if it supports monitor mode.
+
+Check PCI devices (if your wireless card is internal):
+
+
+Copy code
+lspci | grep -i wireless
+Check USB devices (if you're using a USB wireless adapter):
+
+
+Copy code
+lsusb
+Once you have identified the chipset, search online to verify if it supports monitor mode on Linux.
+
+Summary of Commands:
+iwconfig: Check and change the mode of the wireless interface.
+airmon-ng: Use Aircrack-ng to check for monitor mode support and enable it.
+nmcli: Use NetworkManager's command-line tool to check device status.
+lspci / lsusb: Identify the chipset of your wireless adapter.
+If the adapter can enter monitor mode using any of these methods, 
+it supports packet capture, and you can use it for network analysis 
+or security testing tools like Wireshark or Aircrack-ng.
