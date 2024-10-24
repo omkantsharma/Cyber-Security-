@@ -1,5 +1,34 @@
 FTP service-put & get files Os1 to Os2
 
+
+
+====================================================================================
+# Update package lists
+sudo apt-get update
+
+# Install vsftpd
+sudo apt-get install vsftpd
+
+# Check repository configuration
+sudo nano /etc/apt/sources.list
+
+# Add backports repository
+echo "deb http://http.kali.org/kali kali-rolling main non-free contrib backports" | sudo tee /etc/apt/sources.list.d/backports.list
+sudo apt-get update
+sudo apt-get install vsftpd
+
+# Manually download and install vsftpd
+wget http://http.kali.org/kali/pool/main/v/vsftpd/vsftpd_3.0.3-1kali1_amd64.deb
+sudo dpkg -i vsftpd_3.0.3-1kali1_amd64.deb
+
+# Verify installation
+dpkg -l | grep vsftpd
+
+
+
+
+====================================================================================
+
 client server
 
 remote server FTP setup
@@ -214,6 +243,385 @@ drwxrwxrwx    2 1000     1000         4096 Oct 21 08:06 om.txt
 drwxr-xr-x    6 1000     1000         4096 Apr 28  2010 vulnerable
 226 Directory send OK.
 ftp> 
+
+
+
+
+
+
+
+
+
 ====================================================
 ====================================================
+====================================================
+====================================================
+
+====================================================
+====================================================
+
+====================================================
+====================================================
+
+====================================================
+====================================================
+
+====================================================
+====================================================
+====================================================
+====================================================
+
+====================================================
+====================================================
+
+====================================================
+====================================================
+
+====================================================
+====================================================  
+====================================================
+====================================================
+====================================================
+====================================================
+
+====================================================
+====================================================
+
+====================================================
+====================================================
+
+====================================================
+====================================================
+
+====================================================
+====================================================
+====================================================
+====================================================
+
+====================================================
+====================================================
+
+====================================================
+====================================================
+
+====================================================
+====================================================  
+
+Linux to win use FTP to send files
+------------------------------------------------------------
+====================================================================
+On Windows:
+Check if the FTP service is installed:
+
+Open Control Panel > Programs and Features > Turn Windows features 
+on or off. Ensure that Internet Information Services and FTP Server 
+are checked.
+Start the FTP service:
+or
+Open Services (you can search for "Services" in the Start menu).
+Find FTP Server in the list, right-click it, and select Start.
+
+=====================================================================
+On Linux:
+Check if the FTP service is installed (e.g., vsftpd):
+sudo apt install vsftpd
+-------------------------------------------------
+sudo systemctl status vsftpd
+---------------------------------------------------
+Start the FTP service:
+sudo systemctl start vsftpd
+---------------------------------------------------
+2. Check Firewall Settings
+Ensure that the firewall on both the client and 
+server machines allows FTP traffic on port 21.
+=====================================================================
+On Windows:
+Open Windows Defender Firewall > Advanced settings.
+Create a new inbound rule to allow FTP traffic on port 21.
+=====================================================================
+On Linux:
+Use ufw to allow FTP traffic:
+
+sudo ufw allow 21/tcp
+---------------------------------------------------------------
+3. Verify Network Connectivity
+Ensure that there is no network issue preventing the connection.
+
+Ping the target machine:
+ping 192.168.153.193
+---------------------------------------------------------------
+4. Check FTP Server Configuration
+Ensure that the FTP server is configured correctly.
+=====================================================================
+On Windows:
+Open Internet Information Services (IIS) Manager.
+Ensure that the FTP site is configured correctly and is listening 
+on the correct IP address and port.
+=====================================================================
+On Linux:
+Check the vsftpd configuration file (/etc/vsftpd.conf) for any 
+misconfigurations.
+-------------------------------------------
+5. Test FTP Service Locally
+Try connecting to the FTP service locally on the target machine to 
+ensure it is working correctly.
+=====================================================================
+On Windows:
+Open Command Prompt and type:
+ftp localhost
+=====================================================================
+On Linux:
+Open a terminal and type:
+ftp localhost
+-------------------------------------------------------------------------
+====================================================================
+=====================================================================
+=====================================================================
+=====================================================================
+=====================================================================
+
+
+6. Use a Different FTP Client
+Try using a different FTP client, such as FileZilla, to see 
+if the issue persists.
+
+Example Commands:
+
+
+
+# Check if FTP service is running on Windows
+sc query ftpserver
+
+# Start the FTP service on Windows
+net start ftpsrv
+
+# Check if FTP service is running on Linux
+sudo systemctl status vsftpd
+
+# Start the FTP service on Linux
+sudo systemctl start vsftpd
+
+# Allow FTP traffic on Linux
+sudo ufw allow 21/tcp
+If you provide more details about your setup and any error messages 
+you encounter, I can offer more targeted assistance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================
+====================================================
+====================================================
+====================================================
+
+====================================================
+====================================================
+
+====================================================
+====================================================
+
+====================================================
+====================================================
+
+====================================================
+====================================================
+====================================================
+====================================================
+
+====================================================
+====================================================
+
+====================================================
+====================================================
+
+====================================================
+====================================================  
+
+if 
+----------------
+┌──(root㉿kali)-[/home/kali]
+└─# sudo apt-get install vsftpd
+
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package vsftpd
+                                                                             
+┌──(root㉿kali)-[/home/kali]
+└─# 
+
+solutions ---------------------
+
+PGPT-Small
+It seems like you're trying to install vsftpd (Very Secure FTP Daemon) on your Kali Linux machine, but the package is not found. This could be due to a few reasons, such as the package not being available in the default repositories or the repositories not being up-to-date.
+
+Here are some steps to troubleshoot and resolve this issue:
+
+1. Update Package Lists
+First, ensure that your package lists are up-to-date:
+
+bash
+
+
+sudo apt-get update
+2. Install vsftpd
+Try installing vsftpd again:
+
+bash
+
+
+sudo apt-get install vsftpd
+3. Check Repository Configuration
+Ensure that your repository configuration is correct. Open the sources list file:
+
+bash
+
+
+sudo nano /etc/apt/sources.list
+Make sure that the repositories are correctly listed. For example:
+
+
+
+deb http://http.kali.org/kali kali-rolling main non-free contrib
+After making any necessary changes, update the package lists again:
+
+bash
+
+
+sudo apt-get update
+4. Install vsftpd from Alternative Repositories
+If the package is still not found, try installing it from alternative repositories. For example, you can add the backports repository:
+
+bash
+
+
+echo "deb http://http.kali.org/kali kali-rolling main non-free contrib backports" | sudo tee /etc/apt/sources.list.d/backports.list
+sudo apt-get update
+sudo apt-get install vsftpd
+5. Manually Download and Install vsftpd
+As a last resort, you can manually download and install the vsftpd package. First, download the package:
+
+bash
+
+
+wget http://http.kali.org/kali/pool/main/v/vsftpd/vsftpd_3.0.3-1kali1_amd64.deb
+Then, install the downloaded package:
+
+bash
+
+
+sudo dpkg -i vsftpd_3.0.3-1kali1_amd64.deb
+6. Verify Installation
+After installation, verify that vsftpd is installed correctly:
+
+bash
+
+
+dpkg -l | grep vsftpd
+Example Commands:
+bash
+
+
+# Update package lists
+sudo apt-get update
+
+# Install vsftpd
+sudo apt-get install vsftpd
+
+# Check repository configuration
+sudo nano /etc/apt/sources.list
+
+# Add backports repository
+echo "deb http://http.kali.org/kali kali-rolling main non-free contrib backports" | sudo tee /etc/apt/sources.list.d/backports.list
+sudo apt-get update
+sudo apt-get install vsftpd
+
+# Manually download and install vsftpd
+wget http://http.kali.org/kali/pool/main/v/vsftpd/vsftpd_3.0.3-1kali1_amd64.deb
+sudo dpkg -i vsftpd_3.0.3-1kali1_amd64.deb
+
+# Verify installation
+dpkg -l | grep vsftpd
+If you provide more details about your setup and any error messages you encounter, I can offer more targeted assistance.
+
+Plugins
+No plugin selected
 
