@@ -3,6 +3,7 @@ Enable and Disable Monitor Mode in Kali Linux
 ==============
 Enable Monitor Mode
 ==============
+lsusb
 iwconfig
 sudo su
 ifconfig wlan1 down
@@ -10,6 +11,9 @@ airmon-ng check
 airmon-ng check kill
 airmon-ng start wlan1
 iwconfig
+
+
+
 ------------
 =======================
 Disable Monitor Mode
@@ -37,6 +41,8 @@ iwconfig
 Enable Monitor Mode
 ==============
 ------------------------------------------------------------------------
+──(root㉿kali)-[/home/kali/compat-wireless-2010-06-26-p]
+└─# lsusb
                                                                              
 ┌──(root㉿kali)-[~]
 └─# ifconfig wlan0 down
