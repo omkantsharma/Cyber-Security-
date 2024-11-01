@@ -1,0 +1,173 @@
+Enable and Disable Monitor Mode in Kali Linux 2024
+
+==============
+Enable Monitor Mode
+==============
+iwconfig
+sudo su
+ifconfig wlan1 down
+airmon-ng check
+airmon-ng check kill
+airmon-ng start wlan1
+iwconfig
+------------
+=======================
+Disable Monitor Mode
+=======================
+airmon-ng stop wlan0mon
+
+-----------------------------
+service NetworkManager restart
+-------
+iwconfig
+
+
+
+
+
+==========================================
+===========================================
+===========================================
+==========================================
+===========================================
+===========================================
+===========================================
+===========================================
+==============
+Enable Monitor Mode
+==============
+------------------------------------------------------------------------
+                                                                             
+┌──(root㉿kali)-[~]
+└─# ifconfig wlan0 down
+
+wlan0: ERROR while getting interface flags: No such device
+                                                                             
+┌──(root㉿kali)-[~]
+└─# ifconfig wlan1 down
+                                                                             
+┌──(root㉿kali)-[~]
+└─# airmon-ng check
+
+
+
+                                                                             
+┌──(root㉿kali)-[~]
+└─# airmon-ng check
+
+
+
+                                                                             
+┌──(root㉿kali)-[~]
+└─# airmon-ng check kill
+
+
+                                                                             
+┌──(root㉿kali)-[~]
+└─# airmon-ng start wlan1
+
+
+PHY     Interface       Driver          Chipset
+
+phy0    wlan0mon        mac80211_hwsim  Software simulator of 802.11 radio(s) for mac80211
+phy1    wlan1           mac80211_hwsim  Software simulator of 802.11 radio(s) for mac80211
+                (mac80211 monitor mode already enabled for [phy1]wlan1 on [phy1]10)
+                                                                             
+┌──(root㉿kali)-[~]
+└─# airmon-ng start wlan1
+
+
+
+PHY     Interface       Driver          Chipset
+
+phy0    wlan0mon        mac80211_hwsim  Software simulator of 802.11 radio(s) for mac80211
+phy1    wlan1           mac80211_hwsim  Software simulator of 802.11 radio(s) for mac80211
+                (mac80211 monitor mode already enabled for [phy1]wlan1 on [phy1]10)
+                                                                             
+┌──(root㉿kali)-[~]
+└─# iwconfig           
+lo        no wireless extensions.
+
+eth0      no wireless extensions.
+
+wlan1     IEEE 802.11  Mode:Monitor  Frequency:2.457 GHz  Tx-Power=20 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:off
+          
+hwsim0    no wireless extensions.
+
+wlan0mon  IEEE 802.11  Mode:Monitor  Frequency:2.472 GHz  Tx-Power=20 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:off
+          
+                                                                             
+┌──(root㉿kali)-[~]
+└─# 
+========================================================
+========================================================
+========================================================
+========================================================
+========================================================
+-=======================================================
+========================================================
+========================================================
+========================================================
+========================================================
+------------------------------------------------------------------------------------------------
+========================================================
+------------------------------------------------------------------------------------------------
+========================================================
+========================================================
+========================================================
+========================================================
+========================================================
+========================================================
+=======================
+Disable Monitor Mode
+=======================
+----------------------------------------------------------------------------------------------
+                                                                             
+┌──(root㉿kali)-[~]
+└─# airmon-ng stop wlan0mon
+
+
+PHY     Interface       Driver          Chipset
+
+phy0    wlan0mon        mac80211_hwsim  Software simulator of 802.11 radio(s) for mac80211
+                (mac80211 station mode vif enabled on [phy0]wlan0)
+                (mac80211 monitor mode vif disabled for [phy0]wlan0mon)
+phy1    wlan1           mac80211_hwsim  Software simulator of 802.11 radio(s) for mac80211
+
+                                                                             
+┌──(root㉿kali)-[~]
+└─# service NetworkManager restart
+
+                                                                             
+┌──(root㉿kali)-[~]
+└─# ^[[200~iwconfig
+zsh: bad pattern: ^[[200~iwconfig
+                                                                             
+┌──(root㉿kali)-[~]
+└─# iwconfig
+
+lo        no wireless extensions.
+
+eth0      no wireless extensions.
+
+wlan1     IEEE 802.11  Mode:Monitor  Frequency:2.457 GHz  Tx-Power=20 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:off
+          
+hwsim0    no wireless extensions.
+
+wlan0     IEEE 802.11  ESSID:off/any  
+          Mode:Managed  Access Point: Not-Associated   Tx-Power=20 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          
+                                                                             
+┌──(root㉿kali)-[~]
+└─# 
+
+
