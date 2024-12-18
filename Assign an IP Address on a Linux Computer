@@ -1,0 +1,91 @@
+ Assign an IP Address on a Linux Computer
+-----------------------------------------
+
+──(kali㉿kali)-[~]
+└─$ sudo su         
+[sudo] password for kali: 
+Sorry, try again.
+[sudo] password for kali: 
+┌──(root㉿kali)-[/home/kali]
+└─# cd
+                                                                             
+┌──(root㉿kali)-[~]
+└─# ifconfig -a
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        ether 00:0c:29:1f:c8:8f  txqueuelen 1000  (Ethernet)
+        RX packets 794  bytes 73480 (71.7 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 48  bytes 8631 (8.4 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 28  bytes 1480 (1.4 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 28  bytes 1480 (1.4 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+                                                                             
+┌──(root㉿kali)-[~]
+└─# ifconfig eth0 192.168.56.2 netmask 255.255.255.0
+                                                                             
+┌──(root㉿kali)-[~]
+└─# ip a                                            
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 00:0c:29:1f:c8:8f brd ff:ff:ff:ff:ff:ff
+    inet 192.168.56.2/24 brd 192.168.56.255 scope global eth0
+       valid_lft forever preferred_lft forever
+                                                                             
+┌──(root㉿kali)-[~]
+└─# route                              
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+192.168.56.0    0.0.0.0         255.255.255.0   U     0      0        0 eth0
+                                                                             
+┌──(root㉿kali)-[~]
+└─# route add default gw 192.168.56.3                          
+                                                                             
+┌──(root㉿kali)-[~]
+└─# route                            
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         192.168.56.3    0.0.0.0         UG    0      0        0 eth0
+192.168.56.0    0.0.0.0         255.255.255.0   U     0      0        0 eth0
+                                                                             
+┌──(root㉿kali)-[~]
+└─# ip a                             
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 00:0c:29:1f:c8:8f brd ff:ff:ff:ff:ff:ff
+    inet 192.168.56.2/24 brd 192.168.56.255 scope global eth0
+       valid_lft forever preferred_lft forever
+                                                                             
+┌──(root㉿kali)-[~]
+└─# 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+=========================================================================================================
+=========================================================================================================
+Reference
+=========================================================================================================
+most important article
+https://jotelulu.com/en-gb/blog/what-is-dhcp/
+=========================================================================================================
+
+https://www.wikihow.com/Assign-an-IP-Address-on-a-Linux-Computer#:~:text=Quick%20Steps&text=Type%20%22ifconfig%22%20and%20press%20Enter,and%20desired%20IP%20address%2C%20respectively.
+https://forums.virtualbox.org/viewtopic.php?t=109639
+https://www.ibm.com/docs/en/power9/0009-ESS?topic=notebook-setting-ip-address-in-linux
+
