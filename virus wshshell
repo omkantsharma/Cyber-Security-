@@ -1,0 +1,47 @@
+Write below syntex in notpad
+-------------------------------------------------------
+
+set wshshell = wscript.CreateObject("wscript.shell")
+
+Do
+
+wshshell.sendKeys  "Your System Has Been Hacked...."
+WScript.sleep 500
+
+Loop 
+
+
+----------------------------------------------------
+save it with extension virus.vbs
+
+summery -  whshell is here variable, 
+- we store here content wscript.CreateObject 
+- ("WScript.Shell")  - in window it can perform different  task
+   like auto type, sound, click etc
+- time pause 500 Millisecond.- WScript.sleep 500
+- extension .vbs   means script written in visual Basic script                   
+
+-----------
+how to remove 
+- Directly turn off system and turn on and shift delete the .vhs file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
