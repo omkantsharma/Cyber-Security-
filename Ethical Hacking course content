@@ -1930,3 +1930,6 @@ password as is it
 Storted Cross site scripting
 in a search -
 <script>alert(Document.cookie)</script>
+
+--------------------------------------------------
+w3af is a vulnerability scanner
