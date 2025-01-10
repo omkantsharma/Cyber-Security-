@@ -1,0 +1,51 @@
+Reconnaissance 
+Passive Reconnaissance---
+- Whosis database lookup
+(WHOIS Search, Domain Name, Website, and IP Tools)
+
+https://who.is/
+---------------------------------------------------
+- Netcraft
+Netcraft is a website that provides information about other websites, 
+including details like IP address, web server OS, and DNS server.
+
+
+https://searchdns.netcraft.com/
+https://www.netcraft.com/tools/
+---------------------------------------------------
+- History of Website
+The Internet Archive is an American non-profit organization founded in 1996
+by Brewster Kahle that runs a digital library website, archive.org. 
+-
+It provides free access to collections of digitized media including websites, 
+software applications, music, audiovisual, and print materials.
+
+
+https://web.archive.org/
+Note- website's attack history can also check throuth it 
+
+---------------------------------------------------
+- Advance google search
+google dorking - 
+e.g. -
+google search filter-
+site:mircosoft.com
+intitle:"Penetration testing"
+------
+live vulnerable cameras worldwide...
+inurl:control/userimage.html
+https://coolzgeeks.com/tag/control-userimage-html/
+------
+https://www.cybrary.it/blog/advanced-google-dorking-commands
+https://www.imperva.com/learn/application-security/google-dorking-hacking/
+----------------------------------------------------
+- Google Hacking
+- Email Harvesting
+
+Active Reconnaissance
+- DNS Enumeration
+- Mall Server Enumeration
+- DNS Zone Transfer
+- Scanning
+
+
