@@ -4,6 +4,58 @@ Routing information  Protocol (RIP)
 Open shortest Path First (OSPF)
  
 Exterior 
-Border Gateway Protocol (BGP)
+Border Gateway Protocol (BGP) 
+BGP uses TCP port 179 to communicate with other routers 
 
 autonomous SYSTEM 
+
+
+
+
+
+
+
+================================================
+
+To determine the distance vector using hop count in a network, you can use the traceroute command. The hop count represents the number of intermediate devices (like routers) that a packet passes through to reach its destination.
+
+Steps to Use traceroute Command:
+Open Command Line Interface:
+
+On Windows, open Command Prompt.
+On Linux/macOS, open the Terminal.
+Run the traceroute Command:
+
+On Windows:
+php
+Copy code
+tracert <destination>
+Example: tracert google.com
+On Linux/macOS:
+php
+Copy code
+traceroute <destination>
+Example: traceroute google.com
+Interpret the Results:
+
+Each line in the output represents a hop (router) on the path to the destination.
+The hop count is the number of rows before the destination is reached.
+If there is a * or timeout in a row, it means the hop did not respond.
+Example Output:
+For tracert google.com:
+
+Copy code
+1   192.168.1.1      <1 ms   <1 ms   <1 ms
+2   10.0.0.1         5 ms    5 ms    5 ms
+3   203.0.113.1      20 ms   20 ms   20 ms
+4   8.8.8.8          30 ms   30 ms   30 ms
+In this case:
+
+The hop count to the destination (8.8.8.8) is 4.
+This helps measure the number of hops and network latency between the source and the destination.
+
+
+
+
+
+
