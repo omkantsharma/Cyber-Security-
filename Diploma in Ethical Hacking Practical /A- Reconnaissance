@@ -1,10 +1,36 @@
 Reconnaissance 
 Passive Reconnaissance---
+
+- Whosis database lookup
+- Netcraft
+- History of Website
+- Advance google search
+- Email Harvesting
+
+Active Reconnaissance
+- DNS Enumeration
+- Mall Server Enumeration
+- DNS Zone Transfer
+- Scanning
+
+
+
+
+
+
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
+
 - Whosis database lookup
 (WHOIS Search, Domain Name, Website, and IP Tools)
 
 https://who.is/
 ---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
 - Netcraft
 Netcraft is a website that provides information about other websites, 
 including details like IP address, web server OS, and DNS server.
@@ -13,6 +39,9 @@ including details like IP address, web server OS, and DNS server.
 https://searchdns.netcraft.com/
 https://www.netcraft.com/tools/
 ---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
 - History of Website
 The Internet Archive is an American non-profit organization founded in 1996
 by Brewster Kahle that runs a digital library website, archive.org. 
@@ -23,10 +52,13 @@ software applications, music, audiovisual, and print materials.
 
 https://web.archive.org/
 Note- website's attack history can also check throuth it 
-
 ---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+
 - Advance google search
-google dorking - 
+&
+- Google Hacking (google dorking) - 
 e.g. -
 google search filter-
 site:mircosoft.com
@@ -38,14 +70,612 @@ https://coolzgeeks.com/tag/control-userimage-html/
 ------
 https://www.cybrary.it/blog/advanced-google-dorking-commands
 https://www.imperva.com/learn/application-security/google-dorking-hacking/
-----------------------------------------------------
-- Google Hacking
+=============================================================================
+=============================================================================
+=============================================================================
+------------------------------------------------------------------------------------------------------------------------------------
 - Email Harvesting
+tool- 
+the Harvester: included in the Kali Linux distribution,
+ is a comprehensive tool used to gather information
+ about subdomains, virtual hosts, open ports, and
+ email addresses related to any company or website.
+--------------------------------------------------------------------------------------------------------------------
+Implementation ---
+-------
+──(kali㉿kali)-[~]
+└─$ theharvester
+┏━(Message from Kali developers)
+┃
+┃ The command theharvester is deprecated. Please use theHarvester instead.
+┃
+┗━
+---------------------------------------------------------------------------------------------------------------------                                                                         
+┌──(kali㉿kali)-[~]
+└─$ theHarvester -h
+Read proxies.yaml from /home/kali/.theHarvester/proxies.yaml
+*******************************************************************
+*  _   _                                            _             *
+* | |_| |__   ___    /\  /\__ _ _ ____   _____  ___| |_ ___ _ __  *
+* | __|  _ \ / _ \  / /_/ / _` | '__\ \ / / _ \/ __| __/ _ \ '__| *
+* | |_| | | |  __/ / __  / (_| | |   \ V /  __/\__ \ ||  __/ |    *
+*  \__|_| |_|\___| \/ /_/ \__,_|_|    \_/ \___||___/\__\___|_|    *
+*                                                                 *
+* theHarvester 4.6.0                                              *
+* Coded by Christian Martorella                                   *
+* Edge-Security Research                                          *
+* cmartorella@edge-security.com                                   *
+*                                                                 *
+*******************************************************************
+usage: theHarvester [-h] -d DOMAIN [-l LIMIT] [-S START] [-p] [-s]
+                    [--screenshot SCREENSHOT] [-v] [-e DNS_SERVER] [-t]
+                    [-r [DNS_RESOLVE]] [-n] [-c] [-f FILENAME] [-b SOURCE]
 
+theHarvester is used to gather open source intelligence (OSINT) on a
+company or domain.
+
+options:
+  -h, --help            show this help message and exit
+  -d DOMAIN, --domain DOMAIN
+                        Company name or domain to search.
+  -l LIMIT, --limit LIMIT
+                        Limit the number of search results, default=500.
+  -S START, --start START
+                        Start with result number X, default=0.
+  -p, --proxies         Use proxies for requests, enter proxies in
+                        proxies.yaml.
+  -s, --shodan          Use Shodan to query discovered hosts.
+  --screenshot SCREENSHOT
+                        Take screenshots of resolved domains specify output
+                        directory: --screenshot output_directory
+  -v, --virtual-host    Verify host name via DNS resolution and search for
+                        virtual hosts.
+  -e DNS_SERVER, --dns-server DNS_SERVER
+                        DNS server to use for lookup.
+  -t, --take-over       Check for takeovers.
+  -r [DNS_RESOLVE], --dns-resolve [DNS_RESOLVE]
+                        Perform DNS resolution on subdomains with a
+                        resolver list or passed in resolvers, default
+                        False.
+  -n, --dns-lookup      Enable DNS server lookup, default False.
+  -c, --dns-brute       Perform a DNS brute force on the domain.
+  -f FILENAME, --filename FILENAME
+                        Save the results to an XML and JSON file.
+  -b SOURCE, --source SOURCE
+                        anubis, baidu, bevigil, binaryedge, bing, bingapi,
+                        bufferoverun, brave, censys, certspotter,
+                        criminalip, crtsh, dnsdumpster, duckduckgo,
+                        fullhunt, github-code, hackertarget, hunter,
+                        hunterhow, intelx, netlas, onyphe, otx,
+                        pentesttools, projectdiscovery, rapiddns,
+                        rocketreach, securityTrails, sitedossier,
+                        subdomaincenter, subdomainfinderc99, threatminer,
+                        tomba, urlscan, virustotal, yahoo, zoomeye
+-----------------------------------------------------------------------------------------------------------------------                                                                         
+──(kali㉿kali)-[~]
+└─$ theHarvester -d nptel.ac.in -b all
+Read proxies.yaml from /home/kali/.theHarvester/proxies.yaml
+*******************************************************************
+*  _   _                                            _             *
+* | |_| |__   ___    /\  /\__ _ _ ____   _____  ___| |_ ___ _ __  *
+* | __|  _ \ / _ \  / /_/ / _` | '__\ \ / / _ \/ __| __/ _ \ '__| *
+* | |_| | | |  __/ / __  / (_| | |   \ V /  __/\__ \ ||  __/ |    *
+*  \__|_| |_|\___| \/ /_/ \__,_|_|    \_/ \___||___/\__\___|_|    *
+*                                                                 *
+* theHarvester 4.6.0                                              *
+* Coded by Christian Martorella                                   *
+* Edge-Security Research                                          *
+* cmartorella@edge-security.com                                   *
+*                                                                 *
+*******************************************************************
+
+[*] Target: nptel.ac.in 
+
+Created default api-keys.yaml at /home/kali/.theHarvester/api-keys.yaml
+
+[!] Missing API key for bevigil. 
+Read api-keys.yaml from /home/kali/.theHarvester/api-keys.yaml
+
+[!] Missing API key for binaryedge. 
+Read api-keys.yaml from /home/kali/.theHarvester/api-keys.yaml
+Read api-keys.yaml from /home/kali/.theHarvester/api-keys.yaml
+Read api-keys.yaml from /home/kali/.theHarvester/api-keys.yaml
+
+[!] Missing API key for bufferoverun. 
+Read api-keys.yaml from /home/kali/.theHarvester/api-keys.yaml
+Read api-keys.yaml from /home/kali/.theHarvester/api-keys.yaml
+
+[!] Missing API key for Censys ID and/or Secret. 
+Read api-keys.yaml from /home/kali/.theHarvester/api-keys.yaml
+
+[!] Missing API key for criminalip. 
+Read api-keys.yaml from /home/kali/.theHarvester/api-keys.yaml
+
+[!] Missing API key for fullhunt. 
+Read api-keys.yaml from /home/kali/.theHarvester/api-keys.yaml
+
+[!] Missing API key for Github. 
+Read api-keys.yaml from /home/kali/.theHarvester/api-keys.yaml
+
+[!] Missing API key for Hunter. 
+Read api-keys.yaml from /home/kali/.theHarvester/api-keys.yaml
+
+[!] Missing API key for hunterhow. 
+Read api-keys.yaml from /home/kali/.theHarvester/api-keys.yaml
+
+[!] Missing API key for Intelx. 
+Read api-keys.yaml from /home/kali/.theHarvester/api-keys.yaml
+
+[!] Missing API key for netlas. 
+Read api-keys.yaml from /home/kali/.theHarvester/api-keys.yaml
+
+[!] Missing API key for onyphe. 
+Read api-keys.yaml from /home/kali/.theHarvester/api-keys.yaml
+
+[!] Missing API key for PentestTools. 
+Read api-keys.yaml from /home/kali/.theHarvester/api-keys.yaml
+
+[!] Missing API key for ProjectDiscovery. 
+Read api-keys.yaml from /home/kali/.theHarvester/api-keys.yaml
+
+[!] Missing API key for RocketReach. 
+Read api-keys.yaml from /home/kali/.theHarvester/api-keys.yaml
+
+[!] Missing API key for Securitytrail. 
+Read api-keys.yaml from /home/kali/.theHarvester/api-keys.yaml
+Read api-keys.yaml from /home/kali/.theHarvester/api-keys.yaml
+
+[!] Missing API key for Tomba Key and/or Secret. 
+Read api-keys.yaml from /home/kali/.theHarvester/api-keys.yaml
+
+[!] Missing API key for virustotal. 
+Read api-keys.yaml from /home/kali/.theHarvester/api-keys.yaml
+
+[!] Missing API key for zoomeye. 
+        Searching 0 results.
+[*] Searching Bing. 
+[*] Searching Anubis.                                                        
+        Searching results.                                                   
+[*] Searching Certspotter.                                                   
+An exception has occurred: 400, message:                                     
+  Can not decode content-encoding: br                                        
+An exception has occurred: Cannot connect to host www.baidu.com:443 ssl:<ssl.SSLContext object at 0x7fe06cf424e0> [Connection refused]                    
+An exception has occurred: Cannot connect to host www.baidu.com:443 ssl:<ssl.SSLContext object at 0x7fe06cf41f40> [Network is unreachable]                
+..........................................................      
+[*] Searching Baidu.                                                         
+An exception occurred: list index out of range                               
+Unclosed client session                                                      
+client_session: <aiohttp.client.ClientSession object at 0x7fe06cf2ec10>      
+[*] Searching Dnsdumpster.                                                   
+[*] Searching CRTsh.                                                         
+[*] Searching Duckduckgo.                                                    
+[*] Searching Hackertarget.                                                  
+An exception has occurred: 400, message:                                     
+  Can not decode content-encoding: br                                        
+[*] Searching Otx.                                                           
+Sitedossier module has triggered a captcha on first iteration, no results can be found.                                                                   
+Change IPs, manually solve the captcha, or wait before rerunning Sitedossier module                                                                       
+[*] Searching Sitedossier.                                                   
+[*] Searching Rapiddns.                                                      
+[*] Searching Subdomaincenter.                                               
+An exception has occurred: 0, message='Attempt to decode JSON with unexpected mimetype: text/html; charset=utf-8', url=URL('https://api.threatminer.org/v2/domain.php?q=nptel.ac.in&rt=5')                                             
+An exception has occurred: 400, message:                                     
+  Can not decode content-encoding: br                                        
+[*] Searching Urlscan.                                                       
+[*] Searching Yahoo.                                                         
+An exception has occurred: 400, message:                                     
+  Can not decode content-encoding: br                                        
+[*] Searching Subdomainfinderc99.                                            
+An exception has occurred: 400, message:                                     
+  Can not decode content-encoding: br                                        
+An exception has occurred: 400, message:                                     
+  Can not decode content-encoding: br                                        
+An exception has occurred: 400, message:                                     
+  Can not decode content-encoding: br                                        
+An exception has occurred: 400, message:                                     
+  Can not decode content-encoding: br                                        
+An exception has occurred: 400, message:                                     
+  Can not decode content-encoding: br                                        
+An exception has occurred: 400, message:                                     
+  Can not decode content-encoding: br                                        
+An exception has occurred: 400, message:                                     
+  Can not decode content-encoding: br                                        
+An exception has occurred: 400, message:                                     
+  Can not decode content-encoding: br                                        
+An exception has occurred: 400, message:                                     
+  Can not decode content-encoding: br                                        
+An exception has occurred: 400, message:                                     
+  Can not decode content-encoding: br                                        
+An exception has occurred: 400, message:                                     
+  Can not decode content-encoding: br                                        
+An exception has occurred: 400, message:                                     
+  Can not decode content-encoding: br                                        
+An exception has occurred: 400, message:                                     
+  Can not decode content-encoding: br                                        
+[*] Searching Brave.                                                         
+                                                                             
+[*] ASNS found: 13                                                           
+--------------------                                                         
+AS13335                                                                      
+AS141340                                                                     
+AS15169                                                                      
+AS26496                                                                      
+AS27647                                                                      
+AS32181                                                                      
+AS34119                                                                      
+AS396982                                                                     
+AS45232                                                                      
+AS46606                                                                      
+AS55824                                                                      
+AS57724                                                                      
+AS8075                                                                       
+                                                                             
+[*] Interesting Urls found: 26                                               
+--------------------                                                         
+http://nptel.ac.in/courses/112105129/error.php                               
+http://nptel.ac.in/error.php                                                 
+http://textofvideo.nptel.ac.in/                                              
+http://www.nptel.ac.in/                                                      
+https://archive.nptel.ac.in/                                                 
+https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL23HS116S1534072910103177
+https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL24HS84S55230406630745538
+https://arctest.dev.nptel.ac.in/                                             
+https://auth.dev.nptel.ac.in/                                                
+https://internalapp.nptel.ac.in/                                             
+https://nptel.ac.in/                                                         
+https://nptel.ac.in/courses/106106248                                        
+https://nptel.ac.in/domains                                                  
+https://onlinecourses-archive.nptel.ac.in/static/polymer-1.2.0/promise-polyfill/promise-polyfill-lite.html                                                
+https://onlinecourses.nptel.ac.in/                                           
+https://onlinecourses.nptel.ac.in/modules/explorer/_static/components/course-explorer/course-explorer.html                                                
+https://onlinecourses.nptel.ac.in/noc15_ph06/announcements                   
+https://onlinecourses.nptel.ac.in/noc20_cs70/progassignment?name=113         
+https://onlinecourses.nptel.ac.in/noc20_cs80/preview                         
+https://onlinecourses.nptel.ac.in/noc23_bt55/announcements?force=true        
+https://onlinecourses.nptel.ac.in/noc24_cs15/announcements?force=true        
+https://swayamopenid.b2clogin.com/swayamopenid.onmicrosoft.com/B2C_1_ExamPolicy/oauth2/v2.0/authorize?response_type=code&client_id=a07ebc01-4cc4-46dc-8e8f-ecc87f5956b1&redirect_uri=https%3A%2F%2Fexamform.nptel.ac.in%2Fwso_ok&scope=https%3A%2F%2Fswayamopenid.onmicrosoft.com%2Fapi%2Fuser_impersonation+offline_access+openid&state=AeyCt0DFRZlZLzekz0Ek4vvR85kGsu&access_type=authorization_code                                                                        
+https://swayamopenid.b2clogin.com/swayamopenid.onmicrosoft.com/B2C_1_ExamPolicy/oauth2/v2.0/authorize?response_type=code&client_id=a07ebc01-4cc4-46dc-8e8f-ecc87f5956b1&redirect_uri=https%3A%2F%2Fexamform.nptel.ac.in%2Fwso_ok&scope=https%3A%2F%2Fswayamopenid.onmicrosoft.com%2Fapi%2Fuser_impersonation+offline_access+openid&state=BpbjQnwzyOTyjoasZhBDtmlbO3q9YS&access_type=authorization_code                                                                        
+https://swayamopenid.b2clogin.com/swayamopenid.onmicrosoft.com/B2C_1_swayam2/oauth2/v2.0/authorize?response_type=code&client_id=bf9d75c0-a6d0-4ab0-9e9a-054d24e2fea4&redirect_uri=https%3A%2F%2Fonlinecourses.nptel.ac.in%2Fwso_ok&scope=https%3A%2F%2Fswayamopenid.onmicrosoft.com%2Fapi%2Fuser_impersonation+offline_access+openid&state=IkQAKF7Qd09WkzwZliukEfza8dpX6q&access_type=authorization_code                                                                      
+https://swayamopenid.b2clogin.com/swayamopenid.onmicrosoft.com/B2C_1_swayam2/oauth2/v2.0/authorize?response_type=code&client_id=bf9d75c0-a6d0-4ab0-9e9a-054d24e2fea4&redirect_uri=https%3A%2F%2Fonlinecourses.nptel.ac.in%2Fwso_ok&scope=https%3A%2F%2Fswayamopenid.onmicrosoft.com%2Fapi%2Fuser_impersonation+offline_access+openid&state=kiPqj48RYsBCScy8XMDtnXHYg9Wg56&access_type=authorization_code                                                                      
+https://www.nptel.ac.in/                                                     
+                                                                             
+[*] LinkedIn Links found: 0                                                  
+---------------------                                                        
+                                                                             
+[*] IPs found: 62                                                            
+-------------------                                                          
+10.200.5.165                                                                 
+103.158.43.161                                                               
+103.158.43.163                                                               
+104.211.243.132                                                              
+111.125.140.235                                                              
+116.193.159.74                                                               
+14.139.160.146                                                               
+14.139.160.15                                                                
+14.139.160.46                                                                
+14.139.160.71                                                                
+142.250.217.115                                                              
+142.250.217.83                                                               
+142.250.69.211                                                               
+142.251.211.243                                                              
+142.251.215.243                                                              
+142.251.33.115                                                               
+148.66.138.136                                                               
+162.214.80.6                                                                 
+172.217.14.211                                                               
+172.217.3.211                                                                
+173.194.197.121                                                              
+185.27.134.134                                                               
+195.216.243.24                                                               
+199.36.158.100                                                               
+20.190.159.134                                                               
+2001:4860:4802:32::15                                                        
+2001:4860:4802:34::15                                                        
+2001:4860:4802:36::15                                                        
+2001:4860:4802:38::15                                                        
+216.239.32.21                                                                
+216.239.34.21                                                                
+216.239.36.21                                                                
+216.239.38.21                                                                
+2603:1026:3000:148::10                                                       
+2603:1026:3000:c8::9                                                         
+2606:4700:30::681b:8cf4                                                      
+2606:4700:30::681b:8df4                                                      
+2a00:1450:4001:800::2013                                                     
+2a00:1450:4001:803::2013                                                     
+2a00:1450:4001:80b::2013                                                     
+2a00:1450:4001:812::2013                                                     
+2a00:1450:4001:813::2013                                                     
+2a00:1450:4001:819::2013                                                     
+2a00:1450:4001:81d::2001                                                     
+2a00:1450:4001:81d::2013                                                     
+2a00:1450:4001:820::2013                                                     
+2a00:1450:4001:827::2013                                                     
+2a00:1450:4001:82a::2013                                                     
+34.79.160.55                                                                 
+34.93.15.143                                                                 
+34.93.250.60                                                                 
+35.200.221.74                                                                
+35.200.242.81                                                                
+35.244.13.78                                                                 
+69.65.10.202                                                                 
+74.115.51.8                                                                  
+74.125.69.214                                                                
+                                                                             
+[*] No emails found.                                                         
+                                                                             
+[*] Hosts found: 123                                                         
+---------------------                                                        
+2Fstories.nptel.ac.in                                                        
+a.beta.nptel.ac.in                                                           
+a.beta.nptel.ac.in:dev.nptel.ac.in                                           
+a.beta.nptel.ac.in:dev.nptel.ac.in.                                          
+a.beta.nptel.ac.in:ghs.googlehosted.com                                      
+archive.dev.nptel.ac.in                                                      
+archive.nptel.ac.in                                                          
+archive.nptel.ac.in:103.158.43.163                                           
+arctest.dev.nptel.ac.in                                                      
+arctest.dev.nptel.ac.in:103.158.43.163                                       
+auth.dev.nptel.ac.in                                                         
+auth.dev.nptel.ac.in:103.158.43.163                                          
+awx.dev.nptel.ac.in                                                          
+awx.dev.nptel.ac.in:103.158.43.163                                           
+backend.seek.nptel.ac.in                                                     
+beta.nptel.ac.in                                                             
+beta.nptel.ac.in:dev.nptel.ac.in                                             
+citychange.nptel.ac.in                                                       
+dashboard.dev.nptel.ac.in                                                    
+dashboard.dev.nptel.ac.in:103.158.43.163                                     
+dashboard.nptel.ac.in                                                        
+dashboard.nptel.ac.in:dev.nptel.ac.in                                        
+dashboard.nptel.ac.in:dev.nptel.ac.in.                                       
+dev-exam.nptel.ac.in                                                         
+dev.nptel.ac.in                                                              
+dev.nptel.ac.in:103.158.43.163                                               
+elearn.nptel.ac.in                                                           
+elearn.nptel.ac.in:34.79.160.55                                              
+examform.nptel.ac.in                                                         
+examform.nptel.ac.in:216.239.32.21                                           
+fe.dev.nptel.ac.in                                                           
+fe.dev.nptel.ac.in:103.158.43.163                                            
+forums.nptel.ac.in                                                           
+forums.nptel.ac.in:14.139.160.155                                            
+gate.dev.nptel.ac.in                                                         
+gate.dev.nptel.ac.in:103.158.43.163                                          
+gate.nptel.ac.in                                                             
+gate.nptel.ac.in:dev.nptel.ac.in                                             
+git.gd.nptel.ac.in                                                           
+gitlab.dev.nptel.ac.in                                                       
+gitlab.dev.nptel.ac.in:103.158.43.163                                        
+graf.dev.nptel.ac.in                                                         
+internalapp.nptel.ac.in                                                      
+internalapp.nptel.ac.in:35.200.242.81                                        
+jup.dev.nptel.ac.in                                                          
+jup.dev.nptel.ac.in:103.158.43.163                                           
+lam.dev.nptel.ac.in                                                          
+lam.dev.nptel.ac.in:103.158.43.163                                           
+login.nptel.ac.in                                                            
+login.nptel.ac.in:14.139.160.154                                             
+mad1.dev.nptel.ac.in                                                         
+mad1.dev.nptel.ac.in:103.158.43.163                                          
+media.dev.nptel.ac.in                                                        
+media.dev.nptel.ac.in:103.158.43.163                                         
+mm.dev.nptel.ac.in                                                           
+mm.dev.nptel.ac.in:103.158.43.163                                            
+monitor.gd.nptel.ac.in                                                       
+npat.nptel.ac.in                                                             
+npat.nptel.ac.in:ghs.googlehosted.com                                        
+npat.nptel.ac.in:ghs.googlehosted.com.                                       
+nptel2.nptel.ac.in                                                           
+npteldownloads.nptel.ac.in                                                   
+nptelvideos.nptel.ac.in                                                      
+nptelvideos.nptel.ac.in:103.158.43.162                                       
+onlinecourses-archive.nptel.ac.in                                            
+onlinecourses-archive.nptel.ac.in:ghs.googlehosted.com                       
+onlinecourses-archive.nptel.ac.in:ghs.googlehosted.com.                      
+onlinecourses.nptel.ac.in                                                    
+onlinecourses.nptel.ac.in:ghs.googlehosted.com                               
+pbs.dev.nptel.ac.in                                                          
+pbs3.dev.nptel.ac.in                                                         
+pbs3.dev.nptel.ac.in:103.158.43.163                                          
+pod.nptel.ac.in                                                              
+pod.nptel.ac.in:34.93.250.60                                                 
+port.dev.nptel.ac.in                                                         
+port.dev.nptel.ac.in:103.158.43.163                                          
+pve.dev.nptel.ac.in                                                          
+pve.dev.nptel.ac.in:103.158.43.163                                           
+pve15.dev.nptel.ac.in                                                        
+pve8.dev.nptel.ac.in                                                         
+pve8.dev.nptel.ac.in:103.158.43.163                                          
+qa-exam.nptel.ac.in                                                          
+qp-staging.nptel.ac.in                                                       
+qp-staging.nptel.ac.in:35.244.4.136                                          
+rc.dev.nptel.ac.in                                                           
+rc.dev.nptel.ac.in:103.158.43.163                                            
+results.nptel.ac.in                                                          
+results.nptel.ac.in:104.211.243.132                                          
+scoringtool.nptel.ac.in                                                      
+scoringtool.nptel.ac.in:35.200.221.74                                        
+seek.nptel.ac.in                                                             
+seek.nptel.ac.in:199.36.158.100                                              
+sharp.dev.nptel.ac.in                                                        
+sharp.dev.nptel.ac.in:103.158.43.163                                         
+shiksha.nptel.ac.in                                                          
+shiksha.nptel.ac.in:14.139.160.153                                           
+staging-exam.nptel.ac.in                                                     
+staging.dev.nptel.ac.in                                                      
+staging.dev.nptel.ac.in:103.158.43.163                                       
+staging.nptel.ac.in                                                          
+stories.nptel.ac.in                                                          
+stories.nptel.ac.in:178.16.136.199                                           
+swayamncdashboard.nptel.ac.in                                                
+swayamncdashboard.nptel.ac.in:34.93.15.143                                   
+t.beta.nptel.ac.in                                                           
+t.beta.nptel.ac.in:dev.nptel.ac.in                                           
+t.beta.nptel.ac.in:dev.nptel.ac.in.                                          
+t.beta.nptel.ac.in:ghs.googlehosted.com                                      
+test.dev.nptel.ac.in                                                         
+test.dev.nptel.ac.in:103.158.43.163                                          
+testing.nptel.ac.in                                                          
+testing.nptel.ac.in:14.139.160.70                                            
+textofvideo.nptel.ac.in                                                      
+textofvideo.nptel.ac.in:103.158.43.161                                       
+tools.nptel.ac.in                                                            
+tools.nptel.ac.in:35.244.13.78                                               
+validator.dev.nptel.ac.in                                                    
+validator.dev.nptel.ac.in:103.158.43.163                                     
+vlab.dev.nptel.ac.in                                                         
+vlab.dev.nptel.ac.in:103.158.43.163                                          
+vm2.dev.nptel.ac.in                                                          
+vm2.dev.nptel.ac.in:103.158.43.163                                           
+wiki.gd.nptel.ac.in  
+
+
+---------------------------------------------------------------------------------------------------------------------
+https://www.kali.org/tools/theharvester/
+https://cybervie.com/blog/what-is-the-harvester/
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
 Active Reconnaissance
 - DNS Enumeration
 - Mall Server Enumeration
 - DNS Zone Transfer
 - Scanning
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+
+1.
+- DNS Enumeration
+
+DNS enumeration is the process of gathering DNS
+ records, such as domain names, IP addresses, and 
+subdomains, to identify network resources and 
+potential attack targets.
+-------------------------------------
+tools - nslookup (online tool)
+https://www.nslookup.io/
+--
+1.1
+host tool
+-t    target
+ns name server
+-----
+┌──(kali㉿kali)-[~]
+└─$ host -t ns microsoft.com
+microsoft.com name server ns4-39.azure-dns.info.
+microsoft.com name server ns1-39.azure-dns.com.
+microsoft.com name server ns2-39.azure-dns.net.
+microsoft.com name server ns3-39.azure-dns.org.
+------------------------------------------------------------------------
+  (we got all domain server with microsoft.com)                                                                           
+------------------------------------------------------------------------
+-------------------------------------------------------------------------
+------------------------------------------------------------------------
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+2. 
+- Mall Server Enumeration
+
+find the information about the mail server  related to 
+the particular Domain..
+--------------------------
+2.1
+host   tool
+-t   target (specify the email server)
+mx     mail exchange server
+domain name - Microsoft.com
+---
+
+--------------------------------------
+┌──(kali㉿kali)-[~]
+└─$ host -t mx microsoft.com
+microsoft.com mail is handled by 10 microsoft-com.mail.protection.outlook.com.
+        
+----------------------------------------------------
+
+2.3 
+host     tool
+-t          target
+mx       mail exchange server
+domain name  nptel.ac.in
+-----------
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ host -t mx nptel.ac.in  
+nptel.ac.in mail is handled by 20 alt1.aspmx.l.google.com.
+nptel.ac.in mail is handled by 30 aspmx2.googlemail.com.
+nptel.ac.in mail is handled by 30 aspmx3.googlemail.com.
+nptel.ac.in mail is handled by 10 aspmx.l.google.com.
+nptel.ac.in mail is handled by 10 mailx1.iitm.ac.in.
+nptel.ac.in mail is handled by 20 alt2.aspmx.l.google.com.
+----------------------------------------------------
+now we got all email server of nptel.ac.in
+----------------------------------------------------
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+3
+- DNS Zone Transfer
+
+The primary DNS zone
+------------------------------- 
+stores the primary zone file
+ with all the DNS records for that zone. 
+It is a  read/write copy, and zone updates are made to
+ the primary zone and then copied in secondary zones.
+There can only be one primary zone on one DNS server
+at a time.
+https://www.ibm.com/think/topics/dns-zone#:~:text=The%20primary%20DNS%20zone%20stores,DNS%20server%20at%20a%20time.
+-------------------------------------------------------------------------
+──(kali㉿kali)-[~]
+└─$ host -t ns nptel.ac.in  
+nptel.ac.in name server ns-cloud-a3.googledomains.com.
+nptel.ac.in name server ns-cloud-a2.googledomains.com.
+nptel.ac.in name server ns-cloud-a1.googledomains.com.
+nptel.ac.in name server ns-cloud-a4.googledomains.com.
+------------------------------------------------------     
+host - tool
+-l   
+domain name   nptel.ac.in
+followed domin server   ns-cloud-a3.googledomains.com.
+--------
+
+┌──(kali㉿kali)-[~]
+└─$ host -l nptel.ac.in ns-cloud-a3.googledomains.com.
+Using domain server:
+Name: ns-cloud-a3.googledomains.com.
+Address: 216.239.36.106#53
+Aliases: 
+
+Host nptel.ac.in not found: 5(REFUSED)
+; Transfer failed.
+ ------------------------------------------------------ 
+transfer failed - no permit ion to zone transfer here                                                                     
+ ------------------------------------------------------                                                                       
 
 
+
+------------------------------------------------------
+- Scanning
+
+
+reference -
+https://www.recordedfuture.com/threat-intelligence-101/tools-and-technologies/osint-tools
