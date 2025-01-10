@@ -1,0 +1,116 @@
+Network Mapper - Nmap 
+
+nmap                          tool/command
+-sS                                stil scan  /scanning options
+-T2                               timing options
+192.168.1.44            Target (S)
+-oN                              output options
+--------------
+============================================
+============================================
+============================================
+-sS -     A SYN scan is a type of TCP scan that doesn't 
+             complete the third step of the TCP 3-way
+             handshake.
+use - dos attack and firewall bypass
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+Usage in Denial-of-Service (DoS) Attacks:
+---------------------------------------------------------------------------
+DoS Attacks: A SYN flood attack is a common 
+DoS attack where attackers send multiple SYN 
+packets to a target without completing the handshake. 
+This consumes resources on the server, making 
+it unavailable to legitimate users.
+Example Command for SYN Flood:
+
+hping3 --flood --rand-source -S -p <port> <target_IP>
+
+With Nmap:
+nmap -sS -p 80 192.168.1.1
+
+This can be used in combination with other tools for a SYN flood attack.
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+Usage for Firewall Bypass:
+
+Firewalls are typically configured to allow SYN packets, as they 
+are a normal part of the TCP handshake process. Using a SYN 
+scan helps bypass many firewall rules that block other types 
+of probes, such as full TCP handshake scans (SYN/ACK or ACK scans).
+
+Firewall Bypass:
+
+nmap -sS 192.168.1.1
+
+=============================================
+=============================================
+=============================================
+-------------
+-sT      It's a fast and sneaky scan that tries to find 
+            potential open ports on the target computer.
+------------
+-sU     
+To determine which UDP ports are open, closed, or 
+filtered on the target host.
+----------
+-sI
+Idle scan, as it has become known, allows for 
+completely blind port scanning. Attackers can actually 
+scan a target without sending a single packet to the 
+target 
+-------------
+-sA                 ack scan -tcp port filter or not filtered
+determine the status of a firewall or filtering rules on a
+ network.
+-------------
+-T2                               timing options
+
+-T0: Paranoid (extremely slow, evades IDS but takes a long time).
+-T1: Sneaky (slow, stealthy, used for evading detection).
+-T2: Polite (moderately slow, reduces network load).
+-T3: Normal (default timing, balanced speed).
+-T4: Aggressive (faster but may trigger IDS/IPS alerts).
+-T5: Insane (extremely fast, may overwhelm the network and easily trigger alarms).
+----------------------
+----------------------
+The -v option in Nmap stands for verbose mode. It increases the 
+amount of detail shown in the output, 
+e.g.
+nmap -v -sS 192.168.1.1
+For even more verbosity:
+nmap -vv <target>
+--------------------------------------------------
+Saves the scan results in a human-readable format, similar to 
+what is displayed on the terminal.
+nmap -sS -oN scan_results.txt 192.168.1.1
+nmap -sV -oX service_scan.xml 192.168.1.1
+nmap -oA full_scan 192.168.1.1
+-------------------------------
+-------------------------------
+The -O option in Nmap enables OS detection.
+
+o identify the target's operating system, including its version or family (e.g., Windows, Linux, etc.).
+nmap -O 192.168.1.1
+
+-------
+Use -O with -sV (service version detection) for detailed information:
+bash
+Copy code
+
+nmap -O -sV 192.168.1.1
+-------------------------------------
+
+The -sP option in Nmap performs a Ping Scan, as a 
+"Host Discovery Scan" or quick scan.
+
+e.g.
+nmap -sP <target>
+
+To identify which devices are active in a subnet.
+nmap -sP 192.168.1.0/24
+
+----------------------------------------------------------------------------------
+-----------------------------------------------------------
