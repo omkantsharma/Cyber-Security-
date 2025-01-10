@@ -1,0 +1,24 @@
+
+View the Routing Table
+
+On Unix / Linux System: 
+
+netstat -r 
+
+On Windows system:
+
+route print 
+
+
+
+
+
+
+
+
+
+
+
+
+Reference-
+https://alison.com/course/diploma-in-ethical-hacking
