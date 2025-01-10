@@ -9,7 +9,7 @@ BGP uses TCP port 179 to communicate with other routers
 
 autonomous SYSTEM 
 
-----
+---
 Distance Vector Protocol
 like - RIP, BGP Complete Routes 
 
