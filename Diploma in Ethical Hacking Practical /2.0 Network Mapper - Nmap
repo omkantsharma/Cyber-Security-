@@ -1,10 +1,10 @@
 Network Mapper - Nmap 
 
 nmap                          tool/command
--sS                                stil scan  /scanning options
--T2                               timing options
-192.168.1.44            Target (S)
--oN                              output options
+-sS                           stil scan  /scanning options
+-T2                           timing options
+192.168.1.44                  Target (S)
+-oN                           output options
 --------------
 ============================================
 ============================================
