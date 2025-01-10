@@ -1,0 +1,16 @@
+                                                                            
+┌──(kali㉿kali)-[~]
+└─$ history \                                                 
+> 
+    1  theharvester
+    2  theHarvester
+    3  theHarvester -h
+    4  theHarvester -d nptel.ac.in -b all
+    5  host -t ns microsoft.com
+    6  host -t mx microsoft.com
+    7  host -t mx nptel.ac.in 
+    8  host -t ns nptel.ac.in 
+    9  host -l nptel.ac.in s-cloud-a3.googledomains.com.
+   10  host -t ns nptel.ac.in ns-cloud-a3.googledomains.com.
+   11  host -l nptel.ac.in ns-cloud-a3.googledomains.com.
+   12  clear
