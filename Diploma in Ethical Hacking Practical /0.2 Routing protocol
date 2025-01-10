@@ -33,13 +33,11 @@ On Linux/macOS, open the Terminal.
 Run the traceroute Command:
 
 On Windows:
-php
-Copy code
+
 tracert <destination>
 Example: tracert google.com
 On Linux/macOS:
-php
-Copy code
+
 traceroute <destination>
 Example: traceroute google.com
 Interpret the Results:
@@ -50,7 +48,6 @@ If there is a * or timeout in a row, it means the hop did not respond.
 Example Output:
 For tracert google.com:
 
-Copy code
 1   192.168.1.1      <1 ms   <1 ms   <1 ms
 2   10.0.0.1         5 ms    5 ms    5 ms
 3   203.0.113.1      20 ms   20 ms   20 ms
