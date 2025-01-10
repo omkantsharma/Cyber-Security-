@@ -1,0 +1,175 @@
+
+Setting Up Attacker And Victim Operating System in Virtual Machine  or Environment 
+
+
+=========================================================================================================
+=========================================================================================================
+---------------------------------------------------------
+target or testing websites are- 
+http://testphp.vulnweb.com/
+http://altoro.testfire.net/
+ 
+========================================================================================================
+
+Lab establishment -
+------------------------
+vm player - https://www.techspot.com/downloads/1969-vmware-player.html 
+---------------------------
+VM ware Player download link for win- 
+https://www.techspot.com/downloads/downloadnowfile/1969/?evp=a6e906ac6db02cb7df2f5b5788a68df3&file=2171
+------------------------------------------------------------------------------------------------------
+Kali preinstall compressed file link - 
+https://cdimage.kali.org/kali-2024.2/kali-linux-2024.2-vmware-amd64.7z
+
+
+
+Reference-
+https://github.com/omkantsharma/Cyber-Security---VAPT/blob/omkantsharma/APT%20%20%7Badvanced-persistent-threat%7D%209A
+
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+
+or
+
+
+ Cyber Lab establishment
+------------------------------------------------------- 
+vmplayer -- Virtual Environment in host Operating system for Lab.
+vmkali -- compressed preinstalled kali zip file for vmplayer 
+kaliiso -- kali is attacker machine or Linux based operating system 
+Metasploitable2 - for practice you can use it as victim or target machine or OS. 
+Tails OS - use to become anonymous or can run Dark web 
+-------------------------------------------------------------------
+===================================================================
+vmplayer vmkali kaliiso Metasploitable2  download links-
+
+vmplayer - https://www.techspot.com/downloads/1969-vmware-player.html
+for win-
+https://www.techspot.com/downloads/downloadnowfile/1969/?evp=372ff28550b00664c9fe3cb3847a7a23&file=2171
+vmkali - compressed preinstalled file for vmplayer-  https://www.kali.org/get-kali/#kali-virtual-machines
+or 
+https://cdimage.kali.org/kali-2024.2/kali-linux-2024.2-vmware-amd64.7z
+
+kaliiso - https://www.kali.org/get-kali/#kali-installer-images
+https://cdimage.kali.org/kali-2024.2/kali-linux-2024.2-installer-amd64.iso
+
+
+Metasploitable2 - target/victim machine os download links
+https://sourceforge.net/projects/metasploitable/files/Metasploitable2/
+https://sourceforge.net/projects/metasploitable/files/Metasploitable2/metasploitable-linux-2.0.0.zip/download
+
+
+privacy os tails-https://tails.net/
+
+https://tails.net/install/index.en.html
+download page link below --
+https://tails.net/install/download-iso/index.en.html
+https://download.tails.net/tails/stable/tails-amd64-6.6/tails-amd64-6.6.iso
+
+
+
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+=========================================================================================================
+
+
+Virtual Machines/Environment -  
+------------------------------------------------------------------------
+
+
+1 . VMware - 
+https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion
+Download libks-
+https://www.techspot.com/downloads/1969-vmware-player.html
+
+Products are - 
+Desktop Hypervisor
+Manage apps in a local virtualization sandbox
+Fusion for Mac
+Workstation Player
+Workstation Pro
+
+
+------------------------------------------------------------------------
+
+2. Download Virtual Box -
+Download libks-
+https://www.virtualbox.org/wiki/Downloads 
+
+Here you will find links to Virtual Box binaries and its source code.
+Virtual Box binaries
+By downloading, you agree to the terms and conditions of the respective license.
+If you're looking for the latest Virtual Box 6.1 packages, see VirtualBox 6.1 builds. Version 6.1 will remain supported until December 2023.
+VirtualBox 7.0.10 platform packages
+•	Windows hosts
+•	macOS / Intel hosts
+•	Linux distributions
+•	Solaris hosts
+•	Solaris 11 IPS hosts
+
+------------------------------------------------------------------------
+
+https://blog.openthreatresearch.com/setting_up_attacker_victim_machines
+
+------------------------------------------------------------------------
+
+Attacker Machines/operating System- 
+1.	Kali 
+https://www.kali.org/get-kali/#kali-platforms 
+
+------------------------------------------------------------------------
+
+2.	Parrot
+https://www.parrotsec.org/download/ 
+
+------------------------------------------------------------------------
+
+Victim Machines/operating System –        imp. https://www.vulnhub.com/ 
+1.	Metasploit 
+https://www.metasploit.com/download 
+https://docs.metasploit.com/docs/development/maintainers/downloads-by-version.html
+
+------------------------------------------------------------------------
+
+
+2.	VULNERABLE PENTESTING LAB ENVIRONMENT: 1
+https://www.vulnhub.com/entry/vulnerable-pentesting-lab-environment-1,737/
+
+------------------------------------------------------------------------
+
+3.	Tomcat
+https://tomcat.apache.org/download-90.cgi 
+https://www.linkedin.com/pulse/vulnerable-lab-lists-pentesting-mehedi-hasan-babu 
+Blogs links - 
+
+------------------------------------------------------------------------
+
+
+
+https://tails.net/doc/anonymous_internet/Tor_Browser/index.en.html 
+https://www.getastra.com/blog/security-audit/best-penetration-testing-tools/ 
+
+
+------------------------------------------------------------------------
+
+https://owasp.org/www-project-top-ten/
+https://sourceforge.net/directory/windows/?q=vulnerable+machine
+
+
