@@ -1,0 +1,20 @@
+Scanning 
+actively gather the information form target machine/
+device, application and network about vulnerability
+ that can be exploited. 
+
+-Types of scanning
+-- Network Scan - detect the live host on the network.
+-- Port Scan - detect the open port on the host.
+-- Service Scan - detect software, version and service 
+running any particular port.
+-- OS Scan - detect OS.
+-- Vulnerability Scan - detect computer and computer system or network or application for weakness.
+-----------------------------------------------------------------------------
+-Tools used for scanning
+--Nmap
+--Zenmap
+--Nessus vulnerability scanner
+--Nexpose
+
+=====================================
