@@ -83,8 +83,11 @@ nmap -v -sS 192.168.1.1
 For even more verbosity:
 nmap -vv <target>
 --------------------------------------------------
+-oN                              output options
+
 Saves the scan results in a human-readable format, similar to 
 what is displayed on the terminal.
+
 nmap -sS -oN scan_results.txt 192.168.1.1
 nmap -sV -oX service_scan.xml 192.168.1.1
 nmap -oA full_scan 192.168.1.1
