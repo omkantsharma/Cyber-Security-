@@ -1,0 +1,17 @@
+Directory bursting
+
+Directory bursting is an essential technique in ethical hacking to discover hidden directories and files on a web server or application.
+or
+Directory bursting, also known as "directory brute forcing", is a technique used in ethical hacking to discover hidden directories and files on a web server or application. It involves systematically attempting to access different directories by guessing their names or enumerating through a list of common directories and file names.
+================================================================================
+
+
+
+
+
+================================================================================
+
+
+Reference - 
+https://www.makeuseof.com/best-linux-tools-for-directory-bursting/
+https://medium.com/@psychomong/directory-busting-finding-the-hidden-directory-da4b55fe2490
