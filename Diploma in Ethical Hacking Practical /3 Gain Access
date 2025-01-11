@@ -10,3 +10,25 @@ Metasploit for Penetration testing
 -Describe man-in-the-middle attack using the concept of sniffing via ARP poisoning.
 -Explain how Address Resolution Protocol (ARP) works
 -Explain why a sniffer normally turns the NIC of a system to the "promiscuous mode"
+
+
+-----------------------------------------------------------------------------------------------------------
+
+Metasploit project is an open-source penetration testing platform that enables users to find and 
+exploit vulnerabilities.
+
+In 2003, HD Moore created Metasploit as a portable network tool. On October 21st,
+2009, the Metasploit project was acquired by Rapid 7.
+
+The Metasploit framework can be used to penetrate different operating systems like Windows XP, 
+Windows 7, higher version of windows or other operating systems like Linux
+
+Vulnerability is a weakness which can be exploited by an attacker to perform unauthorized 
+action with the computer system. It can be as simple as a weak password or as complex as buffer overflow.
+
+"exploit" is a piece of code, chunk of data or a sequence of commands that take the advantage 
+of a vulnerability present in a computer system causing unintended behaviour to occur on a 
+computer system such as giving unauthorized access to a system or allowing privilege escalation
+
+The "payload" in Metasploit is the part of the private user text which could contain malware such 
+as worm or viruses, which perform the milieus action deleting data,sending spam or encrypting data
