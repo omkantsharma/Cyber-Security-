@@ -1,0 +1,81 @@
+CVSS & CVE
+
+CVSS (Common Vulnerability Scoring System):
+--------------------------
+-A framework used to assess and measure the severity of software vulnerabilities.
+
+-Provides a numerical score (ranging from 0.0 to 10.0) that reflects the vulnerability's risk level.
+
+- Scores are often represented in three severity levels:
+Low (0.1–3.9)
+Medium (4.0–6.9)
+High (7.0–8.9)
+Critical (9.0–10.0)
+---------------------------
+CVSS Metrics:
+
+1. Base Metrics: Evaluate the fundamental attributes of a vulnerability.
+
+-Attack Vector (AV): How the vulnerability is exploited (e.g., network, local).
+-Attack Complexity (AC): The difficulty of exploitation (e.g., low, high).
+-Privileges Required (PR): Level of permissions required.
+-User Interaction (UI): Whether user involvement is needed.
+-Confidentiality (C), Integrity (I), Availability (A): Impact levels.
+-------------------------------------
+2. Temporal Metrics: Adjust the score based on the current exploitability of the vulnerability.
+
+3. Environmental Metrics: Customize the score based on the user's environment and assets.
+
+
+Purpose of CVSS:
+----------------------
+-Standardizes vulnerability severity assessment.
+-Helps prioritize remediation efforts.
+-Used by security teams, vendors, and organizations.
+-------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------
+
+CVE (Common Vulnerabilities and Exposures):
+- A public database of known cybersecurity vulnerabilities.
+
+- Each vulnerability is assigned a unique identifier (CVE ID) for easy reference.
+
+CVE Format:
+----
+CVE-<Year>-<ID>
+-----
+
+- Example: CVE-2025-12345
+             --Year: Year the vulnerability was added.
+             --ID: Unique identifier for the vulnerability.
+
+Key Features:
+     1. Universal Identification: Provides a single, standardized name for a vulnerability.
+     2. Collaboration: Enables easy sharing of information between vendors, security professionals, and tools.
+     3.Database Sources: Managed by the MITRE Corporation and included in the National Vulnerability Database (NVD).
+
+
+
+========================================================================
+========================================================================
+========================================================================
+
+
+Relationship Between CVSS and CVE:
+- CVE IDs are used to catalog vulnerabilities.
+- CVSS scores provide the severity rating for CVE entries.
+ - Example: A CVE entry like CVE-2025-12345 will include its CVSS score and vector details,       such as:
+-----------------------
+CVE-2025-12345
+CVSS Score: 8.2 (High)
+Vector: AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N
+-------------------------
+Use in Security:
+------------
+- CVE identifies the vulnerability.
+- CVSS quantifies its severity to help prioritize actions.
+Both CVE and CVSS are critical tools for vulnerability management and cybersecurity strategies.
+
