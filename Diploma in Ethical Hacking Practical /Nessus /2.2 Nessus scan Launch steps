@@ -1,0 +1,12 @@
+Nessus scan Launch steps 
+
+new scan
+advance scan 
+------------
+setting - basic - general 
+ADD Name, Description, Target like ( 192.167.176.0-192.168.176.255 )
+save 
+my scan 
+select scan name and launch 
+----------------------
+
