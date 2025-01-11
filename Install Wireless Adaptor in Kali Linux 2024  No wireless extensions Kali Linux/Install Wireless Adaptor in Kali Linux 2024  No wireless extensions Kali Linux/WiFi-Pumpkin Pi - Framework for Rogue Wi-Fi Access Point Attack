@@ -1,0 +1,175 @@
+WiFi-Pumpkin Pi - Framework for Rogue Wi-Fi Access Point Attack
+
+isusb 
+sudo su 
+
+iwconfig
+sudo airmon-ng start wlan0
+--------------
+https://github.com/P0cL4bs/WiFi-Pumpkin-deprecated
+git clone https://github.com/P0cL4bs/WiFi-Pumpkin-deprecated.git
+or (if not install then use)
+git clone https://github.com/Vulcainreo/WiFi-Pumpkin.git
+
+cd WiFi-Pumpkin 
+
+ sudo chmod +x installer.sh
+
+./installer.sh --install
+
+-------------------------------
+if error came - ┌──(root㉿kali)-[/home/kali/WiFi-Pumpkin]
+└─#     sudo wifi-pumpkin                                   
+[!] WiFi-Pumpkin need Python 2 :(
+
+-------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=============================================
+=============================================
+=============================================
+OLD METHODS - 
+sudo apt update && sudo apt full-upgrade
+
+
+WiFi-Pumpkin
+Vulcainreo/WiFi-Pumpkin
+
+git clone https://github.com/Vulcainreo/WiFi-Pumpkin.git
+ cd WiFi-Pumpkin
+ sudo pip2 install -r requirements.txt
+ chmod +x installer.sh
+ sudo ./installer.sh --install
+
+=============================================================
+terminal -1  
+(https://github.com/Vulcainreo/WiFi-Pumpkin/tree/master)
+   =============================
+   | wifi-pumpkin Installer|
+   =============================
+          Version: 0.8.5 
+usage: ./installer.sh --install | --uninstall
+[-] This script must be run as root
+                                                 
+┌──(kali㉿kali)-[~/WiFi-Pumpkin]
+└─$ sudo su                       
+[sudo] password for kali: 
+┌──(root㉿kali)-[/home/kali/WiFi-Pumpkin]
+└─# sudo dpkg -i wifi-pumpkin-0.8.5-all.deb
+
+dpkg: error: cannot access archive 'wifi-pumpkin-0.8.5-all.deb': No such file or directory
+                                                 
+┌──(root㉿kali)-[/home/kali/WiFi-Pumpkin]
+└─# sudo apt-get -f install # force install dependencies if not install normally
+
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+
+================================================================
+================================================================
+================================================================
+
+open another 
+terminal - 2 (https://github.com/Vulcainreo/WiFi-Pumpkin/tree/master)
+
+ git clone https://github.com/P0cL4bs/WiFi-Pumpkin.git
+or  
+git clone https://github.com/Vulcainreo/WiFi-Pumpkin.git
+
+
+ cd WiFi-Pumpkin
+ sudo pip install -r requirements.txt
+ chmod +x installer.sh
+ sudo ./installer.sh --install
+----------------------
+
+
+
+
+
+
+
+sudo dpkg -i wifi-pumpkin-0.8.4-all.deb 
+-----------
+sudo wifi-pumpkin
+-----------
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 1
+
+---------------------------
+sudo nano /etc/apt/sources.list
+
+==========================
+If PyQt4 is still missing, it may not be available in Kali’s current repositories. Since PyQt4 support has become limited, here are alternative methods you can try to get WiFi-Pumpkin running:
+
+Option 1: Use an Older Kali Linux Repository
+If you’re okay with potentially installing an older version, you could temporarily add an old repository to access PyQt4.
+
+Add an older repository to sources list: Edit the sources list file:
+
+bash
+Copy code
+sudo nano /etc/apt/sources.list
+Add the following line to the file:
+
+plaintext
+Copy code
+deb http://old.kali.org/kali sana main non-free contrib
+Update and install python-qt4:
+
+bash
+Copy code
+sudo apt update
+sudo apt install python-qt4
+Remove the old repository after installation: To avoid package conflicts in the future, remove the line you added to sources.list.
+==========================
+
+------------------------
+=====================
+this cmd solve -
+sudo apt install docker.io
+
+
+=============================================
+=============================================
+=============================================
+=============================================
+=============================================
+---------------------------------------------------------------------------
+Reference - 
+https://github.com/Vulcainreo/WiFi-Pumpkin.git
+---------------------------------------------------------------------------
+git clone https://github.com/aircreck-ng/rtl8812au.git
+
+
+
+-----------------------------------------------------------------------------
+
+
+
+
+
+------------------------------------------------------------------------------
