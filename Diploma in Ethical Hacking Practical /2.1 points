@@ -1,0 +1,10 @@
+2.1 points
+In ethical hacking different kinds of operating systems like Windows XP, Windows 7, Windows 8, Windows 10 and Linux are used
+-Kali Linux is the preferred machine to be used as the hackers' machine
+-There are different tools like VMware workstation, VMware player and VirtualBox for setting up a virtual hacking platform-
+-VirtualBox for different operating systems can be downloaded from the official website of virtualbox.org
+-Reconnaissance or information gathering is categorized into active and passive reconnaissance
+-In passive reconnaissance, information is not gathered directly from communicating with a victim.
+-In active reconnaissance, information is gathered by directly communicating with a victim
+-Active reconnaissance include DNS Enumeration, Mail Server Enumeration, DNS Zone Transfer and Scanning
+-The Nessus vulnerability scanning tool can be downloaded from the official website of Nessus
