@@ -1,0 +1,12 @@
+3 Gain Access (Metasploit for Penetration testing )
+
+Metasploit for Penetration testing 
+-Explain how to use Metasploit for penetration into Windows and Linux operating systems
+-Outline the command((s) that can be used to find out all the live host in  a network 
+-Explain the role of the help command in Metasploit 
+-Discuss the Application Software Vulnerability and how to penetrate windows machine using that vulnerability
+-Explain the meaning of the term "Social Engineering"
+-Outline all the techniques used for social engineering attacks
+-Describe man-in-the-middle attack using the concept of sniffing via ARP poisoning.
+-Explain how Address Resolution Protocol (ARP) works
+-Explain why a sniffer normally turns the NIC of a system to the "promiscuous mode"
