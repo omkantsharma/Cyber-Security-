@@ -1,0 +1,422 @@
+nmap -sP -O -sV --script vuln arp-scan -l netdiscover  own kali 
+
+active scan
+-------------------------------------------------------------------------------------
+1.
+--- find live host in all network
+sudo nmap -T4 -sP 192.168.176.0/24  
+or 
+--- find live host in all network
+netdiscover     
+or 
+sudo arp-scan -l
+ sudo arp-scan 192.168.176.0/24
+sudo arp-scan --interface=eth0 192.168.1.0/24
+
+------------------------
+
+2.
+--- Discover Open Ports: 
+(choose all live IP or anyone)
+nmap -p 1-65535 192.168.176.1
+or 
+ nmap -T4 -p 1-1000  192.168.176.1 192.168.176.2 192.168.176.181 192.168.176.254  
+-------------------------
+
+3.
+---SCAN -Operating system 
+nmap -T4 -O  192.168.176.1 192.168.176.2 192.168.176.181 192.168.176.254   
+-------------------------
+
+4.
+---- SCAN SERVICE VERSION
+nmap -T4 -sV  192.168.176.1 192.168.176.2 192.168.176.181 192.168.176.254
+-------------------------
+
+5. 
+Vulnerability scanning 
+nmap                      tool
+-T4                            time option
+--script vuln          using script vuln
+ip                              192.168.176.1 192.168.176.2 192.168.176.181 192.168.176.254
+
+sudo nmap -T4 --script vuln 192.168.176.1 192.168.176.2 192.168.176.181 192.168.176.254 
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+---------------------Implementation with  explanation ----------------------------------------------------------
+
+1.
+--- find live host in all network
+sudo nmap -T4 -sP 192.168.176.0/24  
+--------------------------------------------------------------------------------------
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -T4 -sP 192.168.176.0/24  
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-01-11 07:42 EST
+Nmap scan report for 192.168.176.1
+Host is up (0.00038s latency).
+MAC Address: 00:50:56:C0:00:08 (VMware)
+Nmap scan report for 192.168.176.2
+Host is up (0.00011s latency).
+MAC Address: 00:50:56:F7:AE:18 (VMware)
+Nmap scan report for 192.168.176.254
+Host is up (0.00028s latency).
+MAC Address: 00:50:56:E3:54:0C (VMware)
+Nmap scan report for 192.168.176.181
+Host is up.
+Nmap done: 256 IP addresses (4 hosts up) scanned in 18.02 seconds
+----------------------------------------------------------------------------------------------  
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------                                                                   
+or 
+--- find live host in all network
+netdiscover     
+
+or 
+sudo arp-scan -l
+ sudo arp-scan 192.168.176.0/24
+sudo arp-scan --interface=eth0 192.168.1.0/24
+-------
+This output appears to be from a network scanning tool (like arp-scan or similar) analyzing ARP 
+(Address Resolution Protocol) traffic. Here's a step-by-step breakdown of what the information 
+means and the significance of each field:
+------
+-- output -----------------------
+-------------------------------------------------------------------------------------------------------------------------------------
+Currently scanning: 172.16.150.0/16   |   Screen View: Unique Hosts                         
+                                                                                             
+ 38 Captured ARP Req/Rep packets, from 3 hosts.   Total size: 2280                           
+ _____________________________________________________________________________
+   IP            At MAC Address     Count     Len  MAC Vendor / Hostname      
+ -----------------------------------------------------------------------------
+ 192.168.176.2   00:50:56:f7:ae:18      3     180  VMware, Inc.                              
+ 192.168.176.1   00:50:56:c0:00:08     33    1980  VMware, Inc.                              
+ 192.168.176.254 00:50:56:e3:54:0c      2     120  VMware, Inc. 
+------------------------------------------------------------------------------------------------------------------------------------
+Table Breakdown:
+IP: The IP address of the detected host.
+At MAC Address: The corresponding MAC address of the device associated with the IP.
+Count: The number of ARP packets sent/received by the device during the scan.
+Len: Total length of ARP packets in bytes captured from this host.
+MAC Vendor / Hostname:
+The vendor or manufacturer of the network interface card (NIC), based on the first part 
+of the MAC address (known as the OUI - Organizationally Unique Identifier).
+VMware, Inc.: All detected devices are virtual machines hosted on VMware.
+-----------
+---Network Range Scanned:
+The tool is scanning the subnet 172.16.150.0/16, which covers IP addresses 
+from 172.16.0.0 to 172.16.255.255.
+This is a large private network range defined in RFC 1918.
+---Purpose:
+ARP requests and replies are used to map IP addresses to MAC 
+(Media Access Control) addresses on the local network. The tool listens to these 
+packets to identify active devices.
+----------------------------------------------------------------------------------------------------------------------
+┌──(kali㉿kali)-[~]
+└─$ sudo arp-scan -l
+Interface: eth0, type: EN10MB, MAC: 00:0c:29:6a:01:6c, IPv4: 192.168.176.181
+WARNING: Cannot open MAC/Vendor file ieee-oui.txt: Permission denied
+WARNING: Cannot open MAC/Vendor file mac-vendor.txt: Permission denied
+Starting arp-scan 1.10.0 with 256 hosts (https://github.com/royhills/arp-scan)
+192.168.176.1   00:50:56:c0:00:08       (Unknown)
+192.168.176.128 00:0c:29:fa:dd:2a       (Unknown)
+192.168.176.153 00:0c:29:4b:0b:f2       (Unknown)
+192.168.176.254 00:50:56:e3:54:0c       (Unknown)
+
+21 packets received by filter, 0 packets dropped by kernel
+Ending arp-scan 1.10.0: 256 hosts scanned in 1.840 seconds (139.13 hosts/sec). 4 responded
+----------------------------------------------------------------------------------------------------------------------
+ sudo arp-scan 192.168.176.0/24
+──(kali㉿kali)-[~]
+└─$ sudo arp-scan 192.168.176.0/24
+Interface: eth0, type: EN10MB, MAC: 00:0c:29:6a:01:6c, IPv4: 192.168.176.181
+WARNING: Cannot open MAC/Vendor file ieee-oui.txt: Permission denied
+WARNING: Cannot open MAC/Vendor file mac-vendor.txt: Permission denied
+Starting arp-scan 1.10.0 with 256 hosts (https://github.com/royhills/arp-scan)
+192.168.176.1   00:50:56:c0:00:08       (Unknown)
+192.168.176.128 00:0c:29:fa:dd:2a       (Unknown)
+192.168.176.153 00:0c:29:4b:0b:f2       (Unknown)
+192.168.176.254 00:50:56:e3:54:0c       (Unknown)
+
+19 packets received by filter, 0 packets dropped by kernel
+Ending arp-scan 1.10.0: 256 hosts scanned in 1.856 seconds (137.93 hosts/sec). 4 responded
+----------------------------------------------------------------------------------------------------------------------
+──(kali㉿kali)-[~]
+└─$ sudo arp-scan --interface=eth0 192.168.1.0/24        
+Interface: eth0, type: EN10MB, MAC: 00:0c:29:6a:01:6c, IPv4: 192.168.176.181
+WARNING: Cannot open MAC/Vendor file ieee-oui.txt: Permission denied
+WARNING: Cannot open MAC/Vendor file mac-vendor.txt: Permission denied
+Starting arp-scan 1.10.0 with 256 hosts (https://github.com/royhills/arp-scan)
+
+10 packets received by filter, 0 packets dropped by kernel
+Ending arp-scan 1.10.0: 256 hosts scanned in 1.855 seconds (138.01 hosts/sec). 0 responded
+
+
+===================================================================================
+===================================================================================
+===================================================================================
+===================================================================================
+===================================================================================
+===================================================================================
+===================================================================================
+2.
+
+--- Discover Open Ports: 
+(choose all live IP or anyone)
+nmap -p 1-65535 192.168.176.1
+or 
+ nmap -T4 -p 1-1000  192.168.176.1 192.168.176.2 192.168.176.181 192.168.176.254  
+
+----------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------
+---note --- 
+(Check for Unauthorized Devices:
+If VMware devices are unexpected in 
+your network, investigate who manages 
+them and their purpose.)
+------------------------------------
+--Export data
+arp-scan -l > scan_results.txt
+=========================================================
+-----------------------Important note ----------------------------------------------
+---Monitor Continuously:
+Use tools like Wireshark or tcpdump to continuously monitor ARP
+ traffic for suspicious behavior, such as ARP spoofing or new 
+unknown devices.
+=========================================================
+----------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------
+──(kali㉿kali)-[~]
+└─$ nmap -T4 -p 1-1000  192.168.176.1 192.168.176.2 192.168.176.181 192.168.176.254   
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-01-11 08:06 EST
+Nmap scan report for 192.168.176.1
+Host is up (0.00037s latency).
+All 1000 scanned ports on 192.168.176.1 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+MAC Address: 00:50:56:C0:00:08 (VMware)
+
+Nmap scan report for 192.168.176.2
+Host is up (0.00021s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE    SERVICE
+53/tcp filtered domain                                                                                  (Discover open port )
+MAC Address: 00:50:56:F7:AE:18 (VMware)
+
+Nmap scan report for 192.168.176.254
+Host is up (0.000088s latency).
+All 1000 scanned ports on 192.168.176.254 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+MAC Address: 00:50:56:E3:54:0C (VMware)
+
+Nmap scan report for 192.168.176.181
+Host is up (0.000010s latency).
+All 1000 scanned ports on 192.168.176.181 are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+
+Nmap done: 4 IP addresses (4 hosts up) scanned in 18.06 seconds
+------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+3.
+
+---SCAN -Operating system 
+nmap -T4 -O  192.168.176.1 192.168.176.2 192.168.176.181 192.168.176.254   
+
+┌──(kali㉿kali)-[~]
+└─$ nmap -T4 -O  192.168.176.1 192.168.176.2 192.168.176.181 192.168.176.254        
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-01-11 08:14 EST
+Nmap scan report for 192.168.176.1
+Host is up (0.0011s latency).
+All 1000 scanned ports on 192.168.176.1 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+MAC Address: 00:50:56:C0:00:08 (VMware)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+Nmap scan report for 192.168.176.2
+Host is up (0.00021s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE    SERVICE
+53/tcp filtered domain
+MAC Address: 00:50:56:F7:AE:18 (VMware)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: specialized
+Running: VMware Player
+OS CPE: cpe:/a:vmware:player
+OS details: VMware Player virtual NAT device                                                      (Discover operating system)
+Network Distance: 1 hop
+
+Nmap scan report for 192.168.176.254
+Host is up (0.000071s latency).
+All 1000 scanned ports on 192.168.176.254 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+MAC Address: 00:50:56:E3:54:0C (VMware)                           
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+Nmap scan report for 192.168.176.181
+Host is up (0.000028s latency).
+All 1000 scanned ports on 192.168.176.181 are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 0 hops
+
+OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 4 IP addresses (4 hosts up) scanned in 31.07 seconds
+----------------------------------------------------------------------------------------------------------------------------------------
+4.
+---- SCAN SERVICE VERSION
+nmap -T4 -sV  192.168.176.1 192.168.176.2 192.168.176.181 192.168.176.254
+
+──(kali㉿kali)-[~]
+└─$ nmap -T4 -sV  192.168.176.1 192.168.176.2 192.168.176.181 192.168.176.254
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-01-11 08:22 EST
+Nmap scan report for 192.168.176.1
+Host is up (0.00015s latency).
+All 1000 scanned ports on 192.168.176.1 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+MAC Address: 00:50:56:C0:00:08 (VMware)
+
+Nmap scan report for 192.168.176.2
+Host is up (0.00098s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE SERVICE    VERSION                                                                        (Discover service version )
+53/tcp open  tcpwrapped
+MAC Address: 00:50:56:F7:AE:18 (VMware)
+
+Nmap scan report for 192.168.176.254
+Host is up (0.00016s latency).
+All 1000 scanned ports on 192.168.176.254 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+MAC Address: 00:50:56:E3:54:0C (VMware)
+
+Nmap scan report for 192.168.176.181
+Host is up (0.0000040s latency).
+All 1000 scanned ports on 192.168.176.181 are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 4 IP addresses (4 hosts up) scanned in 42.24 seconds
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------
+5. 
+Vulnerability scanning 
+nmap                      tool
+-T4                            time option
+--script vuln          using script vuln
+ip                              192.168.176.1 192.168.176.2 192.168.176.181 192.168.176.254
+
+note - vulnerability scanning use Nessus 
+here we use nmap 
+--------------------------
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -T4 --script vuln 192.168.176.1 192.168.176.2 192.168.176.181 192.168.176.254 
+
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-01-11 09:39 EST
+Nmap scan report for 192.168.176.1
+Host is up (0.00054s latency).
+All 1000 scanned ports on 192.168.176.1 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+MAC Address: 00:50:56:C0:00:08 (VMware)
+
+Nmap scan report for 192.168.176.254
+Host is up (0.000066s latency).
+All 1000 scanned ports on 192.168.176.254 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+MAC Address: 00:50:56:E3:54:0C (VMware)
+
+Nmap scan report for 192.168.176.181
+Host is up (0.000015s latency).
+All 1000 scanned ports on 192.168.176.181 are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+
+Nmap done: 4 IP addresses (3 hosts up) scanned in 79.96 seconds
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+
+┌──(kali㉿kali)-[~]
+└─$ sudo nmap -T4 -v --script vuln 192.168.176.1 192.168.176.2 192.168.176.181 192.168.176.254 
+
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-01-11 09:33 EST
+NSE: Loaded 105 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 09:33
+Completed NSE at 09:33, 10.01s elapsed
+Initiating NSE at 09:33
+Completed NSE at 09:33, 0.00s elapsed
+Initiating ARP Ping Scan at 09:33
+Scanning 3 hosts [1 port/host]
+Completed ARP Ping Scan at 09:33, 1.22s elapsed (3 total hosts)
+Initiating Parallel DNS resolution of 2 hosts. at 09:33
+Completed Parallel DNS resolution of 2 hosts. at 09:34, 13.00s elapsed
+Nmap scan report for 192.168.176.2 [host down]
+Initiating Parallel DNS resolution of 1 host. at 09:34
+Completed Parallel DNS resolution of 1 host. at 09:34, 13.00s elapsed
+Initiating SYN Stealth Scan at 09:34
+Scanning 2 hosts [1000 ports/host]
+Completed SYN Stealth Scan against 192.168.176.254 in 41.26s (1 host left)
+Completed SYN Stealth Scan at 09:34, 41.27s elapsed (2000 total ports)
+NSE: Script scanning 2 hosts.
+Initiating NSE at 09:34
+Completed NSE at 09:34, 1.00s elapsed
+Initiating NSE at 09:34
+Completed NSE at 09:34, 0.00s elapsed
+Nmap scan report for 192.168.176.1
+Host is up (0.000058s latency).
+All 1000 scanned ports on 192.168.176.1 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+MAC Address: 00:50:56:C0:00:08 (VMware)
+
+Nmap scan report for 192.168.176.254
+Host is up (0.000089s latency).
+All 1000 scanned ports on 192.168.176.254 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+MAC Address: 00:50:56:E3:54:0C (VMware)
+
+Initiating SYN Stealth Scan at 09:34
+Scanning 192.168.176.181 [1000 ports]
+Completed SYN Stealth Scan at 09:34, 0.05s elapsed (1000 total ports)
+NSE: Script scanning 192.168.176.181.
+Initiating NSE at 09:34
+Completed NSE at 09:34, 0.00s elapsed
+Initiating NSE at 09:34
+Completed NSE at 09:34, 0.00s elapsed
+Nmap scan report for 192.168.176.181
+Host is up (0.000014s latency).
+All 1000 scanned ports on 192.168.176.181 are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+
+NSE: Script Post-scanning.
+Initiating NSE at 09:34
+Completed NSE at 09:34, 0.00s elapsed
+Initiating NSE at 09:34
+Completed NSE at 09:34, 0.00s elapsed
+Read data files from: /usr/share/nmap
+Nmap done: 4 IP addresses (3 hosts up) scanned in 79.96 seconds
+           Raw packets sent: 5004 (220.112KB) | Rcvd: 2002 (84.056KB)
+
+-
+┌──(kali㉿kali)-[~]
+└─$ sudo arp-scan -l > scan_results.txt
+WARNING: Cannot open MAC/Vendor file ieee-oui.txt: Permission denied
+WARNING: Cannot open MAC/Vendor file mac-vendor.txt: Permission denied
+
+
+
+
+
+
