@@ -1,0 +1,208 @@
+Wi-fi Penetration testing-
+-------------------------------------
+sudo apt install bettercap
+----
+articles --
+https://www.stationx.net/bettercap-tutorial/
+https://www.bettercap.org/usage/interactive/
+https://www.bettercap.org/legacy/
+----
+isusb 
+sudo su 
+iwconfig
+sudo airmon-ng start wlan0
+
+sudo bettercap
+
+set wifi.interface wlan0mon
+
+
+
+---------------------------
+192.168.176.0/24 > 192.168.176.164 >>
+---------------------------
+help
+
+
+
+
+========================================================
+========================================================
+========================================================
+=======================================================
+========================================================
+========================================================
+Method - 2
+---------------------
+sudo su 
+
+lsusb
+iwconfig
+
+sudo airmon-ng start wlan0
+
+-----------------------------------------------
+============================
+============================
+============================
+sudo apt update
+sudo apt upgrade 
+sudo apt-get install --reinstall aircrack-ng
+===
+restart
+===
+sudo su
+
+make load
+----
+iwconfog
+----
+sudo airmon-ng start wlan0
+----
+iwconfog
+----
+----
+sudo airodump-ng wlan0mon
+----
+sudo apt-get install -f
+----
+sudo apt autoremove
+----
+/usr/bin
+----
+sudo apt update
+sudo apt install wifiphisher
+-----
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------
+┌──(kali㉿kali)-[~/Downloads/compat-wireless-2010-06-26-p]
+└─$ sudo su                  
+┌──(root㉿kali)-[/home/kali/Downloads/compat-wireless-2010-06-26-p]
+└─# 
+──(root㉿kali)-[/home/kali/Downloads/compat-wireless-2010-06-26-p]
+└─# iwconfig                                                                 
+lo        no wireless extensions.
+
+eth0      no wireless extensions.
+
+docker0   no wireless extensions.
+
+wlan0     IEEE 802.11  ESSID:off/any  
+          Mode:Managed  Access Point: Not-Associated   Tx-Power=20 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          
+wlan1     IEEE 802.11  ESSID:off/any  
+          Mode:Managed  Access Point: Not-Associated   Tx-Power=20 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          
+hwsim0    no wireless extensions.
+
+
+-------------------------------------------------------------------------------------------------
+
+----
+
+
+
+
+-----
+
+┌──(root㉿kali)-[/home/kali]
+└─# 
+airodump-ng wlan0mon
+
+----------------output-----------------
+ CH  8 ][ Elapsed: 48 s ][ 2024-11-06 23:27                                  
+                                                                             
+ BSSID              PWR  Beacons    #Data, #/s  CH   MB   ENC CIPHER  AUTH E 
+                                                                             
+                                                                             
+ BSSID              STATION            PWR    Rate    Lost   Frames  Notes   
+                                                                             
+Quitting...                                                                  
+  -----------------------------
+----------------------------------------------------------------------------------------
+┌──(root㉿kali)-[/home/kali/Downloads/compat-wireless-2010-06-26-p]
+└─# sudo airmon-ng start wlan0
+
+
+Found 2 processes that could cause trouble.
+Kill them using 'airmon-ng check kill' before putting
+the card in monitor mode, they will interfere by changing channels
+and sometimes putting the interface back in managed mode
+
+    PID Name
+    676 NetworkManager
+   8061 wpa_supplicant
+
+PHY     Interface       Driver          Chipset
+
+phy0    wlan0           mac80211_hwsim  Software simulator of 802.11 radio(s) for mac80211
+                (mac80211 monitor mode vif enabled for [phy0]wlan0 on [phy0]wlan0mon)
+                (mac80211 station mode vif disabled for [phy0]wlan0)
+phy1    wlan1           mac80211_hwsim  Software simulator of 802.11 radio(s) for mac80211
+
+                                                                             
+┌──(root㉿kali)-[/home/kali/Downloads/compat-wireless-2010-06-26-p]
+└─# iwconfig                  
+lo        no wireless extensions.
+
+eth0      no wireless extensions.
+
+docker0   no wireless extensions.
+
+wlan1     IEEE 802.11  ESSID:off/any  
+          Mode:Managed  Access Point: Not-Associated   Tx-Power=20 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          
+hwsim0    no wireless extensions.
+
+wlan0mon  IEEE 802.11  Mode:Monitor  Frequency:2.457 GHz  Tx-Power=20 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:off
+                                                                        
+   -------
+┌──(root㉿kali)-[/home/kali/Downloads/compat-wireless-2010-06-26-p]
+└─# sudo airodump-ng wlan0mon                                                                       
+     
+
+
+
+
+
+
+ ==============================
+===============================
+================================                                                                      
+┌──(root㉿kali)-[/home/kali]
+└─# ifconfig wlan0mon down
+                                                                             
+┌──(root㉿kali)-[/home/kali]
+└─# ifconfig wlan0mon up  
+-----------------------------------------------
+Ctrl +z
+-----------------------------------------------
+fg
+jobs
+
+
