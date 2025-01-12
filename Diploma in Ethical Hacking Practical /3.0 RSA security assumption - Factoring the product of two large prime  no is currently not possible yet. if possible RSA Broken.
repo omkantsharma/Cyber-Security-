@@ -1,2 +1,22 @@
 RSA security assumption - Factoring the product of two large prime 
 no is currently not possible yet. if possible RSA Broken.
+
+
+
+
+
+
+
+
+
+
+Hash functions are computational functions that determine a hash digest H from a given message M. They are also referred to as one-way functions
+There are two types of hash functions we can use; one that uses a key which is called keyed hash function and another one which does not require a key which is the un-keyed hash function.
+An unkeyed hash function is also called Modification Detection Code (MDE) while a keyed hash function is also known as Message Authentication Code (MAC)
+Authentication is a process through which the identity of the sender of a message can be confirmed
+SHA-512 and HMAC are types of one-way hash functions
+Digital signature is the digital equivalent of handwritten signatures, where the signer uses his private key to sign. There are four types of digital signatures
+Digital certificates require a Certification Authority (CA) whom every entity over a network can trust
+Secure Socket Layer (SSL) was first used by Netscape to ensure data security sent through HTTP, LDAP or POP3.
+One of the main objectives fo SSL is to ensure data integrity and privacy
+Transport Layer Security (TLS) is an extension of SSL which aims to provide security and data integrity at the transport layer between two web applications. 
